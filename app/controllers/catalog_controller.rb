@@ -239,15 +239,6 @@ class CatalogController < ApplicationController
     config.autocomplete_path = 'suggest'
  end
 
-  def oai
-    options = params.delete_if { |k,v| %w{controller action}.include?(k) }
-    p = oai_provider
-    render :text => p.process_request(options), :content_type => 'text/xml'
-  end
-
-  def oai_provider
-    @oai_provider ||= ::AdlDocumentProvider.new(self)
-  end
 
 
  # Email Action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
@@ -361,4 +352,14 @@ class CatalogController < ApplicationController
     ['Alt','phrase'].include? params['search_field']
   end
   helper_method :search_field_fritekst?
+
+  def oai
+    options = params.delete_if { |k,v| %w{controller action}.include?(k) }
+    p = oai_provider
+    render :text => p.process_request(options), :content_type => 'text/xml'
+  end
+
+  def oai_provider
+    @oai_provider ||= ::AdlDocumentProvider.new(self)
+  end
 end
