@@ -17,6 +17,10 @@ class SearchBuilder < Blacklight::SearchBuilder
       solr_params[:fq] ||= []
       workid = blacklight_params[:workid]
       workid = "#{workid}*" unless workid.include? '*'
+      # sorting in document order
+      solr_params[:sort] = []
+      solr_params[:sort] << 'position_isi asc'
+      # part of search
       solr_params[:fq] << "part_of_ssim:#{workid}"
     end
   end
@@ -63,7 +67,7 @@ class SearchBuilder < Blacklight::SearchBuilder
     if blacklight_params['match'] == 'all'
       solr_params[:mm] = '100%'
     end
-    if blacklight_params['match'] == 'one'
+    if blacklight_params['match'] == 'one' || !blacklight_params['match'].present?
       solr_params[:mm] = 1
     end
     solr_params

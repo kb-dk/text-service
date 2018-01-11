@@ -1,6 +1,7 @@
 # Class to centralise inteface with FileServer
 class FileServer
   def self.render_snippet(id, opts={})
+    adl_hostport = "#{Rails.application.config_for(:text_service)["adl_hostport"]}"
     uri = "#{Rails.application.config_for(:text_service)["snippet_server_path"]}"
     if(opts[:op] == "osd")
       uri +="#{Rails.application.config_for(:text_service)["openSeadragon_script"]}"
@@ -11,6 +12,7 @@ class FileServer
     uri += "&op=#{opts[:op]}" if opts[:op].present?
     uri += "&prefix=#{opts[:prefix]}" if opts[:prefix].present?
     uri += "&q=#{URI.escape(opts[:q])}" if opts[:q].present?
+    uri += "&hostport=#{URI.escape(adl_hostport)}" 
 
     Rails.logger.debug("snippet url #{uri}")
 
@@ -36,6 +38,23 @@ class FileServer
 
   def self.toc(id)
     self.render_snippet(id,{op:'toc'})
+  end
+
+  # return all image links for use in facsimile pdf view
+  def self.image_links(id, opts={})
+    html = FileServer.facsimile(id, opts)
+    xml = Nokogiri::HTML(html)
+    links = []
+    xml.css('img').each do |img|
+      links << img['src']
+    end
+    links
+  end
+
+  def self.facsimile(id, opts={})
+    params = {op: 'facsimile', prefix: Rails.application.config_for(:text_service)["image_server_prefix"]}
+    params = opts.merge(params)
+    FileServer.render_snippet(id, params)
   end
 
   # This function is only used for sending  xml-(TEI) files directly to the user

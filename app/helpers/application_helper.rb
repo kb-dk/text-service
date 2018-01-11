@@ -13,8 +13,14 @@ module ApplicationHelper
 
   def construct_citation args
     label = []
-    author = args[:document]['author_name_ssi'] + ": " if args[:document]['author_name_ssi'].present?
-    title = args[:document]['volume_title_tesim'].try(:first).to_s
+    author = ""
+    if args[:document]['author_name_ssi'].present?
+      author = args[:document]['author_name_ssi'] + ": " if args[:document]['author_name_ssi'].present?
+    end
+    title = ""
+    if args[:document]['volume_title_tesim'].present?
+      title = args[:document]['volume_title_tesim'].try(:first).to_s
+    end
     # Add author and value as one string so they don't get separated by comma
     label << author + title
     label << "udg. af #{args[:document]['editor_ssi']}" if args[:document]['editor_ssi'].present?
@@ -35,17 +41,15 @@ module ApplicationHelper
   def citation args
     # Construct the first part and add the anvendt udgave and the page number
     cite = ""
-    cite += args[:document]['author_name_ssi'] + ": " if args[:document]['author_name_ssi'].present?
-    cite += "”"+args[:document]['work_title_tesim'].first+"”, i " if args[:document]['work_title_tesim'].present?
+    cite += args[:document]['author_name_ssi'] + ": " if(args[:document]['author_name_ssi'].present?  && args[:document][:id] != args[:document]['volume_id_ssi'])
+    cite += "”" + args[:document]['work_title_tesim'].first + "”, i " if(args[:document]['work_title_tesim'].present? && args[:document][:id] != args[:document]['volume_id_ssi'])
     cite += construct_citation(args)
     cite += ", s. "+args[:document]['page_ssi'] if args[:document]['page_ssi'].present?
     cite += ". "
     # Add the URL and the date in the string
     cite += 'Online udgave fra "Arkiv for Dansk Litteratur (ADL)": ' + request.original_url
-    # There must be a smarter way to get the months translated
-    cite += " (tilgået " + Time.now.strftime("%d. ")
-    cite += I18n.t(Time.now.strftime('%B'))
-    cite += Time.now.strftime(' %Y') +")"
+    # Add the translated current date
+    cite += " (tilgået " + I18n.l(Time.now, format: "%d. %B %Y") +")"
   end
 
   def author_link args

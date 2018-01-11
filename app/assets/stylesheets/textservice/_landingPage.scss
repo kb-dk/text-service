@@ -193,3 +193,39 @@ a[name]{
     padding-left: 10px;
   }
 }
+
+h1.head-in-work{
+  font-size: 2em;
+}
+h2.head-in-text{
+  font-size: 1.5em;
+}
+#ocrFullscreenButton{
+  cursor: pointer;
+}
+
+#period {
+  .dl-horizontal dt {
+    float: left;
+    width: 160px;
+    clear: left;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+  .text {
+    padding: 30px;
+  }
+}
+
+#om-adl {
+  width: 100%;
+}
+article > div, #om-adl > div, #period .text {
+  max-width: 50em;
+  margin: auto;
+}

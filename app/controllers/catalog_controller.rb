@@ -38,8 +38,6 @@ class CatalogController < ApplicationController
     config.index.title_field = 'work_title_tesim'
     config.index.display_type_field = 'cat_ssi'
 
-    blacklight_config.index.partials += [:index_work_search]
-
     # solr field configuration for document/show views
     #config.show.title_field = 'title_display'
     #config.show.display_type_field = 'format'
@@ -92,8 +90,8 @@ class CatalogController < ApplicationController
 
     # Work show fields
     config.add_show_field 'author_id_ssi', :label => 'Forfatter', helper_method: :author_link, itemprop: :author
-    config.add_show_field 'volume_title_tesim', :label => 'Anvendt udgave', helper_method: :show_volume, itemprop: :isPartOf, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
-    config.add_show_field 'volume_title_ssi', :label => 'Citér dette værk', helper_method: :citation, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
+    config.add_show_field 'volume_title_tesim', :label => 'Udgave', helper_method: :show_volume, itemprop: :isPartOf #, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
+    config.add_show_field 'volume_title_ssi', :label => 'Citér', helper_method: :citation #, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
     #config.add_show_field 'publisher_tesim', :label => 'Udgiver', unless: proc { |_context, _field_config, doc | doc['cat_ssi'] == 'volume' }
     #config.add_show_field 'place_published_tesim', :label => 'Udgivelsessted'
     #config.add_show_field 'date_published_ssi', :label => 'Udgivelsesdato'
@@ -160,25 +158,30 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('phrase',label: I18n.t('text_service.config.search.phrase')) do |field|
-      field.solr_parameters = {
-          :fq => ['cat_ssi:work'],
-          :qf => 'text_tsim',
-          :pf => 'text_tsim',
-          :ps => 0,
-          :qs => 0,
-      }
-      field.solr_local_parameters = {
-      }
-    end
+#
+# We can leave some sediment here
+#
+#    config.add_search_field('phrase',label: I18n.t('text_service.config.search.phrase')) do |field|
+#      field.solr_parameters = {
+#          :fq => ['cat_ssi:work'],
+#          :qf => 'text_tsim',
+#          :pf => 'text_tsim',
+#          :ps => 0,
+#          :qs => 0,
+#      }
+#      field.solr_local_parameters = {
+#      }
+#    end
 
     config.add_search_field('leaf') do |field|
       field.include_in_simple_select = false
-      field.solr_parameters = { :fq => 'type_ssi:leaf' }
-      field.solr_local_parameters = {
+      field.solr_parameters = {
+          :fq => 'type_ssi:leaf',
           :qf => 'text_tesim',
           :pf => 'text_tesim',
           :hl => 'true',
+      }
+      field.solr_local_parameters = {
       }
     end
 
@@ -308,17 +311,31 @@ class CatalogController < ApplicationController
  # perhaps using the Solr document modified field
   def send_pdf(document, type)
     name = document['work_title_tesim'].first.strip rescue document.id
+
     render pdf: name,
            footer: {right: '[page] af [topage] sider'},
            header: {html: {template: 'shared/pdf_header.pdf.erb'},
                     spacing: 5},
            margin: {top: 15, # default 10 (mm)
                     bottom: 15},
-           cover:  Rails.root.join('app', 'views', 'shared', 'pdf_cover.html')
+           encoding: 'utf8', # needed here to encode danish characters
+           cover: 'Tekst fra Arkiv for Dansk Litteratur (adl.dk) <br /> <hr> <br /><br />' +
+               'Forfatter: ' + document['author_name_ssi'] + '<br />' +
+               'Titel: ' + document['work_title_tesim'].first + '<br />' +
+               'Anvendt udgave: ' + document['volume_title_tesim'].first + '<br /><br /><br /><br /><br />'+
+               'Det Danske Sprog- og Litteraturselskab (dsl.dk)<br />'+
+               'Det Kongelige Bibliotek (kb.dk)'
+  end
+
+   def facsimile
+    @response, @document = search_service.fetch(params[:id])
+    respond_to do |format|
+      format.html { setup_next_and_previous_documents }
+      format.pdf { send_pdf(@document, 'image') }
+    end
   end
 
   # actions for generating the list of authorportraits and period descriptions
-
   def periods
     (@response,@deprecated_document_list) = search_service.search_results do |builder|
       builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:period','type_ssi:work'], sort: 'sort_title_ssi asc'})
@@ -353,13 +370,9 @@ class CatalogController < ApplicationController
   end
   helper_method :search_field_fritekst?
 
-  def oai
-    options = params.delete_if { |k,v| %w{controller action}.include?(k) }
-    p = oai_provider
-    render :text => p.process_request(options), :content_type => 'text/xml'
+  def search_present?
+    params['q'].present?
   end
+  helper_method :search_present?
 
-  def oai_provider
-    @oai_provider ||= ::AdlDocumentProvider.new(self)
-  end
 end
