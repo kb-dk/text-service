@@ -1,6 +1,6 @@
 <%# default partial to display solr document fields in catalog show view -%>
 <% doc_presenter = show_presenter(document) %>
-<div id="period" class="container">
+<div id="period" class="container-fluid">
 
   <div class="text-content document">
     <div class="text">
@@ -37,7 +37,7 @@
       </dl>
       <div class="pull-right text-right">
         <a target="_blank" href="">
-          <i class="fa fa-download" aria-hidden="true"></i> <%= link_to "Tekst", solr_document_path(document.id, format: 'pdf') %>
+          <i class="fa fa-download" aria-hidden="true"></i> <%= link_to "Tekst", solr_document_path(document.id, format: 'pdf'), target: "_blank" %>
         </a>
       </div>
 

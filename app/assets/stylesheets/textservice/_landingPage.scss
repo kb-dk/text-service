@@ -1,4 +1,4 @@
-.lpContainer {
+.lpContainer, .kbOSDViewer {
   min-height: 620px;
 }
 
@@ -94,7 +94,7 @@
 
 }
 
-#ocrFullscreenButton{
+#ocrFullscreenButton, #show_facsimile, #hide_facsimile{
   float:right;
 }
 
@@ -120,6 +120,8 @@
 
 .textToolbar{
   border-bottom: 1px solid $primary !important;
+  margin-left:10px;
+  margin-right:10px;
   padding-top: 5px;
   padding-bottom: 10px;
   i {
@@ -129,12 +131,12 @@
 
 .lpContainer{
   border: 1px solid $primary;
-  margin: 10px;
-  padding: 10px;
+  margin: 10px 0;
+  padding: 10px 0;
   border-radius: 10px;
 }
 
-.lpTextContainer {
+.border-right{
   border-right: 1px solid $primary;
 }
 
@@ -146,26 +148,65 @@
 .document-metadata{
   padding-left:15px;
 }
-
-.pageBreak{
-  display: block;
-  margin:$grid-gutter-width/2 0px 0px 0px;
-  padding:$grid-gutter-width/2 0px ;
-  font-size: $font-size-lg;
-  line-height: $line-height-base;
-  border-top: 1px dotted $gray-500;
-  text-align: center;
-  a{
-
-    &:after{
-      font-family: 'FontAwesome';
-      content:'\f0f6';
-      margin-left: 5px;
-
-    }
-  }
+.lpTextContainer, .lpFacsContainer, .kbOSDViewer{
+  padding-left: 0;
+  padding-right: 0;
+}
+.ocr{
+  margin-right: 0;
+  margin-left: 0;
+  padding:30px;
 }
 
+// Page breake styling in small devices
+//@media screen and (max-width: 1000px) {
+//  .pageBreak{
+//    display: block;
+//    margin:$grid-gutter-width/2 0px 0px 0px;
+//    padding:$grid-gutter-width/2 0px ;
+//    font-size: $font-size-lg;
+//    line-height: $line-height-base;
+//    border-top: 1px dotted $gray-500;
+//    text-align: center;
+//    a{
+//
+//      &:after{
+//        font-family: 'FontAwesome';
+//        content:'\f0f6';
+//        margin-left: 5px;
+//
+//      }
+//    }
+//  }
+//}
+
+// Page breake styling in desktop devices
+//@media screen and (min-width: 1000px){
+    .ocr {
+      position: relative;
+    }
+
+    .pageBreak {
+      a > small {
+        visibility: visible;
+        position: absolute;
+        left: 5px;
+      }
+
+      a {
+        visibility: hidden;
+        margin-left: 0;
+        width: 0;
+        height: 0;
+        padding: 0;
+      }
+      &:after {
+        content: "\007C";
+        color: $secondary;
+      }
+  }
+//}
+// End of page breake styling
 
 a[name]{
   display: block;
@@ -179,7 +220,7 @@ a[name]{
   padding-left: 1em;
 }
 
-.tableOfContent:hover {
+.tableOfContent:hover, #hide_facsimile:hover, #show_facsimile:hover {
   cursor: pointer;
 }
 
@@ -228,4 +269,7 @@ h2.head-in-text{
 article > div, #om-adl > div, #period .text {
   max-width: 50em;
   margin: auto;
+}
+.period-writers-list .icon-list {
+  padding: 40px 20px 20px 20px;
 }

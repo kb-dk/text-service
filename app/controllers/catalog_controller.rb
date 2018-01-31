@@ -90,7 +90,7 @@ class CatalogController < ApplicationController
 
     # Work show fields
     config.add_show_field 'author_id_ssi', :label => 'Forfatter', helper_method: :author_link, itemprop: :author
-    config.add_show_field 'volume_title_tesim', :label => 'Udgave', helper_method: :show_volume, itemprop: :isPartOf #, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
+    config.add_show_field 'volume_title_tesim', :label => 'Anvendt udgave', helper_method: :show_volume, itemprop: :isPartOf #, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
     config.add_show_field 'volume_title_ssi', :label => 'Citér', helper_method: :citation #, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
     #config.add_show_field 'publisher_tesim', :label => 'Udgiver', unless: proc { |_context, _field_config, doc | doc['cat_ssi'] == 'volume' }
     #config.add_show_field 'place_published_tesim', :label => 'Udgivelsessted'
@@ -126,8 +126,8 @@ class CatalogController < ApplicationController
     config.add_search_field('Alt',label: I18n.t('text_service.config.search.all_filters')) do |field|
       field.solr_parameters = {
           :fq => ['cat_ssi:work'],
-          :qf => 'author_name_tesim^5 work_title_tesim^5 text_tesim',
-          :pf => 'text_tesim'
+          :qf => 'author_name_tesim^5 work_title_tesim^5 text_tsim',
+          :pf => 'text_tsim'
       }
       field.solr_local_parameters = {
       }
@@ -177,8 +177,8 @@ class CatalogController < ApplicationController
       field.include_in_simple_select = false
       field.solr_parameters = {
           :fq => 'type_ssi:leaf',
-          :qf => 'text_tesim',
-          :pf => 'text_tesim',
+          :qf => 'text_tsim',
+          :pf => 'text_tsim',
           :hl => 'true',
       }
       field.solr_local_parameters = {
@@ -311,7 +311,10 @@ class CatalogController < ApplicationController
  # perhaps using the Solr document modified field
   def send_pdf(document, type)
     name = document['work_title_tesim'].first.strip rescue document.id
-
+    edition = ""
+    if document['cat_ssi'] != 'author' and document['cat_ssi'] != 'period' 
+    edition = '<dt>Anvendt udgave:</dt><dd>' + document['volume_title_tesim'].first + '</dd>'
+    end
     render pdf: name,
            footer: {right: '[page] af [topage] sider'},
            header: {html: {template: 'shared/pdf_header.pdf.erb'},
@@ -319,10 +322,15 @@ class CatalogController < ApplicationController
            margin: {top: 15, # default 10 (mm)
                     bottom: 15},
            encoding: 'utf8', # needed here to encode danish characters
-           cover: 'Tekst fra Arkiv for Dansk Litteratur (adl.dk) <br /> <hr> <br /><br />' +
-               'Forfatter: ' + document['author_name_ssi'] + '<br />' +
-               'Titel: ' + document['work_title_tesim'].first + '<br />' +
-               'Anvendt udgave: ' + document['volume_title_tesim'].first + '<br /><br /><br /><br /><br />'+
+           cover: '<style>dl > dt {float: left; width: 160px; clear: left; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;} dl > dd{margin-top: 0; margin-bottom: 20px; margin-left: 180px;}</style>'+
+               'Tekst fra Arkiv for Dansk Litteratur (adl.dk) <br /> <hr> <br /><br />' +
+               '<dl>'+
+               '<dt>Forfatter:</dt><dd>' + document['author_name_ssi'] + '</dd>' +
+               '<dt>Titel:</dt><dd>' + document['work_title_tesim'].first + '</dd>' +
+               '<dt>Citation:</dt><dd style="">' + helpers.citation(@document.instance_values)  + '</dd>' +
+               edition +
+               '</dl>'+
+               '<br /><br /><br /><br /><br />'+
                'Det Danske Sprog- og Litteraturselskab (dsl.dk)<br />'+
                'Det Kongelige Bibliotek (kb.dk)'
   end
@@ -369,10 +377,5 @@ class CatalogController < ApplicationController
     ['Alt','phrase'].include? params['search_field']
   end
   helper_method :search_field_fritekst?
-
-  def search_present?
-    params['q'].present?
-  end
-  helper_method :search_present?
 
 end
