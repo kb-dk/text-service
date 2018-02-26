@@ -31,7 +31,7 @@
   <% if @document['cat_ssi'] == 'author' %>
 
       <a class="icon-list" href="<%= "/?utf8=✓&search_field=author&q=#{@document['work_title_tesim'].try(:join)}" %>">
-        <i class="fa fa-list" aria-hidden="true"></i> Værkliste i ADL
+        <i class="fa fa-list" aria-hidden="true"></i> <%= t('text_service.work_list') %>
       </a>
   <% end %>
   <!-- <%= @document[:id] %> -->

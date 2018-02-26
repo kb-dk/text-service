@@ -1,5 +1,6 @@
 da:
   text_service:
+    work_list: 'Tekster i ADL'
     text_toolbar:
       fullscreen: 'Se tekst i fuld skærm'
       text: 'Hent tekst'
