@@ -40,8 +40,11 @@ da:
     tooltip:
        search:
          header: 'Søgetips'
-         tooltip1: 'Du kan bruge "OR", "AND" og "NOT" til kombinerede søgninger. '
-         tooltip2: 'Bemærk at systemet ikke understøtter wildcards. Trunkering udføres automatisk af systemet.'
+         tooltip1: 'Du kan søge i 3 forskellige felter "Titel", "Forfatter" og "Hele teksten"'
+         tooltip2: 'Systemet understøtter 3 forskellige typer søgninger'
+         tooltip2-1: 'Mindst et ord: finder alle tekster hvor mindst et ord optræder'
+         tooltip2-2: 'Alle ord: finder alle tekster hvor alle ord optræder'
+         tooltip2-3: 'Sætning: finder alle tekster hvor søgeordene optræder i den orden de er angivet'
          tooltip3: 'Hvis du søger på flere ord, kan du sætte "+" før et ord hvis resultatet skal indeholde dette ord, og "-" foran et ord hvis resultatet ikke må indeholde det pågældende ord.'
     login:
        tooltip: 'Log ind hvis du vil benytte bogmærke-funktionen'
