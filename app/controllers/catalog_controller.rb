@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # frozen_string_literal: true
+require 'oai_provider'
+
 class CatalogController < ApplicationController
 
   include Blacklight::Catalog
@@ -160,7 +162,7 @@ class CatalogController < ApplicationController
 
 #
 # We can leave some sediment here
-# 
+#
 #    config.add_search_field('phrase',label: I18n.t('text_service.config.search.phrase')) do |field|
 #      field.solr_parameters = {
 #          :fq => ['cat_ssi:work'],
@@ -185,23 +187,7 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('oai_time') do |field|
-      field.include_in_simple_select = false
-      field.solr_parameters = {
-          :fq => 'cat_ssi:work'
-      }
-      field.solr_local_parameters = {
-          :fl => 'timestamp'
-      }
-    end
 
-
-    config.add_search_field('oai_search') do |field|
-      field.include_in_simple_select = false
-      field.solr_parameters = {
-          :fq => 'cat_ssi:work'
-      }
-    end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
@@ -240,17 +226,25 @@ class CatalogController < ApplicationController
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
+
+    config.oai_config = {
+        :default_solr_params => {
+            :fq => "cat_ssi:work"
+        },
+        :timestamp_field => 'timestamp',
+        :limit => 20,
+        :sets => [{
+            :name => 'Test set',
+            :desc => 'A set for testing',
+            :spec => 'kb.test',
+            :solr_params => {},},
+        {:name => 'Another test set',
+                  :desc => 'More testing',
+                  :spec => 'kb.test2',
+                  :solr_params => {}}]
+    }
  end
 
-  def oai
-    options = params.delete_if { |k,v| %w{controller action}.include?(k) }
-    p = oai_provider
-    render :text => p.process_request(options), :content_type => 'text/xml'
-  end
-
-  def oai_provider
-    @oai_provider ||= ::AdlDocumentProvider.new(self)
-  end
 
 
  # Email Action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
@@ -365,6 +359,15 @@ class CatalogController < ApplicationController
       builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:author','type_ssi:work'], sort: 'sort_title_ssi asc'})
     end
     render "index"
+  end
+
+  def oai
+    options = params.delete_if { |k,v| %w{controller action}.include?(k) }
+    render xml: oai_provider.process_request(options)
+  end
+
+  def oai_provider
+    @oai_provider ||= OaiProvider.new(search_service,blacklight_config.oai_config)
   end
 
   private

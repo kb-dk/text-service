@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'europeana'
 class SolrDocument
   include Blacklight::Solr::Document
 
@@ -15,5 +16,10 @@ class SolrDocument
   # single valued. See Blacklight::Document::SemanticFields#field_semantics
   # and Blacklight::Document::SemanticFields#to_semantic_values
   # Recommendation: Use field names from Dublin Core
-  use_extension(Blacklight::Document::DublinCore)
+  SolrDocument.use_extension(Europeana)
+
+
+  def timestamp
+    Time.parse fetch('timestamp')
+  end
 end

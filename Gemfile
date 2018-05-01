@@ -75,3 +75,5 @@ gem 'kbcookie', '=0.0.2', :git => 'https://github.com/Det-Kongelige-Bibliotek/kb
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
+
+gem 'oai'
