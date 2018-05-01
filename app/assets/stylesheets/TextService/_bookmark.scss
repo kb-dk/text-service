@@ -7,7 +7,7 @@
       position: relative;
       padding-left: 80px;
       padding-top: 2px;
-      color: $green;
+      color: $primary;
     }
 
     input, span{
@@ -17,7 +17,7 @@
   .checked {
     &:before {
       content: "\f02e";
-      color: $green;
+      color: $primary;
     }
   }
 
@@ -31,7 +31,7 @@
     position: relative;
     padding-left: 80px;
     padding-top: 2px;
-    color: $green;
+    color: $primary;
   }
 
 }
