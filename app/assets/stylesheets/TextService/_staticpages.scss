@@ -33,7 +33,7 @@
     color: #666;
 
     header {
-      @extend .box-gradient-blue;
+      @extend .box-gradient;
       position: absolute;
       width: 100%;
       top: $top-header-size;
