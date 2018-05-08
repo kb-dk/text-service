@@ -1,3 +1,6 @@
 body{
   background-image: url(asset-path('lion.png'));
 }
+.frontpage-content .text h3:hover{
+    color: $third-color !important;
+}

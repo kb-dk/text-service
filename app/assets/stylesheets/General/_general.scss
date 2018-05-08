@@ -3,6 +3,9 @@ html{
 }
 
 body {
+  padding-bottom: $footer-height;
+  position: relative;
+  overflow-x: hidden;
   min-height: 100%;
   color: #000;
   font-family: 'Noto Serif', serif;
