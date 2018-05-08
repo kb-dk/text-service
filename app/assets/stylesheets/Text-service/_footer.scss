@@ -1,0 +1,20 @@
+body{
+  padding-bottom: 80px;
+  position: relative;
+}
+
+footer.pageFooter {
+  background-color: #002E70;
+  color: white;
+  height: 80px;
+  padding: 20px;
+  a{
+    color: white;
+    &:hover{
+      color:$yellow!important;
+    }
+  }
+  .row.divider-space{
+    display: none;
+  }
+}
