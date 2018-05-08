@@ -2,15 +2,15 @@
 @import "General/variables";
 
 // Adding view spesific variables before bootstrap
-//@import "Text-service/variables";
-@import "ADL/variables";
+@import "Text-service/variables";
+//@import "ADL/variables";
 
 @import "bootstrap";
 // Adding website specific styling files
 @import "General/General";
 // Adding view specific styling files
-//@import "Text-service/Text-service";
-@import "ADL/ADL";
+@import "Text-service/Text-service";
+//@import "ADL/ADL";
 
 @import 'blacklight/blacklight';
 //font awesome

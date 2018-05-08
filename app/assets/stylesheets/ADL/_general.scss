@@ -1,6 +1,16 @@
 body{
   background-image: url(asset-path('lion.png'));
 }
-.frontpage-content .text h3:hover{
+
+.homeSearch {
+  height: 260px;
+}
+
+.frontpage-content{
+  .text h3:hover{
     color: $third-color !important;
+  }
+  .row > div > a > div {
+    height: 330px;
+  }
 }

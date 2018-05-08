@@ -12,4 +12,16 @@ footer.pageFooter {
   .row.divider-space{
     display: none;
   }
+  .footer { // Hide the first link in footer from the text-service
+    span{
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+    a{
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
 }
