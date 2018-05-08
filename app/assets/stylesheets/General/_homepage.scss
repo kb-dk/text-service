@@ -17,8 +17,12 @@
   padding: 20px 15px;
   border-radius: 25px 25px 0 0;
 }
-
-.frontpage-content {
+.frontpage-content{
+  .row > div > a > div {
+    border-radius: 25px;
+  }
+}
+.frontpage-content.first-boxes {
 
   .text {
     padding: 0 15px;
@@ -45,7 +49,6 @@
   .row > div > a > div {
     border:none;
     margin: 1em;
-    border-radius: 25px;
     background-color: rgba(242, 238, 226, 0.5);
   }
 }
