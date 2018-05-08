@@ -1,7 +1,4 @@
 da:
-  blacklight:
-    application_name: 'DET KGL. BIBLIOTEK'
-    work_list: 'Tekster i Text service'
   general:
     text_toolbar:
       fullscreen: 'Se tekst i fuld skærm'
@@ -18,22 +15,6 @@ da:
       work: 'Værk'
       person: 'Person'
       portrait: 'Portræt'
-    home:
-      boxes:
-        authors:
-          title: 'Forfattere'
-          description: 'Find en forfatter i den alfabetiske oversigt og få adgang til forfatterens værker og en introduktion.'
-        titles:
-          title: 'Titler'
-          description: 'Få overblik over alle værktitler i ADL.'
-        periods:
-          title: 'Perioder'
-          link:
-          description: 'Læs om en bestemt periode i den danske litteraturhistorie.'
-      bluebar:
-        welcome: 'Velkommen til Arkiv for Dansk Litteratur'
-        description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
-        link: 'Dansk Litteraturhistorisk Bibliografi'
     footer:
        dsl: 'Det Danske Sprog- og Litteraturselskab'
        kb: 'Det Kongelige Bibliotek'

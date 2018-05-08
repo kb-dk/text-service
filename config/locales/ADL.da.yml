@@ -1,4 +1,21 @@
 da:
 #  blacklight:
 #    application_name: 'Arkiv for Dansk Litteratur'
-    work_list: 'Tekster i ADL'
+#    work_list: 'Tekster i ADL'
+  view-specific:
+    home:
+      boxes:
+        authors:
+          title: 'Forfattere'
+          description: 'Find en forfatter i den alfabetiske oversigt og få adgang til forfatterens værker og en introduktion.'
+        titles:
+          title: 'Titler'
+          description: 'Få overblik over alle værktitler i ADL.'
+        periods:
+          title: 'Perioder'
+          link:
+          description: 'Læs om en bestemt periode i den danske litteraturhistorie.'
+      bluebar:
+        welcome: 'Velkommen til Arkiv for Dansk Litteratur'
+        description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
+        link: 'Dansk Litteraturhistorisk Bibliografi'

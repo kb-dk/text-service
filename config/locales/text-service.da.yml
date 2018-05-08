@@ -1,1 +1,4 @@
 da:
+  blacklight:
+    application_name: 'Det Kgl. Bibliotek - Text service'
+    work_list: 'Tekster i Text service'
