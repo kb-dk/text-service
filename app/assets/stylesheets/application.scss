@@ -1,13 +1,15 @@
-// Adding textservice spesific variables before bootstrap
-@import "TextService/variables";
+// Adding website spesific variables before bootstrap
+@import "General/variables";
 
-// Adding textservice spesific variables before bootstrap
+// Adding view spesific variables before bootstrap
+@import "Text-service/variables";
 //@import "ADL/variables";
 
 @import "bootstrap";
-// Adding textservice specific styling files
-@import "TextService/TextService";
-// Adding ADL
+// Adding website specific styling files
+@import "General/General";
+// Adding view specific styling files
+@import "Text-service/Text-service";
 //@import "ADL/ADL";
 
 @import 'blacklight/blacklight';
