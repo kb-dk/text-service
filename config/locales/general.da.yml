@@ -15,11 +15,6 @@ da:
       work: 'Værk'
       person: 'Person'
       portrait: 'Portræt'
-    footer:
-       dsl: 'Det Danske Sprog- og Litteraturselskab'
-       kb: 'Det Kongelige Bibliotek'
-       contact_us: 'Kontakt os'
-       about_ADL: 'Om ADL'
     tooltip:
        search:
          header: 'Søgetips'

@@ -20,3 +20,8 @@ da:
 #        description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
 #        link-label: 'Dansk Litteraturhistorisk Bibliografi'
 #        link: 'http://www.kb.dk/da/nb/materialer/e-ressourcer/omdlb.html'
+#    footer:
+#       dsl: 'Det Danske Sprog- og Litteraturselskab'
+#       kb: 'Det Kongelige Bibliotek'
+#       contact_us: 'Kontakt os'
+#       about: 'Om ADL'
