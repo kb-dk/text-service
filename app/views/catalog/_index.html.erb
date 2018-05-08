@@ -13,15 +13,15 @@
 
   <%= render 'index_work_search', document: document %>
 
-  <dt class="col-md-3"><%= t('text_service.search.list.format') %></dt>
+  <dt class="col-md-3"><%= t('general.search.list.format') %></dt>
   <dd class="col-md-9">
     <% if has_text %>
         <i class="fa fa-file-text-o" aria-hidden="true"></i>
-        <span class="dlTxt"><%= t('text_service.search.list.text') %></span>
+        <span class="dlTxt"><%= t('general.search.list.text') %></span>
     <% end %>
     <% if has_facs %>
       <i class="fa fa-file-image-o" aria-hidden="true"></i>
-      <span class="dlFaks"><%= t('text_service.search.list.facsimile') %></span>
+      <span class="dlFaks"><%= t('general.search.list.facsimile') %></span>
     <% end %>
   </dd>
 </dl>

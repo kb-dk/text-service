@@ -82,7 +82,7 @@ module ApplicationHelper
   end
 
   def translate_model_names(name)
-    I18n.t("text_service.models.#{name}")
+    I18n.t("general.models.#{name}")
   end
 
   # Generic method to create glyphicon icons

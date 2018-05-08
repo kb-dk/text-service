@@ -8,7 +8,7 @@
 
       <span class="input-group-addon for-match">
             <label for="match" class="sr-only"><%= t('blacklight.search.form.search.submit') %></label>
-        <%= select_tag("match", options_for_select([[t('text_service.search.form.match.one'),'one'],[t('text_service.search.form.match.all'),'all'],[t('text_service.search.form.match.phrase'),'phrase']],params[:match]),{:class => 'search-match'}) %>
+        <%= select_tag("match", options_for_select([[t('general.search.form.match.one'),'one'],[t('general.search.form.match.all'),'all'],[t('general.search.form.match.phrase'),'phrase']],params[:match]),{:class => 'search-match'}) %>
       </span>
 
       <span class="input-group-btn ">
