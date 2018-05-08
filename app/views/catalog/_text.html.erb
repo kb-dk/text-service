@@ -31,7 +31,7 @@
   <% if @document['cat_ssi'] == 'author' %>
 
       <a class="icon-list" href="<%= "/?utf8=✓&search_field=author&q=#{@document['work_title_tesim'].try(:join)}" %>">
-        <i class="fa fa-list" aria-hidden="true"></i> <%= t('blacklight.work_list') %>
+        <i class="fa fa-list" aria-hidden="true"></i> <%= t('view-specific.work_list') %>
       </a>
   <% end %>
   <!-- <%= @document[:id] %> -->

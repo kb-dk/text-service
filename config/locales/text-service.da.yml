@@ -1,4 +1,22 @@
 da:
   blacklight:
     application_name: 'Det Kgl. Bibliotek - Text service'
+  view-specific:
     work_list: 'Tekster i Text service'
+    home:
+      boxes:
+        authors:
+          title: 'Forfattere'
+          description: 'Find en forfatter i den alfabetiske oversigt og få adgang til forfatterens værker og en introduktion.'
+        titles:
+          title: 'Titler'
+          description: 'Få overblik over alle værktitler i Text service.'
+        periods:
+          title: 'Perioder'
+          link:
+          description: 'Læs om en bestemt periode i Text service.'
+      bluebar:
+        welcome: 'Velkommen til Det Kgl. Bibliotek - Text service'
+        description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
+        link-label: 'Det Kgl. Bibliotek'
+        link: 'http://www.kb.dk'
