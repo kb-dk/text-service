@@ -1,7 +1,7 @@
 <% has_facs = @document['has_facs_ssi'].present? && @document['has_facs_ssi'] == 'yes' %>
 <!--Retrieve the query-->
 <% query_params = current_search_session.try(:query_params) %>
-<% search_field = query_params[:search_field] %>
+<% search_field = query_params.nil? ? "empty" : query_params[:search_field]  %>
 <% doc_presenter = show_presenter(@document) %>
 
 <%# If the search field is fritekst, get the last query and remove " %>
@@ -16,9 +16,11 @@
   <%= link_to(solr_document_path(@document, format: :pdf), :target => "_blank") do %>
       <i class="fa fa-lg fa-download" aria-hidden="true"></i> <span class="d-none d-lg-inline"><%= t('text_service.text_toolbar.text') %></span>
   <% end %>
+  <% if query.present? %>
   <a href="javascript:toggleHighlight()">
     <i class="fa fa-paint-brush"></i><span class="d-none d-lg-inline"><%= t('text_service.text_toolbar.highlight') %></span>
   </a>
+  <% end %>
   <%= render :partial => 'show_tools_work' %>
   <% if has_facs %>
       <a id="hide_facsimile" class="hidden"><i class="fa fa-chevron-right fa-large" title="<%= t('text_service.text_toolbar.hide_facsimile') %>"></i><span class="d-none d-xl-inline"><%= t('text_service.text_toolbar.hide_facsimile') %></span></a>
