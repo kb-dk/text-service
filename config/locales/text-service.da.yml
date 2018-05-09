@@ -15,6 +15,8 @@ da:
           title: 'Perioder'
           link:
           description: 'Læs om en bestemt periode i Tekst service.'
+        sks:
+          title: 'Søren Kierkegaard'
       bluebar:
         welcome: 'Velkommen til Det Kgl. Bibliotek - Tekst service'
         description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'

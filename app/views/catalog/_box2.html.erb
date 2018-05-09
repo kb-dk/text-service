@@ -3,6 +3,8 @@
   # otherwise get the path to the special author/periods searches
   if (type == 'titles')
     url = "/?q=&search_field=Alt&sort=work_title_ssi+asc"
+  elsif (type == 'sks')
+    url = "/?utf8=✓&search_field=author&q=søren+kirkegaard"
   else
     url = send("#{type}_path")
   end

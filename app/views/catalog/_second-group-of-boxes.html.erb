@@ -1,6 +1,6 @@
 <div class="container frontpage-content second-boxes">
   <div class="row">
-    <% ['authors', 'titles', 'periods', 'titles', 'periods'].each do |subject| %>
+    <% ['sks', 'titles', 'periods', 'titles', 'periods'].each do |subject| %>
         <%= render :partial => 'box2', locals: {type: subject} %>
     <% end %>
   </div>
