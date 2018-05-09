@@ -33,4 +33,6 @@ Rails.application.routes.draw do
   get 'periods' => 'catalog#periods'
   get 'authors' => 'catalog#authors'
 
+  get 'oai' => 'catalog#oai'
+
 end
