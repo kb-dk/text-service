@@ -1,3 +1,12 @@
+.navbar-brand{
+//  background: none!important;
+  width: 100px!important;
+  background: url(asset-path('logo.png')) no-repeat top left!important;
+  background-size:cover !important;
+  flex: 0 0 180px!important;
+  height: 80px!important;
+  text-indent: -99999px!important;
+}
 #header-navbar{
   background-color: $yellow;
 }
