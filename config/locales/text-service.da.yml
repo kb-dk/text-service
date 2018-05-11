@@ -15,6 +15,10 @@ da:
           title: 'Perioder'
           link:
           description: 'Læs værker fra en bestemt tidsperiode.'
+        sks:
+          title: 'Søren Kierkegaard'
+        grundtvig:
+          title: 'Grundtvig'
       bluebar:
         welcome: 'Det Kgl. Biblioteks tekstportal'
         description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
