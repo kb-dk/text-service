@@ -1,32 +1,30 @@
 da:
   blacklight:
-    application_name: 'Det Kgl. Bibliotek - Tekst service'
+    application_name: 'Det Kgl. Biblioteks tekstportal'
   view-specific:
-    work_list: 'Tekster i Tekst service'
+    work_list: 'Tekster i tekstportalen'
     home:
       boxes:
         authors:
           title: 'Forfattere'
-          description: 'Find en forfatter i den alfabetiske oversigt og få adgang til forfatterens værker og en introduktion.'
+          description: 'Find en forfatter, få en introduktion og læs forfatterens værker.'
         titles:
           title: 'Titler'
-          description: 'Få overblik over alle værktitler i Tekst service.'
+          description: 'Få overblik over alle værktitler.'
         periods:
           title: 'Perioder'
           link:
-          description: 'Læs om en bestemt periode i Tekst service.'
-        sks:
-          title: 'Søren Kierkegaard'
+          description: 'Læs værker fra en bestemt tidsperiode.'
       bluebar:
-        welcome: 'Velkommen til Det Kgl. Bibliotek - Tekst service'
+        welcome: 'Det Kgl. Biblioteks tekstportal'
         description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
         link-label: 'Det Kgl. Bibliotek'
         link: 'http://www.kb.dk'
     footer:
        first-link-label: 'Det Danske Sprog- og Litteraturselskab'
        first-link: 'http://www.dsl.dk'
-       second-link-label: 'Det Kongelige Bibliotek'
+       second-link-label: 'Det Kgl. Bibliotek'
        second-link: 'http://www.kb.dk'
        contact-us-label: 'Kontakt os'
-       contact-us-link: 'mailto:sekretariat@dsl.dk'
-       about: 'Om Tekst service'
+       contact-us-link: 'https://kontaktbiblioteket.kb.dk/'
+       about: 'Om tekstportalen'
