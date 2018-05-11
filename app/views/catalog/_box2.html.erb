@@ -1,12 +1,10 @@
 <%
   # titles is a link to search for all titles
   # otherwise get the path to the special author/periods searches
-  if (type == 'title')
-    url = "/?utf8=✓&search_field=Alt&q=grundtvig"
-  elsif (type == 'priod')
-    url = "/?utf8=✓&search_field=author&q=søren+kirkegaard"
+  if (type == 'ADL')
+    url = "http://adl.dk"
   else
-    url = "/?utf8=✓&search_field=Alt&q="+t("view-specific.home.boxes.#{type}.title")
+    url = "/?utf8=✓&search_field=author&q="+t("view-specific.home.boxes.#{type}.title")
   end
 %>
 <div class="col-md-3">
