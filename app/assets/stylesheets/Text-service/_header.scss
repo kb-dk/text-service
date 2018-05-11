@@ -13,3 +13,17 @@
 .box-gradient {
   background: linear-gradient(to bottom,#002E70 0%, #00204e 100%);
 }
+#cookie-button{
+  background-color: #171717;
+  position: fixed !important;
+  bottom: 0;
+  padding: 1.5rem;
+  padding-right: 5rem;
+  color: white;
+  width: calc(100vw - (100vw - 100%));
+  z-index: 100;
+  margin-bottom: 0!important;
+  border: 0;
+  border-radius: 0;
+
+}

@@ -101,6 +101,7 @@ function checkCookie() {
     var cookie_button = document.getElementById("cookie-button");
     if (cookie_button) {
         var cookie = getCookie("terms");
+        //cookie="";
         if (cookie != "") {
         } else {
             cookie_button.style.display = "block";
@@ -112,6 +113,9 @@ function checkCookie() {
 }
 $(document).ready(function () {
     checkCookie();
+    $('#accept-cookie').click(function(){
+        $(this).parent().parent().remove();
+    });
 });
 /////////
 function toggleHighlight() {

@@ -4,6 +4,7 @@ da:
 #  view-specific:
 #    work_list: 'Tekster i ADL'
 #    home:
+#       cookie: 'På ADL.dk bruger vi cookies til at huske dine indstillinger samt indsamle statistik.'
 #      boxes:
 #        authors:
 #          title: 'Forfattere'
