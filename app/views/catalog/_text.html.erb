@@ -37,6 +37,10 @@
       </a>
   <% end %>
   <!-- <%= @document[:id] %> -->
+
+  <% if @document[:capabilities_ssi].match(/^.+$/) %>
+  <%= @document[:capabilities_ssi].html_safe %>
+  <% end %>
   <% if @document[:id].match(/sks-/) %>
       <%
         txt_id = @document['id'].gsub(/(txt)|(txr)|(kom)/, 'txt-root').gsub(/-root.*$/, '-root')
