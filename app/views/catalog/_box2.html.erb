@@ -1,11 +1,7 @@
 <%
   # titles is a link to search for all titles
   # otherwise get the path to the special author/periods searches
-  if (type == 'ADL')
-    url = "http://adl.dk"
-  else
-    url = "/?utf8=✓&search_field=author&q="+t("view-specific.home.boxes.#{type}.title")
-  end
+    url = "/?utf8=✓&search_field=all&q=cat_ssi:work AND subcollection_ssi:"+ type
 %>
 <div class="col-md-3">
   <a href="<%= url %>">
