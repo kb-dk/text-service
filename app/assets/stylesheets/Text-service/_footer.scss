@@ -1,0 +1,27 @@
+footer.pageFooter {
+  background-color: #002E70;
+  color: white;
+  height: 80px;
+  padding: 20px;
+  a{
+    color: white;
+    &:hover{
+      color:$yellow!important;
+    }
+  }
+  .row.divider-space{
+    display: none;
+  }
+  .footer { // Hide the first link in footer from the text-service
+    span{
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+    a{
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}

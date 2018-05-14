@@ -1,10 +1,17 @@
+html{
+  height: 100%;
+}
+
 body {
+  padding-bottom: $footer-height;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100%;
   color: #000;
   font-family: 'Noto Serif', serif;
   font-weight: 400;
   font-size: 14px;
   background-color: white;
-  background-image: url(asset-path('lion.png'));
   background-position: center 350px;
   background-repeat: repeat-x;
   background-attachment: fixed;

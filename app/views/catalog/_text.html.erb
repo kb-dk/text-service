@@ -14,26 +14,26 @@
 <% end %>
 <div class="textToolbar">
   <%= link_to(solr_document_path(@document, format: :pdf), :target => "_blank") do %>
-      <i class="fa fa-lg fa-download" aria-hidden="true"></i> <span class="d-none d-lg-inline"><%= t('text_service.text_toolbar.text') %></span>
+      <i class="fa fa-lg fa-download" aria-hidden="true"></i> <span class="d-none d-lg-inline"><%= t('general.text_toolbar.text') %></span>
   <% end %>
   <% if query.present? %>
   <a href="javascript:toggleHighlight()">
-    <i class="fa fa-paint-brush"></i><span class="d-none d-lg-inline"><%= t('text_service.text_toolbar.highlight') %></span>
+    <i class="fa fa-paint-brush"></i><span class="d-none d-lg-inline"><%= t('general.text_toolbar.highlight') %></span>
   </a>
   <% end %>
   <%= render :partial => 'show_tools_work' %>
   <% if has_facs %>
-      <a id="hide_facsimile" class="hidden"><i class="fa fa-chevron-right fa-large" title="<%= t('text_service.text_toolbar.hide_facsimile') %>"></i><span class="d-none d-xl-inline"><%= t('text_service.text_toolbar.hide_facsimile') %></span></a>
-      <a id="show_facsimile"><i class="fa fa-chevron-left fa-large" title="<%= t('text_service.text_toolbar.show_facsimile') %>"></i><span><%= t('text_service.text_toolbar.show_facsimile') %></span></a>
+      <a id="hide_facsimile" class="hidden"><i class="fa fa-chevron-right fa-large" title="<%= t('general.text_toolbar.hide_facsimile') %>"></i><span class="d-none d-xl-inline"><%= t('general.text_toolbar.hide_facsimile') %></span></a>
+      <a id="show_facsimile"><i class="fa fa-chevron-left fa-large" title="<%= t('general.text_toolbar.show_facsimile') %>"></i><span><%= t('general.text_toolbar.show_facsimile') %></span></a>
   <% end %>
 
-  <i id="ocrFullscreenButton" class="fa fa-expand fa-lg" title="<%= t('text_service.text_toolbar.fullscreen') %>"></i>
+  <i id="ocrFullscreenButton" class="fa fa-expand fa-lg" title="<%= t('general.text_toolbar.fullscreen') %>"></i>
 
 
   <% if @document['cat_ssi'] == 'author' %>
 
       <a class="icon-list" href="<%= "/?utf8=✓&search_field=author&q=#{@document['work_title_tesim'].try(:join)}" %>">
-        <i class="fa fa-list" aria-hidden="true"></i> <%= t('text_service.work_list') %>
+        <i class="fa fa-list" aria-hidden="true"></i> <%= t('view-specific.work_list') %>
       </a>
   <% end %>
   <!-- <%= @document[:id] %> -->
@@ -66,7 +66,7 @@
   <% if @document['cat_ssi'] == 'author' %>
       <% unless doc_presenter.field_value("author_name_tesim").empty? %>
           <div class="dl-horizontal  dl-invert pull-left">
-            <strong><span class="blacklight-author_name_tesim text-left-important"><%= t('text_service.author.author_potrait_written_by') %> </span></strong>
+            <strong><span class="blacklight-author_name_tesim text-left-important"><%= t('general.author.author_potrait_written_by') %> </span></strong>
             <span class="blacklight-author_name_tesim">&nbsp;<%= doc_presenter.field_value "author_name_tesim" %></span>
           </div>
       <% end %>

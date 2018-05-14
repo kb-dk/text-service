@@ -10,6 +10,18 @@
   background: url(asset-path('time-period.jpg')) no-repeat;
 }
 
+.sks{
+  background: url(asset-path('sks.jpg')) no-repeat;
+}
+.grundtvig{
+  background: url(asset-path('grundtvig.jpg')) no-repeat;
+}
+.pmm{
+  background: url(asset-path('pmm.jpg')) no-repeat;
+}
+.ADL{
+  background: url(asset-path('ADL.jpg')) no-repeat;
+}
 .image {
   background-position: top;
   height: 169px;
@@ -17,8 +29,12 @@
   padding: 20px 15px;
   border-radius: 25px 25px 0 0;
 }
-
-.frontpage-content {
+.frontpage-content{
+  .row > div > a > div {
+    border-radius: 25px;
+  }
+}
+.frontpage-content.first-boxes {
 
   .text {
     padding: 0 15px;
@@ -37,32 +53,26 @@
       border: 0;
     }
     h3:hover {
-      color: $third-color !important;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       text-decoration: none;
     }
   }
 
   .row > div > a > div {
-    height: 330px;
-    border: thin solid $gray-200;
-    margin: 1em;
-    border-radius: 25px;
+    border:none;
     background-color: rgba(242, 238, 226, 0.5);
   }
 }
 
 .homeSearch {
   height: 260px;
-  color: $beige;
+  color: $secondary;
   font-size: 25px;
   font-weight: normal;
 
   h2 {
     padding-top: 25px;
     width: 100%;
-    margin-top: 15px;
-    margin-bottom: 10px;
   }
   h3 {
     color: white;
@@ -71,7 +81,7 @@
     margin-top: 10px;
     margin-bottom: 5px;
     a{
-      color: #4c9400;
+      color: $fourth-color;
     }
   }
   form {

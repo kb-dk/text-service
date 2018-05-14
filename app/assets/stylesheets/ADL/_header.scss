@@ -1,0 +1,26 @@
+.navbar-brand{
+  background: none !important;
+  text-indent: 0 !important;
+}
+#header-navbar{
+  background-color: white;
+}
+.text-tooltip {
+
+}
+.search-bg {
+  background: url(asset-path('lion-big-white.png')) no-repeat;
+  background-position: center;
+  height: inherit;
+}
+
+.box-gradient {
+  background: linear-gradient(to bottom, rgba(36, 82, 112, 1) 0%, rgba(24, 55, 75, 1) 100%);
+}
+
+#cookie-button{
+  margin-bottom: 0;
+  #read-more{
+    color:white;
+  }
+}
