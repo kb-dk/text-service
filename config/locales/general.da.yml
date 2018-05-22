@@ -38,7 +38,7 @@ da:
         match:
           one: 'mindst et ord'
           all: 'alle ord'
-          phrase: 'sætning'
+          phrase: 'som de står'
       list:
         format: 'Formater:'
         text: 'Tekst'
