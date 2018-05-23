@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 module ApplicationHelper
+  require 'socket'
 
   def get_period_name args
     res = args
@@ -109,5 +110,9 @@ module ApplicationHelper
     rescue Exception => e
       id
     end
+  end
+
+  def get_host_name
+    hostname=Socket.gethostname
   end
 end
