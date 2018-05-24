@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 module ApplicationHelper
+  require 'socket'
 
   def get_period_name args
     res = args
@@ -9,6 +10,23 @@ module ApplicationHelper
       res=doc['response']['docs'].first['work_title_tesim'].join(' ')
     end
     res
+  end
+
+  def get_collection_name args
+     name = args
+     case name
+       when "sks"
+         name = "Søren Kierkegaards Skrifter"
+       when "holberg"
+         name = "Ludvig Holbergs Skrifter"
+       when "pmm"
+         name = "Poul Martin Møllers Skrifter"
+       when "adl"
+         name = "Arkiv for Dansk Litteratur"
+       when "grundtvig"
+         name = "Grundtvigs Værker"
+     end
+     name
   end
 
   def construct_citation args
@@ -109,5 +127,9 @@ module ApplicationHelper
     rescue Exception => e
       id
     end
+  end
+
+  def get_host_name
+    hostname=Socket.gethostname
   end
 end

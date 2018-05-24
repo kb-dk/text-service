@@ -26,6 +26,7 @@ da:
           title: 'Arkiv for Dansk Litteratur'
       bluebar:
         welcome: 'Det Kgl. Biblioteks tekstportal'
+        beta-welcome: 'Være opmærksom på at det er en test version'
         description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
         link-label: 'Det Kgl. Bibliotek'
         link: 'http://www.kb.dk'

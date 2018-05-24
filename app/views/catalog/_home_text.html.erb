@@ -1,4 +1,10 @@
 <%= render :partial => 'catalog/politik_popup' %>
+<% if get_host_name.include?("text-test") || get_host_name.include?("beta-text")
+     text= t('view-specific.home.bluebar.beta-welcome')
+   else
+     text = t('view-specific.home.bluebar.welcome')
+   end
+%>
 
 <div class="row">
   <div class="homeSearch box-gradient fixed-top-second">
@@ -6,7 +12,7 @@
       <div class="container">
         <div class="row text-center">
           <h2>
-            <%= t('view-specific.home.bluebar.welcome') %>
+            <%= text  %>
           </h2>
           <h3>
             <%= t('view-specific.home.bluebar.description') %>
