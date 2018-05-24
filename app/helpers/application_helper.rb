@@ -12,6 +12,23 @@ module ApplicationHelper
     res
   end
 
+  def get_collection_name args
+     name = args
+     case name
+       when "sks"
+         name = "Søren Kierkegaards Skrifter"
+       when "holberg"
+         name = "Ludvig Holbergs Skrifter"
+       when "pmm"
+         name = "Poul Martin Møllers Skrifter"
+       when "adl"
+         name = "Arkiv for Dansk Litteratur"
+       when "grundtvig"
+         name = "Grundtvigs Værker"
+     end
+     name
+  end
+
   def construct_citation args
     label = []
     author = ""
