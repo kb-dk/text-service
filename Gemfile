@@ -76,3 +76,4 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'bootstrap', '~> 4.1.1'
 gem 'oai'
+
