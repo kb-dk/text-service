@@ -8,6 +8,10 @@ da:
       hide_facsimile: 'Luk faksimile'
     landing_page:
       facsimile: 'Hent faksimile'
+      info: 'Info'
+      text: 'Tekst'
+      Comments: 'Kommentar'
+      text_statements: 'Tekstredegørelse'
       table_of_content: 'Indhold'
       all_instances: 'Alle forekomster'
       close: 'Luk'

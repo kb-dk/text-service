@@ -17,7 +17,7 @@
     <div id="appliedParams" class="clearfix constraints-container">
       <%= link_to t('blacklight.search.start_over'), start_over_path, class: "catalog_startOverLink btn btn-secondary" %>
       <%= link_back_to_catalog class: 'btn btn-secondary' %>
-      <button class="btn btn-secondary" onclick="javascript:toggleInfoBox()">Anvendt udgave</button>
+      <button class="btn btn-secondary" onclick="javascript:toggleInfoBox()"><%= t('general.landing_page.info')%></button>
     </div>
 <% end %>
 
