@@ -1,8 +1,21 @@
+<% doc_presenter = index_presenter(document) %>
 <% # bookmark/folder functions   -%>
 <header>
   <div class="search-secondary box-gradient fixed-top-second">
     <div class="container-fluid">
-      <%= render_document_heading(document, :tag => :h1) %>
+      <h1>
+        <span class="author">
+          <% if document['author_name_tesim'].present? %>
+            <%= doc_presenter.field_value 'author_name_tesim' %>:
+          <% end %>
+        </span>
+        <span class="title">
+          <%= render_document_heading(document, :tag => :span) %>
+        </span>
+        <span class="collection">
+            <%= t("view-specific.home.boxes.#{doc_presenter.field_value 'subcollection_ssi'}.title") %>
+        </span>
+      </h1>
     </div>
   </div>
 </header>
