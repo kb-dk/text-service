@@ -36,9 +36,10 @@ $box2-size:169px;
     text-align: center;
     line-height: $box2-size;
     h3{
-    color: white;
+      color: white;
       font-size: 18px;
       font-weight: 400;
+      white-space: normal;
     }
   }
 }

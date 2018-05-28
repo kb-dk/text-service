@@ -37,9 +37,10 @@
       </a>
   <% end %>
   <!-- <%= @document[:id] %> -->
-
+  <% if @document[:capabilities_ssi] %>
   <% if @document[:capabilities_ssi].match(/^.+$/) %>
   <%= @document[:capabilities_ssi].html_safe %>
+  <% end %>
   <% end %>
   <% if @document[:id].match(/sks-/) %>
       <%
@@ -50,15 +51,15 @@
 
       <%= link_to("/text/" + txt_id) do %>
           <i class="fa fa-file-text" aria-hidden="true"></i>
-          Tekst
+          <%= t('general.landing_page.text')%>
       <% end %>
       <%= link_to ("/text/" + kom_id) do %>
           <i class="fa fa-comment" aria-hidden="true"></i>
-          Kommentar
+          <%= t('general.landing_page.Comments')%>
       <% end %>
       <%= link_to ("/text/" + txr_id) do %>
           <i class="fa fa-file-text-o" aria-hidden="true"></i>
-          Tekstredegørelse
+          <%= t('general.landing_page.text_statements')%>
       <% end %>
 
   <% end %>
