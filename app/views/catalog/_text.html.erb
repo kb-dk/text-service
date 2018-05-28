@@ -37,9 +37,10 @@
       </a>
   <% end %>
   <!-- <%= @document[:id] %> -->
-
+  <% if @document[:capabilities_ssi] %>
   <% if @document[:capabilities_ssi].match(/^.+$/) %>
   <%= @document[:capabilities_ssi].html_safe %>
+  <% end %>
   <% end %>
   <% if @document[:id].match(/sks-/) %>
       <%
