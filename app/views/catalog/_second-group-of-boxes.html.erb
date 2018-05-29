@@ -1,0 +1,7 @@
+<div class="container frontpage-content second-boxes">
+  <div class="row">
+    <% ['sks', 'grundtvig', 'pmm', 'ADL'].each do |subject| %>
+        <%= render :partial => 'box2', locals: {type: subject} %>
+    <% end %>
+  </div>
+</div>

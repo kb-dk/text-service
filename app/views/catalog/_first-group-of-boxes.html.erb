@@ -1,0 +1,7 @@
+<div class="container frontpage-content first-boxes">
+  <div class="row">
+    <% ['authors', 'titles', 'periods'].each do |subject| %>
+        <%= render :partial => 'box1', locals: {type: subject} %>
+    <% end %>
+  </div>
+</div>

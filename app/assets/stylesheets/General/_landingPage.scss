@@ -280,3 +280,14 @@ article > div, #om-adl > div, #period .text {
 .period-writers-list .icon-list {
   padding: 40px 20px 20px 20px;
 }
+.toggle-content {
+  display: none;
+  height: 0;
+  overflow: hidden;
+  transition: height 350ms ease-in-out;
+}
+
+.toggle-content.is-visible {
+  display: block;
+  height: auto;
+}

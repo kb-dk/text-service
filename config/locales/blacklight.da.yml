@@ -6,13 +6,10 @@ da:
       previous: '&laquo; Forrige'
       next: 'Næste &raquo;'
       truncate: '…'
-
+  blacklight:
     pagination_compact:
       previous: '&laquo; Forrige'
       next: 'Næste &raquo;'
-
-  blacklight:
-    application_name: 'Arkiv for Dansk Litteratur'
 
     header_links:
       login: 'Log ind'
