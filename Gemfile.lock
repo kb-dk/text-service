@@ -1,10 +1,4 @@
 GIT
-  remote: https://github.com/Det-Kongelige-Bibliotek/kbcookie.git
-  revision: 86b3e6fb9da6278a6ba2daa17683c0cc72c3b78f
-  specs:
-    kbcookie (0.0.2)
-
-GIT
   remote: https://github.com/projectblacklight/blacklight.git
   revision: 82c0d5a4cc6979f57b8071c7da2a20d5e2a09394
   specs:
@@ -289,7 +283,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jettywrapper
   jquery-rails
-  kbcookie (= 0.0.2)!
   listen (>= 3.0.5, < 3.2)
   oai
   puma (~> 3.7)
