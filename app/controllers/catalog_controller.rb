@@ -67,7 +67,7 @@ class CatalogController < ApplicationController
 
     config.add_facet_field 'author_name_ssim', :label => 'Forfatter', :single => true, :limit => 10, :collapse => false
     config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => false, helper_method: :get_period_name
-    config.add_facet_field 'subcollection_ssi', :label => 'Collection', :single => true, :limit => 10, :collapse => false, helper_method: :get_collection_name
+    config.add_facet_field 'subcollection_ssi', :label => 'Samling', :single => true, :limit => 10, :collapse => false, helper_method: :get_collection_name
 
     #
     # set :index_range to true if you want the facet pagination view to have facet prefix-based navigation
