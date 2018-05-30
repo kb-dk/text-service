@@ -36,6 +36,7 @@
         <i class="fa fa-list" aria-hidden="true"></i> <%= t('view-specific.work_list') %>
       </a>
   <% end %>
+  <a id="exposeLinkThing" href="javascript:toggleExposable()">Vis tekstmuligheder</a>
   <!-- <%= @document[:id] %> -->
   <% if @document[:capabilities_ssi] %>
   <% if @document[:capabilities_ssi].match(/^.+$/) %>
@@ -83,6 +84,41 @@
 
   <%= FileServer.render_snippet(@document['id'],
                                 {q: query, op: "render"}) %>
+
+  <script>
+    var elems  = document.getElementsByClassName("exposableDocumentFunctions");
+    var anchor = document.getElementById("exposeLinkThing");
+    var status = 'hidden';
+
+    function toggleExposable() {
+      if(status == 'hidden') {
+        showExposableFunctions();
+      } else {
+        hideExposableFunctions();
+      }
+    }
+
+    function showExposableFunctions() {
+      var i;
+      for (i = 0; i < elems.length; i++) {
+          elems[i].style.visibility='visible';
+      }  
+      status = 'visible';
+      anchor.style.color='white';
+      anchor.style.backgroundColor='black';
+    } 
+
+    function hideExposableFunctions() {
+      var i;
+      for (i = 0; i < elems.length; i++) {
+          elems[i].style.visibility='hidden';
+      }  
+      status = 'hidden';
+      anchor.style.color='black';
+      anchor.style.backgroundColor='white';
+    } 
+
+  </script>
 </article>
 
 
