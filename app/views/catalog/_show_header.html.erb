@@ -10,7 +10,7 @@
           <% end %>
         </span>
         <span class="title">
-          <%= render_document_heading(document, :tag => :span) %>
+          <%= doc_presenter.field_value 'work_title_tesim' %>
         </span>
         <span class="collection" title="samling">
             <%= t("view-specific.home.boxes.#{doc_presenter.field_value 'subcollection_ssi'}.title") %>
