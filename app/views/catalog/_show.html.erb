@@ -11,8 +11,7 @@
   });
 </script>
 <div class="<%= container_classes %>">
-<% if @search_context && current_search_session %>
-<%= render 'previous_next_doc'  %>
+
 <%# if current_search_session %>
     <div id="appliedParams" class="clearfix constraints-container">
       <% if @search_context && current_search_session %>
@@ -49,4 +48,4 @@
       </div>
   <% end %>
 </div>
-
+</div>
