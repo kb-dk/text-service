@@ -1,7 +1,7 @@
 <%
   # titles is a link to search for all titles
   # otherwise get the path to the special author/periods searches
-    url = "/?utf8=✓&q=cat_ssi:work AND subcollection_ssi:"+ type
+    url = "/text?f[subcollection_ssi][]="+ type + "&match=one&search_field=Alt"
 %>
 <div class="col-md-3">
   <a href="<%= url %>">
@@ -10,9 +10,12 @@
       </div>
       <div class="text">
         <h3 class="btn btn-link btn-lg">
-          <%= t("view-specific.home.boxes.#{type}.title") %>
+	  <%= get_collection_name(type) %>
         </h3>
       </div>
     </div>
   </a>
+
+  <a href="/pages/about-<%= type %>">Om samlingen</a>
+
 </div>
