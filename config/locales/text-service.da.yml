@@ -4,7 +4,7 @@ da:
   view-specific:
     work_list: 'Tekster i tekstportalen'
     home:
-      cookie: 'På Tekstportal bruger vi cookies til at huske dine indstillinger samt indsamle statistik.'
+      cookie: 'I tekstportalen bruger vi cookies til at huske dine indstillinger og indsamle statistik.'
       boxes:
         authors:
           title: 'Forfattere'

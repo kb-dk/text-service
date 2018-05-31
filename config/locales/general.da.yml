@@ -42,7 +42,7 @@ da:
         match:
           one: 'mindst et ord'
           all: 'alle ord'
-          phrase: 'som de står'
+          phrase: 'som ordene står'
       list:
         format: 'Formater:'
         text: 'Tekst'
@@ -54,7 +54,7 @@ da:
         all_filters: 'Al tekst'
         title: 'Titel'
         author: 'Forfatter'
-        phrase: 'Phrase Search'
+        phrase: 'Sætning'
       sort:
         relevance: 'Standard'
         author: 'Forfatter'
