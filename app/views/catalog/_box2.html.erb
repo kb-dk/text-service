@@ -10,9 +10,12 @@
       </div>
       <div class="text">
         <h3 class="btn btn-link btn-lg">
-          <%= t("view-specific.home.boxes.#{type}.title") %>
+	  <%= get_collection_name(type) %>
         </h3>
       </div>
     </div>
   </a>
+
+  <a href="/pages/about-<%= type %>">Om samlingen</a>
+
 </div>

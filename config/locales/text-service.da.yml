@@ -17,13 +17,15 @@ da:
           link:
           description: 'Læs værker fra en bestemt tidsperiode.'
         sks:
-          title: 'Søren Kierkegaard'
+          title: 'Søren Kierkegaards Skrifter'
         grundtvig:
-          title: 'Grundtvig'
+          title: 'Grundtvigs Værker'
         pmm:
-          title: 'Poul Martin Møller'
+          title: 'Poul Martin Møllers Værker'
         adl:
           title: 'Arkiv for Dansk Litteratur'
+        holberg:
+          title: 'Ludvig Holbergs Værker'
       bluebar:
         welcome: 'Det Kgl. Biblioteks tekstportal'
         beta-welcome: 'Være opmærksom på at det er en test version'
