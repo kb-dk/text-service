@@ -31,8 +31,16 @@ button#search, #read-more {
 }
 
 header{
+  .collection, .author{
+    font-size:small;
+  }
   .collection{
     float: right;
-    font-size:small ;
+  }
+  .author{
+    margin-right:20px;
+  }
+  .title{
+    font-size: large;
   }
 }
