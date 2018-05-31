@@ -32,12 +32,15 @@ button#search, #read-more {
 
 header{
   .collection, .author{
-    font-size:large ;
+    font-size:small;
   }
   .collection{
     float: right;
   }
   .author{
-    margin-right:10px;
+    margin-right:20px;
+  }
+  .title{
+    font-size: large;
   }
 }
