@@ -51,7 +51,7 @@ da:
 # Keys that are used in catalog_controller
     config:
       search:
-        all_filters: 'Fritekst'
+        all_filters: 'Al tekst'
         title: 'Titel'
         author: 'Forfatter'
         phrase: 'Phrase Search'
