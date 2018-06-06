@@ -54,7 +54,7 @@ da:
         all_filters: 'Al tekst'
         title: 'Titel'
         author: 'Forfatter'
-        phrase: 'Phrase Search'
+        phrase: 'Sætning'
       sort:
         relevance: 'Standard'
         author: 'Forfatter'
