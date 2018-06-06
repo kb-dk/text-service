@@ -28,7 +28,7 @@ da:
           title: 'Ludvig Holbergs Værker'
       bluebar:
         welcome: 'Det Kgl. Biblioteks tekstportal'
-        beta-welcome: 'Være opmærksom på at det er en test version'
+        beta-welcome: 'Det Kgl. Biblioteks tekstportal [test] '
         description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
         link-label: 'Det Kgl. Bibliotek'
         link: 'http://www.kb.dk'
