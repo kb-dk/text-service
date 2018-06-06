@@ -2,12 +2,12 @@ da:
   general:
     text_toolbar:
       fullscreen: 'Se tekst i fuld skærm'
-      text: 'Hent tekst'
+      text: 'Hent PDF'
       highlight: 'Tilføj/fjern markering'
       show_facsimile: 'Vis faksimile'
       hide_facsimile: 'Luk faksimile'
     landing_page:
-      facsimile: 'Hent faksimile'
+      facsimile: 'Hent faksimile PDF'
       info: 'Info'
       text: 'Tekst'
       Comments: 'Kommentar'
