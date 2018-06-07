@@ -7,7 +7,7 @@ da:
       show_facsimile: 'Vis faksimile'
       hide_facsimile: 'Luk faksimile'
     landing_page:
-      facsimile: 'Hent faksimile PDF'
+      facsimile: 'Hent PDF'
       info: 'Info'
       text: 'Tekst'
       Comments: 'Kommentar'
