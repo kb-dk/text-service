@@ -92,7 +92,7 @@ window.dkBreve = (function (window, $, undefined) {
                         citationPageNumber = document.getElementById('pageNumber'),
                         hashTagInURI = document.getElementById('hashTagInURI'),
                         kbosd = KbOSD.prototype.instances[0]; // The dkBreve object should have a kbosd property set to the KbOSD it uses!
-                    if (currentOcrPage > 1) {
+                    if (currentOcrPage > 1 &&  citationPageNumber != null ) {
                         citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;
                         hashTagInURI.innerText = "#"+($('.ocr .pageBreak')[currentOcrPage - 2]).id;
                     } else {
