@@ -9,7 +9,7 @@ da:
     landing_page:
       facsimile: 'Hent PDF'
       info: 'Info'
-      text: 'Tekst'
+      text: 'Huvudtekst'
       Comments: 'Kommentar'
       text_statements: 'Tekstredegørelse'
       table_of_content: 'Indhold'
