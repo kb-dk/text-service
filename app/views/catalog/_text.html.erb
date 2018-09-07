@@ -8,8 +8,9 @@
 <%# If not, the the q parameter will be left empty and the render_snippet will not highlight the text %>
 <% if ["Alt", "phrase"].include? search_field %>
     <% query_params = current_search_session.try(:query_params)
-       query = query_params[:q] if query_params.present?
-       query = query.gsub!(/^\"|\"?$/, '').strip if query.present?
+       query  = query_params[:q] if query_params.present?
+       qmatch = query_params['match'] if query_params.present?
+       query  = query.gsub!(/^\"|\"?$/, '').strip if query.present?
     %>
 <% end %>
 <div class="textToolbar">
@@ -83,7 +84,7 @@
   <% end %>
 
   <%= FileServer.render_snippet(@document['id'],
-                                {q: query, op: "render"}) %>
+                                {q: query, match: qmatch, op: "render"}) %>
 
   <script>
     var elems  = document.getElementsByClassName("exposableDocumentFunctions");
