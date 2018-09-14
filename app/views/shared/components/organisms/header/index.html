@@ -1,0 +1,48 @@
+<header class="org-c3af7b08-07d8-4a3e-8b12-5b6de87acf0c">
+  <div class="inner-content grid-container">
+    <div class="grid-x">
+      <div class="small-6 large-3 cell" >
+        @@include('./atoms/logo/index.html')
+      </div>
+      <div class="small-6 hide-for-large cell" >
+        @@include('./atoms/hamburger-menu/index.html')
+      </div>
+      <div class="show-for-large medium-9 cell navs">
+        <nav class="top-nav">
+          <ul>
+            <li><a href="#">Au library</a></li>
+            <li><a href="inspiration.html">DAB</a></li>
+            <li><a href="events.html">REX</a></li>
+            <li><a href="">Bliv låner</a></li>
+            <li><a href="">Åbningstider</a></li>
+            <li><a href="">Om det kgl. bibliotek</a></li>
+            <li><a href="">In english</a></li>
+            <li><a id="loginBtn" href="">Login @@include('./atoms/icon/index.html', {"icon-type" : "icon-account-circle", "icon-size": "icon-xsmall"})</a></li>
+          </ul>
+        </nav>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#">Find materiale</a></li>
+            <li><a href="inspiration.html">Inspiration og temaer</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="events.html">Arrangementer</a></li>
+            <li><a href="">Besøg os</a></li>
+            <li>
+              <button alt="search" id="searchBtn">
+                @@include('./atoms/icon/index.html', {"icon-type" : "icon-search", "icon-size": "icon-medium"})
+                @@include('./atoms/icon/index.html', {"icon-type" : "icon-clear", "icon-size": "icon-medium"})
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="top-menu">
+        @@include('./molecules/search-form/index.html', {"placeholder": "Søg på KB.dk", "classes": "top-menu collapsed"})
+    </div>
+ </div>
+
+  <div class="hide-for-large">
+    @@include('./organisms/mobile-menu/index.html')
+  </div>
+</header>

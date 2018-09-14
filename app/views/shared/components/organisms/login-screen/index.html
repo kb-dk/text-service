@@ -1,0 +1,41 @@
+<div class="org-10e8caf4-efff-45e2-8bf7-70b494427c5e">
+    <div class="inner-content grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell">
+                <a class="close" href="">
+                    @@include('./atoms/icon/index.html', {"icon-type" : "icon-clear", "icon-size": "icon-xsmall"})
+                </a>
+                <h2>Login to kb.dk</h2>
+            </div>
+            <div class="cell medium-12">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nostrum nulla, incidunt eos aliquid numquam nobis quasi eius nisi aliquam! Dolor voluptatem necessitatibus nihil ex ratione dicta veritatis porro molestiae.</p>
+                    
+            </div>
+            <div class="cell medium-6">
+                    @@include('./molecules/drop-down-input/index.html', {"placeholder": "Library system", "text": "", "datalist": ["LibSys 1", "LibSys 2", "LibSys 3", "LibSys 4"]})
+            </div>
+            <div class="cell medium-6"></div>
+            <div class="cell medium-6">
+                @@include('./molecules/float-label-input/index.html', {
+                    "placeholder": "Username",
+                    "id": "username"
+                })
+            </div>
+            <div class="cell medium-6">
+                @@include('./molecules/float-label-input/index.html', {
+                    "placeholder": "Password",
+                    "type": "password",
+                    "id": "password"
+                })
+            </div>
+            <div class="cell medium-6 medium-offset-6">
+                <div class="box flex-container align-right">
+                    @@loop('./atoms/button/index.html',[
+                    {"type":"secondary", "text": "Cancel"},
+                    {"type": "", "text": "Login"}
+                    ])
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

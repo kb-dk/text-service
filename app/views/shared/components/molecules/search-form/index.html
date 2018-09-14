@@ -1,0 +1,11 @@
+<div class="mol-84808011-3678-4f25-9e6b-db25897b6de1">
+    <form class="form-wrapper search-area @@classes" onsubmit="event.preventDefault();">
+        @@include('./atoms/input/index.html', {"type": "text", "placeholder": "@@placeholder"})
+        @@if (close) {
+            <button alt="clear">@@include('./atoms/icon/index.html',{"icon-type":"icon-clear","icon-size":"icon-small"})</button>
+        }
+        @@if (!close) {
+            <button alt="search">@@include('./atoms/icon/index.html',{"icon-type":"icon-search","icon-size":"icon-medium"})</button>
+        }
+    </form>
+</div>

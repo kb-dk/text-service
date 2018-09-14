@@ -1,0 +1,44 @@
+<div class="org-48c7471a-9609-40ff-92f1-2b853886634d  @@classes">
+  <div class="hover-overlay">
+      <div class="img-frame">
+        @@include('./atoms/bg-img/index.html')
+        @@if(btn) {
+          @@include('./atoms/button/index.html', {"type":"so-small", "text": "So Small"})
+        }
+      </div>
+      @@if (time) {
+        <time>10. marts 2017 - 10. marts 2020</time>
+      }
+      <h3>Lorem ipsum dolor sit amen</h3>
+      <p>Quos rerum ad molestiae, dignissimos quidem porro nesciunt voluptatibus reiciendis iure, blanditiis laudantium error perferendis obcaecati, soluta ut architecto eius ex vero.</p>
+  </div>
+  
+  <div class="bottom">
+      @@if (type === 'link') {
+        <div>
+          @@include('./molecules/icon-link/index.html', {"text" : "Gå direkte til samlingen"})
+        </div>
+      }
+      @@if (type === 'location') {
+        <div>
+          @@include('./atoms/icon/index.html', {"icon-type" : "icon-location", "icon-size": "icon-small"}) Lokation
+        </div>
+      }
+      @@if (type === 'podcast') {
+        <div>
+          @@include('./atoms/icon/index.html', {"icon-type" : "icon-podcast", "icon-size": "icon-small"}) Podcast
+        </div>
+      }
+      @@if (type === 'music') {
+        <div>
+          @@include('./atoms/icon/index.html', {"icon-type" : "icon-music", "icon-size": "icon-small"}) Koncert, København, 19. Marts
+        </div>
+      }
+      @@if (type === 'video') {
+        <div>
+          @@include('./atoms/icon/index.html', {"icon-type" : "icon-video", "icon-size": "icon-small"}) Video, 02:33 min
+        </div>
+      }
+  </div>
+  
+</div>
