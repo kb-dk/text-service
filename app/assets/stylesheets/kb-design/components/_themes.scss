@@ -1,0 +1,105 @@
+@function deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+@mixin theme($theme-map) {
+  .theme-bg, header, .org-01c45fc6-df1a-4fd8-b8c3-d1ff8e3b519d {
+    background-color: map-get($theme-map, 'primary');
+  }
+  .theme-bg {
+    div[class*="edged-"] {
+      .grid-x {
+        .cell {
+          &:nth-child(odd) {
+            .img-frame {
+              &:after {
+                border-left-color: map-get($theme-map, 'primary');
+              }
+            }
+          }
+          &:nth-child(even) {
+            .img-frame {
+              &:after {
+                border-right-color: map-get($theme-map, 'primary');
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  blockquote {
+    &:before {
+      background-color: map-get($theme-map, 'primary');
+    }
+  }
+  // focus spots
+  .mol-9db6cd37-efc9-415d-a2ab-38bfacb57aff {
+    background-color: map-get($theme-map, 'tertiary');
+  }
+  button {
+    &.theme-color {
+      background-color: map-get($theme-map, 'primary');
+      border: 1px solid map-get($theme-map, 'primary');
+      color: $color-dark-blue-100;
+      &:hover{
+          background-color: map-get($theme-map, 'secondary');;
+      }        
+    }
+  }
+  .divider {
+    &.theme-color {
+      background-color: map-get($theme-map, 'primary');
+      &.top-left, &.bottom-left {
+        background-color: transparent;
+        border-left-color: map-get($theme-map, 'primary');
+      }
+      &.top-right, &.bottom-right {
+        background-color: transparent;
+        border-right-color: map-get($theme-map, 'primary');
+      }
+    }    
+  }
+  .mobile-menu {
+    .secondary {
+      background-color: map-get($theme-map, 'secondary');
+    }
+    .divider {
+      border-left-color: map-get($theme-map, 'secondary');
+    }
+
+  } 
+  
+}
+
+.theme-yellow {
+  @include theme((
+    primary: $color-yellow-50,
+    secondary: $color-yellow-100,
+    tertiary: $color-yellow-15
+  ))
+}
+.theme-pink {
+  @include theme((
+    primary: $color-pink-50,
+    secondary: $color-pink-100,
+    tertiary: $color-pink-15
+  ))
+}
+.theme-teal {
+  @include theme((
+    primary: $color-teal-50,
+    secondary: $color-teal-100,
+    tertiary: $color-teal-15
+  ))
+}
+.theme-blue {
+  @include theme((
+    primary: $color-sky-blue-50,
+    secondary: $color-sky-blue-100,
+    tertiary: $color-sky-blue-15
+  ))
+}
