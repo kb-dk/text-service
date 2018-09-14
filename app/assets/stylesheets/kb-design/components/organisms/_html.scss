@@ -1,0 +1,13 @@
+html, body {
+  font-size: $global-font-size;
+  * {
+    box-sizing: border-box;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  &.menu-open, &.scroll-lock {
+    overflow: hidden;
+  }
+}

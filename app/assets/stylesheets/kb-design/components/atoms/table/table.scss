@@ -1,0 +1,31 @@
+.atom-5b8eba9b-16ea-43b3-a1de-68139ff13b02 {
+    overflow-x: auto;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    table {
+        width: 100%;
+        margin: 0 0 1rem;
+        border-spacing: unset;
+    }
+    tr:hover {
+        td {
+            background-color: #f2f4f8;
+        }
+        cursor: pointer;
+    }
+    td, th {
+        text-align: left;
+        @extend %regular-sans-serif;
+        border-bottom: 1px solid #d6d6d6;
+        margin: 0;
+        padding: 12px;
+        &:last-child(){
+            text-align: right;
+        }
+    }
+    th {
+        font-size: rem-calc(12px);
+        color: $color-almost-black-50;
+        white-space: nowrap;
+    }
+}

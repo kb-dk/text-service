@@ -1,0 +1,36 @@
+article {
+  position: relative;
+  margin-bottom: 3rem;
+  strong {
+    
+  }
+}
+.org-9ed2dcde-50dc-4d49-9bf2-6be9f29bc1d9 {
+  .cell {
+    background: white;
+    z-index: 40;
+    &.large-3 {
+      z-index: 30;
+    }
+  }
+  article {
+    position: relative;
+  }
+  @include breakpoint(large) {
+    article {
+      h1, h2, p {
+        padding: 0 25%;
+      }
+
+    }
+    .large-9 {
+      article {
+        h1, h2, p {
+          padding: 0;
+          padding-right: 25%;
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.mol-84808011-3678-4f25-9e6b-db25897b6de1 {
+  width: 100%;
+  @extend %regular-sans-serif;
+  .form-wrapper {
+    transition: opacity 300ms ease-in-out, height 300ms ease-in-out, margin-bottom 300ms ease-in-out;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    z-index: 1;
+    border-radius: 2px;
+    opacity: 1;
+    margin-bottom: .75rem;
+    height: 3rem;
+    position: relative;
+    &:not(.small) {
+      box-shadow: $general-box-shadow;
+      height: 4.5rem;
+      max-height: 4.5rem;
+      &>input {
+        width: calc(100% - 6rem);
+      }
+      button {
+        width: 6rem;
+        color: $color-almost-black-100;
+      }
+    }
+    &.collapsed {
+      opacity: 0;
+      height: 0;
+      margin-bottom: 0;
+      overflow: hidden;
+    }
+    button {
+      outline: none;
+      float: right;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      color: $color-almost-black-50;
+      height: 100%;
+      width: 3rem;
+      background: transparent;
+    }
+    .button:hover {
+        background-color: #fff;
+    }
+  }
+
+  input {
+      box-sizing: border-box;
+      width: calc(100% - 3rem);
+      height: 100%;
+      font-size: 1rem;
+      padding: 0 .75rem;
+      border: none;
+      outline: none;
+      background-color: #fff;
+  }
+  .menu-search-open & {
+    .form-wrapper {
+      opacity: 1;
+      height: 4.5rem;
+      margin-bottom: .75rem;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+blockquote {
+    position: relative;
+    padding-left: 27px;
+    margin-left: 0;
+    &:before {
+        content:"";
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        left: 12px;
+    }
+}

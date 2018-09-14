@@ -1,0 +1,12 @@
+.link-list {
+  margin: 0;
+  padding: 0;
+  @include breakpoint(small only) {
+   font-size: 0.875rem;
+  }
+  
+  li {
+    list-style: none;
+    padding-bottom: .75rem;
+  }
+}

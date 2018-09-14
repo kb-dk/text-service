@@ -1,0 +1,32 @@
+.atom-e7937846-48b1-4797-9eb4-8cd4837fc421 {
+    input {
+        display: none;
+        
+        &:checked {
+            & + label:before {
+                content: "\f26a";
+            }
+        }
+        &:disabled {
+            & + label {
+                color: $color-almost-black-50;
+            }
+        }
+    }
+    label {
+        @extend %regular-sans-serif;
+        display: inline-flex;
+        align-items: center;
+        &:before {
+            content: "\f279";
+            font: normal normal normal 14px/1 'material-icons';
+            text-align: center;
+            font-size: 1.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: .75rem;
+            display: inline-block;
+            border-radius: 2px;
+        }
+    }
+}

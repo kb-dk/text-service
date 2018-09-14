@@ -1,0 +1,32 @@
+.mol-58e0eebf-555c-4435-9d16-3e4600fd2f4e {
+    @extend .mol-ef63e9db-1c74-43c1-82e7-4c8b8c5bfa00;
+    position: relative;
+    
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid $color-almost-black-50;
+        border-bottom: none;
+        border-top: none;
+        z-index: 99;
+        top: 100%;
+        left: -1px;
+        right: 0;
+        width: calc(100% + 2px);
+        div {
+            padding: .75rem;
+            cursor: pointer;
+            background-color: white; 
+            &:hover {
+                background-color: $color-dark-blue-50;
+            }
+            &:last-child {
+                border-bottom: 1px solid $color-almost-black-50;
+            }
+        }
+    }
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: $color-dark-blue-50;
+        color: $color-dark-blue-100; 
+    }
+}

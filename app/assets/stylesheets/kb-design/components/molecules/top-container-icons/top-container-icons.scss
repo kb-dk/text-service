@@ -1,0 +1,24 @@
+.mol-67b55050-5a26-4bd2-894d-c16ea4e11fa2 {
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: $color-almost-black-50;
+    a {
+        padding-right: 0.5rem;
+        &:last-child {
+            padding-right: 0;
+            span {
+                margin-right: 0;
+            }
+        }
+    }
+    button {
+        background: transparent;
+        border: none;
+        color: inherit;
+        outline: none;
+        cursor: pointer;
+    }
+}

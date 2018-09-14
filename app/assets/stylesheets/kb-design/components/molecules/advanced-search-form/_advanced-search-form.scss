@@ -1,0 +1,45 @@
+.mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a {
+  @extend .mol-84808011-3678-4f25-9e6b-db25897b6de1;
+  .form-wrapper {
+    box-shadow: $general-box-shadow;
+    display: inline-flex;
+    width: 100%;
+    .mol-d4e97117-4bf7-4516-92fa-54bb0abc40fb {
+      input {
+        width: 100%;
+      }
+    }
+    @include breakpoint(small only) {
+      flex-wrap: wrap;
+      height: 6rem !important;
+      max-height: none !important;
+      &>input {
+        width: 100% !important;
+        height: 50% !important;
+      }
+      .mol-d4e97117-4bf7-4516-92fa-54bb0abc40fb {
+        width: 80%;
+        height: 50%;
+        input {
+          height: 100%;
+        }
+      }
+      button {
+        width: 20% !important;
+        height: 50% !important;
+      }
+    }
+  }
+  >a {
+    float:right;
+    color: $color-almost-black-50;
+  }
+  
+  &.collapsed {
+    .dropdown-content {
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+}
+
