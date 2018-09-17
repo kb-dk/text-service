@@ -5,9 +5,9 @@
   padding: 1.5rem 0;
 
   .inner-content {
-    @include breakpoint(xlarge) {
+    //@include breakpoint(xlarge) {
       padding: 0;
-    }
+    //}
   }
   
   a {
@@ -20,9 +20,9 @@
     }
   }
   .logo {
-    @include breakpoint(large) {
+    //@include breakpoint(large) {
       min-height: 6rem;
-    }
+    //}
   }
 
   .top-nav {
@@ -38,7 +38,7 @@
       font-size: rem-calc(20px);
     }
     ul {
-      @include flex-row;
+      //@include flex-row;
       align-items: flex-end;
       list-style: none;
       margin: 0;
@@ -90,9 +90,9 @@
   // }
   .top-menu {
     display: none;
-    @include breakpoint(large) {
+    //@include breakpoint(large) {
       display: block;
-    }
+    //}
   }
 
 }
