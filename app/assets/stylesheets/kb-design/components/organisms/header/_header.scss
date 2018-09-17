@@ -38,7 +38,7 @@
       font-size: rem-calc(20px);
     }
     ul {
-      //@include flex-row;
+      @include flex-row;
       align-items: flex-end;
       list-style: none;
       margin: 0;
@@ -84,10 +84,10 @@
     }
   }  
 
-  // .menu-open & {
-  //   min-height: 100vh;
-  //   transition: min-height 500ms ease-out;
-  // }
+   .menu-open & {
+     min-height: 100vh;
+     transition: min-height 500ms ease-out;
+   }
   .top-menu {
     display: none;
     @include media-breakpoint-up(lg) {
