@@ -2,7 +2,7 @@
   width: 7rem;
   height: 100%;
   background-image: url(../img/footer-logo.svg);
-  @include breakpoint(large) {
+  @include media-breakpoint-up(lg) {
     background-image: url(../img/footer-logo.svg);
     width: 7rem;
   }

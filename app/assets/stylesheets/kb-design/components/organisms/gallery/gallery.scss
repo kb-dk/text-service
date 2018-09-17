@@ -34,7 +34,7 @@
    width: 100%;
    height: rem-calc(200px);
    position: relative;
-   @include breakpoint(large) {
+   @include media-breakpoint-up(lg) {
      height: rem-calc(648px);
    }
    .gallery {
@@ -47,14 +47,14 @@
  &.article-left, &.article-right {
    float: left;
 
-   @include breakpoint(large) {
+   @include media-breakpoint-up(lg) {
      width: rem-calc(500px);
      height: rem-calc(336px);
      margin: .5rem 2rem;
    }
  }
  &.full {
-   @include breakpoint(large) {
+   @include media-breakpoint-up(lg) {
     width: calc(200% + 1.5rem);
     margin-left: calc(-50% - .75rem);
      height: rem-calc(648px);
@@ -62,13 +62,13 @@
  }
  &.article-left {
    float: left;
-   @include breakpoint(large) {
+   @include media-breakpoint-up(lg) {
      margin-left: calc(-50% - 0.75rem);
    }
  }
  &.article-right {
    float: right;
-   @include breakpoint(large) {
+   @include media-breakpoint-up(lg) {
     margin-right: calc(-50% - 0.75rem);
    }
  }

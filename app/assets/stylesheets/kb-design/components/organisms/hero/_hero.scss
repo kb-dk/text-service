@@ -1,12 +1,12 @@
 .org-54d5e739-f8cc-4994-a9c9-0aa293d7b729 {
   height: rem-calc(300px);
-  @include breakpoint(large) {
+  @include media-breakpoint-up(lg) {
     height: rem-calc(530px);
   }
     
   &.large {
     height: rem-calc(350px);
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       height: rem-calc(700px);
     }
   }
@@ -27,7 +27,7 @@
       font-weight: bold;
       text-transform: uppercase;
       margin: 4rem 0 0;
-      @include breakpoint(large) { 
+      @include media-breakpoint-up(lg) {
         font-size: rem-calc(96px);
         margin: 8rem 0 0;
         line-height: 6rem;
@@ -37,7 +37,7 @@
     p {
       @extend %regular-sans-serif;
       margin: 0 0 4rem;
-      @include breakpoint(large) { 
+      @include media-breakpoint-up(lg) {
         font-size: rem-calc(48px);
         margin: 0 0 8rem;
       }

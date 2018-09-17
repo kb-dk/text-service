@@ -4,7 +4,7 @@ $divider-height: .75rem;
   height: 3rem;
   background-color: $color-dark-blue-100;
   margin: 2rem 0;
-  @include breakpoint (medium) {
+  @include media-breakpoint-up(md) {
     margin: 3rem 0;
   }
 }
@@ -17,7 +17,7 @@ $divider-height: .75rem;
   &.column {
     width: 100% !important;
     height: 1rem !important;
-    @include breakpoint (small only) {
+    @media (max-width: 767.98px) { // Small only
       width: 100vw !important;
       margin-left: -1.5rem !important;
       max-width: none;
@@ -43,13 +43,13 @@ $divider-height: .75rem;
   &.pull-up {
     z-index: 10;
     margin-bottom: -$divider-height;
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
         margin-bottom: -$divider-height * 2;
     }
   }
   &.pull-down {
     margin-top: -$divider-height;
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
         margin-top: -$divider-height * 2;
         margin-bottom: 1.5rem;
     }
@@ -58,7 +58,7 @@ $divider-height: .75rem;
     border-bottom: $divider-height solid transparent;
     border-right: none;
     border-left: 100vw solid white;
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       border-bottom: $divider-height * 2 solid transparent;
     }
   }
@@ -66,7 +66,7 @@ $divider-height: .75rem;
     border-bottom: $divider-height solid transparent;
     border-left: none;
     border-right: 100vw solid white;
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       border-bottom: $divider-height * 2 solid transparent;
     }
   }
@@ -74,7 +74,7 @@ $divider-height: .75rem;
     border-top: $divider-height solid transparent;
     border-bottom: none;
     border-left: 100vw solid white;
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       border-top: $divider-height * 2 solid transparent;
     }
   }
@@ -82,7 +82,7 @@ $divider-height: .75rem;
     border-top: $divider-height solid transparent;
     border-bottom: none;
     border-right: 100vw solid white;
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       border-top: $divider-height * 2 solid transparent;
     }
   }

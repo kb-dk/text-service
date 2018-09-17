@@ -16,7 +16,7 @@
     float: right;
     height: 8rem;
     margin-left: 2rem;
-    @include breakpoint(small only) {
+    @media (max-width: 767.98px) { // Small only
       display: none;
     }
 

@@ -5,9 +5,9 @@
   padding: 1.5rem 0;
 
   .inner-content {
-    //@include breakpoint(xlarge) {
+    @include media-breakpoint-up(xl) { // Extra large devices (large desktops, 1200px and up)
       padding: 0;
-    //}
+    }
   }
   
   a {
@@ -20,9 +20,9 @@
     }
   }
   .logo {
-    //@include breakpoint(large) {
+    @include media-breakpoint-up(lg){ // Large devices (desktops, 992px and up)
       min-height: 6rem;
-    //}
+    }
   }
 
   .top-nav {
@@ -90,9 +90,9 @@
   // }
   .top-menu {
     display: none;
-    //@include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       display: block;
-    //}
+    }
   }
 
 }

@@ -16,7 +16,7 @@ article {
   article {
     position: relative;
   }
-  @include breakpoint(large) {
+  @include media-breakpoint-up(lg) {
     article {
       h1, h2, p {
         padding: 0 25%;

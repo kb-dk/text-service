@@ -5,7 +5,7 @@ figure {
   &.text {
     margin-bottom: 1.5rem;
   }
-  @include breakpoint(large) {
+  @include media-breakpoint-up(lg) {
     height: 24rem;
   }
   img {
@@ -16,13 +16,13 @@ figure {
     line-height: 1.125rem;
     color: $color-almost-black-50;
     margin-bottom: .75rem;
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       position: absolute;
     }
   }
   &.page-image {
     figcaption {
-      @include breakpoint(large) {
+      @include media-breakpoint-up(lg) {
         width: 20%;
         margin-top: 1.5rem;
       }
@@ -32,14 +32,14 @@ figure {
   }
   .large-9 & {
     &.article-left {
-      @include breakpoint(large) {
+      @include media-breakpoint-up(lg) {
         margin-left: calc(-50% - 0.75rem);
       }
     }
     &.article-center {
       width: 100%;
       padding: 0;
-      @include breakpoint(large) {
+      @include media-breakpoint-up(lg) {
         figcaption {
           width: calc(50% - .75rem);
         }
@@ -47,12 +47,12 @@ figure {
     }
   }
   &.article-left {
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       float: left;
       padding: 0 1.5rem .75rem 0;
       margin-left: calc(-50% - 0.75rem);
       figcaption {
-        @include breakpoint(large) {
+        @include media-breakpoint-up(lg) {
           width: calc(50% - .75rem);
         }
         margin: .50rem 0 0 0;
@@ -60,12 +60,12 @@ figure {
     }
   }
   &.article-right {
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       float: right;
       padding: 0 0 .75rem 1.5rem;
       margin-right: calc(-50% - 0.75rem);
       figcaption {
-        @include breakpoint(large) {
+        @include media-breakpoint-up(lg) {
           width: calc(50% - .75rem);
           text-align: right;
         }
@@ -79,7 +79,7 @@ figure {
     img {
         width: 100%;
     }
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       figcaption {
         width: 50%;
         margin-left: calc(-50% - 0.75rem);

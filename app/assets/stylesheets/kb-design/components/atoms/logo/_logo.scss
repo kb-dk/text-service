@@ -11,7 +11,7 @@
   (min-resolution: 192dpi) { 
     background-image: url(asset-path('logo-mobile.svg'));
   }
-  @media (min-width: 992px) { // Large devices (desktops, 992px and up)
+  @include media-breakpoint-up(lg) { // Large devices (desktops, 992px and up)
     background-image: url(asset-path('logo-ie.png'));
     background-position: center;
     width: 9rem;
@@ -21,7 +21,7 @@
       background-image: url(asset-path('logo.svg'));
     }
   }
-  @media (min-width: 1200px) { // Extra large devices (large desktops, 1200px and up)
+  @include media-breakpoint-up(xl) { // Extra large devices (large desktops, 1200px and up)
     width: 12rem;
   }
   a {

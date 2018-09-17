@@ -18,12 +18,13 @@
 //@include foundation-callout;
 //@include foundation-flex-classes;
 //@import 'util/util';
-//@import 'mixins';
+@import 'mixins';
 //@import 'grid-hacks';
 //@import "settings";
 @import 'typography';
 @import 'icons';
 @import 'themes';
 @import 'global-styles';
+
 @import 'components/organisms/header/header';
 @import 'components/atoms/logo/logo';

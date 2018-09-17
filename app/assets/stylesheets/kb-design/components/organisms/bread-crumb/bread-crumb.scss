@@ -1,6 +1,6 @@
 .org-01c45fc6-df1a-4fd8-b8c3-d1ff8e3b519d {
   @extend %regular-sans-serif;
-  @include breakpoint(large) {
+  @include media-breakpoint-up(lg) {
     padding-bottom: 3rem;
   }
   &.no-padding {

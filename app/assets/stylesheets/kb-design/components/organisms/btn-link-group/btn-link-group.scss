@@ -2,11 +2,11 @@
   z-index: 100;
   @extend %regular-sans-serif;
   .menu {
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
       display: flex;
       justify-content: center;
     }
-    @include breakpoint (small only) {
+    @media (max-width: 767.98px) { // Small only
       max-height: 3rem;
       overflow-y: hidden;
       border-top: 1px solid $color-almost-black-50;

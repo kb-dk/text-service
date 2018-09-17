@@ -2,7 +2,7 @@
     padding: 1.5rem;
     padding-bottom: 0.01rem;
     margin-bottom: 1.5rem;
-    @include breakpoint(large) {
+    @include media-breakpoint-up(lg) {
         margin-bottom: 3rem;
     }
     @extend %regular-sans-serif;
