@@ -7,9 +7,9 @@
 
 @import "bootstrap";
 // Adding website specific styling files
-@import "General/General";
+//@import "General/General";
 // Adding view specific styling files
-@import "Text-service/Text-service";
+//@import "Text-service/Text-service";
 //@import "ADL/ADL";
 
 @import "kb-design/styles";
@@ -17,3 +17,5 @@
 @import 'blacklight/blacklight';
 //font awesome
 @import "font-awesome";
+// Google Material Icons
+@import "material_icons_unicode";

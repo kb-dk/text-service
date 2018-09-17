@@ -75,4 +75,6 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'bootstrap', '~> 4.1.1'
 gem 'oai'
+# Google Material Icons
+gem 'material_icons'
 
