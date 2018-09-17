@@ -17,7 +17,7 @@ $divider-height: .75rem;
   &.column {
     width: 100% !important;
     height: 1rem !important;
-    @media (max-width: 767.98px) { // Small only
+    @include media-breakpoint-down(sm) {
       width: 100vw !important;
       margin-left: -1.5rem !important;
       max-width: none;

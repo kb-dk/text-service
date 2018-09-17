@@ -23,7 +23,7 @@
     }
   }
 
-  @media (max-width: 767.98px) { // Small only
+  @include media-breakpoint-down(sm) {
     &:not(.show-all-filters) {
       a {
         &:nth-child(n+6) {

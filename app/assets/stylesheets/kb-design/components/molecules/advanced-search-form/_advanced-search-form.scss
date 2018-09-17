@@ -9,7 +9,7 @@
         width: 100%;
       }
     }
-    @media (max-width: 767.98px) { // Small only
+    @include media-breakpoint-down(sm) {
       flex-wrap: wrap;
       height: 6rem !important;
       max-height: none !important;

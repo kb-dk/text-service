@@ -1,7 +1,7 @@
 .link-list {
   margin: 0;
   padding: 0;
-  @media (max-width: 767.98px) { // Small only
+  @include media-breakpoint-down(sm) {
    font-size: 0.875rem;
   }
   

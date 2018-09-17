@@ -6,7 +6,7 @@
       display: flex;
       justify-content: center;
     }
-    @media (max-width: 767.98px) { // Small only
+    @include media-breakpoint-down(sm) {
       max-height: 3rem;
       overflow-y: hidden;
       border-top: 1px solid $color-almost-black-50;
