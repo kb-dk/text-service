@@ -17,7 +17,7 @@
             <li><a href="">Åbningstider</a></li>
             <li><a href="">Om det kgl. bibliotek</a></li>
             <li><a href="">In english</a></li>
-            <li><a id="loginBtn" href="">Login @@include('./atoms/icon/index.html', {"icon-type" : "icon-account-circle", "icon-size": "icon-xsmall"})</a></li>
+            <li><a id="loginBtn" href="">Login <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'icon-account-circle', icon_size: 'icon-xsmall'}%></a></li>
           </ul>
         </nav>
         <nav class="main-nav">
@@ -29,8 +29,8 @@
             <li><a href="">Besøg os</a></li>
             <li>
               <button alt="search" id="searchBtn">
-                @@include('./atoms/icon/index.html', {"icon-type" : "icon-search", "icon-size": "icon-medium"})
-                @@include('./atoms/icon/index.html', {"icon-type" : "icon-clear", "icon-size": "icon-medium"})
+                <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'icon-search', icon_size: 'icon-medium'}%>
+                <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'icon-clear', icon_size: 'icon-medium'}%>
               </button>
             </li>
           </ul>
@@ -38,11 +38,11 @@
       </div>
     </div>
     <div class="top-menu">
-        @@include('./molecules/search-form/index.html', {"placeholder": "Søg på KB.dk", "classes": "top-menu collapsed"})
+        <!--@@include('./molecules/search-form/index.html', {"placeholder": "Søg på KB.dk", "classes": "top-menu collapsed"})-->
     </div>
  </div>
 
   <div class="hide-for-large">
-    @@include('./organisms/mobile-menu/index.html')
+    <!--@@include('./organisms/mobile-menu/index.html')-->
   </div>
 </header>
