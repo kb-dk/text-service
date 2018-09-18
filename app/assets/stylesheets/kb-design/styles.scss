@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 @import 'normalize';
 //@import 'settings';
 @import 'colors';
@@ -26,8 +26,8 @@
 @import 'themes';
 @import 'global-styles';
 
-@import "convert_foundation_to_bootstrap";
+@import 'convert_foundation_to_bootstrap';
 
 @import 'components/atoms/atoms';
-@import "components/molecules/molecules";
+@import 'components/molecules/molecules';
 @import 'components/organisms/organisms';
