@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="top-menu">
-        <!--@@include('./molecules/search-form/index.html', {"placeholder": "Søg på KB.dk", "classes": "top-menu collapsed"})-->
+      <%= render :partial =>'shared/components/molecules/search-form/index', locals: {close: false ,placeholder: 'Søg på KB.dk', classes: 'top-menu collapsed'}%>
     </div>
  </div>
 

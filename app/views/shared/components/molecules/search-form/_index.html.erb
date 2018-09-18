@@ -1,0 +1,15 @@
+<div class="mol-84808011-3678-4f25-9e6b-db25897b6de1">
+    <form class="form-wrapper search-area <%= classes %>" onsubmit="event.preventDefault();">
+      <%= render :partial =>'shared/components/atoms/input/index', locals: {type: 'text', placeholder: placeholder}%>
+        <% if close %>
+            <button alt="clear">
+              <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'clear', icon_size: 'icon-small'}%>
+            </button>
+        <% end %>
+      <% unless close %>
+            <button alt="search">
+              <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'search', icon_size: 'icon-medium'}%>
+            </button>
+      <% end %>
+    </form>
+</div>

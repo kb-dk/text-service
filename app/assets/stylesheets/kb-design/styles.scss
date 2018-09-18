@@ -27,7 +27,7 @@
 @import 'global-styles';
 
 @import "convert_foundation_to_bootstrap";
-@import 'components/organisms/header/header';
-@import 'components/atoms/logo/logo';
-@import "components/atoms/icon/icon";
-@import "components/atoms/divider/divider";
+
+@import 'components/atoms/atoms';
+@import "components/molecules/molecules";
+@import 'components/organisms/organisms';
