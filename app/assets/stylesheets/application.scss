@@ -1,3 +1,6 @@
+// Adding new kbdk design variables
+@import 'kb-design/typography';
+
 // Adding website spesific variables before bootstrap
 @import "General/variables";
 
@@ -7,9 +10,9 @@
 
 @import "bootstrap";
 // Adding website specific styling files
-//@import "General/General";
+@import "General/General";
 // Adding view specific styling files
-//@import "Text-service/Text-service";
+@import "Text-service/Text-service";
 //@import "ADL/ADL";
 
 @import "kb-design/styles";

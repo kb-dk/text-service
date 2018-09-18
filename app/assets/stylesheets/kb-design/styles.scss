@@ -21,11 +21,13 @@
 @import 'mixins';
 //@import 'grid-hacks';
 //@import "settings";
-@import 'typography';
+//@import 'typography';
 @import 'icons';
 @import 'themes';
 @import 'global-styles';
 
+@import "convert_foundation_to_bootstrap";
 @import 'components/organisms/header/header';
 @import 'components/atoms/logo/logo';
 @import "components/atoms/icon/icon";
+@import "components/atoms/divider/divider";

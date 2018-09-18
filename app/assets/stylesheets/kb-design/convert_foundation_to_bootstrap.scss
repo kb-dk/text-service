@@ -1,0 +1,25 @@
+.grid-container{
+  @extend .container;
+}
+.grid-x{
+  @extend .row;
+}
+
+.small-6{
+  @extend .col-sm-6;
+}
+
+.large-3{
+  @extend .col-lg-3;
+}
+.large-9{
+  @extend .col-lg-9;
+}
+
+.hide-for-large{
+  @extend .d-lg-none;
+}
+.show-for-medium{
+  @extend .d-none;
+  @extend .d-md-block;
+}
