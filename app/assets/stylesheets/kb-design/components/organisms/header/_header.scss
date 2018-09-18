@@ -14,7 +14,7 @@
     text-decoration: none;
     @extend %medium-sans-serif;
     align-items: center;
-    .icon-account-circle {
+    .account-circle {
       margin: 0 0 0 6px;
 
     }
@@ -64,7 +64,7 @@
   }
   .main-nav { 
     align-items: flex-end;
-    .icon-clear {
+    .clear {
       display: none;
     }
   }
@@ -72,10 +72,10 @@
   .menu-search-open & {
     
     .main-nav { 
-      .icon-clear {
+      .clear {
         display: block;
       }
-      .icon-search {
+      .search {
         display: none;
       }
     }
