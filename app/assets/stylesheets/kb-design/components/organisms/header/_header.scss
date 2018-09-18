@@ -35,7 +35,7 @@
     justify-content: flex-end;
     align-items: flex-start;
     &.main-nav {
-      font-size: rem-calc(20px);
+      font-size: 20px;
     }
     ul {
       @include flex-row;
