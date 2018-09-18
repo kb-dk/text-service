@@ -15,7 +15,7 @@ body {
   @extend %regular-serif;
   color: $color-almost-black-100;
   font-size: $global-font-size;
-  letter-spacing: rem-calc(-0.2px);
+  letter-spacing: -0.2px;
   line-height: 1.5rem;
   overflow-x: hidden;
   .sans-serif {
@@ -28,7 +28,7 @@ body {
 
 h1, h2, h3, h4 {
   @extend %regular-sans-serif;
-  letter-spacing: rem-calc(-0.2px);
+  letter-spacing: -0.2px;
   line-height: 1.5rem;
   margin: 0 auto .75rem;
 }
@@ -84,10 +84,10 @@ a {
   width: 18px;
 }
 small {
-  font-size: rem-calc(14px);
+  font-size: 14px;
 }
 figcaption {
-  font-size: rem-calc(12px);
+  font-size: 12px;
 }
 .accessibility-font {
   /* First font-size fallback to older browsers*/
