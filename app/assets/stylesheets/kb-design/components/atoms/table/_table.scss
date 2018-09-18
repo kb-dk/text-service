@@ -19,12 +19,12 @@
         border-bottom: 1px solid #d6d6d6;
         margin: 0;
         padding: 12px;
-        &:last-child(){
+        &:last-child{
             text-align: right;
         }
     }
     th {
-        font-size: rem-calc(12px);
+        font-size: 12px;
         color: $color-almost-black-50;
         white-space: nowrap;
     }

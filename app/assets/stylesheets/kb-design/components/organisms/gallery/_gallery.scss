@@ -32,10 +32,10 @@
  }
  &.full, &.article-left, &.article-right {
    width: 100%;
-   height: rem-calc(200px);
+   height: 200px;
    position: relative;
    @include media-breakpoint-up(lg) {
-     height: rem-calc(648px);
+     height: 648px;
    }
    .gallery {
       height: 100%;
@@ -48,8 +48,8 @@
    float: left;
 
    @include media-breakpoint-up(lg) {
-     width: rem-calc(500px);
-     height: rem-calc(336px);
+     width: 500px;
+     height: 336px;
      margin: .5rem 2rem;
    }
  }
@@ -57,7 +57,7 @@
    @include media-breakpoint-up(lg) {
     width: calc(200% + 1.5rem);
     margin-left: calc(-50% - .75rem);
-     height: rem-calc(648px);
+     height: 648px;
    }
  }
  &.article-left {
