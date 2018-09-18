@@ -22,4 +22,4 @@
 //= require popper
 //= require bootstrap
 
-//= require_tree .
+// = require_tree .
