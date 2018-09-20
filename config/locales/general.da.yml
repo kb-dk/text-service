@@ -40,9 +40,9 @@ da:
     search:
       form:
         match:
-          one: 'mindst et ord'
-          all: 'alle ord'
-          phrase: 'som ordene står'
+          one: 'Mindst et ord'
+          all: 'Alle ord'
+          phrase: 'Som ordene står'
       list:
         format: 'Formater:'
         text: 'Tekst'

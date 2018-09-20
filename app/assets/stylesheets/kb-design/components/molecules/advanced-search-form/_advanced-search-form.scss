@@ -1,5 +1,9 @@
 .mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a {
   @extend .mol-84808011-3678-4f25-9e6b-db25897b6de1;
+  select{
+    border:none;
+    margin-left: 20px;
+  }
   .form-wrapper {
     box-shadow: $general-box-shadow;
     display: inline-flex;

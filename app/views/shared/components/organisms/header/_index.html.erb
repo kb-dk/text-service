@@ -9,24 +9,19 @@
       </div>
       <div class="show-for-large large-9 cell navs">
         <nav class="top-nav">
-          <ul>
-            <li><a href="#">Au library</a></li>
-            <li><a href="inspiration.html">DAB</a></li>
-            <li><a href="events.html">REX</a></li>
-            <li><a href="">Bliv låner</a></li>
-            <li><a href="">Åbningstider</a></li>
-            <li><a href="">Om det kgl. bibliotek</a></li>
-            <li><a href="">In english</a></li>
-            <li><a id="loginBtn" href="">Login <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'account_circle', icon_size: 'icon-xsmall'}%></a></li>
-          </ul>
+          <%= render 'shared/user_util_links' %>
         </nav>
         <nav class="main-nav">
           <ul>
-            <li><a href="#">Find materiale</a></li>
-            <li><a href="inspiration.html">Inspiration og temaer</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="events.html">Arrangementer</a></li>
-            <li><a href="">Besøg os</a></li>
+            <% ['sks', 'grundtvig', 'pmm', 'adl', 'holberg'].each do |collection| %>
+                <% url = "/text?f[subcollection_ssi][]="+ collection + "&match=one&search_field=Alt" %>
+                <li><a href="<%= url %>"><%= collection %></a></li>
+            <% end %>
+            <!--<li><a href="#"></a></li>-->
+            <!--<li><a href="inspiration.html">Inspiration og temaer</a></li>-->
+            <!--<li><a href="services.html">Services</a></li>-->
+            <!--<li><a href="events.html">Arrangementer</a></li>-->
+            <!--<li><a href="">Besøg os</a></li>-->
             <li>
               <button alt="search" id="searchBtn">
                 <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'search', icon_size: 'icon-medium'}%>
@@ -38,7 +33,7 @@
       </div>
     </div>
     <div class="top-menu">
-      <%= render :partial =>'shared/components/molecules/search-form/index', locals: {close: false ,placeholder: 'Søg på KB.dk', classes: 'top-menu collapsed'}%>
+      <%= render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: 'collapsed'}%>
     </div>
  </div>
 

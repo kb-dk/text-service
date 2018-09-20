@@ -19,7 +19,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-image: url(/assets/img/icons/icon-arrow-dropdown.svg);
+        background-image: url(asset-path('icons/icon-arrow-dropdown.svg'));
         background-repeat: no-repeat;
         background-position: calc(100% - .75rem) center;
     }

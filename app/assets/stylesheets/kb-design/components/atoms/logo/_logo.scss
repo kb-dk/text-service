@@ -6,9 +6,9 @@
   background-position: left center;
   background-size: contain;
   
-  @media 
-  (-webkit-min-device-pixel-ratio: 2), 
-  (min-resolution: 192dpi) { 
+  @media
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
     background-image: url(asset-path('logo-mobile.svg'));
   }
   @include media-breakpoint-up(lg) { // Large devices (desktops, 992px and up)

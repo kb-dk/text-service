@@ -1,13 +1,20 @@
 <div class="mol-84808011-3678-4f25-9e6b-db25897b6de1">
-    <form class="form-wrapper search-area <%= classes %>" onsubmit="event.preventDefault();">
-      <%= render :partial =>'shared/components/atoms/input/index', locals: {type: 'text', placeholder: placeholder}%>
+    <form action="<%= defined?(action) ? action : "" %>" accept-charset="UTF-8" method="<%= defined?(form_method) ? form_method : "get" %>" class="form-wrapper search-area <%= classes %>">
+
+      <%= render_hash_as_hidden_fields(search_state.params_for_search.except(:q, :search_field, :qt, :page, :utf8)) %>
+      <%= hidden_field_tag :search_field, "Alt" %>
+
+      <%= select_tag("match", options_for_select([[t('general.search.form.match.one'),'one'],[t('general.search.form.match.all'),'all'],[t('general.search.form.match.phrase'),'phrase']],params[:match]),{:class => 'search-match'}) %>
+
+
+      <%= render :partial =>'shared/components/atoms/input/index', locals: {name: 'q', id: 'q', type: 'text', placeholder: placeholder}%>
         <% if close %>
             <button alt="clear">
               <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'clear', icon_size: 'icon-small'}%>
             </button>
         <% end %>
       <% unless close %>
-            <button alt="search">
+            <button type="submit" alt="search">
               <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'search', icon_size: 'icon-medium'}%>
             </button>
       <% end %>
