@@ -15,3 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.precompile += %w( application_top.js )
 Rails.application.config.assets.precompile += %w( application_bottom.js )
+Rails.application.config.assets.precompile += %w( catalog.js )

@@ -3,8 +3,10 @@
   <head>
     <title>TextService</title>
     <%= csrf_meta_tags %>
-    <%= javascript_include_tag 'application_top', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+
+    <%= javascript_include_tag 'application_top' %>
 
     <!-- Add Google Analytics -->
     <% if Rails.env.production?  && (root_url.include? "adl.dk") %>
@@ -12,11 +14,12 @@
     <% end %>
   </head>
 
-  <body class="theme-yellow">
+  <body>
   <%= render :partial => 'shared/header_navbar' %>
   <%= render :partial => 'shared/components/atoms/main/index', locals: {content: yield} %>
   <%= render :partial => 'shared/footer' %>
 
-  <%= javascript_include_tag 'application_bottom', 'data-turbolinks-track': 'reload' %>
   </body>
+
+  <%= javascript_include_tag 'application_bottom' %>
 </html>

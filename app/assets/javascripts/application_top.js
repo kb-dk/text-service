@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
 //= require jquery
 //
 // Required by Blacklight
@@ -21,5 +20,4 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-
 
