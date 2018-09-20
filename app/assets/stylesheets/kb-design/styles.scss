@@ -1,28 +1,33 @@
+@import 'variables';
 @import 'normalize';
-@import 'settings';
+//@import 'settings';
 @import 'colors';
-@import 'foundation';
-@import 'foundation-datepicker';
-@include foundation-xy-grid-classes(
-  $base-grid: true,
-  $margin-grid: true,
-  $padding-grid: true,
-  $block-grid: true,
-  $collapse: true,
-  $offset: true,
-  $vertical-grid: true,
-  $frame-grid: true
-);
-@include foundation-visibility-classes;
-@include foundation-callout;
-@include foundation-flex-classes;
-@import 'util/util';
+//@import 'foundation';
+//@import 'foundation-datepicker';
+//@include foundation-xy-grid-classes(
+//  $base-grid: true,
+//  $margin-grid: true,
+//  $padding-grid: true,
+//  $block-grid: true,
+//  $collapse: true,
+//  $offset: true,
+//  $vertical-grid: true,
+//  $frame-grid: true
+//);
+//@include foundation-visibility-classes;
+//@include foundation-callout;
+//@include foundation-flex-classes;
+//@import 'util/util';
 @import 'mixins';
-@import 'grid-hacks';
-@import "settings";
-@import 'typography';
+//@import 'grid-hacks';
+//@import "settings";
+//@import 'typography';
 @import 'icons';
 @import 'themes';
 @import 'global-styles';
-@import '../components/**/*.scss';
-@import '../pages/**/*.scss';
+
+@import 'convert_foundation_to_bootstrap';
+
+@import 'components/atoms/atoms';
+@import 'components/molecules/molecules';
+@import 'components/organisms/organisms';

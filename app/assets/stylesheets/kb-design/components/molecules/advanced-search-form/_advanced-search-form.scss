@@ -1,5 +1,9 @@
 .mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a {
   @extend .mol-84808011-3678-4f25-9e6b-db25897b6de1;
+  select{
+    border:none;
+    margin-left: 20px;
+  }
   .form-wrapper {
     box-shadow: $general-box-shadow;
     display: inline-flex;
@@ -9,7 +13,7 @@
         width: 100%;
       }
     }
-    @include breakpoint(small only) {
+    @include media-breakpoint-down(sm) {
       flex-wrap: wrap;
       height: 6rem !important;
       max-height: none !important;
@@ -31,12 +35,18 @@
     }
   }
   >a {
+    opacity: 1;
+    height: 1rem;
     float:right;
     color: $color-almost-black-50;
+    &.collapsed{
+      opacity: 0;
+      max-height: 0;
+    }
   }
   
   &.collapsed {
-    .dropdown-content {
+     .dropdown-content {
       opacity: 0;
       max-height: 0;
     }

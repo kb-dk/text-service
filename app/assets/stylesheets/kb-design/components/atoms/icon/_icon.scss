@@ -1,0 +1,51 @@
+.icon {
+    display: inline-block;
+    @extend .material-icons;
+    font-size: inherit;
+    letter-spacing: .1px;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    color: inherit;
+    &:before {
+      width: 100%;
+      display: inline-block;
+      height: 100%;
+      text-align: center;
+    }
+  &.facebook {
+    background-image: url(asset-path('facebook.svg'));
+  }
+  &.twitter {
+    background-image: url(asset-path('icon-twitter.svg'));
+  }
+  &.button-right {
+    background-image: url(asset-path('icon-button-right.svg'));
+    background-size: cover;
+  }
+  &.crown {
+    background-image: url(asset-path('icon-crown.svg'));
+  }
+  
+  &.icon-xsmall {
+    width: .75rem;
+    height: .75rem;
+    font-size: .75rem;
+  }
+  &.icon-small {
+    width: 1.125rem;
+    height: 1.125rem;
+    font-size: 1.23rem;
+  }
+  &.icon-medium {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+  }
+  &.icon-large {
+    width: 3rem;
+    height: 3rem;
+    font-size: 3rem;
+  }
+}

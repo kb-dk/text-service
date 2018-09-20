@@ -14,6 +14,9 @@ if (menuSearchBtn) {
       .querySelector('.top-menu .form-wrapper')
       .classList.toggle('collapsed')
     document.body.classList.toggle('menu-search-open')
+    document
+      .querySelector('.mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a a')
+      .classList.toggle('collapsed')
   }
 }
 

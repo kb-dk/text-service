@@ -11,7 +11,7 @@ Array.prototype.slice.call(dropDowninputs).forEach((input) => {
     e.stopPropagation()
   }
   Array.prototype.slice.call(input.querySelectorAll('li')).forEach((li) => {
-    if (input.querySelector('input').value === li.innerText) {
+    if (input.querySelector('input').value === li.innerHTML) {
       li.classList.add('selected')
     }
     li.onclick = (e) => {
@@ -19,7 +19,8 @@ Array.prototype.slice.call(dropDowninputs).forEach((input) => {
         li.classList.remove('selected')
       })
       li.classList.add('selected')
-      input.querySelector('input').value = li.innerText
+      input.querySelector('input').value = li.innerHTML
+      // input.querySelector('input').innerText = li.innerText
       input.classList.toggle('active')
     }
   })
