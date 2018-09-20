@@ -54,18 +54,18 @@
                         <li class="search" id="searchText">
                             <a href="#">Søg på kb.dk</a>
                             <div class="action">
-                                @@include('./atoms/icon/index.html',{"icon-type":"icon-search","icon-size":"icon-small"})
+                              <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'search', icon_size: 'icon-small'}%>
                             </div>
                         </li>
                     </ul>
                     <div class="collapsable mobile-search-area collapsed">
-                        @@include('./molecules/search-form/index.html', {"placeholder": "Søg KB.dk", "close": true})
+                      <%= render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: 'collapsed'}%>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    @@include('./atoms/divider/index.html', {"type": "bottom-left"})
+     <%= render :partial =>'shared/components/atoms/divider/index', locals: {type: 'bottom-left'}%>
     <div class="secondary">
         <div class="inner-content grid-container">
             <div class="grid-x grid-padding-x grid-padding-y">

@@ -1,6 +1,6 @@
 <header class="org-c3af7b08-07d8-4a3e-8b12-5b6de87acf0c">
   <div class="inner-content grid-container">
-    <div class="grid-x">
+    <div class="grid-x row">
       <div class="small-6 large-3 cell" >
         <%= render 'shared/components/atoms/logo/index' %>
       </div>
@@ -13,10 +13,6 @@
         </nav>
         <nav class="main-nav">
           <ul>
-            <% ['sks', 'grundtvig', 'pmm', 'adl', 'holberg'].each do |collection| %>
-                <% url = "/text?f[subcollection_ssi][]="+ collection + "&match=one&search_field=Alt" %>
-                <li><a href="<%= url %>"><%= collection %></a></li>
-            <% end %>
             <!--<li><a href="#"></a></li>-->
             <!--<li><a href="inspiration.html">Inspiration og temaer</a></li>-->
             <!--<li><a href="services.html">Services</a></li>-->
@@ -38,6 +34,6 @@
  </div>
 
   <div class="hide-for-large">
-    <!--@@include('./organisms/mobile-menu/index.html')-->
+    <%= render :partial =>'shared/components/organisms/mobile-menu/index'%>
   </div>
 </header>
