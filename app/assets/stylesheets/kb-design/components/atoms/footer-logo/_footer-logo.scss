@@ -1,9 +1,9 @@
 .footer-logo {
   width: 7rem;
   height: 100%;
-  background-image: url(../img/footer-logo.svg);
+  background-image: url(asset-path('footer-logo.svg'));
   @include media-breakpoint-up(lg) {
-    background-image: url(../img/footer-logo.svg);
+    background-image: url(asset-path('footer-logo.svg'));
     width: 7rem;
   }
   background-repeat: no-repeat;
