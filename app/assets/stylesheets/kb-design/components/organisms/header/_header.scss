@@ -1,9 +1,9 @@
 .org-c3af7b08-07d8-4a3e-8b12-5b6de87acf0c {
+  min-height: 0;
   position: relative;
   transition: min-height 200ms ease-in;
   color: $color-dark-blue-100;
   padding: 1.5rem 0;
-
   .inner-content {
     @include media-breakpoint-up(xl) { // Extra large devices (large desktops, 1200px and up)
       padding: 0;
@@ -85,7 +85,7 @@
   }  
 
    .menu-open & {
-     min-height: 100vh;
+     min-height: 0;
      transition: min-height 500ms ease-out;
    }
   .top-menu {
@@ -94,5 +94,12 @@
       display: block;
     }
   }
-
+  .mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a{
+    height:0;
+  }
 }
+
+.menu-search-open .mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a{
+  height:auto;
+}
+

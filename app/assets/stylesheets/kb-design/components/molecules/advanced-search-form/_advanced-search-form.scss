@@ -35,12 +35,18 @@
     }
   }
   >a {
+    opacity: 1;
+    height: 1rem;
     float:right;
     color: $color-almost-black-50;
+    &.collapsed{
+      opacity: 0;
+      max-height: 0;
+    }
   }
   
   &.collapsed {
-    .dropdown-content {
+     .dropdown-content {
       opacity: 0;
       max-height: 0;
     }
