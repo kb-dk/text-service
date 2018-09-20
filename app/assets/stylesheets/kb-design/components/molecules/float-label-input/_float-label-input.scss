@@ -44,7 +44,7 @@
         outline: none;
         float: right;
         margin: 0;
-        background-image: url(/assets/img/icons/icon-clear.svg);
+        background-image: url(asset-path('icons/icon-clear.svg'));
         background-position: calc(100% - 24px) center;
         background-repeat: no-repeat;
         background-color: transparent;
