@@ -15,17 +15,17 @@
       text-align: center;
     }
   &.facebook {
-    background-image: url(asset-path('facebook.svg'));
+    background-image: url(asset-path('icons/icon-facebook.svg'));
   }
   &.twitter {
-    background-image: url(asset-path('icon-twitter.svg'));
+    background-image: url(asset-path('icons/icon-twitter.svg'));
   }
   &.button-right {
-    background-image: url(asset-path('icon-button-right.svg'));
+    background-image: url(asset-path('icons/icon-button-right.svg'));
     background-size: cover;
   }
   &.crown {
-    background-image: url(asset-path('icon-crown.svg'));
+    background-image: url(asset-path('icons/icon-crown.svg'));
   }
   
   &.icon-xsmall {
