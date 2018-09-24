@@ -1,3 +1,55 @@
-<main class="grid-container fluid">
+<% if get_host_name.include?("text-test") || get_host_name.include?("beta-text")
+     text= t('view-specific.home.bluebar.beta-welcome')
+   else
+     text = t('view-specific.home.bluebar.welcome')
+   end
+%>
+<% divider_type = 'top-left theme-color' %>
+<% if is_front %>
+  <% divider_type = divider_type + ' pull-up'%>
+<% end %>
+<main>
+  <% unless is_front %>
+    <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {is_font: is_front, classes: ''} %>
+  <% end %>
+
+  <%= render :partial => 'shared/components/atoms/divider/index', locals: {type: divider_type } %>
+
+  <% if is_front %>
+  <%= render :partial => 'shared/components/organisms/hero/index-nofilter', locals: {classes:'', heading: text, description:t('view-specific.home.bluebar.description')} %>
+  <% end %>
+
+  <%= render :partial => 'shared/components/organisms/top-container/index' %>
+
+
+  <!--<div class="org-fc19c325-bb61-4c28-ad0e-7c272912ed78 white-cover-bg padding-top">-->
+    <!--<div class="content-header">-->
+      <!--<div class="grid-x grid-margin-x">-->
+        <!--<div class="cell medium-8">-->
+
+
+          <!--<h1>Page intro Heading</h1>-->
+
+        <!--</div>-->
+        <!--<div class="cell medium-4">-->
+          <!--<span class="mol-67b55050-5a26-4bd2-894d-c16ea4e11fa2 hide-for-small-only">-->
+  <!--<button aria-label="Increase Font"><i class="icon icon-format-size icon-medium"></i>-->
+<!--</button>-->
+  <!--<a href=""><i class="icon print icon-medium"></i>-->
+<!--</a>-->
+  <!--<a href=""><i class="icon share icon-medium"></i>-->
+<!--</a>-->
+<!--</span>-->
+        <!--</div>-->
+        <!--<div class="cell small-12 large-8">-->
+          <!--<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda at fugiat deleniti totam? Minus omnis officia maxime perferendis delectus dolorem dignissimos quisquam! Illum architecto voluptas ea officiis! Distinctio, cupiditate quisquam.-->
+          <!--</p>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+<div class="container">
   <%= render :partial =>'shared/content' %>
+</div>
 </main>

@@ -1,28 +1,23 @@
-<%= render :partial => 'catalog/politik_popup' %>
-<% if get_host_name.include?("text-test") || get_host_name.include?("beta-text")
-     text= t('view-specific.home.bluebar.beta-welcome')
-   else
-     text = t('view-specific.home.bluebar.welcome')
-   end
-%>
+
+
+
+
+
 
 <div class="row">
   <div class="homeSearch box-gradient fixed-top-second">
     <div class="search-bg">
       <div class="container">
         <div class="row text-center">
-          <h2>
-            <%= text  %>
-          </h2>
           <h3>
-            <%= t('view-specific.home.bluebar.description') %>
+            <!--<%= t('view-specific.home.bluebar.description') %>-->
           </h3>
           <h3>
-            <a href="<%= t('view-specific.home.bluebar.link')%>", target="_blank">
-              <%= t('view-specific.home.bluebar.link-label') %>
-            </a>
+            <!--<a href="<%= t('view-specific.home.bluebar.link')%>", target="_blank">-->
+              <!--<%= t('view-specific.home.bluebar.link-label') %>-->
+            <!--</a>-->
           </h3>
-          <%= render 'simple_search_form' %>
+          <%-#= render 'simple_search_form' -%>
         </div>
       </div>
     </div>
@@ -30,6 +25,8 @@
 </div>
 <%= render 'first-group-of-boxes' %>
 <%= render 'second-group-of-boxes' %>
+
+<%= render :partial => 'catalog/politik_popup' %>
 
 
 

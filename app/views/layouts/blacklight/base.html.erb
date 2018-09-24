@@ -28,8 +28,7 @@
 </head>
 <body class="<%= render_body_class %> theme-yellow">
 <%= render partial: 'shared/header_navbar' %>
-<%= render partial: 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color pull-up'} %>
-<%= render :partial => 'shared/components/atoms/main/index', locals: {content: 'shared/content'} %>
+<%= render :partial => 'shared/components/atoms/main/index', locals: {content: 'shared/content', is_front:true} %>
 <%= render partial: 'shared/footer' %>
 <%= render partial: 'shared/modal' %>
 
