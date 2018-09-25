@@ -1,7 +1,7 @@
-<div class="org-c2710682-7e51-4505-bd94-d40665c25bda <%= classes %>">
+<div class="org-b4075c29-7e0b-46f8-87eb-fdde9f83e0e9 <%= classes %>">
   <div class="grid-x grid-margin-x">
     <% list.each_with_index do |subject, index| %>
-        <div class="small-12 medium-4 cell">
+        <div data-filter="populaere artikler-tidsskrifter" class="small-12 medium-4 large-3 cell">
           <%= render :partial => 'shared/components/organisms/content-spot/index', locals: {header: t("view-specific.home.boxes.#{subject}.title"), description: t("view-specific.home.boxes.#{subject}.description"), image:"#{subject}.jpg", classes:'', url:urls[index]} %>
         </div>
     <% end %>

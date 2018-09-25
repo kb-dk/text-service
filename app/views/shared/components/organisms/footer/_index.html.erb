@@ -8,7 +8,7 @@
         <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: 'INFORMATION', list: [[t('view-specific.footer.about'), page_path('about-text-service'), '_self'],['Cookie- og Privatlivspolitik','http://www.kb.dk/da/kb/webstedet/cookiepolitik.html','_blank'],[t('view-specific.footer.contact-us-label'),t('view-specific.footer.contact-us-link'), '_self']]} %>
       </div>
       <div class="small-6 medium-3 cell">
-        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: 'ØVRIGE', list: [[t("view-specific.home.boxes.authors.title"),send("authors_path"), '_self'],[t("view-specific.home.boxes.periods.title"),send("periods_path"), '_self'],[t("view-specific.home.boxes.titles.title"),'/?q=&search_field=Alt&sort=work_title_ssi+asc', '_self']]} %>
+        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: 'ØVRIGE', list: [[t("view-specific.home.boxes.author.title"),send("authors_path"), '_self'],[t("view-specific.home.boxes.period.title"),send("periods_path"), '_self'],[t("view-specific.home.boxes.title.title"),'/?q=&search_field=Alt&sort=work_title_ssi+asc', '_self']]} %>
       </div>
       <div class="small-6 medium-3 cell">
         <%= render :partial =>'shared/components/molecules/contact-info/index' %>

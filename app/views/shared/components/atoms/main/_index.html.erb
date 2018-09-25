@@ -4,23 +4,22 @@
      text = t('view-specific.home.bluebar.welcome')
    end
 %>
-<% divider_type = 'top-left theme-color' %>
-<% if is_front %>
-  <% divider_type = divider_type + ' pull-up'%>
-<% end %>
+
 <main>
   <% unless is_front %>
     <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {is_font: is_front, classes: ''} %>
   <% end %>
 
-  <%= render :partial => 'shared/components/atoms/divider/index', locals: {type: divider_type } %>
+  <%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color pull-up' } %>
 
   <% if is_front %>
   <%= render :partial => 'shared/components/organisms/hero/index-nofilter', locals: {classes:'', heading: text, description:t('view-specific.home.bluebar.description')} %>
   <% end %>
 
   <%= render :partial => 'shared/components/organisms/top-container/index' %>
-  <%= render :partial => 'shared/components/organisms/layout/1-column', locals: {classes:'padding-top'} %>
+  <%= render :partial => 'catalog/first-group-of-boxes' %>
+  <%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'bottom-left theme-color' } %>
+  <%= render :partial => 'catalog/second-group-of-boxes' %>
 
 
 
