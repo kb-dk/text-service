@@ -1,32 +1,17 @@
+<% if get_host_name.include?("text-test") || get_host_name.include?("beta-text")
+     text= t('view-specific.home.bluebar.beta-welcome')
+   else
+     text = t('view-specific.home.bluebar.welcome')
+   end
+%>
 
-
-
-
-
-
-<!--<div class="row">-->
-  <!--<div class="homeSearch box-gradient fixed-top-second">-->
-    <!--<div class="search-bg">-->
-      <!--<div class="container">-->
-        <!--<div class="row text-center">-->
-          <!--<h3>-->
-            <!--&lt;!&ndash;<%= t('view-specific.home.bluebar.description') %>&ndash;&gt;-->
-          <!--</h3>-->
-          <!--<h3>-->
-            <!--&lt;!&ndash;<a href="<%= t('view-specific.home.bluebar.link')%>", target="_blank">&ndash;&gt;-->
-              <!--&lt;!&ndash;<%= t('view-specific.home.bluebar.link-label') %>&ndash;&gt;-->
-            <!--&lt;!&ndash;</a>&ndash;&gt;-->
-          <!--</h3>-->
-          <%- # render 'simple_search_form' -%>
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-<%- # render 'first-group-of-boxes' -%>
-<%- # render 'second-group-of-boxes' -%>
-
-<%- # render :partial => 'catalog/politik_popup' -%>
+<%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color pull-up' } %>
+<%= render :partial => 'shared/components/organisms/hero/index-nofilter', locals: {classes:'', heading: text, description:t('view-specific.home.bluebar.description')} %>
+<%= render :partial => 'shared/components/organisms/top-container/index' %>
+<%= render :partial => 'catalog/first-group-of-boxes' %>
+<%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'bottom-left theme-color' } %>
+<%= render :partial => 'catalog/second-group-of-boxes' %>
+<%= render :partial => 'shared/components/organisms/cookies-alert/index', locals: {description:t('view-specific.home.cookie'), url:'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html'} %>
 
 
 
