@@ -1,0 +1,16 @@
+<div class="org-c2710682-7e51-4505-bd94-d40665c25bda <%= classes %>">
+  <div class="grid-x grid-margin-x">
+    <% ['author', 'title', 'period'].each do |subject| %>
+        <%
+          if (subject == 'title')
+            url = "/?q=&search_field=Alt&sort=work_title_ssi+asc"
+          else
+            url = send("#{subject}s_path")
+          end
+        %>
+        <div class="small-12 medium-4 cell">
+          <%= render :partial => 'shared/components/organisms/content-spot/index', locals: {header: t("view-specific.home.boxes.#{subject}.title"), description: t("view-specific.home.boxes.#{subject}.description"), image:"#{subject}.jpg", classes:'', url:url} %>
+        </div>
+    <% end %>
+  </div>
+</div>

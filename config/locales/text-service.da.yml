@@ -6,13 +6,13 @@ da:
     home:
       cookie: 'I tekstportalen bruger vi cookies til at huske dine indstillinger og indsamle statistik.'
       boxes:
-        authors:
+        author:
           title: 'Forfattere'
           description: 'Find en forfatter, få en introduktion og læs forfatterens værker.'
-        titles:
+        title:
           title: 'Titler'
           description: 'Få overblik over alle værktitler.'
-        periods:
+        period:
           title: 'Perioder'
           link:
           description: 'Læs værker fra en bestemt tidsperiode.'

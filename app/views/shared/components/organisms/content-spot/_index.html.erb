@@ -1,0 +1,19 @@
+<div class="org-48c7471a-9609-40ff-92f1-2b853886634d  <%= classes %>">
+  <div class="hover-overlay">
+      <div class="img-frame">
+        <%= render :partial => 'shared/components/atoms/bg-img/index', locals: {image: image} %>
+        <!--@@if(btn) {-->
+          <!--@@include('./atoms/button/index.html', {"type":"so-small", "text": "So Small"})-->
+        <!--}-->
+      </div>
+      <h3><%= header %></h3>
+      <p><%= description %></p>
+  </div>
+  
+  <div class="bottom">
+        <div>
+          <%= render :partial => 'shared/components/molecules/icon-link/index', locals: {text: 'Søg i samlingen', url:url} %>
+        </div>
+  </div>
+  
+</div>
