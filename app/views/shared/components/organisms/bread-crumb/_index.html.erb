@@ -4,7 +4,10 @@
       <div class="hide-for-small-only cell small-12">
         <div class="bread-crumb">
           <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'home', icon_size: 'icon-xsmall'}%>
-          <a href="<%= root_path %>">Forside</a>
+          <a href="http://www.kb.dk">Forside</a>
+          <% items.each do | item |%>
+              / <a href="<%= item[1] %>"><%= item[0]%></a>
+          <% end %>
         </div>
       </div>
     </div>

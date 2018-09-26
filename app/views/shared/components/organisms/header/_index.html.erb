@@ -13,18 +13,18 @@
         </nav>
         <nav class="main-nav">
           <ul>
-            <li>
-              <button alt="search" id="searchBtn">
-                <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'search', icon_size: 'icon-medium'}%>
-                <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'clear', icon_size: 'icon-medium'}%>
-              </button>
-            </li>
+            <!--<li>-->
+              <!--<button alt="search" id="searchBtn">-->
+                <%- # render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'search', icon_size: 'icon-medium'} -%>
+                <%- # render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'clear', icon_size: 'icon-medium'} -%>
+              <!--</button>-->
+            <!--</li>-->
           </ul>
         </nav>
       </div>
     </div>
     <div class="top-menu">
-      <%= render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: ''}%>
+      <%- # render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: ''} -%>
     </div>
  </div>
 

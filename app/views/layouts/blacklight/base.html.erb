@@ -26,14 +26,7 @@
   <%= csrf_meta_tags %>
   <%= content_for(:head) %>
 </head>
-
-<% if has_search_parameters?
-     is_search_page = true
-   else
-     is_search_page = false
-   end %>
-
-<body class="<%= render_body_class %> theme-yellow <%= is_search_page ? 'menu-search-open' : '' %>">
+<body class="<%= render_body_class %> theme-yellow">
 <%= render partial: 'shared/header_navbar' %>
 <%= render :partial => 'shared/components/atoms/main/index', locals: {content: 'shared/content', is_front:true} %>
 <%= render partial: 'shared/footer' %>
