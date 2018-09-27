@@ -7,14 +7,8 @@
         </div>
       </div>
       <div class="cell small-12 large-9 large-offset-3">
+        <%= render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: ''}%>
         <%= render 'search_results' %>
-
-        <!--@@if (includes.one.path) {-->
-            <!--@@include('@@includes.one.path')-->
-          <!--}-->
-          <!--@@if (includes.two.path) {-->
-            <!--@@include('@@includes.two.path', '@@args')-->
-          <!--}-->
       </div>
     </div>
   </div>
