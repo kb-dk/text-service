@@ -11,7 +11,11 @@
 // about supported directives.
 //
 
+//= require_tree ./components
 
 //= require catalog.js
 //= require DkBreve.js
-//= require_tree ./components
+
+//= require text_service/hide_show_facsimili.js
+//= require text_service/hide_show_text_possibilities.js
+

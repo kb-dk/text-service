@@ -40,7 +40,7 @@
   .mol-9db6cd37-efc9-415d-a2ab-38bfacb57aff {
     background-color: map-get($theme-map, 'tertiary');
   }
-  button {
+  .button {
     &.theme-color {
       background-color: map-get($theme-map, 'primary');
       border: 1px solid map-get($theme-map, 'primary');

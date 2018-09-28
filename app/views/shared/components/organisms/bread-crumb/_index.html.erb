@@ -5,8 +5,12 @@
         <div class="bread-crumb">
           <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'home', icon_size: 'icon-xsmall'}%>
           <a href="http://www.kb.dk">Forside</a>
-          <% items.each do | item |%>
-              / <a href="<%= item[1] %>"><%= item[0]%></a>
+          <% items.each_with_index do | item, index |%>
+              / <% if (index == items.size - 1) | (item[1] == '') %>
+                  <%= item[0]%>
+                <% else %>
+                  <a href="<%= item[1] %>"><%= item[0]%></a>
+                <% end %>
           <% end %>
         </div>
       </div>

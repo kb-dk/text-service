@@ -30,8 +30,8 @@ da:
         title: 'Tekst portal'
         welcome: 'Tekstportal'
         beta-welcome: 'Tekstportal [test] '
-        description1: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
-        description: 'En adgang til den danske litteraturhistorie'
+        description1: 'Her kan du læse og søge i værker fra middelalderen til det 20. årh.'
+        description: 'Værker fra middelalderen til det 20. århundrede'
         link-label: 'Det Kgl. Bibliotek'
         link: 'http://www.kb.dk'
     footer:

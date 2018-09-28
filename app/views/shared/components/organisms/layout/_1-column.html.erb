@@ -11,6 +11,9 @@
           <% if elements.include? 'page_intro_without_icon' %>
              <%= render :partial => 'shared/components/organisms/page-intro/index-noicon', locals: { heading:heading , description:description} %>
           <% end %>
+          <% if elements.include? 'page_intro_3' %>
+              <%= render :partial => 'shared/components/organisms/page-intro/index-3', locals: { heading:heading , description:description, right_side_title:collection} %>
+          <% end %>
         <% end %>
         <% if elements.include? 'filtered_banner' %>
             <%= render :partial => 'shared/components/organisms/filter-content/index', locals: {list:list, urls:urls, classes: ''} %>

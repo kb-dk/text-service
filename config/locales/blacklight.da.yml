@@ -117,7 +117,7 @@ da:
           blank: 'Du skal indtaste en udbyder'
           invalid: "Du skal indtaste en gyldig udbyder"
 
-    back_to_search: 'Tilbage til søgeresultat'
+    back_to_search: 'Resultatliste'
     back_to_bookmarks: 'Tilbage til bogmærker'
 
     search:

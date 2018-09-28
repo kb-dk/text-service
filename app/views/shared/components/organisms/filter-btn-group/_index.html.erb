@@ -1,0 +1,13 @@
+<div class="org-63a1bc7e-5093-4bf0-8d2e-fcf5bfe32aca">
+    <div class="grid-x grid-margin-x">
+        <div class="small-12 large-12 cell">
+          <% list.each do |button|%>
+              <%= render :partial =>  'shared/components/atoms/filter-btn/index', locals: {text: button[0], url: button[1], classes:button[2],options: button[3] } %>
+          <% end %>
+            <!--<div class="show-more show-for-small-only">-->
+                <!--<span class="more-text">Vis flere filtre</span>-->
+                <!--<span class="less-text">Vis færre filtre</span>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
