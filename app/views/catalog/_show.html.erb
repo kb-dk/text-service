@@ -15,14 +15,32 @@
 <div class="<%= container_classes %>">
 
 <%# if current_search_session %>
-    <div id="appliedParams" class="clearfix constraints-container">
-      <% if @search_context && current_search_session %>
-        <%= render 'previous_next_doc'  %>
-        <%= link_to t('blacklight.search.start_over'), start_over_path, class: "catalog_startOverLink btn btn-secondary" %>
-        <%= link_back_to_catalog class: 'btn btn-secondary' %>
-      <% end %>
-      <button class="btn btn-secondary" onclick="javascript:toggleInfoBox()">Info</button>
+  <div id="appliedParams" class="clearfix constraints-container row">
+    <div class="cell col-sm-12 col-lg-8">
+
+      <!--<button class="btn btn-secondary" onclick="javascript:toggleInfoBox()">Info</button>-->
+
+      <!--<button class="tableOfContent btn btn-secondary" data-toggle="modal" data-target="#toc">-->
+        <!--<span class="d-none d-lg-inline"><%= t('general.landing_page.table_of_content') %></span>-->
+      <!--</button>-->
+
+      <!--<button id="exposeLinkThing" class="btn btn-secondary" onclick="javascript:toggleExposable()">Vis tekstmuligheder</button>-->
+
+      <!--<% if has_facs %>-->
+          <!--<button id="hide_facsimile" class="btn btn-secondary hidden"><%= t('general.text_toolbar.hide_facsimile') %></button>-->
+          <!--<button id="show_facsimile" class="btn btn-secondary"><%= t('general.text_toolbar.show_facsimile') %></button>-->
+      <!--<% end %>-->
+    <%= render :partial => 'shared/components/organisms/filter-btn-group/index', locals: {list: [['Info','javascript:toggleInfoBox()','',''],[t('general.landing_page.table_of_content'),'','tableOfContent','data-toggle=modal data-target=#toc'],['Tekstmuligheder','javascript:toggleExposable()','',''],[t('general.text_toolbar.hide_facsimile'),'','','']]} %>
     </div>
+    <div class="cell col-sm-12 col-lg-4">
+      <% if @search_context && current_search_session %>
+          <%= render 'previous_next_doc'  %>
+          <% # link_to t('blacklight.search.start_over'), start_over_path, class: "catalog_startOverLink btn btn-secondary" -%>
+          <% # link_back_to_catalog class: 'btn btn-secondary' -%>
+      <% end %>
+    </div>
+  </div>
+
 
 
 

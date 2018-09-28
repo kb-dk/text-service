@@ -1,4 +1,3 @@
-<%= render :partial => 'catalog/politik_popup' %>
 <% if get_host_name.include?("text-test") || get_host_name.include?("beta-text")
      text= t('view-specific.home.bluebar.beta-welcome')
    else
@@ -6,30 +5,21 @@
    end
 %>
 
-<div class="row">
-  <div class="homeSearch box-gradient fixed-top-second">
-    <div class="search-bg">
-      <div class="container">
-        <div class="row text-center">
-          <h2>
-            <%= text  %>
-          </h2>
-          <h3>
-            <%= t('view-specific.home.bluebar.description') %>
-          </h3>
-          <h3>
-            <a href="<%= t('view-specific.home.bluebar.link')%>", target="_blank">
-              <%= t('view-specific.home.bluebar.link-label') %>
-            </a>
-          </h3>
-          <%= render 'simple_search_form' %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<%= render 'first-group-of-boxes' %>
-<%= render 'second-group-of-boxes' %>
+<%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [['Tekstportal',root_path]]} %>
+<%= render :partial =>'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'}%>
+<%= render :partial => 'shared/components/organisms/top-container/index' %>
+<%= render :partial => 'shared/components/organisms/layout/1-column', locals: { elements:['advanced_search'], classes:'white-cover-bg padding-top', heading: text, description:t('view-specific.home.bluebar.description1')} %>
+
+<%= render :partial =>'shared/components/atoms/divider/index', locals: {type: 'top-right pull-up'}%>
+<%= render :partial => 'shared/components/organisms/hero/index', locals: {filters: '', classes:'', heading: t('view-specific.home.bluebar.title'), description:t('view-specific.home.bluebar.description'), image_name: 'hero.jpg'} %>
+<%= render :partial =>'shared/components/atoms/divider/index', locals: {type: 'bottom-left pull-down'}%>
+
+<%= render :partial => 'shared/components/organisms/top-container/index' %>
+
+<%= render :partial => 'catalog/first-group-of-boxes' %>
+<%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'bottom-left theme-color' } %>
+<%= render :partial => 'catalog/second-group-of-boxes' %>
+<%= render :partial => 'shared/components/organisms/cookies-alert/index', locals: {description:t('view-specific.home.cookie'), url:'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html'} %>
 
 
 
