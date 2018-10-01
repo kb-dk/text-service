@@ -26,6 +26,8 @@ da:
           title: 'Arkiv for Dansk Litteratur'
         holberg:
           title: 'Ludvig Holbergs Værker'
+        tfs:
+          title: 'Trykkefrihedens Skrifter'
       bluebar:
         welcome: 'Det Kgl. Biblioteks tekstportal'
         beta-welcome: 'Det Kgl. Biblioteks tekstportal [test] '
