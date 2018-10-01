@@ -25,6 +25,8 @@ module ApplicationHelper
          name = "Arkiv for Dansk Litteratur"
        when "grundtvig"
          name = "Grundtvigs Værker"
+       when "tfs"
+         name = "Trykkefrihedens Skrifter"
      end
      name
   end
