@@ -18,4 +18,4 @@ test: &test
   url: <%= "http://127.0.0.1:#{ENV['TEST_JETTY_PORT'] || 8888}/solr/blacklight-core" %>
 production:
   adapter: solr
-url: <%= ENV['SOLR_URL'] ||  "http://index-test-01.kb.dk/solr/adl-core" %>
+url: <%= ENV['SOLR_URL'] ||  "http://index-stage-01.kb.dk/solr/adl-core" %>
