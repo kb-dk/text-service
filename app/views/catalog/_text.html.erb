@@ -16,7 +16,7 @@
 
 <div class="textToolbar">
   <%= link_to(solr_document_path(@document, format: :pdf), :target => "_blank") do %>
-      <i class="icon get_app"></i> <span class="d-none d-lg-inline"><%= t('general.text_toolbar.text') %></span>
+      <i title="<%= t('general.text_toolbar.text') %>" class="icon get_app"></i>
   <% end %>
   <% if query.present? %>
   <a href="javascript:toggleHighlight()">
