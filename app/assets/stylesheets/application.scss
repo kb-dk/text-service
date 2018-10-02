@@ -9,13 +9,15 @@
 //@import "ADL/variables";
 
 @import "bootstrap";
+
+@import "kb-design/styles";
+
 // Adding website specific styling files
 @import "General/General";
 // Adding view specific styling files
 //@import "Text-service/Text-service";
 //@import "ADL/ADL";
 
-@import "kb-design/styles";
 
 @import 'blacklight/blacklight';
 //font awesome

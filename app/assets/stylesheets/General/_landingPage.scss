@@ -3,6 +3,9 @@ main .document{
 }
 .lpContainer, .kbOSDViewer {
   min-height: 620px;
+  i.icon:hover{
+    color:$color-dark-blue-100;
+  }
 }
 
 .ocr, .kbOSDViewer {
@@ -85,7 +88,7 @@ main .document{
 }
 
 .kbOSDViewer {
-  top: -30px; //to align with the downlaod facsimile button
+  top: -45px; //to align with the downlaod facsimile button
 }
 
 .openseadragon-canvas{
@@ -101,27 +104,13 @@ main .document{
   float:right;
 }
 
-//.textToolbar, .kbOSDToolbar, .downloadLinkContainer, .ocr{
-//  a:not([href]):not([tabindex]){
-//    color: $primary !important;
-//  }
-//  .fa {
-//    color: $primary !important;
-//    &:hover {
-//      color: $primary !important;
-//    }
-//  }
-//}
-.kbOSDToolbar i:hover {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
 .transparentBackground{
   background-color: transparent !important;
 }
-
 .textToolbar{
   border-bottom: 1px solid #c0c0c0;
+}
+.textToolbar, .lpFacsContainer .downloadLinkContainer{
   margin-left:10px;
   margin-right:10px;
   padding-top: 5px;
