@@ -16,6 +16,6 @@
 //= require catalog.js
 //= require DkBreve.js
 
-//= require text_service/hide_show_facsimili.js
-//= require text_service/hide_show_text_possibilities.js
+//= require_tree ./text_service
+
 

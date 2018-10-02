@@ -4,8 +4,7 @@ da:
       fullscreen: 'Se tekst i fuld skærm'
       text: 'Hent PDF'
       highlight: 'Tilføj/fjern markering'
-      show_facsimile: 'Vis faksimile'
-      hide_facsimile: 'Luk faksimile'
+      facsimile: 'Faksimile'
     landing_page:
       facsimile: 'Hent PDF'
       info: 'Info'

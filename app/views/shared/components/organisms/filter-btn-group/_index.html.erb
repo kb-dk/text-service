@@ -2,7 +2,7 @@
     <div class="grid-x grid-margin-x">
         <div class="small-12 large-12 cell">
           <% list.each do |button|%>
-              <%= render :partial =>  'shared/components/atoms/filter-btn/index', locals: {text: button[0], url: button[1], classes:button[2],options: button[3] } %>
+              <%= render :partial =>  'shared/components/atoms/filter-btn/index', locals: {text: button[0], id: button[1], url: button[2], classes:button[3],options: button[4] } %>
           <% end %>
             <!--<div class="show-more show-for-small-only">-->
                 <!--<span class="more-text">Vis flere filtre</span>-->
