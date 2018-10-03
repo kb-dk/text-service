@@ -7,11 +7,7 @@ function toggleInfoBox(){
     var infoBox = document.getElementById('info-box');
     var btn = document.getElementById("toggleInfo");
 
-    if (infoBox.classList.contains('hidden')){
-        infoBox.classList.remove('hidden');
-        btn.classList.add("active");
-    } else {
-        infoBox.classList.add('hidden');
-        btn.classList.remove("active");
-    }
+    infoBox.classList.toggle('hidden');
+    btn.classList.toggle("active");
+
 }

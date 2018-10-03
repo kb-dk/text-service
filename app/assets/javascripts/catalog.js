@@ -77,12 +77,3 @@ function show_work_search(id, target_selector, q) {
         }
     });
 }
-
-// Toggle highlight in landingpages
-function toggleHighlight() {
-    var el = document.getElementsByClassName('hit');
-    var len = el.length;
-    for (i = 0; i < len; i++) {
-        el[i].classList.toggle('transparentBackground');
-    }
-}
