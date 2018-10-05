@@ -77,21 +77,3 @@ function show_work_search(id, target_selector, q) {
         }
     });
 }
-
-// Toggle highlight in landingpages
-function toggleHighlight() {
-    var el = document.getElementsByClassName('hit');
-    var len = el.length;
-    for (i = 0; i < len; i++) {
-        el[i].classList.toggle('transparentBackground');
-    }
-}
-// Hide and show Anvendt udgave
-function toggleInfoBox(){
-    var el = document.getElementById('info-box');
-    if (el.classList.contains('is-visible')){
-        el.classList.remove('is-visible');
-    } else {
-        el.classList.add('is-visible');
-    }
-}

@@ -1,0 +1,1 @@
+<%= render :partial => 'shared/components/atoms/facet/item', locals: {panel_heading:facet_field_label(facet_field.key), panel_body:yield, classes: should_collapse_facet?(facet_field) ? '' : 'active' } %>
