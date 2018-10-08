@@ -1,3 +1,36 @@
+.dl-invert dt{
+  color:$color-almost-black-50;
+}
+.org-1658591f-a5c0-404a-8f54-856d0e08ecd0 {
+  margin-bottom: 3rem;
+}
+a {
+  display: inline;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.all-matches{
+  @extend .button;
+  @extend .so-small;
+}
+
+.pagination ul li{
+  list-style: none;
+  color:$color-dark-blue-100;
+}
+.page-item.active .page-link {
+  z-index: 1;
+  color: white;
+  background-color: $color-dark-blue-100;
+  border-color: $color-dark-blue-100;
+}
+.page-link{
+  color: $color-dark-blue-100;
+}
+
 //.author-img-thumbnail{
 //  padding: 4px;
 //  margin-right: 30px;
