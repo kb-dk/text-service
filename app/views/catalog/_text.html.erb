@@ -6,7 +6,7 @@
 
 <%# If the search field is fritekst, get the last query and remove " %>
 <%# If not, the the q parameter will be left empty and the render_snippet will not highlight the text %>
-<% if ["Alt", "phrase"].include? search_field %>
+<% if ['Alt', 'phrase','prose','verse','play', 'phrase'].include? search_field %>
     <% query_params = current_search_session.try(:query_params)
        query  = query_params[:q] if query_params.present?
        qmatch = query_params['match'] if query_params.present?

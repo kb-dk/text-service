@@ -54,6 +54,9 @@ da:
         all_filters: 'Al tekst'
         title: 'Titel'
         author: 'Forfatter'
+        verse: 'Vers og strofer'
+        prose: 'Prosa'
+        play: 'Dialog (drama)'
         phrase: 'Sætning'
       sort:
         relevance: 'Standard'
