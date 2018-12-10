@@ -15,7 +15,7 @@
 <!--</a>-->
 <!-- Button trigger all matches modal -->
 <!-- Check if the search field is fritekst and if there is a query -->
-<% if search_field == "Alt" and query.present? %>
+<% if (search_field == "Alt"  || search_field == 'prose' || search_field == 'verse' || search_field == 'play')  and query.present? %>
     <button type="button" class="btn btn-secondary contentSearch" data-toggle="modal" data-target="#searchFullText">
       <i class="icon search" aria-hidden="true"></i>
       <%= t('general.landing_page.all_instances') %>
@@ -63,7 +63,7 @@
 </div>
 
 <%= javascript_tag do %>
-    <% if search_field == 'Alt' %>
+    <% if search_field == 'Alt' || search_field == 'prose' || search_field == 'verse' || search_field == 'play' %>
       $(document).ready(
         function () {
           show_work_search("<%= @document['id'] %>", $('#matchesModalBody'), "<%= query %>");

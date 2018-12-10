@@ -12,6 +12,18 @@ module ApplicationHelper
     res
   end
 
+  def get_genre_name args
+    name = args
+    case name
+      when "poetry"
+      name = "Poesi"
+      when "prose"
+      name = "Prosa"
+      when "play"
+      name = "Skuespil"
+    end
+  end
+
   def get_collection_name args
      name = args
      case name

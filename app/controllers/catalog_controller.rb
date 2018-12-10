@@ -66,6 +66,7 @@ class CatalogController < ApplicationController
     # facet bar
 
     config.add_facet_field 'author_name_ssim', :label => 'Forfatter', :single => true, :limit => 10, :collapse => false
+    config.add_facet_field 'contains_ssi', :label => 'Indeholder mest', :single => true, :limit => 10, :collapse => false, helper_method: :get_genre_name
     config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => false, helper_method: :get_period_name
     config.add_facet_field 'subcollection_ssi', :label => 'Samling', :single => true, :limit => 10, :collapse => false, helper_method: :get_collection_name
     config.add_facet_field 'text_type_ssi', :label => 'Tekstkategori', :single => true, :limit => 10, :collapse => false
@@ -162,6 +163,37 @@ class CatalogController < ApplicationController
       field.solr_local_parameters = {
       }
     end
+
+    config.add_search_field('verse', label: I18n.t('general.config.search.verse')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'verse_extract_tesim',
+        :pf => 'verse_extract_tesim'
+      }
+      field.solr_local_parameters = {
+      }
+    end
+
+    config.add_search_field('prose', label: I18n.t('general.config.search.prose')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'prose_extract_tesim',
+        :pf => 'prose_extract_tesim'
+      }
+      field.solr_local_parameters = {
+      }
+    end
+
+    config.add_search_field('play', label: I18n.t('general.config.search.play')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'performace_extract_tesim',
+        :pf => 'performace_extract_tesim'
+      }
+      field.solr_local_parameters = {
+      }
+    end
+
 
 #
 # We can leave some sediment here
@@ -389,7 +421,7 @@ class CatalogController < ApplicationController
 
   # method to be used in the views, that checks if the selected search field is fritekst
   def search_field_fritekst?
-    ['Alt','phrase'].include? params['search_field']
+    ['Alt','phrase','prose','verse','play'].include? params['search_field']
   end
   helper_method :search_field_fritekst?
 
