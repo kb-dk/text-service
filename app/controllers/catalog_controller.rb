@@ -187,8 +187,8 @@ class CatalogController < ApplicationController
     config.add_search_field('play', label: I18n.t('general.config.search.play')) do |field|
       field.solr_parameters = {
         :fq => ['cat_ssi:work'],
-        :qf => 'performace_extract_tesim',
-        :pf => 'performace_extract_tesim'
+        :qf => 'performance_extract_tesim',
+        :pf => 'performance_extract_tesim'
       }
       field.solr_local_parameters = {
       }
