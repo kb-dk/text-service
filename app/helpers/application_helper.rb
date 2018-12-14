@@ -79,10 +79,10 @@ module ApplicationHelper
     args[:document] = @document
     # Construct the first part and add the anvendt udgave and the page number
     not_monograph = args[:document]['is_monograph_ssi']=='no'
-    args[:omit_author] = true if not_monograph
+    args[:omit_author] = true unless not_monograph
     cite = ""
     cite += args[:document]['author_name_ssi'] + ": " if(args[:document]['author_name_ssi'].present?  && args[:document][:id] != args[:document]['volume_id_ssi'])
-    cite += "”" + args[:document]['work_title_tesim'].first + "”, i " if(not_monograph && args[:document]['work_title_tesim'].present? && args[:document][:id] != args[:document]['volume_id_ssi'])
+    cite += "”" + args[:document]['work_title_tesim'].first.strip + "”, i " if(not_monograph && args[:document]['work_title_tesim'].present? && args[:document][:id] != args[:document]['volume_id_ssi'])
     cite += construct_citation(args)
     cite += ", s. <span id='pageNumber'>"+args[:document]['page_ssi']+"</span>" if args[:document]['page_ssi'].present?
     cite += ". "
