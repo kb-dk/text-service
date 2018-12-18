@@ -61,6 +61,8 @@ class SearchBuilder < Blacklight::SearchBuilder
   def more_search_params solr_params
     # this is not the optimal way of doing phrase search, but i have not find the right solr params
     if blacklight_params['match'] == 'phrase'
+      # We do have problems with string searching when the query contains quotation marks
+      solr_params['q'] = solr_params['q'].gsub(/\"/,'')
       solr_params['q'] = "\"#{solr_params['q']}\""
       solr_params['qs'] = 0
     end
