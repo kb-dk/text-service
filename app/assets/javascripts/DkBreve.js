@@ -44,12 +44,14 @@ window.dkBreve = (function (window, $, undefined) {
                 ocrElem = $('.ocr').first(),
                 citationPageNumber = document.getElementById('pageNumber'),
                 pageCount = $('.pageBreak', ocrElem).length + 1;
+	    if(citationPageNumber != null) {
                 if (page>1) {
                     citationPageNumber.innerText = ($('.ocr .pageBreak a small')[page - 2]).textContent;
                 }
                 else{
                     citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
                 }
+	    }
 
             if (page < 1 || page > pageCount) {
                 throw('DkBreve.gotoOcrPage: page "' + page + '" out of bounds.');
@@ -92,13 +94,15 @@ window.dkBreve = (function (window, $, undefined) {
                         citationPageNumber = document.getElementById('pageNumber'),
                         hashTagInURI = document.getElementById('hashTagInURI'),
                         kbosd = KbOSD.prototype.instances[0]; // The dkBreve object should have a kbosd property set to the KbOSD it uses!
-                    if (currentOcrPage > 1 &&  citationPageNumber != null && hashTagInURI != null) {
-                        citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;
-                        hashTagInURI.innerText = "#"+($('.ocr .pageBreak')[currentOcrPage - 2]).id;
-                    } else {
-                        citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
-                        hashTagInURI.innerText = "";
-                    }
+		    if(citationPageNumber != null) {
+			if (currentOcrPage > 1  && hashTagInURI != null) {
+                            citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;
+                            hashTagInURI.innerText = "#"+($('.ocr .pageBreak')[currentOcrPage - 2]).id;
+			} else {
+                            citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
+                            hashTagInURI.innerText = "";
+			}
+		    }
                     if (kbosd.getCurrentPage() !== currentOcrPage) {
                         that.scrollingInProgress = true;
                         kbosd.setCurrentPage(currentOcrPage, function () {
