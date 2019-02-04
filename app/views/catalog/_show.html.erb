@@ -1,6 +1,30 @@
 <% has_text = document['has_text_ssi'].present? && document['has_text_ssi'] == 'yes' %>
 <% has_facs = document['has_facs_ssi'].present? && document['has_facs_ssi'] == 'yes' %>
 
+<!--Retrieve the query-->
+<% query_params = current_search_session.try(:query_params) %>
+<% search_field = query_params.nil? ? "empty" : query_params[:search_field]  %>
+<% doc_presenter = show_presenter(@document) %>
+<%# If the search field is fritekst, get the last query and remove " %>
+<%# If not, the the q parameter will be left empty and the render_snippet will not highlight the text %>
+<% if ["Alt", "phrase"].include? search_field %>
+    <% query_params = current_search_session.try(:query_params)
+       query  = query_params[:q] if query_params.present?
+       qmatch = query_params['match'] if query_params.present?
+       query  = query.gsub!(/^\"|\"?$/, '').strip if query.present?
+    %>
+<% end %>
+
+<% buttons_list = [
+            ['Info','toggleInfo','javascript:toggleInfoBox()','','',true],
+            [t('general.landing_page.table_of_content'),'','','tableOfContent','data-toggle=modal data-target=#toc',true],
+            ['Tekstmuligheder','toggleTextPossibilities','javascript:toggleExposable()','','',true],
+            [t('general.text_toolbar.highlight'),'toggleHighlight','javascript:toggleHighlight()','active','',query.present?],
+            [t('general.text_toolbar.facsimile'),'toggleFacsimile','javascript:toggleFacsimile()','','',has_facs]
+          ]
+%>
+
+
 <script type="text/javascript">
 // this variables are used in DkBreve.js
   first_page = '<%= @document['page_ssi'] %>';
@@ -13,14 +37,24 @@
 <div class="<%= container_classes %>">
 
 <%# if current_search_session %>
-    <div id="appliedParams" class="clearfix constraints-container">
-      <% if @search_context && current_search_session %>
-        <%= render 'previous_next_doc'  %>
-        <%= link_to t('blacklight.search.start_over'), start_over_path, class: "catalog_startOverLink btn btn-secondary" %>
-        <%= link_back_to_catalog class: 'btn btn-secondary' %>
-      <% end %>
-      <button class="btn btn-secondary" onclick="javascript:toggleInfoBox()">Info</button>
+  <div id="appliedParams" class="clearfix constraints-container row">
+
+    <div class="cell col-sm-12 col-lg-8">
+      <%= render :partial => 'shared/components/organisms/filter-btn-group/index', locals: {list: buttons_list} %>
     </div>
+
+    <div class="cell col-sm-12 col-lg-4">
+      <% if @search_context && current_search_session %>
+          <%= render 'previous_next_doc'  %>
+          <% # link_to t('blacklight.search.start_over'), start_over_path, class: "catalog_startOverLink btn btn-secondary" -%>
+          <% # link_back_to_catalog class: 'btn btn-secondary' -%>
+      <% end %>
+    </div>
+  </div>
+
+  <div id="text_possibilities" class="cell col-sm-12">
+    <%= render :partial => 'text_possibilities_toolbar' %>
+  </div>
 
 
 

@@ -1,0 +1,22 @@
+.atom-45190b42-956a-4415-8760-0be25cd1ac57 {
+    text-transform: uppercase;
+    margin-right: .75rem;
+    @extend %regular-sans-serif;
+    color: $color-light-gray;
+    text-decoration: none;
+    cursor: default;
+    &:hover {
+        color: $color-light-gray;
+    }
+    &.active {
+        text-decoration: underline;
+       color: $color-almost-black-100;
+       cursor: pointer;
+       &:hover {
+           color: initial;
+       }
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}

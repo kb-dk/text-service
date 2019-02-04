@@ -1,0 +1,47 @@
+.org-54d5e739-f8cc-4994-a9c9-0aa293d7b729 {
+  height: 300px;
+  @include media-breakpoint-up(lg) {
+    height: 530px;
+  }
+    
+  &.large {
+    height: 350px;
+    @include media-breakpoint-up(lg) {
+      height: 700px;
+    }
+  }
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: -999;
+  .grid-x, .flex-container {
+    height: 100%;
+  }
+  .inner-content {
+    color: white;
+    text-align: right;
+    line-height: 4rem;
+    h1 {
+      @extend %regular-display;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 4rem 0 0;
+      @include media-breakpoint-up(lg) {
+        font-size: 96px;
+        margin: 8rem 0 0;
+        line-height: 6rem;
+      }
+      
+    }
+    p {
+      @extend %regular-sans-serif;
+      margin: 0 0 4rem;
+      @include media-breakpoint-up(lg) {
+        font-size: 48px;
+        margin: 0 0 8rem;
+      }
+    }
+  }
+
+}

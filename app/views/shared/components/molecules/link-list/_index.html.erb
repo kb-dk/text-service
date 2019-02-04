@@ -1,0 +1,10 @@
+<ul class="link-list">
+  <li>
+    <h3><%= title %></h3>
+  </li>
+  <% list.each do |item| %>
+    <li>
+      <a target="<%= item[2] %>" href="<%= item[1] %>"><%= item[0] %></a>
+    </li>
+  <% end %>
+</ul>

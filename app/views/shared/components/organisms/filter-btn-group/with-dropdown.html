@@ -1,0 +1,23 @@
+<div class="org-63a1bc7e-5093-4bf0-8d2e-fcf5bfe32aca">
+    <div class="grid-x grid-margin-x">
+        <div class="small-12 medium-10 cell">
+            @@include("./atoms/filter-btn/index.html", {"text": "Populære", "filter": "populaere"})
+            @@include("./atoms/filter-btn/index.html", {"text": "Artikler og tidsskrifter", "filter": "artikler-tidsskrifter"})
+            @@include("./atoms/filter-btn/index.html", {"text": "Bøger", "filter": "boger"})
+            @@include("./atoms/filter-btn/index.html", {"text": "Småtryk", "filter": "smaatryk"})
+            @@include("./atoms/filter-btn/index.html", {"text": "Øvrigt", "filter": "ovrigt"})
+            @@include("./atoms/filter-btn/index.html", {"text": "Textil", "filter": "textil"})
+            @@include("./atoms/filter-btn/index.html", {"text": "Landbrug", "filter": "landbrug"})
+            @@include("./atoms/filter-btn/index.html", {"text": "maskiner", "filter": "maskiner"})
+            @@include("./atoms/filter-btn/index.html", {"text": "Plakater", "filter": "plakater"})
+            @@include("./atoms/filter-btn/index.html", {"text": "Kunst", "filter": "kunst"})
+            <div class="show-more show-for-small-only">
+                <span class="more-text">Vis flere filtre</span>
+                <span class="less-text">Vis færre filtre</span>
+            </div>
+        </div>
+        <div class="cell small-12 medium-2">
+                @@include('./molecules/drop-down-input/index.html', {"placeholder": "Alle lokationer", "text": "Alle lokationer", "datalist": ["Alle lokationer", "Kbh", "Aarhus", "Odense"]})
+        </div>
+    </div>
+</div>

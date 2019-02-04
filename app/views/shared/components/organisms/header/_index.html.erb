@@ -1,0 +1,34 @@
+<header class="org-c3af7b08-07d8-4a3e-8b12-5b6de87acf0c">
+  <div class="inner-content grid-container">
+    <div class="grid-x row">
+      <div class="small-6 large-3 cell" >
+        <%= render 'shared/components/atoms/logo/index' %>
+      </div>
+      <div class="small-6 hide-for-large cell" >
+        <%= render 'shared/components/atoms/hamburger-menu/index' %>
+      </div>
+      <div class="show-for-large large-9 cell navs">
+        <nav class="top-nav">
+          <%= render 'shared/user_util_links' %>
+        </nav>
+        <nav class="main-nav">
+          <ul>
+            <!--<li>-->
+              <!--<button alt="search" id="searchBtn">-->
+                <%- # render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'search', icon_size: 'icon-medium'} -%>
+                <%- # render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'clear', icon_size: 'icon-medium'} -%>
+              <!--</button>-->
+            <!--</li>-->
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="top-menu">
+      <%- # render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: ''} -%>
+    </div>
+ </div>
+
+  <div class="hide-for-large">
+    <%= render :partial =>'shared/components/organisms/mobile-menu/index'%>
+  </div>
+</header>

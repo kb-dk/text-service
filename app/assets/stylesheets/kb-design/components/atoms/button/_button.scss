@@ -1,0 +1,58 @@
+.button {
+    background-color:$color-dark-blue-100;
+    border: 1px solid $color-dark-blue-100;
+    color: #fff;
+    border-radius: 5px;
+    height: 2.875rem;
+    font-size: .875rem;
+    padding-left: 2.875rem;
+    padding-right: 2.875rem;
+    outline: none;
+    transition:  background-color 200ms ease-in;
+    margin: 0 .75rem .75rem 0;
+    &:hover{
+        background-color: darken($color-dark-blue-100,10%);
+    } 
+    &:disabled{
+        color: white;
+        background-color: $color-almost-black-50;
+        border:0;
+    }
+    
+    &.secondary {
+        border:0;
+        background-color: #fff;
+        color:$color-dark-blue-100;
+        &:disabled{
+            background-color: #fff;
+            color:$color-almost-black-50;
+            border:0;
+        }
+        &:hover{
+            background-color: darken( #fff,10%);
+        }  
+    }
+    &.so-large {
+        font-size: 1.125rem;
+        height: 3.75rem;
+    }
+    &.so-small {
+        font-size: .75rem;
+        height: 2.25rem;
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+    }
+    &.so-small {
+        font-size: .75rem;
+        height: 2.25rem;
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+    }
+    &.hollow{
+        background-color: #fff;
+        color:$color-dark-blue-100;
+        &:hover{
+            background-color: darken( #fff,10%);
+        } 
+    }
+}

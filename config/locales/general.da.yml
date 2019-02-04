@@ -3,9 +3,8 @@ da:
     text_toolbar:
       fullscreen: 'Se tekst i fuld skærm'
       text: 'Hent PDF'
-      highlight: 'Tilføj/fjern markering'
-      show_facsimile: 'Vis faksimile'
-      hide_facsimile: 'Luk faksimile'
+      highlight: 'Markering'
+      facsimile: 'Faksimile'
     landing_page:
       facsimile: 'Hent PDF'
       info: 'Info'
@@ -40,9 +39,9 @@ da:
     search:
       form:
         match:
-          one: 'mindst et ord'
-          all: 'alle ord'
-          phrase: 'som ordene står'
+          one: 'Mindst et ord'
+          all: 'Alle ord'
+          phrase: 'Som ordene står'
       list:
         format: 'Formater:'
         text: 'Tekst'
@@ -54,6 +53,10 @@ da:
         all_filters: 'Al tekst'
         title: 'Titel'
         author: 'Forfatter'
+        verse: 'Verser & strofer'
+        prose: 'Prosa'
+        play: 'Dialog (drama)'
+        author_title: 'Titel & forfatter'
         phrase: 'Sætning'
       sort:
         relevance: 'Standard'

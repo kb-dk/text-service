@@ -1,0 +1,16 @@
+.contact-info {
+  margin: 0;
+  padding: 0;
+  a {
+    padding-top: 0.5rem;
+  }
+  li {
+    list-style: none;
+    a {
+      padding-right: 0.5rem;
+    }
+  }
+  li:last-child {
+    padding-top: 1rem;
+  }
+}

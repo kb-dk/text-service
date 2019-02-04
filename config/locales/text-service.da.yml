@@ -6,13 +6,13 @@ da:
     home:
       cookie: 'I tekstportalen bruger vi cookies til at huske dine indstillinger og indsamle statistik.'
       boxes:
-        authors:
+        author:
           title: 'Forfattere'
           description: 'Find en forfatter, få en introduktion og læs forfatterens værker.'
-        titles:
+        title:
           title: 'Titler'
           description: 'Få overblik over alle værktitler.'
-        periods:
+        period:
           title: 'Perioder'
           link:
           description: 'Læs værker fra en bestemt tidsperiode.'
@@ -26,10 +26,14 @@ da:
           title: 'Arkiv for Dansk Litteratur'
         holberg:
           title: 'Ludvig Holbergs Værker'
+        tfs:
+          title: 'Trykkefrihedens Skrifter'
       bluebar:
-        welcome: 'Det Kgl. Biblioteks tekstportal'
-        beta-welcome: 'Det Kgl. Biblioteks tekstportal [test] '
-        description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
+        title: 'Tekst portal'
+        welcome: 'Tekstportal'
+        beta-welcome: 'Tekstportal [test] '
+        description1: 'Her kan du læse og søge i værker fra middelalderen til det 20. årh.'
+        description: 'Værker fra middelalderen til det 20. århundrede'
         link-label: 'Det Kgl. Bibliotek'
         link: 'http://www.kb.dk'
     footer:

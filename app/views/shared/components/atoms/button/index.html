@@ -1,0 +1,7 @@
+
+@@if (type !== 'disabled' && type !== 'disabled secondary'){
+    <button alt="submit" class="button @@type">@@text</button>
+}
+@@if (type === 'disabled' || type === 'disabled secondary') {
+    <button disabled alt="submit" class="button @@type">@@text</button>
+}

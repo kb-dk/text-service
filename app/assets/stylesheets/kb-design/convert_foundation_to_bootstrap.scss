@@ -1,0 +1,59 @@
+
+.cell{
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+}
+
+.grid-container{
+  @extend .container;
+}
+
+.grid-x{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 100%;
+}
+.inner-content{
+  @extend .container;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Convert grid system from foundation to bootstrap
+$fbps: 'small', 'medium', 'large'; // foundation_breakpoints
+$bbps: 'sm', 'md', 'lg'; // bootstrap_breakpoints
+@for $i from 1 through length($bbps) {
+  @for $j from 1 through 12 {
+    .#{nth($fbps, $i)}-#{$j} {
+      @extend .col-#{nth($bbps, $i)}-#{$j}; // fx. .small-2 to .col-sm-2
+    }
+    @if $j != 12 {
+      .#{nth($fbps, $i)}-offset-#{$j}{
+        @extend .offset-#{nth($bbps, $i)}-#{$j}; // fx. .small-offset-2 to .offset-sm-2
+      }
+    }
+  }
+}
+
+.show-for-medium{
+  @extend .d-none;
+  @extend .d-md-block;
+}
+
+.hide-for-large{
+  @extend .d-lg-none;
+}
+
+.show-for-large{
+  @extend .d-none;
+  @extend .d-lg-block;
+}

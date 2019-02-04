@@ -6,67 +6,16 @@
 
 <%# If the search field is fritekst, get the last query and remove " %>
 <%# If not, the the q parameter will be left empty and the render_snippet will not highlight the text %>
-<% if ["Alt", "phrase"].include? search_field %>
+<% if ['Alt', 'phrase','prose','verse','play', 'phrase'].include? search_field %>
     <% query_params = current_search_session.try(:query_params)
        query  = query_params[:q] if query_params.present?
        qmatch = query_params['match'] if query_params.present?
        query  = query.gsub!(/^\"|\"?$/, '').strip if query.present?
     %>
 <% end %>
-<div class="textToolbar">
-  <%= link_to(solr_document_path(@document, format: :pdf), :target => "_blank") do %>
-      <i class="fa fa-lg fa-download" aria-hidden="true"></i> <span class="d-none d-lg-inline"><%= t('general.text_toolbar.text') %></span>
-  <% end %>
-  <% if query.present? %>
-  <a href="javascript:toggleHighlight()">
-    <i class="fa fa-paint-brush"></i><span class="d-none d-lg-inline"><%= t('general.text_toolbar.highlight') %></span>
-  </a>
-  <% end %>
-  <%= render :partial => 'show_tools_work' %>
-  <% if has_facs %>
-      <a id="hide_facsimile" class="hidden"><i class="fa fa-chevron-right fa-large" title="<%= t('general.text_toolbar.hide_facsimile') %>"></i><span class="d-none d-xl-inline"><%= t('general.text_toolbar.hide_facsimile') %></span></a>
-      <a id="show_facsimile"><i class="fa fa-chevron-left fa-large" title="<%= t('general.text_toolbar.show_facsimile') %>"></i><span><%= t('general.text_toolbar.show_facsimile') %></span></a>
-  <% end %>
 
-  <i id="ocrFullscreenButton" class="fa fa-expand fa-lg" title="<%= t('general.text_toolbar.fullscreen') %>"></i>
+<%= render :partial => 'text_toolbar' %>
 
-
-  <% if @document['cat_ssi'] == 'author' %>
-
-      <a class="icon-list" href="<%= "/?utf8=✓&search_field=author&q=#{@document['work_title_tesim'].try(:join)}" %>">
-        <i class="fa fa-list" aria-hidden="true"></i> <%= t('view-specific.work_list') %>
-      </a>
-  <% end %>
-  <a id="exposeLinkThing" href="javascript:toggleExposable()">Vis tekstmuligheder</a>
-  <!-- <%= @document[:id] %> -->
-  <% if @document[:capabilities_ssi] %>
-  <% if @document[:capabilities_ssi].match(/^.+$/) %>
-  <%= @document[:capabilities_ssi].html_safe %>
-  <% end %>
-  <% end %>
-  <% if @document[:id].match(/sks-/) %>
-      <%
-        txt_id = @document['id'].gsub(/(txt)|(txr)|(kom)/, 'txt-root').gsub(/-root.*$/, '-root')
-        txr_id = @document['id'].gsub(/(txt)|(txr)|(kom)/, 'txr-root').gsub(/-root.*$/, '-root')
-        kom_id = @document['id'].gsub(/(txt)|(txr)|(kom)/, 'kom-root').gsub(/-root.*$/, '-root')
-      %>
-
-      <%= link_to("/text/" + txt_id) do %>
-          <i class="fa fa-file-text" aria-hidden="true"></i>
-          <%= t('general.landing_page.text')%>
-      <% end %>
-      <%= link_to ("/text/" + kom_id) do %>
-          <i class="fa fa-comment" aria-hidden="true"></i>
-          <%= t('general.landing_page.Comments')%>
-      <% end %>
-      <%= link_to ("/text/" + txr_id) do %>
-          <i class="fa fa-file-text-o" aria-hidden="true"></i>
-          <%= t('general.landing_page.text_statements')%>
-      <% end %>
-
-  <% end %>
-
-</div>
 <article class="ocr">
   <%= render partial: 'fullscreen_buttons' %>
 
@@ -86,40 +35,6 @@
   <%= FileServer.render_snippet(@document['id'],
                                 {q: query, match: qmatch, op: "render"}) %>
 
-  <script>
-    var elems  = document.getElementsByClassName("exposableDocumentFunctions");
-    var anchor = document.getElementById("exposeLinkThing");
-    var status = 'hidden';
-
-    function toggleExposable() {
-      if(status == 'hidden') {
-        showExposableFunctions();
-      } else {
-        hideExposableFunctions();
-      }
-    }
-
-    function showExposableFunctions() {
-      var i;
-      for (i = 0; i < elems.length; i++) {
-          elems[i].style.display='block';
-      }  
-      status = 'visible';
-      anchor.style.color='white';
-      anchor.style.backgroundColor='black';
-    } 
-
-    function hideExposableFunctions() {
-      var i;
-      for (i = 0; i < elems.length; i++) {
-          elems[i].style.display='none';
-      }  
-      status = 'hidden';
-      anchor.style.color='black';
-      anchor.style.backgroundColor='white';
-    } 
-
-  </script>
 </article>
 
 

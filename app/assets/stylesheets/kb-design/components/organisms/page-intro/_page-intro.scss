@@ -1,0 +1,36 @@
+.org-fc19c325-bb61-4c28-ad0e-7c272912ed78 {
+  .right_side_title{
+    width: 100%;
+    height: 100%;
+    color: #989898;
+    float: right;
+    text-align: right;
+  }
+  &.margin-bottom {
+    margin-bottom: 2.25rem;
+  }
+  .cell {
+    background: white;
+  }
+  .content-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @extend %medium-sans-serif;
+    font-size: 1rem;
+    &.centered {
+      h1 {
+        text-align: center;
+        font-size: 3.75rem;
+        line-height: 5rem;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+      }
+    }
+    // .mol-84808011-3678-4f25-9e6b-db25897b6de1 {
+
+    //   margin-top: .75rem;
+    // }
+  }
+}

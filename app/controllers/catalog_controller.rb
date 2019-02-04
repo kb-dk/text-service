@@ -66,8 +66,10 @@ class CatalogController < ApplicationController
     # facet bar
 
     config.add_facet_field 'author_name_ssim', :label => 'Forfatter', :single => true, :limit => 10, :collapse => false
+    config.add_facet_field 'contains_ssi', :label => 'Indeholder mest', :single => true, :limit => 10, :collapse => false, helper_method: :get_genre_name
     config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => false, helper_method: :get_period_name
     config.add_facet_field 'subcollection_ssi', :label => 'Samling', :single => true, :limit => 10, :collapse => false, helper_method: :get_collection_name
+    config.add_facet_field 'text_type_ssi', :label => 'Tekstkategori', :single => true, :limit => 10, :collapse => false
 
     #
     # set :index_range to true if you want the facet pagination view to have facet prefix-based navigation
@@ -124,6 +126,16 @@ class CatalogController < ApplicationController
     # urls.  A display label will be automatically calculated from the :key,
     # or can be specified manually to be different.
 
+    config.add_search_field('author_title',label: I18n.t('general.config.search.author_title')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'author_name_tesim work_title_tesim',
+        :pf => 'work_title_tesim'
+      }
+      field.solr_local_parameters = {
+      }
+    end
+
     # This one uses all the defaults set by the solr request handler. Which
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
@@ -137,30 +149,61 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('title', label: I18n.t('general.config.search.title')) do |field|
-      # solr_parameters hash are sent to Solr as ordinary url query params.
-      field.solr_parameters = {
-          :fq => ['cat_ssi:work'],
-          :qf => 'work_title_tesim',
-          :pf => 'work_title_tesim',
-      }
+#    config.add_search_field('title', label: I18n.t('general.config.search.title')) do |field|
+#      # solr_parameters hash are sent to Solr as ordinary url query params.
+#      field.solr_parameters = {
+#          :fq => ['cat_ssi:work'],
+#          :qf => 'work_title_tesim',
+#          :pf => 'work_title_tesim',
+#      }
       # :solr_local_parameters will be sent using Solr LocalParams
       # syntax, as eg {! qf=$title_qf }. This is neccesary to use
       # Solr parameter de-referencing like $title_qf.
       # See: http://wiki.apache.org/solr/LocalParams
+ #     field.solr_local_parameters = {
+#      }
+#    end
+
+ #   config.add_search_field('author', label: I18n.t('general.config.search.author')) do |field|
+#      field.solr_parameters = {
+#          :fq => ['cat_ssi:work'],
+#          :qf => 'author_name_tesim',
+#          :pf => 'author_name_tesim'
+#      }
+#      field.solr_local_parameters = {
+#      }
+#    end
+
+    config.add_search_field('verse', label: I18n.t('general.config.search.verse')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'verse_extract_tesim',
+        :pf => 'verse_extract_tesim'
+      }
       field.solr_local_parameters = {
       }
     end
 
-    config.add_search_field('author', label: I18n.t('general.config.search.author')) do |field|
+    config.add_search_field('prose', label: I18n.t('general.config.search.prose')) do |field|
       field.solr_parameters = {
-          :fq => ['cat_ssi:work'],
-          :qf => 'author_name_tesim',
-          :pf => 'author_name_tesim'
+        :fq => ['cat_ssi:work'],
+        :qf => 'prose_extract_tesim',
+        :pf => 'prose_extract_tesim'
       }
       field.solr_local_parameters = {
       }
     end
+
+    config.add_search_field('play', label: I18n.t('general.config.search.play')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'performance_extract_tesim',
+        :pf => 'performance_extract_tesim'
+      }
+      field.solr_local_parameters = {
+      }
+    end
+
 
 #
 # We can leave some sediment here
@@ -388,7 +431,7 @@ class CatalogController < ApplicationController
 
   # method to be used in the views, that checks if the selected search field is fritekst
   def search_field_fritekst?
-    ['Alt','phrase'].include? params['search_field']
+    ['Alt','phrase','prose','verse','play'].include? params['search_field']
   end
   helper_method :search_field_fritekst?
 

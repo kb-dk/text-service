@@ -1,0 +1,21 @@
+<ul class="link-list">
+  <li>
+    <%= render :partial =>'shared/components/atoms/footer-logo/index'%>
+  </li>
+  <li>
+    <span>Postbox 2149 <br> 1016 København K</span>
+  </li>
+  <li>
+    <span>Tlf: (+45) 33 47 47 47</span>
+  </li>
+  <li>
+    <span>kb@kb.dk</span>
+  </li>
+  <li>
+    <span>EAN: 5798000795297</span>
+  </li>
+  <li class="show-for-medium">
+      <a href=""><%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'facebook', icon_size: 'icon-medium'}%></a>
+      <a href=""><%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'twitter', icon_size: 'icon-medium'}%></a>
+  </li>
+</ul>

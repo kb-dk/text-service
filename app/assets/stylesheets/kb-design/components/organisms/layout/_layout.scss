@@ -1,0 +1,28 @@
+.org-f2202134-9456-4e13-ad1e-56f87086ec03 {
+  min-height: 6rem;
+  &.padding-top {
+    padding-top: .75rem;
+  }
+  &.padding-bottom {
+    padding-bottom: .75rem;
+  }
+  // &:not(.theme-bg) {
+  //   margin-bottom: .75rem;
+  // }
+  .aside {
+    margin-right: 1.5rem;
+    width: calc(25% - 1.5rem);
+  }
+  .grid-padding-y {
+    .cell {
+      padding-bottom: 0;
+    }
+  }
+  .right-col {
+    @extend %regular-sans-serif;
+    strong {
+      @extend %medium-sans-serif;
+      font-weight: normal;
+    }
+  }
+}

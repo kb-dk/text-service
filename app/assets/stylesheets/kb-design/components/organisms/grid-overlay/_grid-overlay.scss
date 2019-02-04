@@ -1,0 +1,18 @@
+.org-0476ac35-f52b-4669-bddf-2689c11d6027 {
+  display: none;
+  width: $vw-minus-scrollbar;
+  height: 100vh;
+  background: transparent;
+  position: fixed !important;
+  z-index: 100;
+  .grid-x, .cell {
+    height: 100%;
+  }
+  .cell {
+    background: pink;
+    opacity: .5;
+  }
+ .show-grid & {
+    display: block;
+ }
+}

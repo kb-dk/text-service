@@ -1,0 +1,8 @@
+<fieldset>
+    @@loop('./atoms/checkbox/index.html', [
+    {"name": "test-check", "id": "checkbox1", "label": "standard"},
+    {"name": "test-check", "id": "checkbox2", "selected": "checked", "label": "checked"},
+    {"name": "test-check", "id": "checkbox3", "disabled": "disabled", "label": "disabled"},
+    {"name": "test-check", "id": "checkbox4", "disabled": "disabled", "selected": "checked", "label": "checked and disabled"}
+    ])
+</fieldset>

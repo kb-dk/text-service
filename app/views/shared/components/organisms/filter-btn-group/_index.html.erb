@@ -1,0 +1,11 @@
+<div class="org-63a1bc7e-5093-4bf0-8d2e-fcf5bfe32aca">
+    <div class="grid-x grid-margin-x">
+        <div class="small-12 large-12 cell">
+          <% list.each do |button|%>
+              <% if button[5] %>
+                <%= render :partial =>  'shared/components/atoms/filter-btn/index', locals: {text: button[0], id: button[1], url: button[2], classes:button[3],options: button[4] } %>
+              <% end %>
+          <% end %>
+        </div>
+    </div>
+</div>

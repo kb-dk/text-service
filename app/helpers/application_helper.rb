@@ -12,6 +12,18 @@ module ApplicationHelper
     res
   end
 
+  def get_genre_name args
+    name = args
+    case name
+      when "poetry"
+      name = "Poesi"
+      when "prose"
+      name = "Prosa"
+      when "play"
+      name = "Skuespil"
+    end
+  end
+
   def get_collection_name args
      name = args
      case name
@@ -25,8 +37,17 @@ module ApplicationHelper
          name = "Arkiv for Dansk Litteratur"
        when "grundtvig"
          name = "Grundtvigs Værker"
+       when "tfs"
+         name = "Trykkefrihedens Skrifter"
      end
      name
+  end
+
+  def show_volume args
+    id = args[:document]['volume_id_ssi']
+    return unless id.present?
+    udgave = construct_citation(args)+"."
+    link_to udgave.html_safe, solr_document_path(id)
   end
 
   def construct_citation args
@@ -37,15 +58,18 @@ module ApplicationHelper
       author = args[:document]['author_name_ssi'] + ": " if args[:document]['author_name_ssi'].present?
     end
     title = ""
+
     if args[:document]['volume_title_tesim'].present?
       title = content_tag(:em, args[:document]['volume_title_tesim'].try(:first).to_s)
     end
     # Add author and value as one string so they don't get separated by comma
-    if args[:omit_author].present?
+
+    if args[:omit_author]
       label << title
     else
       label << author + title
     end
+
     label << "udg. af #{args[:document]['editor_ssi']}"         if args[:document]['editor_ssi'].present?
     label << "#{args[:document]['publisher_tesim'].join(', ')}" if args[:document]['publisher_tesim'].present?
     label << "#{args[:document]['date_published_ssi']}"         if args[:document]['date_published_ssi'].present?
@@ -54,21 +78,31 @@ module ApplicationHelper
     return label.join(', ')  
   end
 
-  def show_volume args
-    id = args[:document]['volume_id_ssi']
-    return unless id.present?
-    udgave = construct_citation(args)+"."
-    link_to udgave.html_safe, solr_document_path(id)
-  end
-
   def citation args
     args[:document] = @document
     # Construct the first part and add the anvendt udgave and the page number
-    not_monograph = args[:document]['is_monograph_ssi']=='no'
-    args[:omit_author] = true if not_monograph
+    if args[:document]['is_monograph_ssi']=='yes'
+      is_monograph = true
+      args[:omit_author] = true
+    else
+      is_monograph = false
+      args[:omit_author] = false
+    end 
+
     cite = ""
     cite += args[:document]['author_name_ssi'] + ": " if(args[:document]['author_name_ssi'].present?  && args[:document][:id] != args[:document]['volume_id_ssi'])
-    cite += "”" + args[:document]['work_title_tesim'].first + "”, i " if(not_monograph && args[:document]['work_title_tesim'].present? && args[:document][:id] != args[:document]['volume_id_ssi'])
+    cite += "”" + args[:document]['work_title_ssi'].strip + "”"
+    
+    # I know this looks wierd, but it seems we need the ", i " for
+    # both anthologies and monographs, but I want to keep it for the
+    # time being.
+
+    if(!is_monograph && args[:document]['work_title_ssi'].present? && args[:document][:id] != args[:document]['volume_id_ssi'])
+      cite += ", i "
+    else
+      cite += ", i " 
+    end
+
     cite += construct_citation(args)
     cite += ", s. <span id='pageNumber'>"+args[:document]['page_ssi']+"</span>" if args[:document]['page_ssi'].present?
     cite += ". "

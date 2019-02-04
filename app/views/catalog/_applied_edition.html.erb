@@ -1,15 +1,14 @@
 <% document ||= @document %>
 <% doc_presenter = show_presenter(document) %>
-<div id="info-box" class="toggle-content">
+<div id="info-box" class="hidden toggle-content">
 <dl class="row dl-invert document-metadata">
-  <% document_show_fields(document).each do |field_name, field| -%>
-      <% if should_render_show_field? document, field %>
+  <% doc_presenter.fields_to_render.each do |field_name, field| -%>
           <div class="col-sm-12">
             <strong><%= raw render_document_show_field_label document, field: field_name %></strong><br>
-            <%= raw doc_presenter.field_value field_name %>
+            <%= raw doc_presenter.field_value field %>
+
           </div>
           <br>
-      <% end -%>
   <% end -%>
 </dl>
 </div>
