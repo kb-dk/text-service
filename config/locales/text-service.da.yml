@@ -16,6 +16,8 @@ da:
           title: 'Perioder'
           link:
           description: 'Læs værker fra en bestemt tidsperiode.'
+        all:
+          title: 'Alle værker'
         sks:
           title: 'Søren Kierkegaards Skrifter'
         grundtvig:
