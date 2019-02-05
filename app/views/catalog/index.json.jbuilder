@@ -20,6 +20,9 @@ json.data do
   end
 end
 
+#
+# I leave these here because I honestly don't know if it were used somewhere
+#
 #json.included do
 #  json.array! @presenter.search_facets_as_json do |facet|
 #    json.type 'facet'
