@@ -7,13 +7,13 @@ da:
       next: 'Næste &raquo;'
       truncate: '…'
       aria:
-        container_label: 'pagination links'
-        current_page: 'Current Page, Page %{page}'
-        go_to_page: 'Go to page %{page}'
-        go_to_previous_page: 'Go to previous page'
-        go_to_next_page: 'Go to next page'
-        go_to_first_page: 'Go to first page'
-        go_to_last_page: 'Go to last page'
+        container_label: 'Bladring i søgeresultater'
+        current_page: 'Nuværende side, side %{page}'
+        go_to_page: 'Gå til side %{page}'
+        go_to_previous_page: 'Gå til forrige side'
+        go_to_next_page: 'Gå til næste side'
+        go_to_first_page: 'Gå til første side'
+        go_to_last_page: 'Gå til sidste side'
 
     pagination_compact:
       previous: '&laquo; Forrige'
