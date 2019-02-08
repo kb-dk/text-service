@@ -46,3 +46,5 @@ da:
        contact-us-label: 'Kontakt os'
        contact-us-link: 'https://kontaktbiblioteket.kb.dk/'
        about: 'Om tekstportalen'
+    breadcrum:
+       text_service: 'Tekster'

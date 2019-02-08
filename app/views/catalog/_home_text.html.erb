@@ -5,7 +5,7 @@
    end
 %>
 
-<%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [['Tekstportal',root_path]]} %>
+<%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrum.text_service'),root_path]]} %>
 <%= render :partial =>'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'}%>
 <%= render :partial => 'shared/components/organisms/top-container/index' %>
 <%= render :partial => 'shared/components/organisms/layout/1-column', locals: { elements:['advanced_search'], classes:'white-cover-bg padding-top', heading: text, description:t('view-specific.home.bluebar.description1')} %>
