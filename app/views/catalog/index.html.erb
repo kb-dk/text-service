@@ -2,7 +2,7 @@
   <%# if there are no input/search related params, display the "home" partial -%>
   <%= render 'home' %>
 <% else %>
-  <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrum.text_service'), root_path], ['Resultatliste', '']]} %>
+  <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrumb.text_service'), root_path], ['Resultatliste', '']]} %>
   <%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'} %>
   <% if ['authors', 'periods'].include? action_name %>
     <%= render :partial => 'shared/components/organisms/top-container/index' %>
