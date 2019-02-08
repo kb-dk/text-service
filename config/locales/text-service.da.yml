@@ -48,3 +48,5 @@ da:
        about: 'Om tekstportalen'
     breadcrum:
        text_service: 'Tekster'
+       home: 'Forside'
+       digital_collections: 'Digitale samlinger'
