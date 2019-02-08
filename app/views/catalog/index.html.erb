@@ -1,12 +1,15 @@
 <% unless has_search_parameters? %>
-    <%# if there are no input/search related params, display the "home" partial -%>
-    <%= render 'home' %>
+  <%# if there are no input/search related params, display the "home" partial -%>
+  <%= render 'home' %>
 <% else %>
-  <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [['Tekstportal',root_path],['Resultatliste','']]} %>
-  <%= render :partial =>'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'}%>
-  <%= render :partial => 'shared/components/organisms/top-container/aside' %>
-  <%= render :partial => 'shared/components/organisms/layout/2-column-aside', locals: {classes:'padding-top'} %>
-
+  <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [['Tekstportal', root_path], ['Resultatliste', '']]} %>
+  <%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'} %>
+  <% if ['authors', 'periods'].include? action_name %>
+    <%= render :partial => 'shared/components/organisms/top-container/index' %>
+    <%= render :partial => 'shared/components/organisms/layout/1-column', locals: {elements:['advanced_search', 'search_result'], classes: 'padding-top'} %>
+  <% else %>
+    <%= render :partial => 'shared/components/organisms/top-container/aside' %>
+    <%= render :partial => 'shared/components/organisms/layout/2-column-aside', locals: {classes: 'padding-top'} %>
+  <% end %>
 <% end %>
-
-<%= render :partial =>'catalog/search_tips'%>
+<%= render :partial => 'catalog/search_tips' %>

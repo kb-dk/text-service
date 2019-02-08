@@ -24,6 +24,9 @@
         <% if elements.include? 'advanced_search' %>
           <%= render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: ''}%>
         <% end %>
+        <% if elements.include? 'search_result' %>
+          <%= render 'search_results' %>
+        <% end %>
       </div>
     </div>
   </div>

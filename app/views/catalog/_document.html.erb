@@ -2,7 +2,11 @@
   <% content = render_document_partials document,
     blacklight_config.view_config(document_index_view_type).partials,
     document_counter: document_counter %>
-
 <% heading =  link_to_document document, document_show_link_field(document) %>
-<%= render :partial => 'shared/components/organisms/search-result/index', locals: {classes:'', heading:heading, content:content } %>
+<% if action_name == "authors"
+     image_id = document.id
+     else
+     image_id = ''
+end %>
+<%= render :partial => 'shared/components/organisms/search-result/index', locals: {classes:'', heading:heading, image_id: image_id, content:content } %>
 

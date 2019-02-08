@@ -2,8 +2,9 @@
   <div class="grid-x grid-margin-x grid-padding-y">
     <div class="cell large-12">
       <h3><%= heading %></h3>
-      <!--<span class="path"></span>-->
-      <!--@@include('./atoms/img/index.html')-->
+      <% unless image_id.nil? || image_id == "" %>
+        <%= image_tag get_author_image(image_id) %>
+      <% end %>
       <%= content %>
     </div>
   </div>
