@@ -1,9 +1,15 @@
 <% collection = params[:f]["subcollection_ssi"].join('') %>
+
+<% if collection == 'adl' %>
+  <%= render :partial => 'shared/components/organisms/layout/1-column', locals: { elements:['banner'], heading:'', description:'', classes:'padding-top', list:['author', 'period'], urls:['/authors', '/periods'], col: 2} %>
+<% end %>
+
 <div class="grid-x grid-margin-x grid-padding-y">
   <div class="small-12 medium-12 cell">
-    <article>
+    <article class="about-collection">
       <h3><%= t("view-specific.collection_home.about.#{collection}.title") %></h3>
       <%= t("view-specific.collection_home.about.#{collection}.description").html_safe %>
     </article>
   </div>
 </div>
+

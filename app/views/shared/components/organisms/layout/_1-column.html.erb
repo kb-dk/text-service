@@ -19,7 +19,7 @@
             <%= render :partial => 'shared/components/organisms/filter-content/index', locals: {list:list, urls:urls, classes: ''} %>
         <% end %>
         <% if elements.include? 'banner' %>
-          <%= render :partial => 'shared/components/organisms/content-spot-banner/index', locals: {list:list, urls:urls, classes: 'edged-3'} %>
+          <%= render :partial => 'shared/components/organisms/content-spot-banner/index', locals: {heading: heading, list:list, urls:urls, classes: 'edged-3', col:col} %>
         <% end %>
         <% if elements.include? 'advanced_search' %>
           <%= render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: ''}%>
