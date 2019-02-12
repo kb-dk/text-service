@@ -24,6 +24,14 @@ module ApplicationHelper
     end
   end
 
+  def has_only_collection_facet?
+    !params[:f].blank? && params[:f].as_json.length == 1 && params[:f]["subcollection_ssi"].present?
+  end
+
+  def is_collection_home_page?
+    params[:q].blank? && params[:search_field] == 'Alt' && params[:match] == 'one' && has_only_collection_facet?
+  end
+
   def get_collection_name args
      name = args
      case name

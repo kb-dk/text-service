@@ -50,3 +50,42 @@ da:
        text_service: 'Tekster'
        home: 'Forside'
        digital_collections: 'Digitale samlinger'
+    collection_home:
+      about:
+        sks:
+          title: 'Om Søren Kierkegaards Skrifter'
+          description: '<p>[Denne tekst er under udarbejdelse]</p>'
+        grundtvig:
+          title: 'Om Grundtvigs Værker'
+          description: '<p>[Denne tekst er under udarbejdelse]</p>'
+        pmm:
+          title: 'Om Poul Martin Møllers Værker'
+          description: '<p>[Denne tekst er under udarbejdelse]</p>'
+        adl:
+          title: 'Om Arkiv for Dansk Litteratur'
+          description: "<p><i>[Denne tekst er under udarbejdelse]</i></p>
+                        <p>Arkiv for Dansk Litteratur er samling af udvalgte dele af ældre dansk
+                        litteratur &ndash; fra middelalderen og frem til midt i det
+                        20. århundrede. ADL er en ressource for forskning, undervisning og bred formidling af
+                        ældre dansk litteratur.</p>
+                        <p>Samlingen kan også tilgås på sin egen hjemmeside: <a href='http://www.adl.dk/'>www.adl.dk</a>&nbsp;</p>
+                         <p>ADL er et samarbejde mellem
+                         <a href='http://www.kb.dk/'>Det Kgl. Bibliotek</a> og
+                         <a href='http://www.dsl.dk/'>Det Dansk Sprog- og Litteraturselskab</a>.
+                         ADL rummer p.t. værker af 78 forfattere.</p>
+                         <p>Teksterne i ADL er gengivet efter trykte
+                         standardudgaver. Teksterne kan ses i to forskellige
+                         former, dels som digitale faksimiler af den trykte
+                         udgave, dels som søgbar tekst. De to former vises
+                         ved siden af hinanden. De digitaliserede tekster er
+                         OCR-behandlede og opmærkede i tekstformatet TEI. Materialet kan også
+                         tilgås direkte via
+                         <a href='https://github.com/Det-Kongelige-Bibliotek/access-digital-objects/blob/master/text-corpora.md'>Det Kgl.
+                         Biblioteks API</a>.</p>"
+        holberg:
+          title: 'Om Ludvig Holbergs Værker'
+          description: '<p>[Denne tekst er under udarbejdelse]</p>'
+        tfs:
+          title: 'Om Trykkefrihedens Skrifter'
+          description: '<p>[Denne tekst er under udarbejdelse]</p>'
+
