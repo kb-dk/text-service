@@ -4,7 +4,7 @@
      author_name = ''
 end %>
 <%
-  collection = t("view-specific.home.boxes.#{document['subcollection_ssi']}.title")
+  collection = document['subcollection_ssi']
 %>
 <%= render :partial => 'shared/components/organisms/layout/1-column', locals: { elements:['page_intro_3'], classes:'white-cover-bg padding-top', heading: document_show_html_title, author: author_name, collection:collection} %>
 
