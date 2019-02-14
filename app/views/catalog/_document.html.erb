@@ -2,11 +2,12 @@
   <% content = render_document_partials document,
     blacklight_config.view_config(document_index_view_type).partials,
     document_counter: document_counter %>
-<% heading =  link_to_document document, document_show_link_field(document) %>
+<% counter = document_counter_with_offset(document_counter)
+  heading = link_to_document document, counter: counter %>
 <% if action_name == "authors"
      image_id = document.id
      else
      image_id = ''
 end %>
-<%= render :partial => 'shared/components/organisms/search-result/index', locals: {classes:'', heading:heading, image_id: image_id, content:content } %>
+<%= render :partial => 'shared/components/organisms/search-result/index', locals: {document_counter: document_counter , classes:'', heading:heading, image_id: image_id, content:content } %>
 
