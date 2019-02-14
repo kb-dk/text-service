@@ -1,7 +1,7 @@
 <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe %>
 <% content_for(:head) { render_link_rel_alternates } %>
 
-<%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrumb.text_service'),root_path],[link_back_to_catalog,''],[document_show_html_title,'']]} %>
+<%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrumb.text_service'),root_path],[link_back_to_catalog,''],[truncate(document_show_html_title, :length => 50),'']]} %>
 <%= render :partial =>'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'}%>
 <%= render :partial => 'shared/components/organisms/top-container/index' %>
 

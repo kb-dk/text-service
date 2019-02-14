@@ -12,7 +12,7 @@
              <%= render :partial => 'shared/components/organisms/page-intro/index-noicon', locals: { heading:heading , description:description} %>
           <% end %>
           <% if elements.include? 'page_intro_3' %>
-              <%= render :partial => 'shared/components/organisms/page-intro/index-3', locals: { heading:heading , description:description, right_side_title:collection} %>
+              <%= render :partial => 'shared/components/organisms/page-intro/index-3', locals: { heading:heading , description:t("view-specific.home.boxes.#{collection}.title"), url: get_collection_home_url(collection), small_title:author} %>
           <% end %>
         <% end %>
         <% if elements.include? 'filtered_banner' %>

@@ -8,6 +8,13 @@ main .document{
   }
 }
 
+// Sat to important, because it have to override the master design where where the background color is Important.
+.filter-btn:not(.active) {
+  &:hover {
+    background-color: darken($color-dark-blue-50, 10%) !important;
+  }
+}
+
 .ocr, .kbOSDViewer {
   height: 620px;
   overflow-y: scroll;
