@@ -2,13 +2,28 @@
  * Created by bimo on 10/3/18.
  */
 
-function toggleFullscreen() {
-    if (
-        document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.mozFullScreenElement ||
-        document.msFullscreenElement
-    ) {
+// Go fullscreen
+var viewFullScreen = document.getElementById("ocrFullscreenButton");
+if (viewFullScreen) {
+    viewFullScreen.addEventListener("click", function () {
+        var docElm = document.getElementsByClassName("ocr")[0];
+        if (docElm.requestFullscreen) {
+            docElm.requestFullscreen();
+        } else if (docElm.msRequestFullscreen) {
+            docElm.msRequestFullscreen();
+        } else if (docElm.mozRequestFullScreen) {
+            docElm.mozRequestFullScreen();
+        } else if (docElm.webkitRequestFullScreen) {
+            docElm.webkitRequestFullScreen();
+        }
+    });
+}
+
+// Close fullscreen
+var closeFullScreen = document.getElementById("escFullScreen");
+if (closeFullScreen) {
+    closeFullScreen.addEventListener("click", function () {
+        var docElm = document.getElementsByClassName("ocr")[0];
         if (document.exitFullscreen) {
             document.exitFullscreen();
         } else if (document.mozCancelFullScreen) {
@@ -18,19 +33,5 @@ function toggleFullscreen() {
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
         }
-    } else {
-        var element = $('.ocr').get(0);
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        } else if (element.mozRequestFullScreen) {
-            element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullscreen) {
-            element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (element.msRequestFullscreen) {
-            element.msRequestFullscreen();
-        }
-    }
+    });
 }
-
-// Close on fullscreen
-$('.escFullScreenButton').click(dkBreve.closeFullScreen);
