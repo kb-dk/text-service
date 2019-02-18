@@ -1,5 +1,5 @@
 <div class="downloadLinkContainer">
-  <%= link_to(facsimile_catalog_path(@document.id, format: :pdf,), :target => "_blank", :target => "_blank") do %>
+  <%= link_to(facsimile_catalog_path(@document.id, format: :pdf,), :target => "_blank") do %>
       <i class="icon get_app" title="<%= I18n.t('general.landing_page.facsimile') %>"></i>
   <% end %>
 </div>
