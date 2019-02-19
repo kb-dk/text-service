@@ -164,17 +164,6 @@ window.dkBreve = (function (window, $, undefined) {
         onWindowResize: function () {
             this.setContentHeight($(window).innerHeight() - this.getFooterAndHeaderHeight());
         },
-        closeFullScreen: function () {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-        },
         getFooterAndHeaderHeight: function () {
             return $('.page_links').outerHeight() +
                 $('.workNavBar').outerHeight() +
