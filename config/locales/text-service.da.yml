@@ -54,15 +54,19 @@ da:
       about:
         sks:
           title: 'Om Søren Kierkegaards Skrifter'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
           description: '<p>[Denne tekst er under udarbejdelse]</p>'
         grundtvig:
           title: 'Om Grundtvigs Værker'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
           description: '<p>[Denne tekst er under udarbejdelse]</p>'
         pmm:
           title: 'Om Poul Martin Møllers Værker'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
           description: '<p>[Denne tekst er under udarbejdelse]</p>'
         adl:
           title: 'Om Arkiv for Dansk Litteratur'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
           description: "<p><i>[Denne tekst er under udarbejdelse]</i></p>
                         <p>Arkiv for Dansk Litteratur er samling af udvalgte dele af ældre dansk
                         litteratur &ndash; fra middelalderen og frem til midt i det
@@ -84,8 +88,15 @@ da:
                          Biblioteks API</a>.</p>"
         holberg:
           title: 'Om Ludvig Holbergs Værker'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
           description: '<p>[Denne tekst er under udarbejdelse]</p>'
         tfs:
           title: 'Om Trykkefrihedens Skrifter'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
           description: '<p>[Denne tekst er under udarbejdelse]</p>'
+        all:
+          title: 'Alle værker'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
+          description: '<p>[Denne tekst er under udarbejdelse]</p>'
+
 

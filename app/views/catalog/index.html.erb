@@ -10,7 +10,8 @@
   <% else %>
     <%= render :partial => 'shared/components/organisms/top-container/aside' %>
     <% if is_collection_home_page? %>
-      <%= render :partial => 'shared/components/organisms/layout/2-column-aside', locals: {collection_home: true, classes: 'padding-top'} %>
+      <% collection = params[:f]["subcollection_ssi"].join('') %>
+      <%= render :partial => 'shared/components/organisms/layout/3-column-aside', locals: {collection_home: true, collection: collection, classes: 'padding-top'} %>
     <% else %>
       <%= render :partial => 'shared/components/organisms/layout/2-column-aside', locals: {classes: 'padding-top'} %>
     <% end %>

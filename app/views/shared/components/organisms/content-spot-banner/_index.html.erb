@@ -2,7 +2,7 @@
   <div class="grid-x grid-margin-x">
     <% list.each_with_index do |subject, index| %>
         <div class="small-12 medium-<% if col==2 %>6<% else %>4<% end %> cell">
-          <%= render :partial => 'shared/components/organisms/content-spot/index', locals: {header: t("view-specific.home.boxes.#{subject}.title"), description: t("view-specific.home.boxes.#{subject}.description"), image:"#{subject}.jpg", classes:'', url:urls[index]} %>
+          <%= render :partial => 'shared/components/organisms/content-spot/index', locals: {header: t("view-specific.home.boxes.#{subject}.title"), description: t("view-specific.collection_home.about.#{subject}.summary"), image:"#{subject}.jpg", classes:'', url:urls[index]} %>
         </div>
     <% end %>
   </div>
