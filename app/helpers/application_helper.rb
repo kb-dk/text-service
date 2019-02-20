@@ -120,6 +120,10 @@ module ApplicationHelper
       args[:omit_author] = false
     end 
 
+    #
+    # In retrospect one could easily say that there are far too many title fields in the text service
+    # And still, we don't have sub-titles, transcribed titles, uniform titles etc.
+    #
     tit = args[:document]['work_title_ssi'].present? ? args[:document]['work_title_ssi'].strip :  args[:document]['volume_title_tesim'].first.strip
 
     cite = ""
