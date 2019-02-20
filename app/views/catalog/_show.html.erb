@@ -1,6 +1,5 @@
 <% has_text = document['has_text_ssi'].present? && document['has_text_ssi'] == 'yes' %>
-<% has_facs = document['has_facs_ssi'].present? && document['has_facs_ssi'] == 'yes' %>
-
+<% has_facs = document['has_facs_ssi'].present? && document['has_facs_ssi'] == 'yes'&& document['cat_ssi'] != 'author' && document['cat_ssi'] != 'period' %>
 <!--Retrieve the query-->
 <% query_params = current_search_session.try(:query_params) %>
 <% search_field = query_params.nil? ? "empty" : query_params[:search_field]  %>
