@@ -15,11 +15,13 @@
 .btn.btn-secondary{
   @extend .secondary;
 }
-.org-fc19c325-bb61-4c28-ad0e-7c272912ed78 h1{
-  font-family: 'nowayregular', sans-serif;
-}
-.org-fc19c325-bb61-4c28-ad0e-7c272912ed78.margin-top{
-  margin-top: 35px;
+.org-fc19c325-bb61-4c28-ad0e-7c272912ed78{
+  h1{
+    font-family: 'nowayregular', sans-serif;
+  }
+  &.margin-top{
+    margin-top: 35px;
+  }
 }
 
 //html{
