@@ -8,8 +8,7 @@
       </div>
       <div class="cell small-12 large-9">
         <%= render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: ''}%>
-        <%= render :partial => 'shared/components/organisms/page-intro/index', locals: {heading: t("view-specific.collection_home.about.#{collection}.title"), description: ''} %>
-
+        <%= render :partial => 'shared/components/organisms/page-intro/index', locals: {heading: t("view-specific.collection_home.about.#{collection}.title"), description: '', classes: 'margin-top'} %>
         <div class="grid-x grid-margin-x grid-padding-y">
           <div class="small-12 medium-8 cell">
             <%= render :partial => 'collection_home', locals: {collection: collection} %>
