@@ -1,12 +1,36 @@
 # -*- coding: utf-8 -*-
 module ApplicationHelper
   require 'socket'
+  require 'nokogiri'
+
+  def get_text_capabilities arg
+    parsed_data = Nokogiri::HTML.parse(arg)
+    h = Hash.new
+    tags = parsed_data.xpath("//a")
+    tags.each do |tag|
+      h[tag.text] = tag[:href]
+    end
+    h
+  end
+
+  def get_text_capabilities_type arg
+    text_capabilities_type = 'Hovedtekst'
+    text_capabilities = get_text_capabilities (arg[:capabilities_ssi])
+    unless text_capabilities.length == 0
+      text_capabilities.each do |key, value|
+        if value.include? arg.id
+          text_capabilities_type = key
+        end
+      end
+    end
+    text_capabilities_type
+  end
 
   def get_period_name args
     res = args
     repository = blacklight_config.repository_class.new(blacklight_config)  
     doc = repository.find(args)
-    if(doc['response']['docs'].first['work_title_tesim'].present?)
+    if doc['response']['docs'].first['work_title_tesim'].present?
       res=doc['response']['docs'].first['work_title_tesim'].join(' ')
     end
     res
