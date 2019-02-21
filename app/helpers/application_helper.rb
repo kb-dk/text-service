@@ -120,9 +120,15 @@ module ApplicationHelper
       args[:omit_author] = false
     end 
 
+    #
+    # In retrospect one could easily say that there are far too many title fields in the text service
+    # And still, we don't have sub-titles, transcribed titles, uniform titles etc.
+    #
+    tit = args[:document]['work_title_ssi'].present? ? args[:document]['work_title_ssi'].strip :  args[:document]['volume_title_tesim'].first.strip
+
     cite = ""
     cite += args[:document]['author_name_ssi'] + ": " if(args[:document]['author_name_ssi'].present?  && args[:document][:id] != args[:document]['volume_id_ssi'])
-    cite += "”" + args[:document]['work_title_ssi'].strip + "”"
+    cite += "”" + tit + "”"
     
     # I know this looks wierd, but it seems we need the ", i " for
     # both anthologies and monographs, but I want to keep it for the
