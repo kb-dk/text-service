@@ -3,12 +3,12 @@ da:
     text_toolbar:
       fullscreen: 'Se tekst i fuld skærm'
       text: 'Hent PDF'
-      highlight: 'Markering'
+      highlight: 'Søgemarkering'
       facsimile: 'Faksimile'
     landing_page:
       facsimile: 'Hent PDF'
       info: 'Info'
-      text: 'Huvudtekst'
+      text: 'Hovedtekst'
       Comments: 'Kommentar'
       text_statements: 'Tekstredegørelse'
       table_of_content: 'Indhold'
