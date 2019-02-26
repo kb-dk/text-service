@@ -11,7 +11,7 @@
 // about supported directives.
 //
 
-//= require_tree ./components
+//= require_tree ./transpiled_components
 
 //= require catalog.js
 //= require DkBreve.js
