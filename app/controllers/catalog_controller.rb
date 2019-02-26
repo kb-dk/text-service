@@ -363,6 +363,10 @@ class CatalogController < ApplicationController
     if document['cat_ssi'] != 'author' and document['cat_ssi'] != 'period' 
     edition = '<dt>Anvendt udgave:</dt><dd>' + document['volume_title_tesim'].first + '</dd>'
     end
+    auth_name = ""
+    if document.has_key?('author_name_ssi')
+          auth_name = '<dt>Forfatter:</dt><dd>' + document['author_name_ssi'] + '</dd>' 
+    end    
     render pdf: name,
            footer: {right: '[page] af [topage] sider'},
            header: {html: {template: 'shared/pdf_header.pdf.erb'},
@@ -373,7 +377,7 @@ class CatalogController < ApplicationController
            cover: '<style>dl > dt {float: left; width: 160px; clear: left; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;} dl > dd{margin-top: 0; margin-bottom: 20px; margin-left: 180px;}</style>'+
                'Tekst fra Arkiv for Dansk Litteratur (adl.dk) <br /> <hr> <br /><br />' +
                '<dl>'+
-               '<dt>Forfatter:</dt><dd>' + document['author_name_ssi'] + '</dd>' +
+               auth_name +
                '<dt>Titel:</dt><dd>' + document['work_title_tesim'].first + '</dd>' +
                '<dt>Citation:</dt><dd style="">' + helpers.citation(@document.instance_values)  + '</dd>' +
                edition +
