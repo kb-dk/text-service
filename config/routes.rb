@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'snippet/index'
+
+  get 'snippet/comment'
+
   devise_for :users
     concern :searchable, Blacklight::Routes::Searchable.new
 
@@ -34,5 +38,8 @@ Rails.application.routes.draw do
   get 'authors' => 'catalog#authors'
 
   get 'oai' => 'catalog#oai'
+
+  resources :snippet
+  get '/comment/:id' => 'snippet#comment'
 
 end
