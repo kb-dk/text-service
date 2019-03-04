@@ -62,17 +62,17 @@ module ApplicationHelper
     when "all"
       url = '/text?match=one&q=&match=one&search_field=Alt'
     when "sks"
-      url = '/text?f[subcollection_ssi][]=sks&match=one&search_field=Alt'
+      url = '/sks'
     when "holberg"
-      url = '/text?f[subcollection_ssi][]=holberg&match=one&search_field=Alt'
+      url = '/lhv'
     when "pmm"
-      url = '/text?f[subcollection_ssi][]=pmm&match=one&search_field=Alt'
+      url = '/pmm'
     when "adl"
-      url = '/text?f[subcollection_ssi][]=adl&match=one&search_field=Alt'
+      url = '/adl'
     when "grundtvig"
-      url = '/text?f[subcollection_ssi][]=grundtvig&match=one&search_field=Alt'
+      url = '/gv'
     when "tfs"
-      url = '/text?f[subcollection_ssi][]=tfs&match=one&search_field=Alt'
+      url = '/tfs'
     else
       url = "#"
     end

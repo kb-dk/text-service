@@ -406,6 +406,17 @@ class CatalogController < ApplicationController
     render "index"
   end
 
+  def collection
+    id = params['id']
+    case id
+    when "gv"
+      id = "grundtvig"
+    when "lhv"
+      id = "holberg"
+    end
+    redirect_to  action: 'index', f: {subcollection_ssi: ["#{id}"]}, match: 'one', search_field: 'Alt'
+  end
+
   def oai
     options = params.delete_if { |k,v| %w{controller action}.include?(k) }
     render xml: oai_provider.process_request(options)
