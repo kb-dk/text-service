@@ -24,6 +24,24 @@
   }
 }
 
+#searchTips{
+  .modal-header .close {
+    padding: 0;
+    margin: 0;
+  }
+  table{
+    tr:nth-child(odd) {
+      background: $light-gray;
+    }
+    border-spacing:5px 15px;
+    border-collapse:separate;
+    td:first-child{
+      width: 30%;
+      vertical-align: top;
+    }
+  }
+}
+
 //html{
 //  height: 100%;
 //}
