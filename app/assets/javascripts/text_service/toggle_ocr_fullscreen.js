@@ -1,7 +1,7 @@
 /**
  * Created by bimo on 10/3/18.
  */
-
+"use strict";
 function toggleFullscreen() {
     if (
         document.fullscreenElement ||
