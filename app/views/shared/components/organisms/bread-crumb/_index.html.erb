@@ -4,8 +4,8 @@
       <div class="hide-for-small-only cell small-12">
         <div class="bread-crumb">
           <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'home', icon_size: 'icon-xsmall'}%>
-          <a href="http://www.kb.dk"><%= t('view-specific.breadcrumb.home')%></a> /
-          <a href="http://digitalesamlinger.kb.dk"><%= t('view-specific.breadcrumb.digital_collections')%></a>
+          <a href="http://www.kb.dk"><%= t('view-specific.breadcrumb.home')%></a>
+<!--         / <a href="http://digitalesamlinger.kb.dk"><%#= t('view-specific.breadcrumb.digital_collections')%></a>-->
           <% items.each_with_index do | item, index |%>
               / <% if (index == items.size - 1) | (item[1] == '') %>
                   <%= item[0]%>
