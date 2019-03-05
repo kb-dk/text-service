@@ -1,5 +1,5 @@
 /* global $,window, jQuery, dkBreve, KbOSD */
-
+"use strict";
 window.dkBreve = (function (window, $, undefined) {
     'use strict';
     var DkBreve = function () {
@@ -199,16 +199,15 @@ $(document).on('kbosdready', function (e) {
 });
 
 //////////////////////////////////////////////////////
-
 $(document).ready(function () {
  // If there is no OSD in the page so there is no pagination
 // The following code checks if there is no pagination then 'on scroll' changes the page number on citation
     if(typeof (has_facs)!== 'undefined') {
         if (!(has_facs)) {
             document.getElementsByClassName('ocr')[0].addEventListener("scroll", function () {
-                    var currentOcrPage = getOcrCurrentPage();
-                    citationPageNumber = document.getElementById('pageNumber');
-                    hashTagInURI = document.getElementById('hashTagInURI');
+                    let  currentOcrPage = getOcrCurrentPage();
+                    let citationPageNumber = document.getElementById('pageNumber');
+                    let hashTagInURI = document.getElementById('hashTagInURI');
                     if (citationPageNumber) {
                         if (currentOcrPage > 1) {
                             citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;
