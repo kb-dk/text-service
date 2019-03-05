@@ -12,7 +12,7 @@ function index_work_search(id, modal_selector, modal_body_selector, target_selec
             datatype: 'json',
             success: function (data) {
                 $(target_selector).empty();
-                docs = data.data;
+                var docs = data.data;
                 hl_field = 'text_tsim';
                 matches_num = data.meta.pages.total_count;
                 if (matches_num > 0) {
