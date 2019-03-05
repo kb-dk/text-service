@@ -3,14 +3,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="header">Søgetips</h4>
+        <h4 class="modal-title" id="header"><b>Søgetips</b></h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="luk"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
         <div>
-          <p>Der søges tre forskellige steder:  Titel, forfatter, al tekst.
-            På hovedsiden søges overalt. På andre sider kan du vælge hvor.
-            Du kan vælge tre forskellige måder at søge på:</p>
+          <p>Til højre i søgefeltet kan du vælge hvilken <b>måde</b> du vil søge på:</p>
           <table>
             <tr>
               <td>Mindst et ord</td>
@@ -18,16 +16,40 @@
             </tr>
             <tr>
               <td>Alle ord</td>
-              <td>Finder alle tekster, hvor alle ord optræder</td>
+              <td>Finder alle tekster, hvor alle ord optræder<br/>
+                <small><em>Du kan tilføje ”+” hhv. ”–” uden mellemrum før et ord, hvis resultatet SKAL hhv. IKKE MÅ indeholde dette ord.</em></small>
+              </td>
             </tr>
             <tr>
               <td>Som ordene står</td>
               <td>Finder alle tekster, hvor alle ord optræder, som du har indtastet dem</td>
             </tr>
           </table>
-          <p>Modificering af ’Alle ord’:  Skriv ”+” hhv. ”–” uden mellemrum før et ord, hvis resultatet SKAL hhv. IKKE MÅ indeholde dette ord.</p>
-          <p>Du kan skrive "OR", "AND" og "NOT" til kombinerede søgninger.</p>
-          <p>Der kan ikke anvendes jokertegn (wildcards). Trunkering udføres automatisk af systemet.</p>
+          <p>Du kan skrive "OR", "AND" og "NOT" til kombinerede søgninger. Du kan ikke anvende jokertegn (wildcards). Søgetrunkering udføres automatisk af systemet.</p>
+          <p>Til højre i søgefeltet kan du også vælge <b>hvor</b> du vil søge:</p>
+          <table>
+            <tr>
+              <td>Al tekst</td>
+              <td>Al tekst inkl. titel og forfatter, men ikke redaktionelle tekster (kommentarer o.a.)</td>
+            </tr>
+            <tr>
+              <td>Titel & forfatter</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Prosa</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Verser & strofer</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Dialog (drama)</td>
+              <td></td>
+            </tr>
+          </table>
+          <p>Desuden kan du indskrænke søgningen med de søgefacetter som ses i kolonnen til venstre for søgeresultaterne. At klikke på en samlingsikon på hovedsiden svarer til at tilvælge en søgefacet under 'Samling'.</p>
         </div>
       </div>
       <div class="modal-footer">

@@ -1,6 +1,7 @@
 function collections_home_url() {
     var url = document.location.href;
     url = decodeURIComponent(url.substr(url.lastIndexOf('/text')));
+    var new_url;
     switch (url) {
         case '/text?f[subcollection_ssi][]=sks&match=one&search_field=Alt':
             new_url = '/sks';

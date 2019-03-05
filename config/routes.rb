@@ -38,6 +38,6 @@ Rails.application.routes.draw do
   get 'oai' => 'catalog#oai'
 
   resources :snippet
-  get '/text/comment/:id' => 'snippet#comment'
+  get '/comment/:id' => 'snippet#comment'
 
 end
