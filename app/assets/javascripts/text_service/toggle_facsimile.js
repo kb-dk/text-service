@@ -1,11 +1,11 @@
 /**
  * Created by bimo on 9/28/18.
  */
-
+"use strict";
 function toggleFacsimile() {
-    var txtPanel  = document.getElementsByClassName("lpTextContainer")[0];
-    var facPanel  = document.getElementsByClassName("lpFacsContainer")[0];
-    var btn = document.getElementById("toggleFacsimile");
+    let txtPanel  = document.getElementsByClassName("lpTextContainer")[0];
+    let facPanel  = document.getElementsByClassName("lpFacsContainer")[0];
+    let btn = document.getElementById("toggleFacsimile");
 
     txtPanel.classList.toggle("col-sm-12");
     txtPanel.classList.toggle("col-sm-6");

@@ -1,7 +1,8 @@
+"use strict";
 function collections_home_url() {
     var url = document.location.href;
     url = decodeURIComponent(url.substr(url.lastIndexOf('/text')));
-    var new_url;
+    let new_url;
     switch (url) {
         case '/text?f[subcollection_ssi][]=sks&match=one&search_field=Alt':
             new_url = '/sks';
@@ -25,7 +26,7 @@ function collections_home_url() {
             new_url = '';
     }
     if(new_url !== ''){
-        history.pushState(url,null,new_url);
+        history.replaceState(url,null,new_url);
     }
 }
 

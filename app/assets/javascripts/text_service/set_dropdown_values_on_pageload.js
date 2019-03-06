@@ -1,12 +1,14 @@
 // Reads url parameters and set dropdown's value.
 // It is needed because in the design an input box is used instead of normal select tag in html
-// which cannot have different value than we can show.
+// which cannot have different value than what we can show.
 // so we need to set the value manually.
+
+"use strict";
 var dropDowninputs = document.querySelectorAll('.mol-d4e97117-4bf7-4516-92fa-54bb0abc40fb');
 
 function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+    let vars = {};
+    window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
         vars[key] = value;
     });
     return vars;

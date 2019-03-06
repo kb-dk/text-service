@@ -3,11 +3,11 @@
  */
 
 // Toggle highlight in landingpages
+"use strict";
 function toggleHighlight() {
-    var highlighted_elements = document.getElementsByClassName('hit');
-    var btn = document.getElementById("toggleHighlight");
-
-    var len = highlighted_elements.length;
+    let highlighted_elements = document.getElementsByClassName('hit');
+    let btn = document.getElementById("toggleHighlight");
+    let len = highlighted_elements.length;
     for (i = 0; i < len; i++) {
         highlighted_elements[i].classList.toggle('transparentBackground');
     }
