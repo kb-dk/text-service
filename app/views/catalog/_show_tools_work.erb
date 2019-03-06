@@ -33,7 +33,9 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <%= FileServer.toc(document.id) %>
+        <!--  doc = document.id -->
+        <%  doc =  document['part_of_ssim'].present? ? document['part_of_ssim'].first : document['volume_id_ssi'] %>
+	<%= FileServer.toc(doc) %>
       </div>
       <div class="modal-footer">
       </div>
