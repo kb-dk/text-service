@@ -1,7 +1,7 @@
 <div class="grid-x grid-margin-x grid-padding-y">
   <div class="small-12 medium-12 cell">
     <article class="about-collection">
-      <%= t("view-specific.collection_home.about.#{collection}.description").html_safe %>
+      <%= render :partial => "collection_home_#{collection}"%>
     </article>
   </div>
 </div>

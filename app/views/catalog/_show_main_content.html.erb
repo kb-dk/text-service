@@ -1,7 +1,15 @@
 <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe %>
-<% content_for(:head) { render_link_rel_alternates } %>
+<% content_for(:head) {render_link_rel_alternates} %>
 <% title = truncate(document_show_html_title, :length => 50)
-  items = [[t('view-specific.breadcrumb.text_service'),root_path],[link_back_to_catalog,''],[title,'']] %>
+   case @document[:cat_ssi]
+   when "author"
+     resultlist_link = "<a href='/authors'>Forfatterliste</a>".html_safe
+   when "period"
+     resultlist_link = "<a href='/periods'>Periodeliste</a>".html_safe
+   else
+     resultlist_link = link_back_to_catalog
+   end
+   items = [[t('view-specific.breadcrumb.text_service'), root_path], [resultlist_link, ''], [title, '']] %>
 <% text_capabilities = get_text_capabilities (@document[:capabilities_ssi])
    text_capabilities_type = get_text_capabilities_type (@document) %>
 <% unless text_capabilities_type == 'Hovedtekst'
@@ -10,10 +18,10 @@
    end
 %>
 <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: items} %>
-<%= render :partial =>'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'}%>
+<%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'} %>
 <%= render :partial => 'shared/components/organisms/top-container/index' %>
 
-    <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
+<%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
 
 <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
   <!--
