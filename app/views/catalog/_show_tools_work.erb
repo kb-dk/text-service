@@ -34,7 +34,7 @@
       </div>
       <div class="modal-body">
         <!--  doc = document.id -->
-        <%  doc =  document['part_of_ssim'].present? ? document['part_of_ssim'].first : document['volume_id_ssi'] %>
+        <%  doc = document['volume_id_ssi'] %>
 	<%= FileServer.toc(doc) %>
       </div>
       <div class="modal-footer">
