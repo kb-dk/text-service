@@ -10,6 +10,11 @@
      buttons_list.push([title , title, javascript_url, classes, '', true])
    end
 %>
-<div class="textPossibilitiesToolbar <% if text_capabilities_type == "Hovedtekst" %> hidden <% end %>">
+<div class="textPossibilitiesToolbar
+  <% if text_capabilities_type == "Hovedtekst" %> hidden
+  <% end %>">
   <%= render :partial => 'shared/components/organisms/filter-btn-group/index', locals: {list: buttons_list} %>
+  <fieldset>
+    <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: 'Qutation', selected: 'selected', disabled: '', id: 'Show_only_this_part', name: 'Show_only_this_part'} %>
+  </fieldset>
 </div>
