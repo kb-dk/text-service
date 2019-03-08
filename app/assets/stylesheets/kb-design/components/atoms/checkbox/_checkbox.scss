@@ -4,7 +4,7 @@
         
         &:checked {
             & + label:before {
-                content: "\f26a";
+                content: "\e834";
             }
         }
         &:disabled {
@@ -18,8 +18,8 @@
         display: inline-flex;
         align-items: center;
         &:before {
-            content: "\f279";
-            font: normal normal normal 14px/1 'material-icons';
+            content: "\e835";
+            font: normal normal normal 14px/1 'Material Icons';
             text-align: center;
             font-size: 1.5rem;
             width: 1.5rem;
