@@ -1,3 +1,4 @@
+"use strict";
 // Called in the _index_default.html to populate the index partial with links of text searches
 // If the matxhes are more than 3, it creates a button that triggers a modal with all the matches/links
 function index_work_search(id, modal_selector, modal_body_selector, target_selector, text_label_id, q, match) {
@@ -12,9 +13,9 @@ function index_work_search(id, modal_selector, modal_body_selector, target_selec
             datatype: 'json',
             success: function (data) {
                 $(target_selector).empty();
-                docs = data.data;
-                hl_field = 'text_tsim';
-                matches_num = data.meta.pages.total_count;
+                let docs = data.data;
+                let hl_field = 'text_tsim';
+                let matches_num = data.meta.pages.total_count;
                 if (matches_num > 0) {
                     $(target_selector).append('<div id="results-header"><p>' + matches_num + ' match</p></div>');
                     for (var i = 0; i in docs && i < 3; i++) {
@@ -58,9 +59,9 @@ function show_work_search(id, target_selector, q) {
         datatype: 'json',
         success: function (data) {
             $(target_selector).empty();
-            docs = data.response.docs;
-            highlighting = data.response.highlighting;
-            matches_num = data.response.pages.total_count;
+            let docs = data.response.docs;
+            let highlighting = data.response.highlighting;
+            let matches_num = data.response.pages.total_count;
             if (matches_num > 0) {
                 $('.contentSearch').show();
                 $(target_selector).append('<div id="results-header"><p>' + matches_num + ' match</p></div>');

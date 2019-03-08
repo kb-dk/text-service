@@ -12,9 +12,21 @@
     }
   }
 }
+footer .social_media:hover{
+  text-decoration: none;
+}
 .about-collection{
-  h3, a{
-    color: #002E70;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  h3{
+    font-family: 'nowaymedium', sans-serif;
+  }
+
+  a{
+    cursor: pointer;
+    font-family: 'nowayregular', sans-serif;
+    text-decoration: underline;
   }
 
 }
@@ -46,20 +58,13 @@
 }
 
 #searchTips{
+  font-size: smaller;
   .modal-header .close {
     padding: 0;
     margin: 0;
   }
-  table{
-    tr:nth-child(odd) {
-      background: $light-gray;
-    }
-    border-spacing:5px 15px;
-    border-collapse:separate;
-    td:first-child{
-      width: 30%;
-      vertical-align: top;
-    }
+  p{
+    margin-bottom: 5px;
   }
 }
 

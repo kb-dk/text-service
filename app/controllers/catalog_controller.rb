@@ -363,6 +363,10 @@ class CatalogController < ApplicationController
     if document['cat_ssi'] != 'author' and document['cat_ssi'] != 'period' 
     edition = '<dt>Anvendt udgave:</dt><dd>' + document['volume_title_tesim'].first + '</dd>'
     end
+    author_portrait = ''
+    if document['cat_ssi'] == 'author'
+      author_portrait = 'Forfatterportræt af '
+    end
     auth_name = ""
     if document.has_key?('author_name_ssi')
           auth_name = '<dt>Forfatter:</dt><dd>' + document['author_name_ssi'] + '</dd>' 
@@ -375,16 +379,13 @@ class CatalogController < ApplicationController
                     bottom: 15},
            encoding: 'utf8', # needed here to encode danish characters
            cover: '<style>dl > dt {float: left; width: 160px; clear: left; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;} dl > dd{margin-top: 0; margin-bottom: 20px; margin-left: 180px;}</style>'+
-               'Tekst fra Arkiv for Dansk Litteratur (adl.dk) <br /> <hr> <br /><br />' +
+               'Fra Det Kgl. Biblioteks tekstportal (tekster.kb.dk) <br /> <hr> <br /><br />' +
                '<dl>'+
                auth_name +
-               '<dt>Titel:</dt><dd>' + document['work_title_tesim'].first + '</dd>' +
+               '<dt>Titel:</dt><dd>' + author_portrait + document['work_title_tesim'].first + '</dd>' +
                '<dt>Citation:</dt><dd style="">' + helpers.citation(@document.instance_values)  + '</dd>' +
                edition +
-               '</dl>'+
-               '<br /><br /><br /><br /><br />'+
-               'Det Danske Sprog- og Litteraturselskab (dsl.dk)<br />'+
-               'Det Kongelige Bibliotek (kb.dk)'
+               '</dl>'
   end
 
    def facsimile

@@ -3,7 +3,14 @@
      collection = params[:f]["subcollection_ssi"].join('')
      resultlist = collection.upcase
    else
-     resultlist = t('blacklight.back_to_search')
+     case params[:action]
+     when "authors"
+       resultlist = 'Forfatterliste'
+     when "periods"
+       resultlist = 'Periodeliste'
+     else
+       resultlist = t('blacklight.back_to_search')
+     end
    end
 %>
 <% if has_search_parameters? %>

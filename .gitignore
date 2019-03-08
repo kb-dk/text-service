@@ -18,3 +18,5 @@
 /tmp
 /.idea
 .keep
+node_modules
+public
