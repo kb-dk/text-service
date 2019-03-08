@@ -3,7 +3,7 @@
     input {
         &:checked {
             & + label:before {
-                content: "\f26f";
+                content: "\e86c";
                 background-color: transparent;
                 color: $color-dark-blue-100;
             }
