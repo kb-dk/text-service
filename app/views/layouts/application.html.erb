@@ -3,6 +3,7 @@
   <head>
     <title>TextService</title>
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all'%>
 
@@ -14,7 +15,7 @@
     <% end %>
   </head>
 
-  <body>
+  <body class="theme-yellow">
   <%= render :partial => 'shared/header_navbar' %>
   <%= render :partial => 'shared/components/atoms/main/index', locals: {content: yield} %>
   <%= render :partial => 'shared/footer' %>

@@ -3,7 +3,7 @@
     <div class="grid-x grid-margin-x grid-padding-y">
       <div class="cell small-12">
         <% if elements.include? 'page_intro' %>
-          <%= render :partial => 'shared/components/organisms/page-intro/index', locals: { heading:heading , description:description} %>
+          <%= render :partial => 'shared/components/organisms/page-intro/index', locals: { heading:heading , description:description, classes:classes} %>
         <% else %>
           <% if elements.include? 'h2' %>
             <%= render :partial => 'shared/components/organisms/heading/h2', locals: {classes:'',heading:heading } %>
@@ -26,6 +26,9 @@
         <% end %>
         <% if elements.include? 'search_result' %>
           <%= render 'search_results' %>
+        <% end %>
+        <% if elements.include? 'article' %>
+          <%= render "#{article}" %>
         <% end %>
       </div>
     </div>

@@ -1,6 +1,22 @@
 footer .social_media:hover{
   text-decoration: none;
 }
+
+article.om-tekstportalen{
+  h3{
+    font-family: 'nowaymedium', sans-serif;
+    clear: both;
+  }
+  figure{
+    height: auto;
+    img{
+      width: 20%;
+    }
+    &.article-right{
+      margin-right: calc(-80% - 0.75rem);
+    }
+  }
+}
 .about-collection{
   margin-left: -15px;
   margin-right: -15px;
