@@ -14,4 +14,6 @@ function toggle_vis_kun_denne_del() {
 }
 
 let show_quotation_service = document.getElementById('Show_only_this_part');
-show_quotation_service.addEventListener('click', toggle_vis_kun_denne_del, false);
+if (show_quotation_service) {
+    show_quotation_service.addEventListener('click', toggle_vis_kun_denne_del, false);
+}
