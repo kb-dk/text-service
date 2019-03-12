@@ -1,3 +1,17 @@
+#toc{
+  .current_entry_parent{
+    background-Color: #d1d8e6;
+  }
+  .current_entry{
+    font-weight: bold;
+    font-family: 'nowaymedium', sans-serif;
+    &:hover{
+      text-decoration: none;
+      cursor: default;
+      color: black;
+    }
+  }
+}
 footer .social_media:hover{
   text-decoration: none;
 }
