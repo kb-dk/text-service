@@ -1,113 +1,138 @@
-#toc{
-  .current_entry_parent{
+#toc {
+  .current_entry_parent {
     background-Color: #d1d8e6;
   }
-  .current_entry{
+
+  .current_entry {
     font-weight: bold;
     font-family: 'nowaymedium', sans-serif;
-    &:hover{
+
+    &:hover {
       text-decoration: none;
       cursor: default;
       color: black;
     }
   }
 }
-footer .social_media:hover{
+
+footer .social_media:hover {
   text-decoration: none;
 }
 
-article.om-tekstportalen{
-  h3{
+article.om-tekstportalen {
+  h3 {
     font-family: 'nowaymedium', sans-serif;
     clear: both;
   }
-  figure{
+
+  figure {
     height: auto;
-    img{
+
+    img {
       width: 20%;
     }
-    &.article-right{
+
+    &.article-right {
       margin-right: calc(-80% - 0.75rem);
     }
   }
 }
-.about-collection{
+
+.about-collection {
   margin-left: -15px;
   margin-right: -15px;
 
-  h3{
+  h3 {
     font-family: 'nowaymedium', sans-serif;
   }
 
-  a{
+  a {
     cursor: pointer;
     font-family: 'nowayregular', sans-serif;
     text-decoration: underline;
   }
 
 }
-.textPossibilitiesToolbar{
-  fieldset{
+
+.textPossibilitiesToolbar {
+  fieldset {
     border: none;
   }
-  i.fa{
+
+  i.fa {
     color: black;
     cursor: auto;
-    &:hover{
-      color:black;
+
+    &:hover {
+      color: black;
     }
   }
 }
+
 .org-63a1bc7e-5093-4bf0-8d2e-fcf5bfe32aca {
-  margin-bottom:0;
+  margin-bottom: 0;
 }
-.exposableDocumentFunctions a{
-  font-size: 0;
-  visibility:hidden;
-  i.fa{
-    font-size: medium;
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    color: #000;
+
+.exposableDocumentFunctions {
+  line-height: 1;
+  a {
+    font-size: 0;
+    visibility: hidden;
+
+    i.fa {
+      font-size: medium;
+      visibility: visible;
+      position: absolute;
+      left: 0;
+      color: #000;
+    }
   }
 }
-.btn{
+
+.btn {
   display: inline;
 }
 
-.btn.btn-primary{
+.btn.btn-primary {
   @extend .button;
 }
-.btn.btn-secondary{
+
+.btn.btn-secondary {
   @extend .secondary;
 }
-.org-fc19c325-bb61-4c28-ad0e-7c272912ed78{
-  a{
+
+.org-fc19c325-bb61-4c28-ad0e-7c272912ed78 {
+  a {
     color: #002E70;
   }
-  h1{
+
+  h1 {
     font-family: 'nowaymedium', sans-serif;
+
     span {
       padding-right: .5em;
       font-family: 'nowayregular', sans-serif;
     }
   }
-  &.margin-top{
+
+  &.margin-top {
     margin-top: 35px;
   }
 }
 
-#searchTips{
+#searchTips {
   font-size: smaller;
+
   .modal-header .close {
     padding: 0;
     margin: 0;
   }
-  .modal-body{
+
+  .modal-body {
     line-height: normal;
   }
-  p{
+
+  p {
     margin-bottom: 1.2em;
   }
 }
