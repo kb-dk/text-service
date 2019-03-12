@@ -16,5 +16,14 @@ function positioning_and_highlighting_in_TOC() {
     }
 }
 
+function removeHighlight(){
+    $('#toc li a.current_entry').removeClass("current_entry");
+    $('#toc li.current_entry_parent').removeClass("current_entry_parent");
+}
+
 // jQuery event for when modal is shown
 $('#toc').on('shown.bs.modal', positioning_and_highlighting_in_TOC);
+$('#toc').on('hide.bs.modal', removeHighlight);
+$("#toc a").click(function(){
+    $('#toc').modal('hide')
+});
