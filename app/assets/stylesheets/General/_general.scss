@@ -16,7 +16,32 @@ footer .social_media:hover{
   }
 
 }
-
+.textPossibilitiesToolbar{
+  fieldset{
+    border: none;
+  }
+  i.fa{
+    color: black;
+    cursor: auto;
+    &:hover{
+      color:black;
+    }
+  }
+}
+.org-63a1bc7e-5093-4bf0-8d2e-fcf5bfe32aca {
+  margin-bottom:0;
+}
+.exposableDocumentFunctions a{
+  font-size: 0;
+  visibility:hidden;
+  i.fa{
+    font-size: medium;
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    color: #000;
+  }
+}
 .btn{
   display: inline;
 }
