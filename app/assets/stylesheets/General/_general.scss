@@ -1,5 +1,35 @@
+#toc{
+  .current_entry_parent{
+    background-Color: #d1d8e6;
+  }
+  .current_entry{
+    font-weight: bold;
+    font-family: 'nowaymedium', sans-serif;
+    &:hover{
+      text-decoration: none;
+      cursor: default;
+      color: black;
+    }
+  }
+}
 footer .social_media:hover{
   text-decoration: none;
+}
+
+article.om-tekstportalen{
+  h3{
+    font-family: 'nowaymedium', sans-serif;
+    clear: both;
+  }
+  figure{
+    height: auto;
+    img{
+      width: 20%;
+    }
+    &.article-right{
+      margin-right: calc(-80% - 0.75rem);
+    }
+  }
 }
 .about-collection{
   margin-left: -15px;

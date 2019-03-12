@@ -1,57 +1,6 @@
-<%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrumb.text_service'),root_path]]} %>
-
-<article id="main-content">
-  <div id="about" class="container">
-
-    <%#= render :partial => 'catalog/shared_header', locals: {document:'about'}%>
-
-    <div class="row">
-
-      <div id="om-adl" class="document">
-        <div class="text-content">
-          <div class="text">
-
-	    <h2>Om tekstportalen</h2>
-
-	    <p><i>[Denne tekst er under udarbejdelse]</i></p>
-
-	    <p>Det Kgl. Biblioteks tekstportal indeholder både indscannede
-	      og digitalt fødte tekster, der har dansk oprindelse eller tilknytning til Danmark,
-	      og som har forbindelse til Det Kgl. Biblioteks kulturarvssamlinger.</p>
-	    
-            <h2>Hovedsiden</h2>
-
-	    <p>På hovedsiden ses ikoner for den primære adgang til tekstportalen: Søgning efter forfatter,
-	      titel eller (tids)periode.</p>
-
-	    <p>Derunder ses ikoner for de samlinger, der indgår i tekstportalen.</p>
-
-            <h2>Søgeresultater</h2>
-
-	    <p>Der søges som udgangspunkt i den totale mængde tekster i alle samlinger, som indgår
-	      i tekstportalen.</p>
-
-	    <p>Søgeresultaterne kan begrænses til en udvalgt samling vha. ikonerne på hovedsiden, og
-	      vha. filtrene til venstre for søgeresultaterne kan søgningen ændres til udvalgte samlinger,
-	      forfattere og perioder.</p>
-	    
-            <h2>Præsentation af tekster</h2>
-
-	    <p>Teksterne præsenteres i form af en digital tekst, en faksimile (et billede af teksten) eller begge former.</p>
-
-	    <p>Alle digitale tekster er søgbare, og gule markeringer i teksten fortæller, hvor der er match. Over den digitale tekst
-	      er der forskellige valgmuligheder for teksten afhængigt af, hvad der er tilgængeligt.</p>
-
-	    <p>Ligeledes er der over en faksimile forskellige valgmuligheder for visning.</p>
-
-	    <p>I visse digitale tekster findes særlige små markører. Ved klik med mus på disse vises fx tekstkommentarer og tekstkritik.</p>
-
-	    <p><i>[Nærværende tekst er ikke færdigbearbejdet]</i></p>
-
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
+<% page_description = 'Det Kgl. Biblioteks tekstportal er udviklet af Det Kgl. Bibliotek, og portalen indeholder indscannede og digitalt fødte tekster, som er af dansk oprindelse og som har forbindelse til Det Kgl. Biblioteks kulturarvssamlinger.' %>
+<% page_heading = 'Om tekstportalen' %>
+<%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrumb.text_service'), root_path], [t('view-specific.footer.about'), '']]} %>
+<%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'} %>
+<%= render :partial => 'shared/components/organisms/top-container/index' %>
+<%= render :partial => 'shared/components/organisms/layout/1-column', locals: {elements: ['page_intro', 'article'], heading: page_heading , description: page_description, classes: 'padding-top', article: 'pages/about-text-service-article'} %>
