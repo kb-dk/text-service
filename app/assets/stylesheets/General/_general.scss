@@ -2,7 +2,6 @@
   .current_entry_parent {
     background-Color: #d1d8e6;
   }
-
   .current_entry {
     font-weight: bold;
     font-family: 'nowaymedium', sans-serif;
@@ -12,6 +11,35 @@
       cursor: default;
       color: black;
     }
+  }
+}
+
+#blacklight-modal{
+  h1{
+    width: 100%;
+    text-align: center;
+  }
+  .btn {
+    border-color: #002E70;
+    &.btn-outline-secondary, &.btn-link {
+      background-Color: #FFF6C4;
+      color: #002E70;
+      &:hover {
+        color: #002E70;
+      }
+      &.active {
+        cursor: text;
+        background-Color: #002E70;
+        color: #FFF6C4;
+      }
+    }
+    &.btn-link{
+    margin: 0;
+      &:hover {
+        background-Color: #FFF6C4 !important;
+        text-decoration: none;
+      }
+  }
   }
 }
 
