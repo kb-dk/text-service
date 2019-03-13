@@ -13,6 +13,16 @@ module ApplicationHelper
     h
   end
 
+  def get_parent_title id
+    repository = blacklight_config.repository_class.new(blacklight_config)
+    doc = repository.find(id).documents.first
+    if doc && doc['work_title_tesim'] && doc['work_title_tesim'][0]
+      title = doc['work_title_tesim'][0]
+    else
+      title = 'hoveddokument'
+    end
+    title
+  end
   def get_text_capabilities_type arg
     text_capabilities_type = 'Hovedtekst'
     text_capabilities = get_text_capabilities (arg[:capabilities_ssi])
