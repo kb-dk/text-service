@@ -72,7 +72,7 @@ da:
           summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
         all:
           title: 'Alle værker'
-          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
+          summary: 'Søgning i alle værker på tværs af alle tekstsamlinger.'
           description: '<p>[Denne tekst er under udarbejdelse]</p>'
 
 
