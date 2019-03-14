@@ -2,13 +2,13 @@
   <div class="inner-content grid-container">
     <div class="grid-x grid-padding-x grid-padding-y">
       <div class="small-6 medium-3 cell">
-        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: 'OM SAMLINGERNE', list: [[get_collection_name('sks'), page_path('about-sks'), '_self'],[get_collection_name('grundtvig'), page_path('about-grundtvig'), '_self'],[get_collection_name('pmm'), page_path('about-pmm'), '_self'],[get_collection_name('adl'), page_path('about-adl'), '_self'],[get_collection_name('holberg'), page_path('about-holberg'), '_self']]} %>
+        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: '', list: [[t('view-specific.footer.about'), page_path('about-text-portal'), '_self'],['Cookie- og Privatlivspolitik','http://www.kb.dk/da/kb/webstedet/cookiepolitik.html','_blank'],[t('view-specific.footer.contact-us-label'),t('view-specific.footer.contact-us-link'), '_self']]} %>
       </div>
       <div class="small-6 medium-3 cell">
-        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: 'INFORMATION', list: [[t('view-specific.footer.about'), page_path('about-text-service'), '_self'],['Cookie- og Privatlivspolitik','http://www.kb.dk/da/kb/webstedet/cookiepolitik.html','_blank'],[t('view-specific.footer.contact-us-label'),t('view-specific.footer.contact-us-link'), '_self']]} %>
+        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: '', list: []} %>
       </div>
       <div class="small-6 medium-3 cell">
-        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: 'ØVRIGE', list: [[t("view-specific.home.boxes.author.title"),send("authors_path"), '_self'],[t("view-specific.home.boxes.period.title"),send("periods_path"), '_self'],[t("view-specific.home.boxes.title.title"),'/?q=&search_field=Alt&sort=work_title_ssi+asc', '_self']]} %>
+        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: '', list: []} %>
       </div>
       <div class="small-6 medium-3 cell">
         <%= render :partial =>'shared/components/molecules/contact-info/index' %>

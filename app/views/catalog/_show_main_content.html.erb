@@ -9,8 +9,16 @@
    else
      resultlist_link = link_back_to_catalog
    end
-   items = [[t('view-specific.breadcrumb.text_service'), root_path], [resultlist_link, ''], [title, '']] %>
-<% text_capabilities = get_text_capabilities (@document[:capabilities_ssi])
+   items = [[t('view-specific.breadcrumb.text_service'), root_path], [resultlist_link, '']]
+
+   if @document[:type_ssi] == 'leaf'
+     if @document[:part_of_ssim].first
+       parent_title = get_parent_title(@document[:part_of_ssim].first)
+       items.push([parent_title, @document[:part_of_ssim].first])
+     end
+   end
+   items.push([title, ''])
+   text_capabilities = get_text_capabilities (@document[:capabilities_ssi])
    text_capabilities_type = get_text_capabilities_type (@document) %>
 <% unless text_capabilities_type == 'Hovedtekst'
      items[2][1] = text_capabilities['Hovedtekst']

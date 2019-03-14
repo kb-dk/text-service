@@ -57,13 +57,13 @@ da:
           summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
         grundtvig:
           title: 'Om Grundtvigs Værker'
-          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
+          summary: 'En tekstkritisk og kommen&shy;teret udgave af N.F.S. Grundtvigs trykte forfatter&shy;skab. En af de betydeligste personligheder i 1800-tallets danske åndsliv.'
         pmm:
           title: 'Om Poul Martin Møllers Værker'
           summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
         adl:
           title: 'Om Arkiv for Dansk Litteratur'
-          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
+          summary: 'Udvalgte dele af ældre dansk litteratur – fra middelalderen og frem til midten af det 20. århundrede.'
         holberg:
           title: 'Om Ludvig Holbergs Værker'
           summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
@@ -72,7 +72,7 @@ da:
           summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
         all:
           title: 'Alle værker'
-          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
+          summary: 'Søgning i alle værker på tværs af alle tekstsamlinger.'
           description: '<p>[Denne tekst er under udarbejdelse]</p>'
 
 
