@@ -7,7 +7,7 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-XXXXX-Y', 'auto'); // Add the correct google acount id here
+ga('create', 'UA-136348494-1', 'auto'); // Add the correct google acount id here
 ga('set', 'anonymizeIp', true);
 ga('send', 'pageview');
 <!-- End Google Analytics -->
