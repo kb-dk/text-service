@@ -15,6 +15,7 @@
      if @document[:part_of_ssim].first
        parent_title = get_parent_title(@document[:part_of_ssim].first)
        items.push([parent_title, @document[:part_of_ssim].first])
+       title = 'uddrag fra' + parent_title
      end
    end
    items.push([title, ''])
