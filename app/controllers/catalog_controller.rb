@@ -126,16 +126,6 @@ class CatalogController < ApplicationController
     # urls.  A display label will be automatically calculated from the :key,
     # or can be specified manually to be different.
 
-    config.add_search_field('author_title',label: I18n.t('general.config.search.author_title')) do |field|
-      field.solr_parameters = {
-        :fq => ['cat_ssi:work'],
-        :qf => 'author_name_tesim work_title_tesim',
-        :pf => 'work_title_tesim'
-      }
-      field.solr_local_parameters = {
-      }
-    end
-
     # This one uses all the defaults set by the solr request handler. Which
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
@@ -148,6 +138,18 @@ class CatalogController < ApplicationController
       field.solr_local_parameters = {
       }
     end
+
+
+    config.add_search_field('author_title',label: I18n.t('general.config.search.author_title')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'author_name_tesim work_title_tesim',
+        :pf => 'work_title_tesim'
+      }
+      field.solr_local_parameters = {
+      }
+    end
+
 
 #    config.add_search_field('title', label: I18n.t('general.config.search.title')) do |field|
 #      # solr_parameters hash are sent to Solr as ordinary url query params.
@@ -174,21 +176,22 @@ class CatalogController < ApplicationController
 #      }
 #    end
 
-    config.add_search_field('verse', label: I18n.t('general.config.search.verse')) do |field|
-      field.solr_parameters = {
-        :fq => ['cat_ssi:work'],
-        :qf => 'verse_extract_tesim',
-        :pf => 'verse_extract_tesim'
-      }
-      field.solr_local_parameters = {
-      }
-    end
-
+  
     config.add_search_field('prose', label: I18n.t('general.config.search.prose')) do |field|
       field.solr_parameters = {
         :fq => ['cat_ssi:work'],
         :qf => 'prose_extract_tesim',
         :pf => 'prose_extract_tesim'
+      }
+      field.solr_local_parameters = {
+      }
+    end
+
+    config.add_search_field('verse', label: I18n.t('general.config.search.verse')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'verse_extract_tesim',
+        :pf => 'verse_extract_tesim'
       }
       field.solr_local_parameters = {
       }
