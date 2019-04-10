@@ -1,0 +1,17 @@
+.atom-adaaa9e4-4e39-428a-b80c-253fc5bd67dd {
+    @extend .atom-e7937846-48b1-4797-9eb4-8cd4837fc421;
+    input {
+        &:checked {
+            & + label:before {
+                content: "\e86c";
+                background-color: transparent;
+                color: $color-dark-blue-100;
+            }
+        }
+    }
+    label {
+        &:before {
+            content: '\f26c';
+        }
+    }
+}

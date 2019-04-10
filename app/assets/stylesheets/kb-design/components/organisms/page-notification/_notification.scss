@@ -1,0 +1,49 @@
+.org-11bfca9f-f278-4d0e-8384-2a2d064e8f6c {
+    background-color: $color-dark-blue-100;
+    position: sticky !important;
+    top: 0;
+}
+.page-notification {
+    padding: 1.5rem;
+    padding-right: 5rem;
+    color: white;
+    @extend %regular-sans-serif;
+    width: $vw-minus-scrollbar;
+    z-index: 100;
+
+    .close {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+    }
+
+    &.dismiss {
+        animation-name: dismissed;
+        animation-duration: 300ms;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        overflow: hidden;
+    }
+}
+
+@keyframes dismissed {
+    0% {
+        opacity: 1;
+        max-height: 50vh;
+    }
+    90% {
+        opacity: .1;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    100% {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        display: none;
+    }
+}

@@ -1,15 +1,36 @@
 <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe %>
-<% content_for(:head) { render_link_rel_alternates } %>
+<% content_for(:head) {render_link_rel_alternates} %>
+<% title = truncate(document_show_html_title, :length => 50)
+   case @document[:cat_ssi]
+   when "author"
+     resultlist_link = "<a href='/authors'>Forfatterliste</a>".html_safe
+   when "period"
+     resultlist_link = "<a href='/periods'>Periodeliste</a>".html_safe
+   else
+     resultlist_link = link_back_to_catalog
+   end
+   items = [[t('view-specific.breadcrumb.text_service'), root_path], [resultlist_link, '']]
 
+   if @document[:type_ssi] == 'leaf'
+     if @document[:part_of_ssim].first
+       parent_title = get_parent_title(@document[:part_of_ssim].first)
+       items.push([parent_title, @document[:part_of_ssim].first])
+       title = 'uddrag fra' + parent_title
+     end
+   end
+   items.push([title, ''])
+   text_capabilities = get_text_capabilities (@document[:capabilities_ssi])
+   text_capabilities_type = get_text_capabilities_type (@document) %>
+<% unless text_capabilities_type == 'Hovedtekst'
+     items[2][1] = text_capabilities['Hovedtekst']
+     items.push ([text_capabilities_type, ''])
+   end
+%>
+<%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: items} %>
+<%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'} %>
+<%= render :partial => 'shared/components/organisms/top-container/index' %>
 
-
-<div id="document <%= render_document_class %>" itemscope  itemtype="<%= @document.itemtype %>">
-  <div id="doc_<%= @document.id.to_s.parameterize %>">
-    <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
-  </div>
-</div>
-
-
+<%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
 
 <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
   <!--

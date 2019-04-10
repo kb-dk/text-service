@@ -1,0 +1,32 @@
+.logo {
+  width: 10rem;
+  height: 100%;
+  background-image: url(asset-path('logo-mobile.png'));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  
+  @media
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    background-image: url(asset-path('logo-mobile.svg'));
+  }
+  @include media-breakpoint-up(lg) { // Large devices (desktops, 992px and up)
+    background-image: url(asset-path('logo-ie.png'));
+    background-position: center;
+    width: 9rem;
+    @media
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi) {
+      background-image: url(asset-path('logo.svg'));
+    }
+  }
+  @include media-breakpoint-up(xl) { // Extra large devices (large desktops, 1200px and up)
+    width: 12rem;
+  }
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+}

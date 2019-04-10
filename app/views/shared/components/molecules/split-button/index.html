@@ -1,0 +1,17 @@
+ <div class="split-button-wrapper dropdown-wrapper-js">
+    <button alt="submit" class="split-button-label button @@type">@@text </button>
+    <button alt="submit" class="split-button-arrow dropdown-button-js button arrow @@type">
+        @@if (type === ''){
+            @@include('./atoms/icon/index.html',{"icon-type":"icon-arrow-dropdown-white", "icon-size":"icon-medium"})
+        }
+        @@if (type !== '') {
+            @@include('./atoms/icon/index.html',{"icon-type":"icon-arrow-dropdown", "icon-size":"icon-medium"})
+        }
+    </button>
+
+    <ul>
+        @@for (var i = 0; i < options.length; i++) {
+            <li><a href="#">`+options[i]+`</a></li>
+        }
+    </ul>
+</div>

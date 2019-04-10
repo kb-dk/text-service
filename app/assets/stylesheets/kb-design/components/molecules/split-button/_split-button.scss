@@ -1,0 +1,52 @@
+
+.split-button-wrapper{  
+    display: inline-block;
+    position: relative;
+    .split-button-label{
+        margin:0;
+        float: left;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 1px solid #fff;
+        padding-left: 1.875rem;
+        padding-right: 1.875rem;
+    }
+    .split-button-arrow{    
+        margin:0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-left: 0.575rem;
+        padding-right: 0.575rem;
+    }
+    ul {
+        z-index: 1;
+        position: absolute;
+        display: none;
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: white;
+        border: 1px solid $color-almost-black-50;
+        
+        li { 
+            display: block;
+            width: 100%;
+            padding: 0;
+            a {
+                display: block;
+                padding: 0 1.125rem;
+                line-height: 2.5rem;
+                border-bottom: 1px solid gray;
+                text-decoration: none;
+            }
+        }
+    }
+    
+    &.active {
+        ul {
+            display: block;
+        }
+    }
+}
+

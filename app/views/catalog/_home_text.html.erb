@@ -1,29 +1,17 @@
-<%= render :partial => 'catalog/politik_popup' %>
+<% if get_host_name.include?("text-test") || get_host_name.include?("beta-text")
+     text= t('view-specific.home.bluebar.beta-welcome')
+   else
+     text = t('view-specific.home.bluebar.welcome')
+   end
 
-<div class="row">
-  <div class="homeSearch box-gradient-blue fixed-top-second">
-    <div class="search-bg">
-      <div class="container">
-        <div class="row text-center">
-          <h2>
-            <%= t('text_service.home.bluebar.welcome') %>
-          </h2>
-          <h3>
-            <%= t('text_service.home.bluebar.description') %>
-          </h3>
-          <h3>
-            <a href="http://www.kb.dk/da/nb/materialer/e-ressourcer/omdlb.html", target="_blank">
-              <%= t('text_service.home.bluebar.link') %>
-            </a>
-          </h3>
-          <%= render 'simple_search_form' %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<%= render 'boxes' %>
+  collections = ['all', 'adl', 'grundtvig', 'sks', 'pmm', 'holberg']
+%>
 
-
+<%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrumb.text_service'),root_path]]} %>
+<%= render :partial =>'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'}%>
+<%= render :partial => 'shared/components/organisms/top-container/index' %>
+<%= render :partial => 'shared/components/organisms/layout/1-column', locals: { elements:['advanced_search'], classes:'white-cover-bg padding-top', heading: text, description:t('view-specific.home.bluebar.description1')} %>
+<%= render :partial => 'shared/components/organisms/layout/1-column', locals: { elements:['h2', 'filtered_banner'], heading:'Samlingerne', description:'', classes:'', list: collections, urls: collections.map { |collection| get_collection_home_url(collection)}}%>
+<%= render :partial => 'shared/components/organisms/cookies-alert/index', locals: {description:t('view-specific.home.cookie'), url:'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html'} %>
 
 

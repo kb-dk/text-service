@@ -1,11 +1,11 @@
-<!-- Modal Table of content  -->
+<!-- Modal Alle forekomster  -->
 <% matches_id = "matches-ModalBody-#{document['id']}" %>
 <% text_label_id = "matces-text-label-#{document['id'].gsub("#", "")}" %>
 <% modal_body_id = "matches-modal-body-#{document['id']}" %>
 <% modal_id = "matches-#{document['id']}" %>
 
 <% if search_field_fritekst? %>
-    <dt class="col-md-3" id=<%= text_label_id %>><%= t('text_service.search.list.in_text') %></dt>
+    <dt class="col-md-3" id=<%= text_label_id %>><%= t('general.search.list.in_text') %></dt>
     <dd class="search-results col-md-9" id=<%= matches_id %>></dd>
 <% end %>
 
@@ -23,7 +23,6 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
       </div>
     </div>
   </div>

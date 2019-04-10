@@ -1,0 +1,96 @@
+html, body {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  height: 100%;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+div[class^='org-'] {
+  position: relative;
+}
+
+body {
+  @extend %regular-serif;
+  color: $color-almost-black-100;
+  font-size: $global-font-size;
+  letter-spacing: -0.2px;
+  line-height: 1.5rem;
+  overflow-x: hidden;
+  .sans-serif {
+    @extend %regular-sans-serif;
+  }
+  &.login-open {
+    overflow: hidden;
+  }
+}
+
+h1, h2, h3, h4 {
+  @extend %regular-sans-serif;
+  letter-spacing: -0.2px;
+  line-height: 1.5rem;
+  margin: 0 auto .75rem;
+}
+
+h1, h4, h6 {
+  font-weight: 500;
+}
+
+h2, h3, h5 {
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 4rem;
+  &.display-text {
+    @extend %regular-display;
+  }
+}
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  @extend %medium-sans-serif;
+}
+h3 {
+  font-size: 1.25rem;
+  @extend %medium-sans-serif;
+}
+h4 {
+  font-size: 1.125rem;
+  @extend %medium-sans-serif;
+}
+p {
+  margin: 0 auto 1.5rem;
+}
+a {
+  text-decoration: underline;
+  color: inherit;
+  display: inline-flex; // Beware of this??
+  &:hover {
+    color: $color-dark-blue-100;
+  }
+}
+
+.right-col {
+  strong  {
+    @extend %medium-sans-serif;
+  }
+}
+
+.icon-arrow-head-right{
+  height: 18px;
+  width: 18px;
+}
+small {
+  font-size: 14px;
+}
+figcaption {
+  font-size: 12px;
+}
+.accessibility-font {
+  /* First font-size fallback to older browsers*/
+  font-size: 1.25rem;
+  transition: font-size 200ms ease-in-out;
+}

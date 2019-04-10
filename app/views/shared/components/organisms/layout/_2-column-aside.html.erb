@@ -1,0 +1,15 @@
+<div class="org-f2202134-9456-4e13-ad1e-56f87086ec03 <%= classes %>">
+  <div class="inner-content grid-container">
+    <div class="grid-x grid-margin-x grid-padding-y">
+      <div class="cell show-for-large large-3 aside">
+        <div id="sidebar" class="<%= sidebar_classes %>">
+          <%= render 'facets' %>
+        </div>
+      </div>
+      <div class="cell small-12 large-9">
+        <%= render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: ''}%>
+          <%= render 'search_results' %>
+      </div>
+    </div>
+  </div>
+</div>

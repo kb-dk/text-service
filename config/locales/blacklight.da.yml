@@ -6,13 +6,20 @@ da:
       previous: '&laquo; Forrige'
       next: 'Næste &raquo;'
       truncate: '…'
+      aria:
+        container_label: 'Bladring i søgeresultater'
+        current_page: 'Nuværende side, side %{page}'
+        go_to_page: 'Gå til side %{page}'
+        go_to_previous_page: 'Gå til forrige side'
+        go_to_next_page: 'Gå til næste side'
+        go_to_first_page: 'Gå til første side'
+        go_to_last_page: 'Gå til sidste side'
 
     pagination_compact:
       previous: '&laquo; Forrige'
       next: 'Næste &raquo;'
 
   blacklight:
-    application_name: 'Arkiv for Dansk Litteratur'
 
     header_links:
       login: 'Log ind'
@@ -120,17 +127,16 @@ da:
           blank: 'Du skal indtaste en udbyder'
           invalid: "Du skal indtaste en gyldig udbyder"
 
-    back_to_search: 'Tilbage til søgeresultat'
+    back_to_search: 'Resultatliste'
     back_to_bookmarks: 'Tilbage til bogmærker'
 
     search:
-      # i18n key 'title' is deprecated and will be removed in Blacklight 6.0
-      title: '%{application_name} søgeresultater'
       page_title:
         title: '%{constraints} - %{application_name} søgeresultater'
         constraint: '%{label}: %{value}'
         many_constraint_values: '%{values} Valgt'
-      search_results_header: 'Søg'
+      header: 'Søg'
+      search_constraints_header: 'Søg begrænsninger'
       search_results: 'Søgeresultater'
       errors:
         request_error: "Beklager, søgningen er ikke forstået."
@@ -149,8 +155,8 @@ da:
           title: 'Afgrænsning'
           post_label: 'for'
         search:
-         label: 'Søg efter'
-         placeholder: 'Forfatter, titel eller søgeord'
+          label: 'Søg efter'
+          placeholder: 'Forfatter, titel eller søgeord'
         submit: 'Søg'
       pagination:
         title: 'Results navigation'
@@ -176,6 +182,7 @@ da:
         selected:
           remove: '[remove]'
         missing: "[Missing]"
+        all: Alle
       group:
         more: 'mere »'
       filters:
@@ -193,9 +200,9 @@ da:
       rss_feed: 'RSS for resultater'
       atom_feed: 'Atom for resultater'
       bookmarks:
-          present: "I bogmærker"
-          absent: "Tilføj til bogmærker"
-          inprogress: "Gemmer..."
+        present: "I bogmærker"
+        absent: "Tilføj til bogmærker"
+        inprogress: "Gemmer..."
       zero_results:
         title: "Ingen resultater fundet"
         modify_search: "Prøv at ændre din søgning"

@@ -1,0 +1,36 @@
+{
+  "name": "kongelige-bibliotek-web",
+  "version": "1.6.0",
+  "private": true,
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build-public",
+    "clean": "rm -rd public",
+    "deploy-dev": "yarn build; surge public kongelige.surge.sh"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015-ie": "^6.7.0",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1"
+  },
+  "devDependencies": {
+    "@rise-digital/eslint-config-rise": "^2.2.1",
+    "eslint": "^4.19.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-flatten": "^0.4.0",
+    "gulp-live-server": "^0.0.31",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass-glob": "^1.0.8",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-replace": "^1.0.0",
+    "prettier": "^1.11.1"
+  }
+}

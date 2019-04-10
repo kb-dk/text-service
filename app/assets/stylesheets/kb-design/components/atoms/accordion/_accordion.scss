@@ -1,0 +1,41 @@
+.atom-317722d7-e5b8-4722-92cf-c73e9689042a {
+    width: 100%;
+    .section {
+        border-bottom: 1px solid $color-light-gray;
+        padding: .75rem 0 0 0;
+        h4 {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            width: 100%;
+            color: $color-dark-blue-100;
+            cursor: pointer;
+            &:after {
+                content: "⌃";
+                transition: transform 500ms;
+                height: 15px;
+                position: absolute;
+                right: 0;
+                transform: scaleY(-1);
+            }
+            .icon {
+                margin-right: 8px;
+            }
+        }
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 500ms;
+        }
+        &.active {
+            .content {
+                max-height: 100vh;
+            }
+            h4 {
+                &:after {
+                    transform: scaleY(1);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+da:
+#  blacklight:
+#    application_name: 'Arkiv for Dansk Litteratur'
+#  view-specific:
+#    work_list: 'Tekster i ADL'
+#    home:
+#       cookie: 'På ADL.dk bruger vi cookies til at huske dine indstillinger samt indsamle statistik.'
+#      boxes:
+#        authors:
+#          title: 'Forfattere'
+#          description: 'Find en forfatter i den alfabetiske oversigt og få adgang til forfatterens værker og en introduktion.'
+#        titles:
+#          title: 'Titler'
+#          description: 'Få overblik over alle værktitler i ADL.'
+#        periods:
+#          title: 'Perioder'
+#          link:
+#          description: 'Læs om en bestemt periode i den danske litteraturhistorie.'
+#      bluebar:
+#        welcome: 'Velkommen til Arkiv for Dansk Litteratur'
+#        description: 'Her kan du læse og søge i værker fra den danske litteraturhistorie fra middelalderen til det 20. årh.'
+#        link-label: 'Dansk Litteraturhistorisk Bibliografi'
+#        link: 'http://www.kb.dk/da/nb/materialer/e-ressourcer/omdlb.html'
+#    footer:
+#       dsl: 'Det Danske Sprog- og Litteraturselskab'
+#       kb: 'Det Kongelige Bibliotek'
+#       contact_us: 'Kontakt os'
+#       about: 'Om ADL'

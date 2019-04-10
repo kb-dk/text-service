@@ -64,8 +64,12 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
+
     config.add_facet_field 'author_name_ssim', :label => 'Forfatter', :single => true, :limit => 10, :collapse => false
+    config.add_facet_field 'contains_ssi', :label => 'Indeholder mest', :single => true, :limit => 10, :collapse => false, helper_method: :get_genre_name
     config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => false, helper_method: :get_period_name
+    config.add_facet_field 'subcollection_ssi', :label => 'Samling', :single => true, :limit => 10, :collapse => false, helper_method: :get_collection_name
+    config.add_facet_field 'text_type_ssi', :label => 'Tekstkategori', :single => true, :limit => 10, :collapse => false
 
     #
     # set :index_range to true if you want the facet pagination view to have facet prefix-based navigation
@@ -92,11 +96,11 @@ class CatalogController < ApplicationController
 
     # Work show fields
     config.add_show_field 'author_id_ssi', :label => 'Forfatter', helper_method: :author_link, itemprop: :author
-    config.add_show_field 'volume_title_tesim', :label => 'Anvendt udgave', helper_method: :show_volume, itemprop: :isPartOf #, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
-    config.add_show_field 'volume_title_ssi', :label => 'Citér', helper_method: :citation #, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
-    #config.add_show_field 'publisher_tesim', :label => 'Udgiver', unless: proc { |_context, _field_config, doc | doc['cat_ssi'] == 'volume' }
-    #config.add_show_field 'place_published_tesim', :label => 'Udgivelsessted'
-    #config.add_show_field 'date_published_ssi', :label => 'Udgivelsesdato'
+    config.add_show_field 'volume_title_tesim', :label => 'Anvendt udgave', helper_method: :show_volume, itemprop: :isPartOf , unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
+    config.add_show_field 'work_title_tesim', :label => 'Citér', helper_method: :citation , unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
+    config.add_show_field 'publisher_tesim', :label => 'Udgiver', unless: proc { |_context, _field_config, doc | doc['cat_ssi'] == 'volume' }
+    config.add_show_field 'place_published_tesim', :label => 'Udgivelsessted'
+    config.add_show_field 'date_published_ssi', :label => 'Udgivelsesdato'
 
     config.show.document_actions.citation.if = :render_citation_action?
 
@@ -125,7 +129,7 @@ class CatalogController < ApplicationController
     # This one uses all the defaults set by the solr request handler. Which
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
-    config.add_search_field('Alt',label: I18n.t('text_service.config.search.all_filters')) do |field|
+    config.add_search_field('Alt',label: I18n.t('general.config.search.all_filters')) do |field|
       field.solr_parameters = {
           :fq => ['cat_ssi:work'],
           :qf => 'author_name_tesim^5 work_title_tesim^5 text_tsim',
@@ -135,35 +139,79 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('title', label: I18n.t('text_service.config.search.title')) do |field|
-      # solr_parameters hash are sent to Solr as ordinary url query params.
+
+    config.add_search_field('author_title',label: I18n.t('general.config.search.author_title')) do |field|
       field.solr_parameters = {
-          :fq => ['cat_ssi:work'],
-          :qf => 'work_title_tesim',
-          :pf => 'work_title_tesim',
+        :fq => ['cat_ssi:work'],
+        :qf => 'author_name_tesim work_title_tesim',
+        :pf => 'work_title_tesim'
       }
+      field.solr_local_parameters = {
+      }
+    end
+
+
+#    config.add_search_field('title', label: I18n.t('general.config.search.title')) do |field|
+#      # solr_parameters hash are sent to Solr as ordinary url query params.
+#      field.solr_parameters = {
+#          :fq => ['cat_ssi:work'],
+#          :qf => 'work_title_tesim',
+#          :pf => 'work_title_tesim',
+#      }
       # :solr_local_parameters will be sent using Solr LocalParams
       # syntax, as eg {! qf=$title_qf }. This is neccesary to use
       # Solr parameter de-referencing like $title_qf.
       # See: http://wiki.apache.org/solr/LocalParams
+ #     field.solr_local_parameters = {
+#      }
+#    end
+
+ #   config.add_search_field('author', label: I18n.t('general.config.search.author')) do |field|
+#      field.solr_parameters = {
+#          :fq => ['cat_ssi:work'],
+#          :qf => 'author_name_tesim',
+#          :pf => 'author_name_tesim'
+#      }
+#      field.solr_local_parameters = {
+#      }
+#    end
+
+  
+    config.add_search_field('prose', label: I18n.t('general.config.search.prose')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'prose_extract_tesim',
+        :pf => 'prose_extract_tesim'
+      }
       field.solr_local_parameters = {
       }
     end
 
-    config.add_search_field('author', label: I18n.t('text_service.config.search.author')) do |field|
+    config.add_search_field('verse', label: I18n.t('general.config.search.verse')) do |field|
       field.solr_parameters = {
-          :fq => ['cat_ssi:work'],
-          :qf => 'author_name_tesim',
-          :pf => 'author_name_tesim'
+        :fq => ['cat_ssi:work'],
+        :qf => 'verse_extract_tesim',
+        :pf => 'verse_extract_tesim'
       }
       field.solr_local_parameters = {
       }
     end
+
+    config.add_search_field('play', label: I18n.t('general.config.search.play')) do |field|
+      field.solr_parameters = {
+        :fq => ['cat_ssi:work'],
+        :qf => 'performance_extract_tesim',
+        :pf => 'performance_extract_tesim'
+      }
+      field.solr_local_parameters = {
+      }
+    end
+
 
 #
 # We can leave some sediment here
 #
-#    config.add_search_field('phrase',label: I18n.t('text_service.config.search.phrase')) do |field|
+#    config.add_search_field('phrase',label: I18n.t('general.config.search.phrase')) do |field|
 #      field.solr_parameters = {
 #          :fq => ['cat_ssi:work'],
 #          :qf => 'text_tsim',
@@ -193,8 +241,8 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc', :label => (I18n.t'text_service.config.sort.relevance')
-    config.add_sort_field 'author_name_ssi asc', :label => (I18n.t'text_service.config.sort.author')
+    config.add_sort_field 'score desc', :label => (I18n.t'general.config.sort.relevance')
+    config.add_sort_field 'author_name_ssi asc', :label => (I18n.t'general.config.sort.author')
     config.add_sort_field 'work_title_ssi asc', :label => 'Titel'
 
     config.spell_max = 5
@@ -250,7 +298,7 @@ class CatalogController < ApplicationController
  # Email Action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
   def email_action documents
     report = params[:report].nil? ? "" : params[:report]
-    report +=  I18n.t('text_service.config.email.text.from', value: current_user.email) + "\n" unless current_user.nil?
+    report +=  I18n.t('general.config.email.text.from', value: current_user.email) + "\n" unless current_user.nil?
     mail = RecordMailer.email_record(documents, {:to => params[:to], :message => report+"\n\n"+params[:message]}, url_options)
     if mail.respond_to? :deliver_now
       mail.deliver_now
@@ -263,10 +311,10 @@ class CatalogController < ApplicationController
   def feedback
     @response, @document = search_service.fetch URI.unescape(params[:id])
     @report = ""
-    @report +=  I18n.t('text_service.config.email.text.from', value: current_user.email) + "\n" unless current_user.nil?
-    @report +=  I18n.t('text_service.config.email.text.url', url: @document['url_ssi']) + "\n" unless @document['url_ssi'].blank?
-    @report += I18n.t('text_service.config.email.text.author', value: @document['author_name'].first) + "\n" unless @document['author_name'].blank?
-    @report += I18n.t('text_service.config.email.text.title', value: @document['work_title_tesim'].first.strip)+ "\n" unless @document['work_title_tesim'].blank?
+    @report +=  I18n.t('general.config.email.text.from', value: current_user.email) + "\n" unless current_user.nil?
+    @report +=  I18n.t('general.config.email.text.url', url: @document['url_ssi']) + "\n" unless @document['url_ssi'].blank?
+    @report += I18n.t('general.config.email.text.author', value: @document['author_name'].first) + "\n" unless @document['author_name'].blank?
+    @report += I18n.t('general.config.email.text.title', value: @document['work_title_tesim'].first.strip)+ "\n" unless @document['work_title_tesim'].blank?
     render layout: nil
   end
 
@@ -318,6 +366,14 @@ class CatalogController < ApplicationController
     if document['cat_ssi'] != 'author' and document['cat_ssi'] != 'period' 
     edition = '<dt>Anvendt udgave:</dt><dd>' + document['volume_title_tesim'].first + '</dd>'
     end
+    author_portrait = ''
+    if document['cat_ssi'] == 'author'
+      author_portrait = 'Forfatterportræt af '
+    end
+    auth_name = ""
+    if document.has_key?('author_name_ssi')
+          auth_name = '<dt>Forfatter:</dt><dd>' + document['author_name_ssi'] + '</dd>' 
+    end    
     render pdf: name,
            footer: {right: '[page] af [topage] sider'},
            header: {html: {template: 'shared/pdf_header.pdf.erb'},
@@ -326,16 +382,13 @@ class CatalogController < ApplicationController
                     bottom: 15},
            encoding: 'utf8', # needed here to encode danish characters
            cover: '<style>dl > dt {float: left; width: 160px; clear: left; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;} dl > dd{margin-top: 0; margin-bottom: 20px; margin-left: 180px;}</style>'+
-               'Tekst fra Arkiv for Dansk Litteratur (adl.dk) <br /> <hr> <br /><br />' +
+               'Fra Det Kgl. Biblioteks tekstportal (tekster.kb.dk) <br /> <hr> <br /><br />' +
                '<dl>'+
-               '<dt>Forfatter:</dt><dd>' + document['author_name_ssi'] + '</dd>' +
-               '<dt>Titel:</dt><dd>' + document['work_title_tesim'].first + '</dd>' +
+               auth_name +
+               '<dt>Titel:</dt><dd>' + author_portrait + document['work_title_tesim'].first + '</dd>' +
                '<dt>Citation:</dt><dd style="">' + helpers.citation(@document.instance_values)  + '</dd>' +
                edition +
-               '</dl>'+
-               '<br /><br /><br /><br /><br />'+
-               'Det Danske Sprog- og Litteraturselskab (dsl.dk)<br />'+
-               'Det Kongelige Bibliotek (kb.dk)'
+               '</dl>'
   end
 
    def facsimile
@@ -359,6 +412,17 @@ class CatalogController < ApplicationController
       builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:author','type_ssi:work'], sort: 'sort_title_ssi asc'})
     end
     render "index"
+  end
+
+  def collection
+    id = params['id']
+    case id
+    when "gv"
+      id = "grundtvig"
+    when "lhv"
+      id = "holberg"
+    end
+    redirect_to  action: 'index', f: {subcollection_ssi: ["#{id}"]}, match: 'one', search_field: 'Alt'
   end
 
   def oai
@@ -386,7 +450,7 @@ class CatalogController < ApplicationController
 
   # method to be used in the views, that checks if the selected search field is fritekst
   def search_field_fritekst?
-    ['Alt','phrase'].include? params['search_field']
+    ['Alt','phrase','prose','verse','play'].include? params['search_field']
   end
   helper_method :search_field_fritekst?
 

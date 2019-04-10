@@ -1,0 +1,25 @@
+.mol-6391dbcf-4806-4f67-a2a5-46a4a831f576 {
+    display: inline-block;
+    position: relative;
+    margin: 0 .75rem .75rem 0;
+    button {
+        display: inline-flex;
+        align-items: center;
+        padding-left: 1.5rem;
+        padding-right: 3rem;
+        margin: 0;
+        i {
+            position: absolute;
+            right: .75rem;
+        }
+    }
+    ul {
+
+        display: none;
+    }
+    &.active {
+        ul {
+            display: block;
+        }
+    }
+}

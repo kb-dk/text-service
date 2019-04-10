@@ -1,0 +1,20 @@
+.org-01c45fc6-df1a-4fd8-b8c3-d1ff8e3b519d {
+  @extend %regular-sans-serif;
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 3rem;
+  }
+  &.no-padding {
+    padding-bottom: 0;
+  }
+
+  .bread-crumb {
+    color: $color-almost-black-50;
+    margin-bottom: 1.5rem;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

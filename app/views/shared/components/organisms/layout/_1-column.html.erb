@@ -1,0 +1,36 @@
+<div class="org-f2202134-9456-4e13-ad1e-56f87086ec03 <%= classes %>">
+  <div class="inner-content grid-container">
+    <div class="grid-x grid-margin-x grid-padding-y">
+      <div class="cell small-12">
+        <% if elements.include? 'page_intro' %>
+          <%= render :partial => 'shared/components/organisms/page-intro/index', locals: { heading:heading , description:description, classes:classes} %>
+        <% else %>
+          <% if elements.include? 'h2' %>
+            <%= render :partial => 'shared/components/organisms/heading/h2', locals: {classes:'',heading:heading } %>
+          <% end %>
+          <% if elements.include? 'page_intro_without_icon' %>
+             <%= render :partial => 'shared/components/organisms/page-intro/index-noicon', locals: { heading:heading , description:description} %>
+          <% end %>
+          <% if elements.include? 'page_intro_3' %>
+              <%= render :partial => 'shared/components/organisms/page-intro/index-3', locals: { heading:heading , description:t("view-specific.home.boxes.#{collection}.title"), url: get_collection_home_url(collection), small_title:author} %>
+          <% end %>
+        <% end %>
+        <% if elements.include? 'filtered_banner' %>
+            <%= render :partial => 'shared/components/organisms/filter-content/index', locals: {list:list, urls:urls, classes: ''} %>
+        <% end %>
+        <% if elements.include? 'banner' %>
+          <%= render :partial => 'shared/components/organisms/content-spot-banner/index', locals: {heading: heading, list:list, urls:urls, classes: 'edged-3', col:col} %>
+        <% end %>
+        <% if elements.include? 'advanced_search' %>
+          <%= render :partial =>'shared/components/molecules/advanced-search-form/index', locals: {close: false , action: search_action_url , form_method: 'get', input_placeholder: t('blacklight.search.form.search.placeholder'), dropdown1_placeholder: 'dropdown1_placeholder', classes: ''}%>
+        <% end %>
+        <% if elements.include? 'search_result' %>
+          <%= render 'search_results' %>
+        <% end %>
+        <% if elements.include? 'article' %>
+          <%= render "#{article}" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<footer>
+  <div class="inner-content grid-container">
+    <div class="grid-x grid-padding-x grid-padding-y">
+      <div class="small-6 medium-3 cell">
+        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: '', list: [[t('view-specific.footer.about'), page_path('about-text-portal'), '_self'],['Cookie- og Privatlivspolitik','http://www.kb.dk/da/kb/webstedet/cookiepolitik.html','_blank'],[t('view-specific.footer.contact-us-label'),t('view-specific.footer.contact-us-link'), '_self']]} %>
+      </div>
+      <div class="small-6 medium-3 cell">
+        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: '', list: []} %>
+      </div>
+      <div class="small-6 medium-3 cell">
+        <%= render :partial =>'shared/components/molecules/link-list/index', locals: {title: '', list: []} %>
+      </div>
+      <div class="small-6 medium-3 cell">
+        <%= render :partial =>'shared/components/molecules/contact-info/index' %>
+      </div>
+      <div class="small-12 show-for-small-only cell">
+        <div class="box flex-container align-center">
+          <%-# render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'facebook', icon_size: 'icon-medium'}-%>
+          <%-# render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'twitter', icon_size: 'icon-medium'}-%>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

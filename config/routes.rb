@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users
     concern :searchable, Blacklight::Routes::Searchable.new
+
+  resources :id
+  get '/:id', action: :collection, controller: 'catalog', constraints: {id: /adl|gv|pmm|sks|lhv|tfs/ }
 
   resource :catalog, only: [:index], as: 'catalog', path: '/text', controller: 'catalog' do
     concerns :searchable
@@ -21,7 +24,6 @@ Rails.application.routes.draw do
     end
   end
 
-
   mount Blacklight::Engine => '/'
   root to: "catalog#index"
 
@@ -34,5 +36,8 @@ Rails.application.routes.draw do
   get 'authors' => 'catalog#authors'
 
   get 'oai' => 'catalog#oai'
+
+  resources :snippet
+  get '/comment/:id' => 'snippet#comment'
 
 end

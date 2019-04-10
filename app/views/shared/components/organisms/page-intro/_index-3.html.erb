@@ -1,0 +1,21 @@
+<div class="org-fc19c325-bb61-4c28-ad0e-7c272912ed78">
+  <div class="content-header">
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-8">
+        <h1>
+          <% if small_title != '' %>
+          <span>
+            <%= small_title %>
+          </span>
+          <% end %>
+          <%= heading %>
+        </h1>
+      </div>
+      <% if description != '' %>
+          <div class="cell small-12 large-8">
+            <p><a href="<%= url %>"><%= description %></a></p>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

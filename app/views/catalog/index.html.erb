@@ -1,21 +1,34 @@
-<% unless has_search_parameters? %>
-    <%# if there are no input/search related params, display the "home" partial -%>
-    <%= render 'home' %>
-<% else %>
-    <% if has_search_parameters? %>
-        <%= render 'catalog/search_form' %>
-        <div id="content" class="content-not-main">
-          <div class="container">
-            <div class="row">
-              <div id="sidebar" class="<%= sidebar_classes %>">
-                <%= render 'search_sidebar' %>
-              </div>
-              <div class="col-md-9 col-sm-8">
-                <%= render 'search_results' %>
-              </div>
-            </div>
-          </div>
-        </div>
+<% is_collection_home_page = is_collection_home_page?
+   if is_collection_home_page
+     collection = params[:f]["subcollection_ssi"].join('')
+     resultlist = collection.upcase
+   else
+     case params[:action]
+     when "authors"
+       resultlist = 'Forfatterliste'
+     when "periods"
+       resultlist = 'Periodeliste'
+     else
+       resultlist = t('blacklight.back_to_search')
+     end
+   end
+%>
+<% if has_search_parameters? %>
+  <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrumb.text_service'), root_path], [resultlist, '']]} %>
+  <%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'} %>
+  <% if ['authors', 'periods'].include? action_name %>
+    <%= render :partial => 'shared/components/organisms/top-container/index' %>
+    <%= render :partial => 'shared/components/organisms/layout/1-column', locals: {elements: ['advanced_search', 'search_result'], classes: 'padding-top'} %>
+  <% else %>
+    <%= render :partial => 'shared/components/organisms/top-container/aside' %>
+    <% if is_collection_home_page %>
+      <%= render :partial => 'shared/components/organisms/layout/3-column-aside', locals: {collection_home: true, collection: collection, classes: 'padding-top'} %>
+    <% else %>
+      <%= render :partial => 'shared/components/organisms/layout/2-column-aside', locals: {classes: 'padding-top'} %>
     <% end %>
+  <% end %>
+<% else %>
+  <%# if there is no input/search related params, display the "home" partial -%>
+  <%= render 'home' %>
 <% end %>
-
+<%= render :partial => 'catalog/search_tips' %>

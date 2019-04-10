@@ -1,5 +1,5 @@
 /* global $,window, jQuery, dkBreve, KbOSD */
-
+"use strict";
 window.dkBreve = (function (window, $, undefined) {
     'use strict';
     var DkBreve = function () {
@@ -44,12 +44,14 @@ window.dkBreve = (function (window, $, undefined) {
                 ocrElem = $('.ocr').first(),
                 citationPageNumber = document.getElementById('pageNumber'),
                 pageCount = $('.pageBreak', ocrElem).length + 1;
+	    if(citationPageNumber != null) {
                 if (page>1) {
                     citationPageNumber.innerText = ($('.ocr .pageBreak a small')[page - 2]).textContent;
                 }
                 else{
                     citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
                 }
+	    }
 
             if (page < 1 || page > pageCount) {
                 throw('DkBreve.gotoOcrPage: page "' + page + '" out of bounds.');
@@ -92,13 +94,15 @@ window.dkBreve = (function (window, $, undefined) {
                         citationPageNumber = document.getElementById('pageNumber'),
                         hashTagInURI = document.getElementById('hashTagInURI'),
                         kbosd = KbOSD.prototype.instances[0]; // The dkBreve object should have a kbosd property set to the KbOSD it uses!
-                    if (currentOcrPage > 1) {
-                        citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;
-                        hashTagInURI.innerText = "#"+($('.ocr .pageBreak')[currentOcrPage - 2]).id;
-                    } else {
-                        citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
-                        hashTagInURI.innerText = "";
-                    }
+		    if(citationPageNumber != null) {
+			if (currentOcrPage > 1  && hashTagInURI != null) {
+                            citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;
+                            hashTagInURI.innerText = "#"+($('.ocr .pageBreak')[currentOcrPage - 2]).id;
+			} else {
+                            citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
+                            hashTagInURI.innerText = "";
+			}
+		    }
                     if (kbosd.getCurrentPage() !== currentOcrPage) {
                         that.scrollingInProgress = true;
                         kbosd.setCurrentPage(currentOcrPage, function () {
@@ -124,22 +128,6 @@ window.dkBreve = (function (window, $, undefined) {
                 contentHeight = windowHeight - headerFooterHeight - 10;
             dkBreve.setContentHeight(contentHeight);
 
-            // Collapse/Expand facsimile column
-            $('#hide_facsimile').click(function (e) {
-                $(this).closest('.lpTextContainer').removeClass('col-sm-6 border-right');
-                $(this).closest('.lpTextContainer').addClass('col-sm-12');
-                $(this).hide();
-                $('#show_facsimile').show();
-                $('.lpFacsContainer').hide();
-
-            });
-            $('#show_facsimile').click(function (e) {
-                $(this).closest('.lpTextContainer').addClass('col-sm-6 border-right');
-                $(this).closest('.lpTextContainer').removeClass('col-sm-12');
-                $(this).hide();
-                $('#hide_facsimile').show();
-                $('.lpFacsContainer').show();
-            });
 
             $(window).resize(function () {
                 dkBreve.onWindowResize.call(dkBreve);
@@ -176,17 +164,6 @@ window.dkBreve = (function (window, $, undefined) {
         onWindowResize: function () {
             this.setContentHeight($(window).innerHeight() - this.getFooterAndHeaderHeight());
         },
-        closeFullScreen: function () {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-        },
         getFooterAndHeaderHeight: function () {
             return $('.page_links').outerHeight() +
                 $('.workNavBar').outerHeight() +
@@ -211,54 +188,15 @@ $(document).on('kbosdready', function (e) {
 });
 
 //////////////////////////////////////////////////////
-
 $(document).ready(function () {
-
-// set up handler for ocr fullscreen
-    $('#ocrFullscreenButton').click(function (e) {
-        // Copy/Pasted from http://stackoverflow.com/questions/7130397/how-do-i-make-a-div-full-screen /HAFE
-        // if already full screen; exit
-        // else go fullscreen
-        if (
-            document.fullscreenElement ||
-            document.webkitFullscreenElement ||
-            document.mozFullScreenElement ||
-            document.msFullscreenElement
-        ) {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.webkitExitFullscreen) {
-                document.webkitExitFullscreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-        } else {
-            var element = $('.ocr').get(0);
-            if (element.requestFullscreen) {
-                element.requestFullscreen();
-            } else if (element.mozRequestFullScreen) {
-                element.mozRequestFullScreen();
-            } else if (element.webkitRequestFullscreen) {
-                element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-            } else if (element.msRequestFullscreen) {
-                element.msRequestFullscreen();
-            }
-        }
-    });
-
-// Close on fullscreen
-    $('.escFullScreenButton').click(dkBreve.closeFullScreen);
-
  // If there is no OSD in the page so there is no pagination
 // The following code checks if there is no pagination then 'on scroll' changes the page number on citation
     if(typeof (has_facs)!== 'undefined') {
         if (!(has_facs)) {
             document.getElementsByClassName('ocr')[0].addEventListener("scroll", function () {
-                    var currentOcrPage = getOcrCurrentPage();
-                    citationPageNumber = document.getElementById('pageNumber');
-                    hashTagInURI = document.getElementById('hashTagInURI');
+                    let  currentOcrPage = getOcrCurrentPage();
+                    let citationPageNumber = document.getElementById('pageNumber');
+                    let hashTagInURI = document.getElementById('hashTagInURI');
                     if (citationPageNumber) {
                         if (currentOcrPage > 1) {
                             citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;

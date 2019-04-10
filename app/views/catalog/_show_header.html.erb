@@ -1,8 +1,20 @@
-<% # bookmark/folder functions   -%>
-<header>
-  <div class="search-secondary box-gradient-blue fixed-top-second">
-    <div class="container-fluid">
-      <%= render_document_heading(document, :tag => :h1) %>
-    </div>
-  </div>
-</header>
+<% if document['author_name_ssi'].present?
+     author_name = document['author_name_ssi']
+   else
+     author_name = ''
+   end
+
+   title = document_show_html_title
+   if @document[:type_ssi] == 'leaf'
+     if @document[:part_of_ssim].first
+       parent_title = get_parent_title(@document[:part_of_ssim].first)
+       title = 'Uddrag fra' + parent_title
+     end
+   end
+%>
+
+<%
+  collection = document['subcollection_ssi']
+%>
+<%= render :partial => 'shared/components/organisms/layout/1-column', locals: {elements: ['page_intro_3'], classes: 'white-cover-bg padding-top', heading: title, author: author_name, collection: collection} %>
+

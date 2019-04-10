@@ -1,0 +1,31 @@
+.atom-0d378dbb-558c-442e-aa50-6c7af902714b {
+    position: relative;
+    z-index: 100;
+    ul {
+        position: absolute;
+        background-color: white;
+        border: 1px solid $color-light-gray;
+        border-top: none;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        box-shadow: $general-box-shadow;
+        li {
+            list-style-type: none;
+            padding: calc(.75rem / 2) .75rem;
+            cursor: pointer;
+            height: 3rem;
+            line-height: 2rem;
+            &.selected {
+                background-color: $color-dark-blue-50;
+            }
+            &:last-child {
+                padding-bottom: calc(.75rem / 2);
+            }
+            &:hover {
+                background-color: $color-dark-blue-50;
+            }
+        }
+    }
+}

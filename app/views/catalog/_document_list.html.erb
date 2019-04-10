@@ -1,0 +1,9 @@
+<% # container for all documents in index list view   -%>
+<%# Adds extra margin, so that søgetips is clickable in authors and periods list %>
+<% if ['authors', 'periods'].include? action_name
+     classes = 'mt-sm-5'
+   else
+     classes = ''
+   end %>
+<%= render :partial => 'shared/components/organisms/search-results/index', locals: {classes: classes, documents: documents, documents_bottom: 'results_pagination'} %>
+

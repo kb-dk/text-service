@@ -1,3 +1,4 @@
+"use strict";
 // Called in the _index_default.html to populate the index partial with links of text searches
 // If the matxhes are more than 3, it creates a button that triggers a modal with all the matches/links
 function index_work_search(id, modal_selector, modal_body_selector, target_selector, text_label_id, q, match) {
@@ -12,9 +13,9 @@ function index_work_search(id, modal_selector, modal_body_selector, target_selec
             datatype: 'json',
             success: function (data) {
                 $(target_selector).empty();
-                docs = data.data;
-                hl_field = 'text_tsim';
-                matches_num = data.meta.pages.total_count;
+                let docs = data.data;
+                let hl_field = 'text_tsim';
+                let matches_num = data.meta.pages.total_count;
                 if (matches_num > 0) {
                     $(target_selector).append('<div id="results-header"><p>' + matches_num + ' match</p></div>');
                     for (var i = 0; i in docs && i < 3; i++) {
@@ -58,9 +59,9 @@ function show_work_search(id, target_selector, q) {
         datatype: 'json',
         success: function (data) {
             $(target_selector).empty();
-            docs = data.response.docs;
-            highlighting = data.response.highlighting;
-            matches_num = data.response.pages.total_count;
+            let docs = data.response.docs;
+            let highlighting = data.response.highlighting;
+            let matches_num = data.response.pages.total_count;
             if (matches_num > 0) {
                 $('.contentSearch').show();
                 $(target_selector).append('<div id="results-header"><p>' + matches_num + ' match</p></div>');
@@ -76,48 +77,4 @@ function show_work_search(id, target_selector, q) {
             } // If the number of matches is 0, or matches dosn't contain any highlight like in case of using 'NOT', hide the label
         }
     });
-}
-
-///////// Cookie popup in the home page
-function cookieTerms(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return "";
-}
-
-function checkCookie() {
-    var cookie_button = document.getElementById("cookie-button");
-    if (cookie_button) {
-        var cookie = getCookie("terms");
-        if (cookie != "") {
-        } else {
-            cookie_button.style.display = "block";
-            if (cookie != "" && cookie != null) {
-                cookieTerms("terms", cookie, 60);
-            }
-        }
-    }
-}
-$(document).ready(function () {
-    checkCookie();
-});
-/////////
-function toggleHighlight() {
-    var el = document.getElementsByClassName('hit');
-    var len = el.length;
-    for (i = 0; i < len; i++) {
-        el[i].classList.toggle('transparentBackground');
-    }
 }

@@ -29,7 +29,7 @@ module Blacklight
     # Classes used for sizing the sidebar content of a Blacklight page
     # @return [String]
     def sidebar_classes
-      'page-sidebar col-md-3'
+      'page-sidebar'
     end
 
     ##
@@ -37,7 +37,7 @@ module Blacklight
     # overwritten to return 'container-fluid' for Bootstrap full-width layout
     # @return [String]
     def container_classes
-      'container-fluid'
+      'container'
     end
   end
 end

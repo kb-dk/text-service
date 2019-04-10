@@ -1,8 +1,28 @@
-// Adding textservice spesific variables before bootstrap
-@import "textservice/variables";
+// Adding new kbdk design variables
+@import 'kb-design/typography';
+
+// Adding website spesific variables before bootstrap
+@import "General/variables";
+
+// Adding view spesific variables before bootstrap
+//@import "Text-service/variables";
+//@import "ADL/variables";
+
 @import "bootstrap";
-// Adding textservice specific styling files
-@import "textservice/textservice";
 @import 'blacklight/blacklight';
+
+@import "kb-design/styles";
+
+// Adding website specific styling files
+@import "General/General";
+// Adding view specific styling files
+//@import "Text-service/Text-service";
+//@import "ADL/ADL";
+
+@import "snippet";
+
 //font awesome
 @import "font-awesome";
+// Google Material Icons
+@import "material_icons";
+@import "material_icons_unicode";

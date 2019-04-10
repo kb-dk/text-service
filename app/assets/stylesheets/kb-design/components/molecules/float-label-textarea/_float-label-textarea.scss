@@ -1,0 +1,26 @@
+.mol-fe30df5a-c3ef-4607-8b62-2d58b044c575 {
+    @extend .mol-ef63e9db-1c74-43c1-82e7-4c8b8c5bfa00;
+
+    textarea {
+        width: 100%;
+        height: 100%;
+        min-height: 6rem;
+        padding: .75rem;
+        font-size: 1rem;
+        outline: none; 
+        border: none;
+        background: transparent;
+        &::placeholder {
+            transition: opacity 300ms;
+        }
+        
+    }
+    &.focus {
+        textarea {
+            &::placeholder { 
+                opacity: 0;
+            }
+        }
+    }
+    
+}
