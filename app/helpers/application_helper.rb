@@ -79,7 +79,7 @@ module ApplicationHelper
       url = '/pmm'
     when "adl"
       url = '/adl'
-    when "grundtvig"
+    when "gv"
       url = '/gv'
     when "tfs"
       url = '/tfs'
@@ -100,7 +100,7 @@ module ApplicationHelper
          name = "Poul Martin Møllers Skrifter"
        when "adl"
          name = "Arkiv for Dansk Litteratur"
-       when "grundtvig"
+       when "gv"
          name = "Grundtvigs Værker"
        when "tfs"
          name = "Trykkefrihedens Skrifter"

@@ -16,7 +16,7 @@ function collections_home_url() {
         case '/text?f[subcollection_ssi][]=adl&match=one&search_field=Alt':
             new_url = '/adl';
             break;
-        case '/text?f[subcollection_ssi][]=grundtvig&match=one&search_field=Alt':
+        case '/text?f[subcollection_ssi][]=gv&match=one&search_field=Alt':
             new_url = '/gv';
             break;
         case '/text?f[subcollection_ssi][]=tfs&match=one&search_field=Alt':
