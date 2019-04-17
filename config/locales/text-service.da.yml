@@ -20,7 +20,7 @@ da:
           title: 'Alle værker'
         sks:
           title: 'Søren Kierkegaards Skrifter'
-        grundtvig:
+        gv:
           title: 'Grundtvigs Værker'
         pmm:
           title: 'Poul Martin Møllers Værker'
@@ -55,7 +55,7 @@ da:
         sks:
           title: 'Om Søren Kierkegaards Skrifter'
           summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
-        grundtvig:
+        gv:
           title: 'Om Grundtvigs Værker'
           summary: 'En tekstkritisk og kommen&shy;teret udgave af N.F.S. Grundtvigs trykte forfatter&shy;skab. En af de betydeligste personligheder i 1800-tallets danske åndsliv.'
         pmm:
