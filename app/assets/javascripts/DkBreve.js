@@ -192,9 +192,11 @@ $(document).ready(function () {
  // If there is no OSD in the page so there is no pagination
 // The following code checks if there is no pagination then 'on scroll' changes the page number on citation
     if(typeof (has_facs)!== 'undefined') {
-        if (!(has_facs)) {
-            document.getElementsByClassName('ocr')[0].addEventListener("scroll", function () {
+        if (has_facs) {
+            window.addEventListener("scroll", function () {
                     let  currentOcrPage = getOcrCurrentPage();
+                console.log(currentOcrPage);
+
                     let citationPageNumber = document.getElementById('pageNumber');
                     let hashTagInURI = document.getElementById('hashTagInURI');
                     if (citationPageNumber) {
@@ -208,17 +210,17 @@ $(document).ready(function () {
                     }
                     function getOcrCurrentPage() {
                         var ocrElem = $('.ocr'),
-                            ocrScrollTop = ocrElem[0].scrollTop,
-                            ocrScrollTopOffset = ocrScrollTop + 9, // Magic number 9 is 1 px less than the margin added when setting pages
-                            ocrBreaks = $('.pageBreak', ocrElem);
+                            ocrScrollTop = 30,
+                            ocrScrollTopOffset = $(window).scrollTop() + 9, // Magic number 9 is 1 px less than the margin added when setting pages
+                            ocrBreaks = $('.pageBreak');
                         var i = 0;
-                        if ($(ocrBreaks[0]).position().top + ocrScrollTopOffset > ocrScrollTop) {
+                        if ($(ocrBreaks[0]).offset().top - ocrScrollTopOffset > ocrScrollTop) {
                             return 1; // user are before the very first pageBreak => page 1
                         }
-                        while (i < ocrBreaks.length && $(ocrBreaks[i]).position().top + ocrScrollTopOffset <= ocrScrollTop) {
+                        while (i < ocrBreaks.length && $(ocrBreaks[i]).offset().top - ocrScrollTopOffset <= ocrScrollTop) {
                             i++;
                         }
-                        return i + 1;
+                        return i;
                     }
                 }
             );
