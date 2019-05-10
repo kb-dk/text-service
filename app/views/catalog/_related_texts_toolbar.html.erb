@@ -1,0 +1,22 @@
+<% buttons_list = []
+   text_capabilities_type = get_text_capabilities_type (@document)
+   text_capabilities = get_text_capabilities (@document[:capabilities_ssi])
+   text_capabilities.each do |title, url|
+     javascript_url = "this.href='#{url}'"
+     classes = ''
+     if title == text_capabilities_type
+       classes = 'active'
+     end
+     buttons_list.push([title , title, javascript_url, classes, '', true])
+   end
+%>
+
+<div class="relatedTextsToolbar
+  <% if text_capabilities_type == "Hovedtekst" %> hidden
+  <% end %>">
+
+  <% if buttons_list.any? %>
+    <%= render :partial => 'shared/components/organisms/filter-btn-group/index', locals: {list: buttons_list} %>
+  <% end %>
+
+</div>
