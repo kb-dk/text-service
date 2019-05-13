@@ -147,6 +147,10 @@ main .document {
 
  .atom-e7937846-48b1-4797-9eb4-8cd4837fc421{
     display: inline-block;
+   margin-right: 10px;
+   label:before{
+     margin-right: 0;
+   }
   }
 }
 
