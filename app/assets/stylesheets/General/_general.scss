@@ -102,18 +102,20 @@ article.om-tekstportalen {
 }
 
 .exposableDocumentFunctions {
-  line-height: 1;
-  a {
-    font-size: 0;
-    visibility: hidden;
+        font-size: 0;
+        visibility: hidden;
+  line-height: 0;
 
-    i.fa {
-      font-size: medium;
-      visibility: visible;
-      position: absolute;
-      left: 0;
-      color: #000;
-    }
+  .quote{
+          font-size: medium;
+          visibility: visible;
+          position: absolute;
+          left: 0;
+          color: #000;
+    line-height: 1;
+  }
+  .the_whole{
+    display: none;
   }
 }
 
