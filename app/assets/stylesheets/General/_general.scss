@@ -108,26 +108,31 @@ article.om-tekstportalen {
   margin-bottom: 0;
 }
 
-.exposableDocumentFunctions {
+span.symbol, a.translation{
+  display: none;
+}
+
+filter_vintage
+
+span.symbol.translation{
   font-size: 0;
-  visibility: hidden;
-  line-height: 0;
-
-  .quote {
-    font-size: medium;
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    color: #000;
-    line-height: 1;
-  }
-
-  .the_whole {
-    display: none;
+  &:before{
+    font-size: large;
+    display: inline;
+    font-weight: bold;
   }
 }
 
-a.comment .symbol.comment {
+.quote {
+  font-size: medium;
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  color: #000;
+  line-height: 1;
+}
+
+.the_whole {
   display: none;
 }
 

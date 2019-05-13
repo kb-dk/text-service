@@ -5,12 +5,13 @@ function toggle_text_comments() {
     if (this.checked) {
         for (i = 0; i < text_comments.length; i++) {
             text_comments[i].style.display = 'inline';
-            text_comments[i].parentElement.style.textDecoration = 'underline';
+            text_comments[i].parentElement.style.display = 'inline';
+
         }
     } else {
         for (i = 0; i < text_comments.length; i++) {
             text_comments[i].style.display = 'none';
-            text_comments[i].parentElement.style.textDecoration = 'none';
+            text_comments[i].parentElement.style.display = 'none';
         }
     }
 }
