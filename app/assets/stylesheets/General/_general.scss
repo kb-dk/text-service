@@ -108,13 +108,11 @@ article.om-tekstportalen {
   margin-bottom: 0;
 }
 
-span.symbol, a.translation{
+span.symbol, a.translation, a.modernized{
   display: none;
 }
 
-filter_vintage
-
-span.symbol.translation{
+span.symbol.translation, span.symbol.modernized{
   font-size: 0;
   &:before{
     font-size: large;
