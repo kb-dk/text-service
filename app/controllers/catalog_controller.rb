@@ -418,7 +418,7 @@ class CatalogController < ApplicationController
     id = params['id']
     case id
     when "gv"
-      id = "grundtvig"
+      id = "gv"
     when "lhv"
       id = "holberg"
     end
