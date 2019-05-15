@@ -21,14 +21,14 @@
 else
   text_capabilities_type = get_text_capabilities_type (@document)
   classes = ''
-  unless text_capabilities_type == "Hovedtekst"
+  unless (text_capabilities_type == "Hovedtekst") || (text_capabilities_type == "Tekst")
     classes = 'active'
   end
   buttons_list = [
             ['Info','toggleInfo','javascript:toggleInfoBox()','','',true],
             [t('general.landing_page.table_of_content'),'show_toc','','tableOfContent','data-toggle=modal data-target=#toc',true],
             ['Relaterede tekster','toggleRelatedTexts','javascript:toggleRelatedTexts()',classes,'',true],
-            ['Tekstmuligheder','toggleTextPossibilities','javascript:toggleTextPossibilities()',classes,'',true],
+            ['Tekstmuligheder','toggleTextPossibilities','javascript:toggleTextPossibilities()','','',true],
             [t('general.text_toolbar.highlight'),'toggleHighlight','javascript:toggleHighlight()','active','',query.present?],
             [t('general.text_toolbar.facsimile'),'toggleFacsimile','javascript:toggleFacsimile()','','',has_facs]
           ]

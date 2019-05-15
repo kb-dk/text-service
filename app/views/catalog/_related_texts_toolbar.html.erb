@@ -13,7 +13,7 @@
 %>
 
 <div class="relatedTextsToolbar
-  <% if text_capabilities_type == "Hovedtekst" %> hidden
+  <% if (text_capabilities_type == "Hovedtekst")||(text_capabilities_type == "Tekst" ) %> hidden
   <% end %>">
 
   <% if buttons_list.any? %>

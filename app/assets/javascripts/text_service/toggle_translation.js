@@ -6,13 +6,11 @@ function toggle_translation() {
         for (i = 0; i < text_translations.length; i++) {
             text_translations[i].style.display = 'inline';
             text_translations[i].classList.add('icon', 'translate');
-            text_translations[i].parentElement.style.textDecoration = 'underline';
             text_translations[i].parentElement.style.display = 'inline';
         }
     } else {
         for (i = 0; i < text_translations.length; i++) {
             text_translations[i].style.display = 'none';
-            text_translations[i].parentElement.style.textDecoration = 'none';
             text_translations[i].parentElement.style.display = 'none';
         }
     }
