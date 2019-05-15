@@ -127,7 +127,8 @@ span.symbol{
   &.info,
   &.person,
   &.comment,
-  &.place{
+  &.place,
+  &.title{
     @extend .hide_unicode_icon;
   }
 }
