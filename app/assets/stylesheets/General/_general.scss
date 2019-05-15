@@ -113,13 +113,17 @@ span.symbol, a.translation, a.modernized{
   cursor: pointer;
 }
 
-span.symbol.translation, span.symbol.modernized{
+.hide_unicode_icon{
   font-size: 0;
   &:before{
     font-size: large;
     display: inline;
     font-weight: bold;
   }
+}
+
+span.symbol.translation, span.symbol.modernized, span.symbol.person{
+  @extend .hide_unicode_icon;
 }
 
 .quote {
