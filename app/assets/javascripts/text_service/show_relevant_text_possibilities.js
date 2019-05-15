@@ -1,7 +1,7 @@
 "use strict";
 
 function show_relevant_text_possibilities() {
-    let types = ['quote', 'comment', 'translation', 'modernized', 'info', 'person'];
+    let types = ['quote', 'comment', 'translation', 'modernized', 'info', 'person', 'place'];
     types.forEach(function(type)
     {
         var symbols = document.querySelectorAll('span.symbol.' + type);

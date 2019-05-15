@@ -1,7 +1,7 @@
 "use strict";
 
 function toggle_location() {
-    let text_locations = document.querySelectorAll("span.symbol.location");
+    let text_locations = document.querySelectorAll("span.symbol.place");
     if (this.checked) {
         for (i = 0; i < text_locations.length; i++) {
             text_locations[i].style.display = 'inline';

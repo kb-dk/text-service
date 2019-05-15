@@ -121,10 +121,17 @@ span.symbol, a.translation, a.modernized{
     font-weight: bold;
   }
 }
-
-span.symbol.translation, span.symbol.modernized, span.symbol.person{
-  @extend .hide_unicode_icon;
+span.symbol{
+  &.translation,
+  &.modernized,
+  &.info,
+  &.person,
+  &.comment,
+  &.place{
+    @extend .hide_unicode_icon;
+  }
 }
+
 
 .quote {
   font-size: medium;

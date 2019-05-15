@@ -2,11 +2,11 @@
 <span class="textPossibilitiesToolbar hidden">
   <fieldset>
     <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span>&#9986;</span> Uddrag', selected: '', disabled: '', id: 'Show_only_this_part', name: 'Show_only_this_part', type:'quote', classes: 'hidden'} %>
-    <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span>&#9658;</span> Tekstkommentarer', selected: '', disabled: '', id: 'Show_comments', name: 'Show_comments', type: 'comment', classes: 'hidden'} %>
+    <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span class="icon comment">&nbsp;</span>Tekstkommentarer', selected: '', disabled: '', id: 'Show_comments', name: 'Show_comments', type: 'comment', classes: 'hidden'} %>
     <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span class="icon translate">&nbsp;</span>Oversættelse', selected: '', disabled: '', id: 'Show_translations', name: 'Show_translations', type:'translation', classes: 'hidden'} %>
     <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span class="icon filter_vintage">&nbsp;</span>Modernisering', selected: '', disabled: '', id: 'Show_modernizations', name: 'Show_modernizations', type:'modernized', classes: 'hidden'} %>
-    <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span>&#9432;</span> Tekstkritisk apparat', selected: '', disabled: '', id: 'Show_infos', name: 'Show_infos', type:'info', classes: 'hidden'} %>
+    <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span class="icon info">&nbsp;</span> Tekstkritisk apparat', selected: '', disabled: '', id: 'Show_infos', name: 'Show_infos', type:'info', classes: 'hidden'} %>
     <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span class="icon person">&nbsp;</span>Person', selected: '', disabled: '', id: 'Show_persons', name: 'Show_persons', type:'person', classes: 'hidden'} %>
-    <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span class="icon location_on">&nbsp;</span>Beliggenhed', selected: '', disabled: '', id: 'Show_locations', name: 'Show_locations', type:'location', classes: 'hidden'} %>
+    <%= render :partial => 'shared/components/atoms/checkbox/index.html.erb', locals: {label: '<span class="icon location_on">&nbsp;</span>Beliggenhed', selected: '', disabled: '', id: 'Show_locations', name: 'Show_locations', type:'place', classes: 'hidden'} %>
   </fieldset>
 </span>
