@@ -1,5 +1,6 @@
 <% buttons_list = []
    text_capabilities_type = get_text_capabilities_type (@document)
+
    text_capabilities = get_text_capabilities (@document[:capabilities_ssi])
    text_capabilities.each do |title, url|
      javascript_url = "this.href='#{url}'"
