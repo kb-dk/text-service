@@ -236,25 +236,46 @@ main .document {
   position: relative;
 }
 
+//a.pagination{
+//  display: inline;
+//}
+//.symbol.pagination.edition {
+//  display: inline ;
+//  //a > small {
+//  //  visibility: visible;
+//    position: absolute;
+//    left: 5px;
+//  //}
+//
+//    margin-left: 0;
+//    width: 0;
+//    height: 0;
+//    padding: 0;
+//
+//  &:after {
+//    content: "\007C";
+//    color: $secondary;
+//  }
+//}
 a.pagination{
-  display: inline;
+  display: none;
+  font-family: 'nowayregular', sans-serif;
+  .symbol.pagination{
+    display: inline;
+      font-size: 14px;
+      font-weight: normal;
+  }
 }
-.symbol.pagination.edition {
-  display: inline ;
-  //a > small {
-  //  visibility: visible;
+.pageBreak, a.pagination {
+  small.edition {
     position: absolute;
     left: 5px;
-  //}
-
-    margin-left: 0;
-    width: 0;
-    height: 0;
-    padding: 0;
+  }
 
   &:after {
     content: "\007C";
     color: $secondary;
+    font-size: large;
   }
 }
 
