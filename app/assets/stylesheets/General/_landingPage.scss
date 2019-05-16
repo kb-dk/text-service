@@ -236,20 +236,21 @@ main .document {
   position: relative;
 }
 
-.pageBreak {
-  a > small {
-    visibility: visible;
+a.pagination{
+  display: inline;
+}
+.symbol.pagination.edition {
+  display: inline ;
+  //a > small {
+  //  visibility: visible;
     position: absolute;
     left: 5px;
-  }
+  //}
 
-  a {
-    visibility: hidden;
     margin-left: 0;
     width: 0;
     height: 0;
     padding: 0;
-  }
 
   &:after {
     content: "\007C";
