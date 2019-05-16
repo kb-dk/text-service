@@ -14,7 +14,6 @@ for (var i = 0; i < infos.length; i++) {
         modal_body.innerHTML = text_critic.innerHTML;
         text_critic.setAttribute("style", "display: none !important");
         let witnesses = text_critic.querySelectorAll('.witness[title]');
-        console.log(witnesses);
         let modal_footer = modal.getElementsByClassName('modal-footer')[0];
         modal_footer.innerHTML = '';
         for (var i = 0; i < witnesses.length; i++) {
