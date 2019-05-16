@@ -1,3 +1,18 @@
+a{
+  text-decoration: underline;
+}
+
+a.comment{
+  text-decoration: none;
+  pointer-events: none;
+}
+
+a.show_comments{
+  pointer-events: auto !important;
+  text-decoration: underline !important;
+  cursor: pointer !important;
+}
+
 #toc {
   .current_entry_parent {
     background-Color: #d1d8e6;
