@@ -4,11 +4,11 @@ var comments = document.querySelectorAll('a[title="Kommentar"]');
 for (var i = 0; i < comments.length; i++) {
     var comment = comments[i];
     comment.dataset.toggle = "modal";
-    comment.dataset.target = "#comment";
+    comment.dataset.target = "#comment_modal";
 
     comment.addEventListener("click", function (event) {
         event.preventDefault()
-        var modal = document.getElementById('comment');
+        var modal = document.getElementById('comment_modal');
         var modal_body = modal.getElementsByClassName('modal-body')[0];
 
         var xhttp = new XMLHttpRequest();
