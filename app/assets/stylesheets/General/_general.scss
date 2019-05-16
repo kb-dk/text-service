@@ -112,6 +112,14 @@ span.symbol, a.translation, a.modernized{
   display: none;
   cursor: pointer;
 }
+span.symbol.title, span.symbol.person, span.symbol.place{
+  cursor: auto;
+}
+
+a.comment{
+  pointer-events: none;
+  cursor: default;
+}
 
 .hide_unicode_icon{
   font-size: 0;

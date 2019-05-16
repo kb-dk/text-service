@@ -6,13 +6,13 @@ function toggle_text_comments() {
         for (i = 0; i < text_comments.length; i++) {
             text_comments[i].style.display = 'inline';
             text_comments[i].classList.add('icon', 'comment');
-            text_comments[i].parentElement.style.display = 'inline';
+            text_comments[i].parentElement.style.pointerEvents = 'auto';
 
         }
     } else {
         for (i = 0; i < text_comments.length; i++) {
             text_comments[i].style.display = 'none';
-            text_comments[i].parentElement.style.display = 'none';
+            text_comments[i].parentElement.style.pointerEvents = 'none';
         }
     }
 }
