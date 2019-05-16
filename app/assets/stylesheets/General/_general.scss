@@ -107,6 +107,9 @@ article.om-tekstportalen {
 .org-63a1bc7e-5093-4bf0-8d2e-fcf5bfe32aca {
   margin-bottom: 0;
 }
+#info_modal .modal-footer > :not(:first-child) {
+  margin-left: 0
+}
 
 span.symbol, a.translation, a.modernized{
   display: none;
