@@ -111,6 +111,42 @@ article.om-tekstportalen {
   margin-left: 0
 }
 
+.exposableDocumentFunctions {
+  line-height: 1;
+
+  a {
+    font-size: 0;
+    visibility: hidden;
+
+    i.fa {
+      font-size: medium;
+      visibility: visible;
+      position: absolute;
+      left: 0;
+      color: #000;
+    }
+  }
+}
+
+.page-notification.ie_message {
+  text-shadow: none;
+  a{
+    display: inline-block;
+    text-decoration: underline;
+    &:hover {
+      color: white;
+    }
+  }
+  .close_notification {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+
+    &:hover {
+      color: white;
+    }
+  }
+
 span.symbol, a.translation, a.modernized{
   display: none;
   cursor: pointer;
