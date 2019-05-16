@@ -130,13 +130,16 @@ article.om-tekstportalen {
 
 .page-notification.ie_message {
   text-shadow: none;
-  a{
+
+  a {
     display: inline-block;
     text-decoration: underline;
+
     &:hover {
       color: white;
     }
   }
+
   .close_notification {
     position: absolute;
     right: 1.5rem;
@@ -146,6 +149,7 @@ article.om-tekstportalen {
       color: white;
     }
   }
+}
 
 span.symbol, a.translation, a.modernized{
   display: none;
