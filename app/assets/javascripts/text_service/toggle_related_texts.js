@@ -3,9 +3,9 @@
  */
 "use strict";
 
-function toggleTextPossibilities() {
-    let text_possibility_toolbar = document.getElementsByClassName("textPossibilitiesToolbar")[0];
-    let btn = document.getElementById("toggleTextPossibilities");
+function toggleRelatedTexts() {
+    let text_possibility_toolbar = document.getElementsByClassName("relatedTextsToolbar")[0];
+    let btn = document.getElementById("toggleRelatedTexts");
 
     if (btn.classList.contains('active')) {
         text_possibility_toolbar.classList.add('hidden');
