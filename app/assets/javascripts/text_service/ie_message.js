@@ -25,4 +25,9 @@ function is_ie(){
     return false;
 }
 
+function closeBanner(){
+    var banner = document.getElementById('ie_banner');
+    banner.style.display = 'none';
+}
+
 window.addEventListener('load', ie_message, false);
