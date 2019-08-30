@@ -140,6 +140,20 @@ main .document {
   border-bottom: 1px solid #c0c0c0;
 }
 
+.toolbar_container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+ .atom-e7937846-48b1-4797-9eb4-8cd4837fc421{
+    display: inline-block;
+   margin-right: 10px;
+   label:before{
+     margin-right: 0;
+   }
+  }
+}
+
 .textToolbar, .lpFacsContainer .downloadLinkContainer {
   margin-left: 10px;
   margin-right: 10px;
@@ -222,24 +236,46 @@ main .document {
   position: relative;
 }
 
-.pageBreak {
-  a > small {
-    visibility: visible;
+//a.pagination{
+//  display: inline;
+//}
+//.symbol.pagination.edition {
+//  display: inline ;
+//  //a > small {
+//  //  visibility: visible;
+//    position: absolute;
+//    left: 5px;
+//  //}
+//
+//    margin-left: 0;
+//    width: 0;
+//    height: 0;
+//    padding: 0;
+//
+//  &:after {
+//    content: "\007C";
+//    color: $secondary;
+//  }
+//}
+a.pagination{
+  display: none;
+  font-family: 'nowayregular', sans-serif;
+  .symbol.pagination{
+    display: inline;
+      font-size: 14px;
+      font-weight: normal;
+  }
+}
+.pageBreak, a.pagination {
+  small.edition {
     position: absolute;
     left: 5px;
-  }
-
-  a {
-    visibility: hidden;
-    margin-left: 0;
-    width: 0;
-    height: 0;
-    padding: 0;
   }
 
   &:after {
     content: "\007C";
     color: $secondary;
+    font-size: large;
   }
 }
 

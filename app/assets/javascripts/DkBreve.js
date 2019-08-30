@@ -194,7 +194,7 @@ $(document).ready(function () {
     if(typeof (has_facs)!== 'undefined') {
         if (!(has_facs)) {
             document.getElementsByClassName('ocr')[0].addEventListener("scroll", function () {
-                    let  currentOcrPage = getOcrCurrentPage();
+                let  currentOcrPage = getOcrCurrentPage();
                     let citationPageNumber = document.getElementById('pageNumber');
                     let hashTagInURI = document.getElementById('hashTagInURI');
                     if (citationPageNumber) {
@@ -212,11 +212,13 @@ $(document).ready(function () {
                             ocrScrollTopOffset = ocrScrollTop + 9, // Magic number 9 is 1 px less than the margin added when setting pages
                             ocrBreaks = $('.pageBreak', ocrElem);
                         var i = 0;
-                        if ($(ocrBreaks[0]).position().top + ocrScrollTopOffset > ocrScrollTop) {
-                            return 1; // user are before the very first pageBreak => page 1
-                        }
-                        while (i < ocrBreaks.length && $(ocrBreaks[i]).position().top + ocrScrollTopOffset <= ocrScrollTop) {
-                            i++;
+                        if ($(ocrBreaks).length){
+                            if ($(ocrBreaks[0]).position().top + ocrScrollTopOffset > ocrScrollTop) {
+                                return 1; // user are before the very first pageBreak => page 1
+                            }
+                            while (i < ocrBreaks.length && $(ocrBreaks[i]).position().top + ocrScrollTopOffset <= ocrScrollTop) {
+                                i++;
+                            }
                         }
                         return i + 1;
                     }

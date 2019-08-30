@@ -1,14 +1,14 @@
 "use strict";
 
 function toggle_vis_kun_denne_del() {
-    let text_possibility_elements = document.getElementsByClassName("exposableDocumentFunctions");
+    let comments = document.querySelectorAll("span.symbol.quote");
     if (this.checked) {
-        for (i = 0; i < text_possibility_elements.length; i++) {
-            text_possibility_elements[i].style.display = 'block';
+        for (i = 0; i < comments.length; i++) {
+            comments[i].style.display = 'block';
         }
     } else {
-        for (i = 0; i < text_possibility_elements.length; i++) {
-            text_possibility_elements[i].style.display = 'none';
+        for (i = 0; i < comments.length; i++) {
+            comments[i].style.display = 'none';
         }
     }
 }
