@@ -50,7 +50,7 @@ GEM
       globalid
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
-      nokogiri (~> 1.6)
+      nokogiri (>= 1.10.4)
       rails (~> 5.1)
     bootstrap (4.3.1)
       autoprefixer-rails (>= 9.1.0)
@@ -148,7 +148,7 @@ GEM
     multi_json (1.13.1)
     multipart-post (2.0.0)
     nio4r (2.3.1)
-    nokogiri (1.10.2)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     oai (0.4.0)
       builder (>= 3.1.0)
