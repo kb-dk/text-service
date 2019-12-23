@@ -1,0 +1,22 @@
+.org_navigation-header {
+  position: relative;
+  background-color: #002E70 !important;
+  padding: 12px 0;
+  display: block;
+  height: 48px;
+
+  .logo {
+    background-image: url(asset-path('logo-navigation-header.png'));
+    width: 95px;
+  }
+
+  .right-panel a {
+    float: right;
+    color: #eefbfa;
+    font-family: 'nowaymedium';
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: -0.2px;
+    line-height: 24px;
+  }
+}
