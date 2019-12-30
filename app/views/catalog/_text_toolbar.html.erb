@@ -11,7 +11,10 @@
     <% end %>
   <% end %>
 
-</div>
+<span id="scrollTop" class="jf-icon box rounded-borders jf-icon-pil-o scrollup hidden-print show-to-top">
+  <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'arrow_upward', icon_size: 'icon-medium'}%>
+</span>
 
+</div>
 <!-- Table of content modal -->
 <%= render :partial => 'show_tools_work' %>

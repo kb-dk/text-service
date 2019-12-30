@@ -193,6 +193,7 @@ main .document {
 }
 
 .kbOSDToolbar {
+  z-index: 9999999999;
   border-bottom: 1px solid #c0c0c0 !important;
   padding-bottom: 5px;
 }
@@ -205,62 +206,56 @@ main .document {
   padding-left: 0;
   padding-right: 0;
 }
-
+.lpTextContainer{
+  z-index: 9999999999;
+}
 .ocr {
   margin-right: 0;
   margin-left: 0;
   padding: 30px;
 }
 
-// Page breake styling in small devices
-//@media screen and (max-width: 1000px) {
-//  .pageBreak{
-//    display: block;
-//    margin:$grid-gutter-width/2 0px 0px 0px;
-//    padding:$grid-gutter-width/2 0px ;
-//    font-size: $font-size-lg;
-//    line-height: $line-height-base;
-//    border-top: 1px dotted $gray-500;
-//    text-align: center;
-//    a{
-//
-//      &:after{
-//        font-family: 'FontAwesome';
-//        content:'\f0f6';
-//        margin-left: 5px;
-//
-//      }
-//    }
-//  }
-//}
 
-// Page breake styling in desktop devices
-//@media screen and (min-width: 1000px){
+.scrollup {
+  visibility: hidden ;
+  position: fixed;
+  right: 40px;
+  bottom: 350px;
+  padding: 15px;
+  border-radius: 50em;
+  background: #d1d1d1;
+  color: rgb(51, 51, 51);
+  font-size: 20px;
+  z-index: 9999999999;
+  transition: opacity .1s ease-in-out
+}
+
+.scrollup.show-to-top {
+  cursor: pointer;
+  opacity: .7;
+  pointer-events: initial
+}
+
 .ocr {
   position: relative;
 }
+.kbOSDViewer{
+  overflow: visible !important;
+  margin-top:0;
+  .kbOSDToolbar {
+    z-index: 9999999999;
+    background-color: white;
+    padding-top: 10px;
+    height:46px;
+    position: sticky !important;
+    top:0 !important;
+  }
+}
+.downloadLinkContainer{
+  position: sticky !important;
+  top:0;
+}
 
-//a.pagination{
-//  display: inline;
-//}
-//.symbol.pagination.edition {
-//  display: inline ;
-//  //a > small {
-//  //  visibility: visible;
-//    position: absolute;
-//    left: 5px;
-//  //}
-//
-//    margin-left: 0;
-//    width: 0;
-//    height: 0;
-//    padding: 0;
-//
-//  &:after {
-//    content: "\007C";
-//    color: $secondary;
-//  }
-//}
 a.pagination{
   display: none;
   font-family: 'nowayregular', sans-serif;
@@ -283,8 +278,11 @@ a.pagination{
   }
 }
 
-//}
-// End of page breake styling
+.pageBreak a>small {
+  visibility: visible;
+  position: absolute;
+  left: 5px;
+}
 
 a[name] {
   display: block;

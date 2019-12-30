@@ -7,11 +7,11 @@ window.dkBreve = (function (window, $, undefined) {
 
     DkBreve.prototype = {
 
-        has_text: function(){
+        has_text: function () {
             var ocrElem = $('.ocr');
-            if (ocrElem[0]){
+            if (ocrElem[0]) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         },
@@ -19,20 +19,18 @@ window.dkBreve = (function (window, $, undefined) {
          * Get current page in ocr pane
          */
         getOcrCurrentPage: function () {
-                var ocrElem = $('.ocr'),
-                    ocrScrollTop = ocrElem[0].scrollTop,
-                    ocrScrollTopOffset = ocrScrollTop + 9, // Magic number 9 is 1 px less than the margin added when setting pages
-                    ocrBreaks = $('.pageBreak', ocrElem);
-
-                // TODO: Optimization: Split on length so letters with more than 10 pages uses a binary search approach to figure out the correct page!
-                var i = 0;
-                if ($(ocrBreaks[0]).position().top + ocrScrollTopOffset > ocrScrollTop) {
-                    return 1; // user are before the very first pageBreak => page 1
-                }
-                while (i < ocrBreaks.length && $(ocrBreaks[i]).position().top + ocrScrollTopOffset <= ocrScrollTop) {
-                    i++;
-                }
-                return i + 1;
+            var ocrElem = $('.ocr'),
+                ocrScrollTop = 50,
+                ocrScrollTopOffset = $(window).scrollTop() ,
+                ocrBreaks = $('.pageBreak');
+            var i = 0;
+            if ($(ocrBreaks[0]).offset().top - ocrScrollTopOffset > ocrScrollTop) {
+                return 1; // user are before the very first pageBreak => page 1
+            }
+            while (i < ocrBreaks.length && $(ocrBreaks[i]).offset().top - ocrScrollTopOffset <= ocrScrollTop) {
+                i++;
+            }
+            return i + 1;
         },
 
         /**
@@ -41,30 +39,28 @@ window.dkBreve = (function (window, $, undefined) {
          */
         gotoOcrPage: function (page, skipAnimation) {
             var that = this,
-                ocrElem = $('.ocr').first(),
                 citationPageNumber = document.getElementById('pageNumber'),
-                pageCount = $('.pageBreak', ocrElem).length + 1;
-	    if(citationPageNumber != null) {
-                if (page>1) {
+                pageCount = $('.pageBreak').length + 1;
+
+            if (citationPageNumber != null) {
+                if (page > 1) {
                     citationPageNumber.innerText = ($('.ocr .pageBreak a small')[page - 2]).textContent;
-                }
-                else{
+                } else {
                     citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
                 }
-	    }
-
+            }
             if (page < 1 || page > pageCount) {
                 throw('DkBreve.gotoOcrPage: page "' + page + '" out of bounds.');
             }
             if (that.animInProgress) {
-                ocrElem.stop(true, true);
+                $([document.documentElement, document.body]).stop(true, true);
             }
             if (skipAnimation) {
                 that.animInProgress = true;
                 if (page === 1) {
-                    ocrElem[0].scrollTop = 0;
+                    $([document.documentElement, document.body]).scrollTop = 0;
                 } else {
-                    ocrElem[0].scrollTop = $($('.ocr .pageBreak')[page - 2]).position().top + $('.ocr')[0].scrollTop + 10;
+                    $([document.documentElement, document.body]).scrollTop = $($('.pageBreak')[page - 2]).position().top - 50;
                 }
                 setTimeout(function () {
                     that.animInProgress = false;
@@ -72,12 +68,14 @@ window.dkBreve = (function (window, $, undefined) {
             } else {
                 that.animInProgress = true;
                 if (page === 1) {
-                    ocrElem.animate({scrollTop: 0}, 500, 'swing', function () {
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: 0
+                    }, 500, 'swing', function () {
                         that.animInProgress = false;
                     }); // scroll to top of text
                 } else {
-                    ocrElem.animate({
-                        scrollTop: $($('.ocr .pageBreak')[page - 2]).position().top + $('.ocr')[0].scrollTop + 10
+                    $([document.documentElement, document.body]).animate({
+                        scrollTop: $($('.pageBreak')[page - 2]).offset().top - 50
                     }, 500, 'swing', function () {
                         that.animInProgress = false;
                     });
@@ -87,22 +85,22 @@ window.dkBreve = (function (window, $, undefined) {
         onOcrScroll: function () {
             var that = dkBreve;
 
-            if(that.has_text()) {
+            if (that.has_text()) {
                 if (!that.animInProgress) {
                     // this is a genuine scroll event, not something that origins from a kbOSD event
                     var currentOcrPage = that.getOcrCurrentPage(),
                         citationPageNumber = document.getElementById('pageNumber'),
                         hashTagInURI = document.getElementById('hashTagInURI'),
                         kbosd = KbOSD.prototype.instances[0]; // The dkBreve object should have a kbosd property set to the KbOSD it uses!
-		    if(citationPageNumber != null) {
-			if (currentOcrPage > 1  && hashTagInURI != null) {
+                    if (citationPageNumber != null) {
+                        if (currentOcrPage > 1 && hashTagInURI != null) {
                             citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;
-                            hashTagInURI.innerText = "#"+($('.ocr .pageBreak')[currentOcrPage - 2]).id;
-			} else {
+                            hashTagInURI.innerText = "#" + ($('.ocr .pageBreak')[currentOcrPage - 2]).id;
+                        } else {
                             citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
                             hashTagInURI.innerText = "";
-			}
-		    }
+                        }
+                    }
                     if (kbosd.getCurrentPage() !== currentOcrPage) {
                         that.scrollingInProgress = true;
                         kbosd.setCurrentPage(currentOcrPage, function () {
@@ -136,7 +134,7 @@ window.dkBreve = (function (window, $, undefined) {
         onKbOSDReady: function (kbosd) {
             var that = this;
             that.kbosd = kbosd;
-            if ((kbosd.pageCount > 1)&&(that.has_text())) { // if there isn't more than one page, no synchronization between the panes are needed.
+            if ((kbosd.pageCount > 1) && (that.has_text())) { // if there isn't more than one page, no synchronization between the panes are needed.
                 //currentOcrpage is more than 1 if readed by the URL
                 var currentOcrPage = that.getOcrCurrentPage();
                 if (currentOcrPage > 1) {
@@ -157,8 +155,7 @@ window.dkBreve = (function (window, $, undefined) {
                     }
                 });
                 $(kbosd.contentElem).on('fullScreen', that.onFullScreen);
-
-                $('.ocr').scroll(this.onOcrScroll);
+                $(window).scroll(this.onOcrScroll);
             }
         },
         onWindowResize: function () {
@@ -189,41 +186,51 @@ $(document).on('kbosdready', function (e) {
 
 //////////////////////////////////////////////////////
 $(document).ready(function () {
- // If there is no OSD in the page so there is no pagination
+    window.addEventListener("scroll", function () {
+        //
+        let doc = document.documentElement;
+        let top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+        if ($('.lpContainer').position().top <= top) {
+            $('#scrollTop').css("visibility", "visible"); // Show the scrollTop button when it is after page 2
+            // The element is visible, do something
+        } else {
+            $('#scrollTop').css("visibility", "hidden");// Hide the scrollTop button when it is already at top
+            // The element is NOT visible, do something else
+        }
+// If there is no OSD in the page so there is no pagination
 // The following code checks if there is no pagination then 'on scroll' changes the page number on citation
-    if(typeof (has_facs)!== 'undefined') {
-        if (has_facs) {
-            window.addEventListener("scroll", function () {
-                    let  currentOcrPage = getOcrCurrentPage();
-                console.log(currentOcrPage);
-
-                    let citationPageNumber = document.getElementById('pageNumber');
-                    let hashTagInURI = document.getElementById('hashTagInURI');
-                    if (citationPageNumber) {
-                        if (currentOcrPage > 1) {
-                            citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;
-                            hashTagInURI.innerText = "#" + ($('.ocr .pageBreak')[currentOcrPage - 2]).id;
-                        } else {
-                            citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
-                            hashTagInURI.innerText = ""
-                        }
-                    }
-                    function getOcrCurrentPage() {
-                        var ocrElem = $('.ocr'),
-                            ocrScrollTop = 30,
-                            ocrScrollTopOffset = $(window).scrollTop() + 9, // Magic number 9 is 1 px less than the margin added when setting pages
-                            ocrBreaks = $('.pageBreak');
-                        var i = 0;
-                        if ($(ocrBreaks[0]).offset().top - ocrScrollTopOffset > ocrScrollTop) {
-                            return 1; // user are before the very first pageBreak => page 1
-                        }
-                        while (i < ocrBreaks.length && $(ocrBreaks[i]).offset().top - ocrScrollTopOffset <= ocrScrollTop) {
-                            i++;
-                        }
-                        return i;
+        if (typeof (has_facs) !== 'undefined') {
+            if (!(has_facs)) {
+                let currentOcrPage = getOcrCurrentPage();
+                let citationPageNumber = document.getElementById('pageNumber');
+                let hashTagInURI = document.getElementById('hashTagInURI');
+                if (citationPageNumber) {
+                    if (currentOcrPage > 1) {
+                        citationPageNumber.innerText = ($('.ocr .pageBreak a small')[currentOcrPage - 2]).textContent;
+                        hashTagInURI.innerText = "#" + ($('.ocr .pageBreak')[currentOcrPage - 2]).id;
+                    } else {
+                        citationPageNumber.innerText = first_page;// first_page is a global variable defined in the text.html view containing page_ssi from solr
+                        hashTagInURI.innerText = ""
                     }
                 }
-            );
+
+                function getOcrCurrentPage() {
+                    var ocrElem = $('.ocr'),
+                        ocrScrollTop = ocrElem[0].scrollTop,
+                        ocrScrollTopOffset = ocrScrollTop + 9, // Magic number 9 is 1 px less than the margin added when setting pages
+                        ocrBreaks = $('.pageBreak', ocrElem);
+                    var i = 0;
+                    if ($(ocrBreaks).length) {
+                        if ($(ocrBreaks[0]).position().top + ocrScrollTopOffset > ocrScrollTop) {
+                            return 1; // user are before the very first pageBreak => page 1
+                        }
+                        while (i < ocrBreaks.length && $(ocrBreaks[i]).position().top + ocrScrollTopOffset <= ocrScrollTop) {
+                            i++;
+                        }
+                    }
+                    return i + 1;
+                }
+            }
         }
-    }
+    });
 });
