@@ -190,12 +190,15 @@ $(document).ready(function () {
         //
         let doc = document.documentElement;
         let top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
-        if ($('.lpContainer').position().top <= top) {
-            $('#scrollTop').css("visibility", "visible"); // Show the scrollTop button when it is after page 2
-            // The element is visible, do something
-        } else {
-            $('#scrollTop').css("visibility", "hidden");// Hide the scrollTop button when it is already at top
-            // The element is NOT visible, do something else
+        let lpContainer = $('.lpContainer');
+        if (lpContainer.length){
+            if (lpContainer.position().top <= top) {
+                $('#scrollTop').css("visibility", "visible"); // Show the scrollTop button when it is after page 2
+                // The element is visible, do something
+            } else {
+                $('#scrollTop').css("visibility", "hidden");// Hide the scrollTop button when it is already at top
+                // The element is NOT visible, do something else
+            }
         }
 // If there is no OSD in the page so there is no pagination
 // The following code checks if there is no pagination then 'on scroll' changes the page number on citation
