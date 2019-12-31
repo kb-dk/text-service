@@ -1,3 +1,6 @@
+<!-- Table of content modal -->
+<%= render :partial => 'show_tools_work' %>
+
 <div class="textToolbar">
 
   <% list = [
@@ -10,11 +13,4 @@
       <%= render :partial => 'shared/components/molecules/icon-link/index', locals: {text:item[1], id:item[2], url:item[3], icon_type: item[4], target: item[5], title:item[6]} %>
     <% end %>
   <% end %>
-
-<span id="scrollTop" class="jf-icon box rounded-borders jf-icon-pil-o scrollup hidden-print show-to-top">
-  <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'arrow_upward', icon_size: 'icon-medium'}%>
-</span>
-
 </div>
-<!-- Table of content modal -->
-<%= render :partial => 'show_tools_work' %>

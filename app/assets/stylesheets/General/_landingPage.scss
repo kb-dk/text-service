@@ -18,7 +18,7 @@ main .document {
 }
 
 .kbOSDViewer {
-  height: 620px!important;
+  height: 620px !important;
   overflow-y: scroll;
   margin: 10px;
 }
@@ -29,8 +29,18 @@ main .document {
   }
 }
 
-.ocr {
-  padding: 10px;
+article.ocr {
+  position: relative;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 30px;
+
+  sup a{
+    cursor: pointer;
+  }
+  .fa-link {
+    padding-left: 10px;
+  }
 
   .escFullScreenButton {
     display: none;
@@ -140,17 +150,18 @@ main .document {
   border-bottom: 1px solid #c0c0c0;
 }
 
-.toolbar_container{
+.toolbar_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
- .atom-e7937846-48b1-4797-9eb4-8cd4837fc421{
+  .atom-e7937846-48b1-4797-9eb4-8cd4837fc421 {
     display: inline-block;
-   margin-right: 10px;
-   label:before{
-     margin-right: 0;
-   }
+    margin-right: 10px;
+
+    label:before {
+      margin-right: 0;
+    }
   }
 }
 
@@ -160,7 +171,8 @@ main .document {
   padding-top: 5px;
   padding-bottom: 10px;
 }
-.lpFacsContainer, .textToolbar{
+
+.lpFacsContainer, .textToolbar {
   background: white;
   z-index: 999;
   align-self: flex-start;
@@ -176,13 +188,7 @@ main .document {
   padding-left: 2px;
 }
 
-
 .lpContainer {
-  //border: 1px solid $primary;
-  //margin: 10px 0;
-  //padding: 10px 0;
-  //border-radius: 10px;
-
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
@@ -193,7 +199,6 @@ main .document {
 }
 
 .kbOSDToolbar {
-  z-index: 9999999999;
   border-bottom: 1px solid #c0c0c0 !important;
   padding-bottom: 5px;
 }
@@ -206,18 +211,12 @@ main .document {
   padding-left: 0;
   padding-right: 0;
 }
-.lpTextContainer{
-  z-index: 9999999999;
-}
-.ocr {
-  margin-right: 0;
-  margin-left: 0;
-  padding: 30px;
-}
 
+.lpTextContainer {
+}
 
 .scrollup {
-  visibility: hidden ;
+  visibility: hidden;
   position: fixed;
   right: 40px;
   bottom: 350px;
@@ -236,35 +235,35 @@ main .document {
   pointer-events: initial
 }
 
-.ocr {
-  position: relative;
-}
-.kbOSDViewer{
+.kbOSDViewer {
   overflow: visible !important;
-  margin-top:0;
+  margin-top: 0;
+
   .kbOSDToolbar {
-    z-index: 9999999999;
     background-color: white;
     padding-top: 10px;
-    height:46px;
+    height: 46px;
     position: sticky !important;
-    top:0 !important;
+    top: 0 !important;
   }
-}
-.downloadLinkContainer{
-  position: sticky !important;
-  top:0;
 }
 
-a.pagination{
+.downloadLinkContainer {
+  position: sticky !important;
+  top: 0;
+}
+
+a.pagination {
   display: none;
   font-family: 'nowayregular', sans-serif;
-  .symbol.pagination{
+
+  .symbol.pagination {
     display: inline;
-      font-size: 14px;
-      font-weight: normal;
+    font-size: 14px;
+    font-weight: normal;
   }
 }
+
 .pageBreak, a.pagination {
   small.edition {
     position: absolute;
@@ -278,7 +277,7 @@ a.pagination{
   }
 }
 
-.pageBreak a>small {
+.pageBreak a > small {
   visibility: visible;
   position: absolute;
   left: 5px;
@@ -311,12 +310,6 @@ a[name] {
   position: relative;
   z-index: 1029;
   width: 150px;
-}
-
-.ocr {
-  .fa-link {
-    padding-left: 10px;
-  }
 }
 
 h1.head-in-work {
