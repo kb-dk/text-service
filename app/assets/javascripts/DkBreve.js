@@ -21,16 +21,18 @@ window.dkBreve = (function (window, $, undefined) {
         getOcrCurrentPage: function () {
             var ocrElem = $('.ocr'),
                 ocrScrollTop = 50,
-                ocrScrollTopOffset = $(window).scrollTop() ,
+                ocrScrollTopOffset = $(window).scrollTop(),
                 ocrBreaks = $('.pageBreak');
             var i = 0;
-            if ($(ocrBreaks[0]).offset().top - ocrScrollTopOffset > ocrScrollTop) {
-                return 1; // user are before the very first pageBreak => page 1
+            if (ocrBreaks.length) {
+                if ($(ocrBreaks[0]).offset().top - ocrScrollTopOffset > ocrScrollTop) {
+                    return 1; // user are before the very first pageBreak => page 1
+                }
+                while (i < ocrBreaks.length && $(ocrBreaks[i]).offset().top - ocrScrollTopOffset <= ocrScrollTop) {
+                    i++;
+                }
+                return i + 1;
             }
-            while (i < ocrBreaks.length && $(ocrBreaks[i]).offset().top - ocrScrollTopOffset <= ocrScrollTop) {
-                i++;
-            }
-            return i + 1;
         },
 
         /**
