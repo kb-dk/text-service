@@ -4,13 +4,13 @@
 <div class="textToolbar">
 
   <% list = [
-              [true,'', '', solr_document_path(@document, format: :pdf),'get_app', '_blank', t('general.text_toolbar.text')],
-              [true,'', 'ocrFullscreenButton', '#','fullscreen', '_self', t('general.text_toolbar.fullscreen')]
-  ]%>
+      [true, '', '', solr_document_path(@document, format: :pdf), 'get_app', '_blank', t('general.text_toolbar.text')],
+      [true, '', 'ocrFullscreenButton', '#', 'fullscreen', '_self', t('general.text_toolbar.fullscreen')]
+  ] %>
 
   <% list.each do |item| %>
     <% if item[0] %>
-      <%= render :partial => 'shared/components/molecules/icon-link/index', locals: {text:item[1], id:item[2], url:item[3], icon_type: item[4], target: item[5], title:item[6]} %>
+      <%= render :partial => 'shared/components/molecules/icon-link/index', locals: {text: item[1], id: item[2], url: item[3], icon_type: item[4], target: item[5], title: item[6]} %>
     <% end %>
   <% end %>
 </div>

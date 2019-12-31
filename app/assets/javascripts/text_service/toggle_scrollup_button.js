@@ -1,9 +1,17 @@
 "use strict";
 
 function scrollToTop() {
-    //document.querySelector('.org_navigation-header ').scrollIntoView({ behavior: 'smooth' });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    console.log(document.getElementsByTagName('body')[0]);
+    if (
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement
+    ){
+        document.querySelector('.ocr ').scrollTo({top:0, behavior: 'smooth' });
+
+    }else{
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 
 let scrollup_button = document.getElementById('scrollTop');

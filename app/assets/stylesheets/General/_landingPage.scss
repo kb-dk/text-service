@@ -66,6 +66,7 @@ article.ocr {
     width: 100%;
     height: 100%;
     margin-top: 60px;
+    overflow: scroll;
 
     .escFullScreenButton, .showOnFullscreen {
       display: block;
@@ -80,6 +81,7 @@ article.ocr {
     width: 100%;
     height: 100%;
     margin-top: 60px;
+    overflow: scroll;
 
     div.text.snippetRoot {
       width: 60em;
@@ -100,7 +102,7 @@ article.ocr {
     height: 100%;
     margin: auto;
     margin-top: 60px;
-
+    overflow: scroll;
     .escFullScreenButton, .showOnFullscreen {
       display: block;
     }
@@ -114,7 +116,7 @@ article.ocr {
     width: 100%;
     height: 100%;
     margin-top: 60px;
-
+    overflow: scroll;
     .escFullScreenButton, .showOnFullscreen {
       display: block;
     }
