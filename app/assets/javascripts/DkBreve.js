@@ -20,7 +20,7 @@ window.dkBreve = (function (window, $, undefined) {
          */
         getOcrCurrentPage: function () {
             var ocrElem = $('.ocr'),
-                ocrScrollTop = 50,
+                ocrScrollTop = 50 + 5,
                 ocrScrollTopOffset = $(window).scrollTop(),
                 ocrBreaks = $('.pageBreak');
             var i = 0;
@@ -43,7 +43,6 @@ window.dkBreve = (function (window, $, undefined) {
             var that = this,
                 citationPageNumber = document.getElementById('pageNumber'),
                 pageCount = $('.pageBreak').length + 1;
-
             if (citationPageNumber != null) {
                 if (page > 1) {
                     citationPageNumber.innerText = ($('.ocr .pageBreak a small')[page - 2]).textContent;
@@ -86,7 +85,6 @@ window.dkBreve = (function (window, $, undefined) {
         },
         onOcrScroll: function () {
             var that = dkBreve;
-
             if (that.has_text()) {
                 if (!that.animInProgress) {
                     // this is a genuine scroll event, not something that origins from a kbOSD event
@@ -185,6 +183,7 @@ window.dkBreve = (function (window, $, undefined) {
 $(document).on('kbosdready', function (e) {
     dkBreve.onKbOSDReady(e.detail.kbosd);
 });
+
 
 //////////////////////////////////////////////////////
 $(document).ready(function () {
