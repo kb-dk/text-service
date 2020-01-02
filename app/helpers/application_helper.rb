@@ -41,7 +41,7 @@ module ApplicationHelper
     repository = blacklight_config.repository_class.new(blacklight_config)  
     doc = repository.find(args)
     if doc['response']['docs'].first['work_title_tesim'].present?
-      res=doc['response']['docs'].first['work_title_tesim'].join(' ')
+      res=doc['response']['docs'].first['work_title_tesim'][1]
     end
     res
   end
