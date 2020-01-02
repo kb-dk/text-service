@@ -17,8 +17,8 @@ main .document {
   }
 }
 
-.ocr, .kbOSDViewer {
-  height: 620px;
+.kbOSDViewer {
+  height: 620px !important;
   overflow-y: scroll;
   margin: 10px;
 }
@@ -29,8 +29,18 @@ main .document {
   }
 }
 
-.ocr {
-  padding: 10px;
+article.ocr {
+  position: relative;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 30px;
+
+  sup a{
+    cursor: pointer;
+  }
+  .fa-link {
+    padding-left: 10px;
+  }
 
   .escFullScreenButton {
     display: none;
@@ -56,6 +66,7 @@ main .document {
     width: 100%;
     height: 100%;
     margin-top: 60px;
+    overflow: scroll;
 
     .escFullScreenButton, .showOnFullscreen {
       display: block;
@@ -70,6 +81,7 @@ main .document {
     width: 100%;
     height: 100%;
     margin-top: 60px;
+    overflow: scroll;
 
     div.text.snippetRoot {
       width: 60em;
@@ -90,7 +102,7 @@ main .document {
     height: 100%;
     margin: auto;
     margin-top: 60px;
-
+    overflow: scroll;
     .escFullScreenButton, .showOnFullscreen {
       display: block;
     }
@@ -104,7 +116,7 @@ main .document {
     width: 100%;
     height: 100%;
     margin-top: 60px;
-
+    overflow: scroll;
     .escFullScreenButton, .showOnFullscreen {
       display: block;
     }
@@ -140,17 +152,18 @@ main .document {
   border-bottom: 1px solid #c0c0c0;
 }
 
-.toolbar_container{
+.toolbar_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 
- .atom-e7937846-48b1-4797-9eb4-8cd4837fc421{
+  .atom-e7937846-48b1-4797-9eb4-8cd4837fc421 {
     display: inline-block;
-   margin-right: 10px;
-   label:before{
-     margin-right: 0;
-   }
+    margin-right: 10px;
+
+    label:before {
+      margin-right: 0;
+    }
   }
 }
 
@@ -159,9 +172,14 @@ main .document {
   margin-right: 10px;
   padding-top: 5px;
   padding-bottom: 10px;
-  //i {
-  //  padding-left: 10px;
-  //}
+}
+
+.lpFacsContainer, .textToolbar {
+  background: white;
+  z-index: 999;
+  align-self: flex-start;
+  top: 0;
+  position: sticky !important;
 }
 
 .downloadLinkContainer i {
@@ -172,13 +190,7 @@ main .document {
   padding-left: 2px;
 }
 
-
 .lpContainer {
-  //border: 1px solid $primary;
-  //margin: 10px 0;
-  //padding: 10px 0;
-  //border-radius: 10px;
-
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
@@ -202,70 +214,58 @@ main .document {
   padding-right: 0;
 }
 
-.ocr {
-  margin-right: 0;
-  margin-left: 0;
-  padding: 30px;
+.lpTextContainer {
 }
 
-// Page breake styling in small devices
-//@media screen and (max-width: 1000px) {
-//  .pageBreak{
-//    display: block;
-//    margin:$grid-gutter-width/2 0px 0px 0px;
-//    padding:$grid-gutter-width/2 0px ;
-//    font-size: $font-size-lg;
-//    line-height: $line-height-base;
-//    border-top: 1px dotted $gray-500;
-//    text-align: center;
-//    a{
-//
-//      &:after{
-//        font-family: 'FontAwesome';
-//        content:'\f0f6';
-//        margin-left: 5px;
-//
-//      }
-//    }
-//  }
-//}
-
-// Page breake styling in desktop devices
-//@media screen and (min-width: 1000px){
-.ocr {
-  position: relative;
+.scrollup {
+  visibility: hidden;
+  position: fixed;
+  right: 40px;
+  bottom: 350px;
+  padding: 15px;
+  border-radius: 50em;
+  background: #d1d1d1;
+  color: rgb(51, 51, 51);
+  font-size: 20px;
+  z-index: 9999999999;
+  transition: opacity .1s ease-in-out
 }
 
-//a.pagination{
-//  display: inline;
-//}
-//.symbol.pagination.edition {
-//  display: inline ;
-//  //a > small {
-//  //  visibility: visible;
-//    position: absolute;
-//    left: 5px;
-//  //}
-//
-//    margin-left: 0;
-//    width: 0;
-//    height: 0;
-//    padding: 0;
-//
-//  &:after {
-//    content: "\007C";
-//    color: $secondary;
-//  }
-//}
-a.pagination{
-  display: none;
-  font-family: 'nowayregular', sans-serif;
-  .symbol.pagination{
-    display: inline;
-      font-size: 14px;
-      font-weight: normal;
+.scrollup.show-to-top {
+  cursor: pointer;
+  opacity: .7;
+  pointer-events: initial
+}
+
+.kbOSDViewer {
+  overflow: visible !important;
+  margin-top: 0;
+
+  .kbOSDToolbar {
+    background-color: white;
+    padding-top: 10px;
+    height: 46px;
+    position: sticky !important;
+    top: 0 !important;
   }
 }
+
+.downloadLinkContainer {
+  position: sticky !important;
+  top: 0;
+}
+
+a.pagination {
+  display: none;
+  font-family: 'nowayregular', sans-serif;
+
+  .symbol.pagination {
+    display: inline;
+    font-size: 14px;
+    font-weight: normal;
+  }
+}
+
 .pageBreak, a.pagination {
   small.edition {
     position: absolute;
@@ -279,8 +279,11 @@ a.pagination{
   }
 }
 
-//}
-// End of page breake styling
+.pageBreak a > small {
+  visibility: visible;
+  position: absolute;
+  left: 5px;
+}
 
 a[name] {
   display: block;
@@ -309,12 +312,6 @@ a[name] {
   position: relative;
   z-index: 1029;
   width: 150px;
-}
-
-.ocr {
-  .fa-link {
-    padding-left: 10px;
-  }
 }
 
 h1.head-in-work {
