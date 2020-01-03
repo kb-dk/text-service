@@ -15,7 +15,7 @@
 %>
 <% if has_search_parameters? %>
   <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrumb.text_service'), root_path], [resultlist, '']]} %>
-  <%= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'} %>
+  <%#= render :partial => 'shared/components/atoms/divider/index', locals: {type: 'top-left theme-color'} %>
   <% if ['authors', 'periods'].include? action_name %>
     <%= render :partial => 'shared/components/organisms/top-container/index' %>
     <%= render :partial => 'shared/components/organisms/layout/1-column', locals: {elements: ['advanced_search', 'search_result'], classes: 'padding-top'} %>

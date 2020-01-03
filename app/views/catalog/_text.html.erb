@@ -34,7 +34,11 @@
   <%= FileServer.render_snippet(@document['id'],
                                 {q: query, match: qmatch, op: "render"}) %>
 
+  <span id="scrollTop" class="jf-icon box rounded-borders jf-icon-pil-o scrollup hidden-print show-to-top">
+  <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'arrow_upward', icon_size: 'icon-medium'}%>
+</span>
 </article>
 
 <%= render :partial => 'comment' %>
 <%= render :partial => 'info' %>
+

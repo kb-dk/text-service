@@ -26,7 +26,7 @@
   <%= csrf_meta_tags %>
   <%= content_for(:head) %>
 </head>
-<body class="<%= render_body_class %> theme-yellow">
+<body class="<%= render_body_class %> theme-blue">
 <%= render partial: 'shared/components/organisms/page-notification/index', locals: {message: t('general.ie_message.message').html_safe, classes:'ie_message hidden'} %>
 <%= render partial: 'shared/header_navbar' %>
 <%= render :partial => 'shared/components/atoms/main/index', locals: {content: 'shared/content', is_front:true} %>
