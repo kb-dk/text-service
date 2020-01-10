@@ -17,6 +17,24 @@ main .document {
   }
 }
 
+.textToolbar .filter-btn{
+  line-height: 1;
+  padding: .2rem;
+  margin-bottom: 0;
+  .scissors, .pagination_other{
+    position: relative;
+    bottom: 2px;
+  }
+  .pagination_other{
+    left: 3px;
+  }
+  &.active{
+    i:hover{
+      color:white;
+    }
+  }
+}
+
 .kbOSDViewer {
   height: 620px !important;
   overflow-y: scroll;
@@ -136,7 +154,7 @@ article.ocr {
 
 }
 
-#ocrFullscreenButton {
+#ocrFullscreenButton, #toggleFacsimile {
   float: right;
 }
 
@@ -156,7 +174,9 @@ article.ocr {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
 
+.textToolbar, .toolbar_container{
   .atom-e7937846-48b1-4797-9eb4-8cd4837fc421 {
     display: inline-block;
     margin-right: 10px;
@@ -172,6 +192,9 @@ article.ocr {
   margin-right: 10px;
   padding-top: 5px;
   padding-bottom: 10px;
+}
+.textToolbar{
+  padding-bottom: 5px;
 }
 
 .lpFacsContainer, .textToolbar {
