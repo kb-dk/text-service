@@ -17,33 +17,25 @@ main .document {
   }
 }
 
-.textToolbar .filter-btn{
+.textToolbar .filter-btn {
   line-height: 1;
   padding: .2rem;
   margin-bottom: 0;
-  .scissors, .pagination_other{
+  margin-right: 0.5rem;
+
+  .scissors, .pagination_other {
     position: relative;
     bottom: 2px;
   }
-  .pagination_other{
+
+  .pagination_other {
     left: 3px;
   }
-  &.active{
-    i:hover{
-      color:white;
+
+  &.active {
+    i:hover {
+      color: white;
     }
-  }
-}
-
-.kbOSDViewer {
-  height: 620px !important;
-  overflow-y: scroll;
-  margin: 10px;
-}
-
-.kbOSDContent, .kbOSDToolbar {
-  &.fullpage {
-    background: white;
   }
 }
 
@@ -53,9 +45,10 @@ article.ocr {
   margin-left: 0;
   padding: 30px;
 
-  sup a{
+  sup a {
     cursor: pointer;
   }
+
   .fa-link {
     padding-left: 10px;
   }
@@ -176,7 +169,7 @@ article.ocr {
   flex-wrap: wrap;
 }
 
-.textToolbar, .toolbar_container{
+.textToolbar, .toolbar_container {
   .atom-e7937846-48b1-4797-9eb4-8cd4837fc421 {
     display: inline-block;
     margin-right: 10px;
@@ -223,11 +216,6 @@ article.ocr {
   border-right: 1px solid $primary;
 }
 
-.kbOSDToolbar {
-  border-bottom: 1px solid #c0c0c0 !important;
-  padding-bottom: 5px;
-}
-
 .document-metadata {
   padding-left: 15px;
 }
@@ -237,21 +225,24 @@ article.ocr {
   padding-right: 0;
 }
 
-.lpTextContainer {
-}
-
 .scrollup {
+  padding: .2rem;
+  border-radius: 2rem;
+  font-size: .875rem;
+  line-height: 1;
   visibility: hidden;
   position: fixed;
   right: 40px;
   bottom: 350px;
-  padding: 15px;
-  border-radius: 50em;
   background: #d1d1d1;
   color: rgb(51, 51, 51);
-  font-size: 20px;
   z-index: 9999999999;
-  transition: opacity .1s ease-in-out
+  transition: opacity .1s ease-in-out;
+
+  &:hover {
+    background-color: #d1d8e6 !important;
+    color: #002E70 !important;
+  }
 }
 
 .scrollup.show-to-top {
@@ -262,6 +253,9 @@ article.ocr {
 
 .kbOSDViewer {
   overflow: visible !important;
+  overflow-y: scroll;
+  height: 620px !important;
+  margin: 10px;
   margin-top: 0;
 
   .kbOSDToolbar {
@@ -270,9 +264,16 @@ article.ocr {
     height: 46px;
     position: sticky !important;
     top: 0 !important;
+    border-bottom: 1px solid #c0c0c0 !important;
+    padding-bottom: 5px;
   }
 }
 
+.kbOSDContent, .kbOSDToolbar {
+  &.fullpage {
+    background: white;
+  }
+}
 .downloadLinkContainer {
   position: sticky !important;
   top: 0;
