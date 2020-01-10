@@ -25,12 +25,8 @@ else
     classes = 'active'
   end
   buttons_list = [
-            ['Info','toggleInfo','javascript:toggleInfoBox()','','',true],
-            [t('general.landing_page.table_of_content'),'show_toc','','tableOfContent','data-toggle=modal data-target=#toc',true],
-            ['Relaterede tekster','toggleRelatedTexts','javascript:toggleRelatedTexts()',classes,'',true],
-            ['Tekstmuligheder','toggleTextPossibilities','javascript:toggleTextPossibilities()','','',true],
-            [t('general.text_toolbar.highlight'),'toggleHighlight','javascript:toggleHighlight()','active','',query.present?],
-            [t('general.text_toolbar.facsimile'),'toggleFacsimile','javascript:toggleFacsimile()','','',has_facs]
+            ['Info','toggleInfoBtn','','','',true],
+            ['Relaterede tekster','toggleRelatedTextsBtn','',classes,'',true]
           ]
      end
 %>
@@ -47,7 +43,6 @@ else
 </script>
 <div class="<%= container_classes %>">
 
-<%# if current_search_session %>
   <div id="appliedParams" class="clearfix constraints-container row">
 
     <div class="cell col-sm-12 col-lg-8">
@@ -57,8 +52,6 @@ else
     <div class="cell col-sm-12 col-lg-4">
       <% if @search_context && current_search_session %>
           <%= render 'previous_next_doc'  %>
-          <% # link_to t('blacklight.search.start_over'), start_over_path, class: "catalog_startOverLink btn btn-secondary" -%>
-          <% # link_back_to_catalog class: 'btn btn-secondary' -%>
       <% end %>
     </div>
   </div>
@@ -67,11 +60,7 @@ else
     <div id="related_texts" class="item">
       <%= render :partial => 'related_texts_toolbar' %>
     </div>
-    <div id="text_possibilities" class="item">
-      <%= render :partial => 'text_possibilities_toolbar' %>
-    </div>
   </div>
-
 
 <div class="document">
   <div class="row ">
@@ -79,8 +68,6 @@ else
       <%= render 'applied_edition' %>
     </div>
   </div>
-
-
 
   <% if has_text && has_facs %>
       <div class="row lpContainer">
