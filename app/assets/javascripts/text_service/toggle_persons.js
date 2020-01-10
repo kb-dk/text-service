@@ -2,19 +2,20 @@
 
 function toggle_person() {
     let text_persons = document.querySelectorAll("span.symbol.person");
-    if (this.checked) {
+    if (this.classList.contains('active')) {
+        for (i = 0; i < text_persons.length; i++) {
+            text_persons[i].style.display = 'none';
+        }
+    } else {
         for (i = 0; i < text_persons.length; i++) {
             text_persons[i].style.display = 'inline';
             text_persons[i].classList.add('icon', 'person');
         }
-    } else {
-        for (i = 0; i < text_persons.length; i++) {
-            text_persons[i].style.display = 'none';
-        }
     }
+    this.classList.toggle('active');
 }
 
-let show_persons = document.getElementById('Show_persons');
+let show_persons = document.getElementById('person');
 if (show_persons) {
     show_persons.addEventListener('click', toggle_person, false);
 }
