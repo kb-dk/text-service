@@ -1,1 +1,1 @@
-<a class="filter-btn <%= classes %>" id=<%= id %> onclick="<%= url %>" <%= options %>><%= text %></a>
+<a class="filter-btn <%= classes %>" id=<%= id %> <% if url != '' %>href="<%= url %>"<% end %> <%= options %>><%= text.html_safe %></a>
