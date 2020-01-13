@@ -2,18 +2,20 @@
 
 function toggle_vis_kun_denne_del() {
     let comments = document.querySelectorAll("span.symbol.quote");
-    if (this.checked) {
-        for (i = 0; i < comments.length; i++) {
-            comments[i].style.display = 'block';
-        }
-    } else {
+    if (this.classList.contains('active')) {
         for (i = 0; i < comments.length; i++) {
             comments[i].style.display = 'none';
         }
+    } else {
+        for (i = 0; i < comments.length; i++) {
+            comments[i].style.display = 'block';
+        }
     }
+
+    this.classList.toggle('active');
 }
 
-let show_quotation_service = document.getElementById('Show_only_this_part');
+let show_quotation_service = document.getElementById('quote');
 if (show_quotation_service) {
     show_quotation_service.addEventListener('click', toggle_vis_kun_denne_del, false);
 }

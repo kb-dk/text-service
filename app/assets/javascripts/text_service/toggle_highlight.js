@@ -13,3 +13,9 @@ function toggleHighlight() {
     }
     btn.classList.toggle("active");
 }
+
+
+let toggleHighlight_btn = document.getElementById('toggleHighlight');
+if (toggleHighlight_btn) {
+    toggleHighlight_btn.addEventListener('click', toggleHighlight, false);
+}

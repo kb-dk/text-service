@@ -13,12 +13,13 @@ function show_relevant_text_possibilities() {
         pageBreak.innerHTML = '&#128463; ' + pageBreak.innerHTML;
     });
 
+    console.log('he');
     let types = ['quote', 'comment', 'translation', 'modernized', 'info', 'person', 'place', 'title', 'pagination.other'];
     types.forEach(function(type)
     {
         var symbols = document.querySelectorAll('.symbol.' + type);
         if (symbols.length != 0){
-            var button = document.getElementById(type);
+            var button = document.getElementById(type.replace('.', "_"));
             button.classList.remove("hidden");
         }
     });
