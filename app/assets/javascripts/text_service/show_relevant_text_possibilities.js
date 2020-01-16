@@ -13,7 +13,6 @@ function show_relevant_text_possibilities() {
         pageBreak.innerHTML = '&#128463; ' + pageBreak.innerHTML;
     });
 
-    console.log('he');
     let types = ['quote', 'comment', 'translation', 'modernized', 'info', 'person', 'place', 'title', 'pagination.other'];
     types.forEach(function(type)
     {
