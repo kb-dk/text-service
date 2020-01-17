@@ -22,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 # See hhttps://github.com/discourse/mini_racer
 gem 'mini_racer'
 
+gem "rack", ">= 2.0.8"
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
