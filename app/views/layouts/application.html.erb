@@ -10,7 +10,7 @@
     <%= javascript_include_tag 'application_top' %>
 
     <!-- Add Google Analytics -->
-    <% if Rails.env.production?  && (root_url.include? "adl.dk") %>
+    <% if Rails.env.production?  && (root_url.include? 'kb.dk') %>
         <%= render :partial => 'shared/analytics' %>
     <% end %>
   </head>
