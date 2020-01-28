@@ -13,10 +13,8 @@
     %>
 <% end %>
 
-<%= render :partial => 'text_toolbar' %>
-
 <article class="ocr">
-  <%= render partial: 'fullscreen_buttons' %>
+  <%= render :partial => 'text_toolbar' %>
 
   <% if @document['cat_ssi'] == 'author' %>
       <% unless @document['author_name_ssi'].empty? %>
@@ -37,6 +35,7 @@
   <span id="scrollTop" class="jf-icon box rounded-borders jf-icon-pil-o scrollup hidden-print show-to-top">
   <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'arrow_upward', icon_size: 'icon-medium'}%>
 </span>
+  <%= render :partial => 'comment' %>
 </article>
 
 <%= render :partial => 'comment' %>
