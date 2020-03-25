@@ -3,7 +3,7 @@
 
    text_capabilities = get_text_capabilities (@document[:capabilities_ssi])
    text_capabilities.each do |title, url|
-     javascript_url = "this.href='#{url}'"
+     javascript_url = "#{url}"
      classes = ''
      if title == text_capabilities_type
        classes = 'active'
