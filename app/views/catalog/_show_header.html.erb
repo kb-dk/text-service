@@ -8,7 +8,7 @@
    if @document[:type_ssi] == 'leaf'
      if @document[:part_of_ssim].first
        parent_title = get_parent_title(@document[:part_of_ssim].first)
-       title = 'Uddrag fra: ' + parent_title
+       title = 'Uddrag fra ' + parent_title
      end
    end
 %>
