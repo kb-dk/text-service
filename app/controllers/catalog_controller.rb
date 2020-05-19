@@ -342,12 +342,15 @@ class CatalogController < ApplicationController
     self.class == CatalogController
   end
 
+  
  # Overwriting this method to enable pdf generation using WickedPDF
  # Unfortunately the additional_export_formats method was quite difficult
  # to use for this use case.
   def show
-    deprecated_response, @document = search_service.fetch(params[:id])
-    @response = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(deprecated_response, 'The @response instance variable is deprecated; use @document.response instead.')
+    repository = blacklight_config.repository_class.new(blacklight_config)
+    @document = repository.find(params[:id]).documents.first
+#    deprecated_response, @document = search_service.fetch(params[:id])
+ #   @response = ActiveSupport::Deprecation::DeprecatedObjectProxy.new(deprecated_response, 'The @response instance variable is deprecated; use @document.response instead.')
 
     respond_to do |format|
       format.html { @search_context = setup_next_and_previous_documents }
