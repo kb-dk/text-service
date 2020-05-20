@@ -12,9 +12,12 @@
    items = [[t('view-specific.breadcrumb.text_service'), root_path], [resultlist_link, '']]
 
    if @document[:type_ssi] == 'leaf'
-     if @document[:part_of_ssim].first
-       parent_title = get_parent_title(@document[:part_of_ssim].first)
-       items.push([parent_title, @document[:part_of_ssim].first])
+if @document[:part_of_ssim].first
+       parent_work   =  get_parent_work(@document['id'])
+       parent_title  =  parent_work['work_title_tesim'].first
+#       parent_title = get_parent_title(@document[:part_of_ssim].first)
+#       parent_title = " parent title"
+       items.push([parent_title,  parent_work[:id] + '#' +  @document[:xmlid_ssi]]) 
        title = 'Uddrag fra ' + parent_title
      end
    end

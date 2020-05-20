@@ -13,16 +13,36 @@ module ApplicationHelper
     h
   end
 
-  def get_parent_title id
+  def get_parent_work id
+    logger.debug "argument id = #{id}"
     repository = blacklight_config.repository_class.new(blacklight_config)
-    doc = repository.find(id).documents.first
-    if doc && doc['work_title_tesim'] && doc['work_title_tesim'][0]
+    begin
+      doc = repository.find(id).documents.first
+      doc['part_of_ssim'].each do  |par_id|
+        begin
+          ancestor=repository.find(par_id).documents.first
+          # next unless ancestor['type_ssi'].match /work/
+          return ancestor 
+        rescue
+          logger.debug "ID: #{par_id}"
+          next
+        end
+      end
+    rescue
+      logger.debug "Called for id: #{id}"
+    end
+  end
+  
+  def get_parent_title id
+    doc = get_parent_work id
+    begin
       title = doc['work_title_tesim'][0]
-    else
+    rescue
       title = 'hoveddokument'
     end
     title
   end
+  
   def get_text_capabilities_type arg
     text_capabilities_type = 'Hovedtekst'
     text_capabilities = get_text_capabilities (arg[:capabilities_ssi])
