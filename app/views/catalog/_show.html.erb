@@ -20,8 +20,9 @@
      ]
 else
   text_capabilities_type = get_text_capabilities_type (@document)
-  classes = ''
-  unless (text_capabilities_type == "Hovedtekst") || (text_capabilities_type == "Tekst")
+  text_capabilities = get_text_capabilities @document[:capabilities_ssi]
+  classes = 'hidden'
+  if text_capabilities.size() > 1 # (text_capabilities_type == "Hovedtekst") || (text_capabilities_type == "Tekst")
     classes = 'active'
   end
   buttons_list = [

@@ -2,13 +2,17 @@
    text_capabilities_type = get_text_capabilities_type (@document)
 
    text_capabilities = get_text_capabilities (@document[:capabilities_ssi])
-   text_capabilities.each do |title, url|
-     javascript_url = "#{url}"
-     classes = ''
-     if title == text_capabilities_type
-       classes = 'active'
+   if text_capabilities.size() > 1
+     begin
+       text_capabilities.each do |title, url|
+         javascript_url = "#{url}"
+         classes = ''
+         if title == text_capabilities_type
+           classes = 'active'
+         end
+         buttons_list.push([title , title, javascript_url, classes, '', true])
+       end
      end
-     buttons_list.push([title , title, javascript_url, classes, '', true])
    end
 %>
 
