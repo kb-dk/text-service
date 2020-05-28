@@ -161,8 +161,8 @@ da:
       pagination:
         title: 'Results navigation'
       pagination_info:
-        no_items_found: 'Ingen %{entry_name} fundet'
-        single_item_found: '<strong>1</strong> %{entry_name} fundet'
+        no_items_found: 'Ingen resultater fundet'
+        single_item_found: '<strong>1</strong> resultat fundet'
         pages:
           one: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> af <strong>%{total_num}</strong>'
           other: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> af <strong>%{total_num}</strong>'
