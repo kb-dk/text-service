@@ -43,8 +43,8 @@ da:
        first-link: 'http://www.dsl.dk'
        second-link-label: 'Det Kgl. Bibliotek'
        second-link: 'http://www.kb.dk'
-       contact-us-label: 'Kontakt os'
-       contact-us-link: 'https://kontaktbiblioteket.kb.dk/'
+       contact-us-label: 'Spørg biblioteket'
+       contact-us-link: 'https://www.kb.dk/spoerg-biblioteket'
        about: 'Om tekstportalen'
     breadcrumb:
        text_service: 'Tekster'
