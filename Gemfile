@@ -24,6 +24,9 @@ gem 'uglifier', '>= 1.3.0'
 # See hhttps://github.com/discourse/mini_racer
 gem 'mini_racer'
 
+
+gem "activesupport", "~> 5.2.4.3"
+
 gem "rack", ">= 2.0.8"
 
 # Use CoffeeScript for .coffee assets and views
