@@ -3,7 +3,7 @@ da:
     ie_message:
       message: 'Internet Explorer er teknologisk forældet og supporteres ikke af tekstportalen. <a target="_blank" href="/pages/about-text-portal#platforms">Læs om supporterede browsere</a>.'
     text_toolbar:
-      fullscreen: 'Se tekst i fuld skærm'
+      fullscreen: 'Se faksimile i fuld skærm'
       text: 'Hent PDF'
       highlight: 'Søgemarkering'
       facsimile: 'Faksimile'

@@ -17,7 +17,7 @@ function index_work_search(id, modal_selector, modal_body_selector, target_selec
                 let hl_field = 'text_tsim';
                 let matches_num = data.meta.pages.total_count;
                 if (matches_num > 0) {
-                    $(target_selector).append('<div id="results-header"><p>' + matches_num + ' match</p></div>');
+                    $(target_selector).append('<div id="results-header"><p>' + matches_num + ' forekomster</p></div>');
                     for (var i = 0; i in docs && i < 3; i++) {
                         if (typeof (docs[i].highlighting[docs[i].id][hl_field]) !== "undefined") {
                             $(target_selector).append('<p><a href="/text/' + id + '#' + docs[i].attributes.xmlid_ssi + '">' + docs[i].highlighting[docs[i].id][hl_field].join("...") + '</a></br>Side: ' + docs[i].attributes.page_ssi + '</p>');                        // }

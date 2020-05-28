@@ -5,6 +5,7 @@ require 'oai_provider'
 class CatalogController < ApplicationController
 
   include Blacklight::Catalog
+#  include ApplicationHelper
 
   #get the list of all authors in a period when we are showing af period
   before_action :get_authors_in_period, only: [:show], if: :showing_period?
@@ -364,6 +365,7 @@ class CatalogController < ApplicationController
  # cache files in the public folder based on their id
  # perhaps using the Solr document modified field
   def send_pdf(document, type)
+    repository = blacklight_config.repository_class.new(blacklight_config)
     name = document['work_title_tesim'].first.strip rescue document.id
     edition = ""
     if document['cat_ssi'] != 'author' and document['cat_ssi'] != 'period' 
@@ -376,7 +378,14 @@ class CatalogController < ApplicationController
     auth_name = ""
     if document.has_key?('author_name_ssi')
           auth_name = '<dt>Forfatter:</dt><dd>' + document['author_name_ssi'] + '</dd>' 
-    end    
+    end
+    tit = ''
+    begin
+      tit = document['work_title_tesim'].first
+    rescue
+      tit = "Udrag fra " + helpers.get_parent_work(document.id)['work_title_tesim'].first
+    end
+    
     render pdf: name,
            footer: {right: '[page] af [topage] sider'},
            header: {html: {template: 'shared/pdf_header.pdf.erb'},
@@ -388,7 +397,7 @@ class CatalogController < ApplicationController
                'Fra Det Kgl. Biblioteks tekstportal (tekster.kb.dk) <br /> <hr> <br /><br />' +
                '<dl>'+
                auth_name +
-               '<dt>Titel:</dt><dd>' + author_portrait + document['work_title_tesim'].first + '</dd>' +
+               '<dt>Titel:</dt><dd>' + author_portrait + tit + '</dd>' +
                '<dt>Citation:</dt><dd style="">' + helpers.citation(@document.instance_values)  + '</dd>' +
                edition +
                '</dl>'
