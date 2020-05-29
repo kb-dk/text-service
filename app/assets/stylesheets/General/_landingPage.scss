@@ -309,7 +309,7 @@ a.pagination {
 p.paragraph {
   .pageBreak {
     &:after {
-      content: "\007C";
+      content: "\007C\007C";
       color: $secondary;
       font-size: large;
     }
