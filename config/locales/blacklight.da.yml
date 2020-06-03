@@ -206,7 +206,7 @@ da:
       zero_results:
         title: "Ingen resultater fundet"
         modify_search: "Prøv at ændre din søgning"
-        use_fewer_keywords: "Brug færre nøgleord og prøv de links der står til venstre til at forfine din sgøning."
+        use_fewer_keywords: "Brug færre nøgleord og prøv de links der står til venstre til at forfine din søgning."
         search_fields: "Du har søgt inden for %{search_fields}"
         search_everything: "Prøv at søge i alt"
       view_title: "Se resultater som: "
