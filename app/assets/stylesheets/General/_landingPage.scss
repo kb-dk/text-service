@@ -304,11 +304,15 @@ a.pagination {
     position: absolute;
     left: 5px;
   }
+}
 
-  &:after {
-    content: "\007C";
-    color: $secondary;
-    font-size: large;
+p.paragraph {
+  .pageBreak {
+    &:after {
+      content: "\007C\007C";
+      color: $secondary;
+      font-size: large;
+    }
   }
 }
 
