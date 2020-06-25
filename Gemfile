@@ -27,7 +27,7 @@ gem 'mini_racer'
 
 gem "activesupport", "~> 5.2.4.3"
 
-gem "rack", ">= 2.0.8"
+gem "rack", ">= 2.2.3"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
