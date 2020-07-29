@@ -27,7 +27,7 @@ gem 'mini_racer'
 
 gem "activesupport", "~> 5.2.4.3"
 
-gem "rack", ">= 2.0.8"
+gem "rack", ">= 2.2.3"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -81,7 +81,7 @@ end
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary',  '0.12.4'
 #gem 'bootstrap', '~> 4.1.1'
 gem "bootstrap", ">= 4.3.1"
 gem 'oai'
