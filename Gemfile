@@ -81,7 +81,7 @@ end
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary',  '0.12.4'
 #gem 'bootstrap', '~> 4.1.1'
 gem "bootstrap", ">= 4.3.1"
 gem 'oai'
