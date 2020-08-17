@@ -15,7 +15,7 @@ for (var i = 0; i < infos.length; i++) {
         text_critic.setAttribute("style", "display: none !important");
         let witnesses = text_critic.querySelectorAll('.witness[title]');
         let modal_footer = modal.getElementsByClassName('modal-footer')[0];
-        modal_footer.innerHTML = '<div style="flex: 0 0 100%;"><b>]</b>: Lemma symbol</div>';
+        modal_footer.innerHTML = '<div style="flex: 0 0 100%;"><b>]</b>: Lemmasymbol</div>';
         for (var i = 0; i < witnesses.length; i++) {
             modal_footer.innerHTML += '<div style="flex: 0 0 100%;"><b>' + witnesses[i].innerHTML + '</b>: ' + witnesses[i].getAttribute('title')+'</div>';
         }
