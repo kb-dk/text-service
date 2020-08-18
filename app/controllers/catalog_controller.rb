@@ -432,7 +432,7 @@ class CatalogController < ApplicationController
     when "gv"
       id = "gv"
     when "lhv"
-      id = "holberg"
+      id = "lhv"
     end
     redirect_to  action: 'index', f: {subcollection_ssi: ["#{id}"]}, match: 'one', search_field: 'Alt'
   end
