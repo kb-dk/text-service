@@ -307,6 +307,7 @@ a.pagination {
 }
 
 p.paragraph {
+  text-align: justify;
   .pageBreak {
     &:after {
       content: "\007C\007C";
