@@ -386,6 +386,18 @@ class CatalogController < ApplicationController
     rescue
       tit = "Udrag fra " + helpers.get_parent_work(document.id)['work_title_tesim'].first
     end
+
+    # image has to be local to show up in pdf
+    pd = ""
+    if document['subcollection_ssi'] == "tfs"
+      pd = '<dt>Ophavsret</dt>' +
+      '<dd>Materialet er fri af ophavsret. Du kan kopiere, ændre, distribuere eller fremføre værket,
+      også til kommercielle formål, uden at bede om tilladelse.</dd>' +
+      '<dd><a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">
+        <img alt="Creative Commons-licens" style="border-width:0" src="http://localhost:3000/assets/88x31.png" />
+      </a></dd>' + 
+      '<dd><a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">Læs Public Domain-erklæringen</a>.</dd>'
+    end
     
     render pdf: name,
            footer: {right: '[page] af [topage] sider'},
@@ -400,7 +412,7 @@ class CatalogController < ApplicationController
                auth_name +
                '<dt>Titel:</dt><dd>' + author_portrait + tit + '</dd>' +
                '<dt>Citation:</dt><dd style="">' + helpers.citation(@document.instance_values)  + '</dd>' +
-               edition +
+               edition + pd
                '</dl>'
   end
 
