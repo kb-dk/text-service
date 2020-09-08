@@ -71,7 +71,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => false, helper_method: :get_period_name
     config.add_facet_field 'subcollection_ssi', :label => 'Samling', :single => true, :limit => 10, :collapse => false, helper_method: :get_collection_name
     config.add_facet_field 'text_type_ssi', :label => 'Tekstkategori', :single => true, :limit => 10, :collapse => false
-
+    config.add_facet_field 'textclass_genre_ssim', :label => 'Tekstklassifikation', :single => true, :limit => 10, :collapse => false
+    config.add_facet_field 'textclass_keywords_ssim', :label => 'Emneord', :single => true, :limit => 10, :collapse => false
     #
     # set :index_range to true if you want the facet pagination view to have facet prefix-based navigation
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
@@ -385,6 +386,18 @@ class CatalogController < ApplicationController
     rescue
       tit = "Udrag fra " + helpers.get_parent_work(document.id)['work_title_tesim'].first
     end
+
+    # image has to be local to show up in pdf
+    pd = ""
+    if document['subcollection_ssi'] == "tfs"
+      pd = '<dt>Ophavsret</dt>' +
+      '<dd>Materialet er fri af ophavsret. Du kan kopiere, ændre, distribuere eller fremføre værket,
+      også til kommercielle formål, uden at bede om tilladelse.</dd>' +
+      '<dd><a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">
+        <img alt="Creative Commons-licens" style="border-width:0" src="http://localhost:3000/assets/88x31.png" />
+      </a></dd>' + 
+      '<dd><a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">Læs Public Domain-erklæringen</a>.</dd>'
+    end
     
     render pdf: name,
            footer: {right: '[page] af [topage] sider'},
@@ -399,7 +412,7 @@ class CatalogController < ApplicationController
                auth_name +
                '<dt>Titel:</dt><dd>' + author_portrait + tit + '</dd>' +
                '<dt>Citation:</dt><dd style="">' + helpers.citation(@document.instance_values)  + '</dd>' +
-               edition +
+               edition + pd
                '</dl>'
   end
 
@@ -432,7 +445,7 @@ class CatalogController < ApplicationController
     when "gv"
       id = "gv"
     when "lhv"
-      id = "holberg"
+      id = "lhv"
     end
     redirect_to  action: 'index', f: {subcollection_ssi: ["#{id}"]}, match: 'one', search_field: 'Alt'
   end

@@ -306,6 +306,10 @@ a.pagination {
   }
 }
 
+p.init, p.paragraph {
+  text-align: justify;
+}
+
 p.paragraph {
   .pageBreak {
     &:after {

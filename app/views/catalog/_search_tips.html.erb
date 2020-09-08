@@ -17,23 +17,24 @@
                 <small><em>Du kan tilføje ”+” hhv. ”–” uden mellemrum før et ord, hvis resultatet SKAL hhv. IKKE MÅ indeholde dette ord.</em></small>
               </dd>
               <dt class="col-4">Som ordene står</dt>
-              <dd class="col-8">Finder alle tekster, hvor alle ord optræder, som du har indtastet dem</dd>
+              <dd class="col-8">Finder alle tekster, hvor alle ord optræder, i den rækkefølge du har indtastet dem</dd>
           </dl>
           <p>Du kan skrive "OR", "AND" og "NOT" til kombinerede søgninger. Du kan ikke anvende jokertegn (wildcards). Søgetrunkering udføres automatisk af systemet.</p>
           <p>Til højre i søgefeltet kan du også vælge <b>hvor</b> du vil søge:</p>
           <dl class="row">
               <dt class="col-4">Al tekst</dt>
-              <dd class="col-8">Søg i al tekst, men ikke i redaktionelle tekster (kommentarer o.a.)</dd>
+              <dd class="col-8">Søg i al tekst, samt i "titel" og "forfatter", men ikke i redaktionelle tekster (kommentarer o.a.)</dd>
               <dt class="col-4">Titel & forfatter</dt>
-              <dd class="col-8">Søg i titel og forfatternavn</dd>
+              <dd class="col-8">Søg kun i hhv. "titel" og "forfatter"</dd>
               <dt class="col-4">Prosa</dt>
-              <dd class="col-8">Søg kun i værker som er prosa</dd>
-              <dt class="col-4">Verser & strofer</dt>
-              <dd class="col-8">Søg kun i værker som er lyrik</dd>
+              <dd class="col-8">Søg kun i tekster, der er struktureret som prosa i tekstfilen</dd>
+              <dt class="col-4">Vers & strofer</dt>
+              <dd class="col-8">Søg kun i tekster, der er struktureret som vers eller strofer i tekstfilen</dd>
               <dt class="col-4">Dialog (drama)</dt>
-              <dd class="col-8">Søg kun i værker som er drama</dd>
+              <dd class="col-8">Søg kun i tekster, der er struktureret som dialog eller drama i tekstfilen</dd>
           </dl>
-          <p>I søgeresultaterne kan du indskrænke søgningen med de søgefacetter som ses i kolonnen til venstre, hvor der fx står ’Forfatter’, ’Indeholder mest’, ’Periode’ m.m.  At klikke på en samlingsikon på hovedsiden svarer til at tilvælge en søgefacet under 'Samling'.</p>
+          <p>Bemærk at søgning med søgevalget ”prosa”, ”vers & strofer” og ”Dialog (drama)” udelukkende kigger på hvordan teksten er struktureret i tekstfilen. Det vil sige at søgning med disse søgevalg ikke nødvendigvis giver et udtømmende resultat.</p>
+          <p>I søgeresultaterne kan du indskrænke søgningen med de søgefacetter som ses i kolonnen til venstre, hvor der fx står ’Forfatter’, ’Periode’ m.m. At klikke på en samlingsikon på hovedsiden svarer til at tilvælge en søgefacet under 'Samling'. Søgefacetten ’Indeholder mest’ indskrænker søgeresultater efter hvordan teksterne er struktureret i tekstfilerne. Tekster med mest prosa og lidt lyrik vil altså optræde som ’prosa’ under ’Indeholder mest’.</p>
         </div>
       </div>
       <div class="modal-footer">

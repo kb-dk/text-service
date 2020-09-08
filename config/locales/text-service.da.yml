@@ -26,7 +26,7 @@ da:
           title: 'Poul Martin Møllers Værker'
         adl:
           title: 'Arkiv for Dansk Litteratur'
-        holberg:
+        lhv:
           title: 'Ludvig Holbergs Værker'
         tfs:
           title: 'Trykkefrihedens Skrifter'
@@ -64,7 +64,7 @@ da:
         adl:
           title: 'Om Arkiv for Dansk Litteratur'
           summary: 'Udvalgte dele af ældre dansk litteratur – fra middelalderen og frem til midten af det 20. århundrede.'
-        holberg:
+        lhv:
           title: 'Om Ludvig Holbergs Værker'
           summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
         tfs:

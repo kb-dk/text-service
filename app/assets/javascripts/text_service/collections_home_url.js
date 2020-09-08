@@ -7,7 +7,7 @@ function collections_home_url() {
         case '/text?f[subcollection_ssi][]=sks&match=one&search_field=Alt':
             new_url = '/sks';
             break;
-        case '/text?f[subcollection_ssi][]=holberg&match=one&search_field=Alt':
+        case '/text?f[subcollection_ssi][]=hlv&match=one&search_field=Alt':
             new_url = '/lhv';
             break;
         case '/text?f[subcollection_ssi][]=pmm&match=one&search_field=Alt':
