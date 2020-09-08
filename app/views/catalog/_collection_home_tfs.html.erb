@@ -134,19 +134,3 @@ I denne webportal benævnes teksterne blot <b>Trykkefrihedens Skrifter.</b></p>
 <li>Forskningsmidler fra Carlsbergfondet. Læs mere her: <a href="https://www.carlsbergfondet.dk/da/Nyheder/Nyt-fra-fondet/Nyheder/Trykkefrihed-og-tilblivelsen-af-en-ny-offentlighed">https://www.carlsbergfondet.dk/da/Nyheder/Nyt-fra-fondet/Nyheder/Trykkefrihed-og-tilblivelsen-af-en-ny-offentlighed</a></li>
 <li>Digitalisering og IT-udvikling i Det Kgl. Bibliotek</li>
 </ul>
-
-
-<!-- The hack below in jQuery works, but the JavaScript should be replaced by putting the HTML snippet into
-the proper source file for the right-hand column of the page.
-
-The snippet is:
-<aside style="text-align:right"><a href="/pages/tfs-bibliografi">Læs detaljeret<br/>bibliografi</a></aside>
-
--->
-<script>
-$(function() {
-	var node = $('.about-collection').parent().parent().parent().parent().children().last();
-	if (!node.text().trim())
-		node.html('<aside style="text-align:right"><a href="/pages/tfs-bibliografi">Læs detaljeret<br/>bibliografi</a></aside>');
-});
-</script>
