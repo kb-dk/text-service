@@ -93,7 +93,7 @@ module ApplicationHelper
       url = '/text?match=one&q=&match=one&search_field=Alt'
     when "sks"
       url = '/sks'
-    when "holberg"
+    when "lhv"
       url = '/lhv'
     when "pmm"
       url = '/pmm'
@@ -114,7 +114,7 @@ module ApplicationHelper
      case name
        when "sks"
          name = "Søren Kierkegaards Skrifter"
-       when "holberg"
+       when "lhv"
          name = "Ludvig Holbergs Skrifter"
        when "pmm"
          name = "Poul Martin Møllers Skrifter"
