@@ -63,8 +63,12 @@ class SearchBuilder < Blacklight::SearchBuilder
     if blacklight_params['match'] == 'phrase'
       # We do have problems with string searching when the query contains quotation marks
       # because we want to add them ourselves
-      solr_params['q'] = solr_params['q'].gsub(/\"/,'')
-      solr_params['q'] = "\"#{solr_params['q']}\""
+      solr_q_string = ''
+      if solr_params['q']
+        solr_q_string = solr_params['q']
+      end
+      solr_params['q'] =  solr_q_string.gsub(/\"/,'')
+      solr_params['q'] = "\"#{ solr_q_string}\""
       solr_params['qs'] = 0
     end
     if blacklight_params['match'] == 'all'
