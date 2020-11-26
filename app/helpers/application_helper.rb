@@ -144,15 +144,15 @@ module ApplicationHelper
     label = []
     author = ""
 
-    if args[:document]['author_name_ssi'].present?
-      author = args[:document]['author_name_ssi'] + ": " if args[:document]['author_name_ssi'].present?
-    end
+    author = args[:document]['author_name_ssi'] + ": " if args[:document]['author_name_ssi'].present?
+
     title = ""
 
     if args[:document]['volume_title_tesim'].present?
       title = content_tag(:em, args[:document]['volume_title_tesim'].try(:first).to_s)
     end
-    # Add author and value as one string so they don't get separated by comma
+    
+    # Add author and title as one string so they don't get separated by comma
 
     if args[:omit_author]
       label << title
@@ -163,9 +163,13 @@ module ApplicationHelper
     label << "udg. af #{args[:document]['editor_ssi']}"         if args[:document]['editor_ssi'].present?
     label << "#{args[:document]['publisher_tesim'].join(', ')}" if args[:document]['publisher_tesim'].present?
     label << "#{args[:document]['date_published_ssi']}"         if args[:document]['date_published_ssi'].present?
+
     # Remove empty string from the array
+    
     label = label.reject { |c| c.empty? }
-    return label.join(', ')  
+    
+    return label.join(', ')
+    
   end
 
   # This one does "Citér", but it also uses the construct_citation above.
@@ -181,7 +185,7 @@ module ApplicationHelper
 
     is_monograph = args[:document]['is_monograph_ssi']=='yes'
     args[:omit_author] = args[:document]['num_authors_isi'].present? ? args[:document]['num_authors_isi'] > 1 : false
-    
+
     if args[:document]['cat_ssi'] == 'volume'
       tit = args[:document]['volume_title_tesim'].first.strip
     else
@@ -195,7 +199,7 @@ module ApplicationHelper
 
 
     cite = ""
-    cite += args[:document]['author_name_ssi'] + ": " if(args[:document]['author_name_ssi'].present?  && args[:document][:id] != args[:document]['volume_id_ssi'])
+    cite += args[:document]['author_name_ssi'] + ": " if(args[:document]['author_name_ssi'].present?)
     cite += "”" + tit + "”"
     
     # I know this looks wierd, but it seems we need the ", i " for
