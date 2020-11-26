@@ -4,7 +4,7 @@
 <div id="info-box" class="hidden toggle-content">
 <dl class="row dl-invert document-metadata">
   <% doc_presenter.fields_to_render.each do |field_name, field| -%>
-          <div class="col-sm-12">
+          <div class="col-sm-12"><!-- <%= field_name %> -->
             <strong><%= raw render_document_show_field_label document, field: field_name %></strong><br>
             <%= raw doc_presenter.field_value field %>
 
