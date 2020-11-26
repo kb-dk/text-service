@@ -128,13 +128,18 @@ module ApplicationHelper
      name
   end
 
+  # This one is doing the "Anvendt udgave"
+  
   def show_volume args
     id = args[:document]['volume_id_ssi']
     return unless id.present?
+    args[:omit_author] = args[:document]['num_authors_isi'].present? ? args[:document]['num_authors_isi'] > 1 : false
     udgave = construct_citation(args)+"."
     link_to udgave.html_safe, solr_document_path(id)
   end
 
+  # This one is doing the "Anvendt udgave", but the actually construction is in the following method
+  
   def construct_citation args
     label = []
     author = ""
@@ -163,22 +168,31 @@ module ApplicationHelper
     return label.join(', ')  
   end
 
+  # This one does "Citér", but it also uses the construct_citation above.
+  
   def citation args
     args[:document] = @document
+
+    # Start with an empty title!
+    
+    tit = '';
+
     # Construct the first part and add the anvendt udgave and the page number
-    if args[:document]['is_monograph_ssi']=='yes'
-      is_monograph = true
-      args[:omit_author] = true
+
+    is_monograph = args[:document]['is_monograph_ssi']=='yes'
+    args[:omit_author] = args[:document]['num_authors_isi'].present? ? args[:document]['num_authors_isi'] > 1 : false
+    
+    if args[:document]['cat_ssi'] == 'volume'
+      tit = args[:document]['volume_title_tesim'].first.strip
     else
-      is_monograph = false
-      args[:omit_author] = false
-    end 
+      tit = args[:document]['work_title_ssi'].present? ? args[:document]['work_title_ssi'].strip :  args[:document]['volume_title_tesim'].first.strip
+    end
 
     #
     # In retrospect one could easily say that there are far too many title fields in the text service
     # And still, we don't have sub-titles, transcribed titles, uniform titles etc.
     #
-    tit = args[:document]['work_title_ssi'].present? ? args[:document]['work_title_ssi'].strip :  args[:document]['volume_title_tesim'].first.strip
+
 
     cite = ""
     cite += args[:document]['author_name_ssi'] + ": " if(args[:document]['author_name_ssi'].present?  && args[:document][:id] != args[:document]['volume_id_ssi'])
