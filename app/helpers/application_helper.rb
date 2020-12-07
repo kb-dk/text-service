@@ -245,7 +245,7 @@ module ApplicationHelper
     begin
       solr_docs = repository.find(id).documents
       if solr_docs.size > 0
-        solr_docs.first['work_title_tesim'].join
+        solr_docs.first['work_title_tesim'][0] #.join
       else
         id
       end
