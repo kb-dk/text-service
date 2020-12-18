@@ -103,6 +103,8 @@ module ApplicationHelper
       url = '/gv'
     when "tfs"
       url = '/tfs'
+    when "letters"
+      url = '/letters'
     else
       url = "#"
     end
@@ -124,6 +126,8 @@ module ApplicationHelper
          name = "Grundtvigs Værker"
        when "tfs"
          name = "Trykkefrihedens Skrifter"
+       when "letters"
+         name = "Danmarks Breve"
      end
      name
   end
