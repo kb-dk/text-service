@@ -70,11 +70,13 @@ module ApplicationHelper
     name = args
     case name
       when "poetry"
-      name = "Poesi"
+        name = "Poesi"
       when "prose"
-      name = "Prosa"
+        name = "Prosa"
       when "play"
-      name = "Skuespil"
+        name = "Skuespil"
+      when "letter"
+        name = "Breve"
     end
   end
 
