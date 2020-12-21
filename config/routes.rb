@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   devise_for :users
     concern :searchable, Blacklight::Routes::Searchable.new
 
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
 
   resource :catalog, only: [:index], as: 'catalog', path: '/text', controller: 'catalog' do
     concerns :searchable
+    concerns :range_searchable
+
   end
 
   concern :exportable, Blacklight::Routes::Exportable.new

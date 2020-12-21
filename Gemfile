@@ -78,6 +78,8 @@ gem 'rsolr', '>= 1.0'
 group :development, :test do
 end
 
+gem 'blacklight_range_limit', '~> 7.8.0'
+
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'wicked_pdf'
