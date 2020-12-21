@@ -15,7 +15,6 @@
 //
 // Required by Blacklight
 //= require blacklight/blacklight
-//= require 'blacklight_range_limit'
 // Add Bootstrap js
 //= require jquery3
 //= require popper
