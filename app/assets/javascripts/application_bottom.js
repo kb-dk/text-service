@@ -17,5 +17,3 @@
 //= require DkBreve.js
 
 //= require_tree ./text_service
-//= require 'blacklight_range_limit'
-
