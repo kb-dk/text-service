@@ -217,3 +217,13 @@ da:
       default: 'entry'
 
     did_you_mean: 'Mente du: %{options}?'
+
+    range_limit:
+      range_html:
+        range_begin: "%{field_label} start"
+        range_end: "%{field_label} slut"
+      results_range_html:
+        min: "%{field_label} min"
+        max: "%{field_label} max"
+      submit_limit: 'Begræns'
+      remove_limit: 'fjern'
