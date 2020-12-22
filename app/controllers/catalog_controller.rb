@@ -74,13 +74,23 @@ class CatalogController < ApplicationController
     config.add_facet_field 'text_type_ssi', :label => 'Tekstkategori', :single => true, :limit => 10, :collapse => false
     config.add_facet_field 'textclass_genre_ssim', :label => 'Tekstklassifikation', :single => true, :limit => 10, :collapse => false
     config.add_facet_field 'textclass_keywords_ssim', :label => 'Emneord', :single => true, :limit => 10, :collapse => false
-    config.add_facet_field 'year_itsi', label: 'Dato',
-                           range: {
-                             num_segments: 10,
-                             assumed_boundaries: [1900, Time.now.year + 2],
-                             segments: true,
-                             maxlength: 4
-                           }
+    config.add_facet_field 'year_itsi', label: 'Dato', range: {
+                         num_segments: 10,
+                         assumed_boundaries: [1500, Time.now.year + 2],
+                         segments: true,
+                         maxlength: 4
+                       }
+
+#    config.add_facet_field 'pub_date', label: 'Publication Year',
+#                           range: {
+#                             num_segments: 10,
+#                             assumed_boundaries: [1900, Time.now.year + 2],
+#                             segments: true,
+#                             maxlength: 4
+#                           }
+
+    
+    
     #
     # set :index_range to true if you want the facet pagination view to have facet prefix-based navigation
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)

@@ -132,6 +132,7 @@ GEM
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
     libv8 (8.4.255.0)
+    libv8 (8.4.255.0-x86_64-linux)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -263,12 +264,13 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   actionview (>= 5.2.4.2)
   activesupport (~> 5.2.4.3)
   blacklight (= 7.3.0)
-  blacklight_range_limit (~> 7.8.0)
+  blacklight_range_limit (~> 7.8.1)
   bootstrap (>= 4.3.1)
   byebug
   capybara (~> 2.13)
@@ -304,4 +306,4 @@ DEPENDENCIES
   xray-rails
 
 BUNDLED WITH
-   2.1.4
+   2.2.2

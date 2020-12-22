@@ -12,8 +12,7 @@
 //
 
 //= require_tree ./transpiled_components
-
 //= require catalog.js
 //= require DkBreve.js
-
 //= require_tree ./text_service
+//= require blacklight/blacklight
