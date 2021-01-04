@@ -22,7 +22,7 @@ gem 'sassc-rails', '~> 2.1.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See hhttps://github.com/discourse/mini_racer
-gem 'mini_racer', '~> 0.3.1'
+gem 'mini_racer'
 
 
 gem "activesupport", "~> 5.2.4.3"
