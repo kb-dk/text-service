@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+# ruby 2.5.0
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -89,3 +91,9 @@ gem "bootstrap", ">= 4.3.1"
 gem 'oai'
 # Google Material Icons
 gem 'material_icons'
+
+
+
+gem "nokogiri", ">= 1.11.0.rc4"
+
+
