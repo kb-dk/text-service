@@ -55,6 +55,7 @@ da:
         all_filters: 'Al tekst'
         title: 'Titel'
         author: 'Forfatter'
+        person: 'Anden person'
         verse: 'Vers & strofer'
         prose: 'Prosa'
         play: 'Dialog (drama)'
