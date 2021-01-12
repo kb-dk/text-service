@@ -68,13 +68,13 @@ class CatalogController < ApplicationController
     # facet bar
 
     config.add_facet_field 'author_name_ssim', :label => 'Forfatter', :single => true, :limit => 10, :collapse => false
-    config.add_facet_field 'person_name_ssim', :label => 'Person', :single => true, :limit => 10, :collapse => false
+    config.add_facet_field 'person_name_ssim', :label => 'Person', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'contains_ssi', :label => 'Indeholder mest', :single => true, :limit => 10, :collapse => false, helper_method: :get_genre_name
-    config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => false, helper_method: :get_period_name
+    config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => true, helper_method: :get_period_name
     config.add_facet_field 'subcollection_ssi', :label => 'Samling', :single => true, :limit => 10, :collapse => false, helper_method: :get_collection_name
     config.add_facet_field 'text_type_ssi', :label => 'Tekstkategori', :single => true, :limit => 10, :collapse => false
-    config.add_facet_field 'textclass_genre_ssim', :label => 'Tekstklassifikation', :single => true, :limit => 10, :collapse => false
-    config.add_facet_field 'textclass_keywords_ssim', :label => 'Emneord', :single => true, :limit => 10, :collapse => false
+    config.add_facet_field 'textclass_genre_ssim', :label => 'Tekstklassifikation', :single => true, :limit => 10, :collapse => true
+    config.add_facet_field 'textclass_keywords_ssim', :label => 'Emneord', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'year_itsi', label: 'Dato', range: {
                          num_segments: 10,
                          assumed_boundaries: [1500, Time.now.year + 2],
