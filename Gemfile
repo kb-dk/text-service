@@ -94,6 +94,6 @@ gem 'material_icons'
 
 
 
-gem "nokogiri", ">= 1.11.0.rc4"
+# gem "nokogiri", ">= 1.11.0.rc4"
 
 
