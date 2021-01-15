@@ -280,8 +280,10 @@ class CatalogController < ApplicationController
     # except in the relevancy case).
     config.add_sort_field 'score desc', :label => (I18n.t'general.config.sort.relevance')
     config.add_sort_field 'author_name_ssi asc', :label => (I18n.t'general.config.sort.author')
-    config.add_sort_field 'work_title_ssi asc', :label => 'Titel'
-
+    config.add_sort_field 'work_title_ssi asc', :label => (I18n.t'general.config.sort.title_asc')
+    config.add_sort_field 'work_title_ssi desc', :label => (I18n.t'general.config.sort.title_desc')
+    config.add_sort_field 'year_itsi asc', :label => (I18n.t'general.config.sort.year_asc')
+    config.add_sort_field 'year_itsi desc', :label => (I18n.t'general.config.sort.year_desc')
     config.spell_max = 5
 
 
