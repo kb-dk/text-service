@@ -30,6 +30,16 @@
 	</button>
       </span>
       <%= render :partial => 'tooltips', locals: {document: 'search', header: true} %>
+      <!-- span class="input-group-addon for-sort-field">
+	<strong>Select sort field</strong>
+	<label for="sort_field" class="sr-only"><%= t('blacklight.search.search.sort.submit') %></label>
+	<%= select_tag(:sort_field,
+            options_for_select(sort_fields, h(params[:sort_field])),
+            title: t('blacklight.search.form.sort_field.title'),
+            id: "sort_field",
+            class: "sort-field") %>
+      </span -->
+
     </div>
     <% end %>
   </div>
