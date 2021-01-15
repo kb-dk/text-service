@@ -147,7 +147,7 @@ da:
         title: 'Antalt resultater per side'
         submit: 'Update'
       sort:
-        label: 'Sorter efter %{field}'
+        label_html: 'Sorter efter %{field}'
         submit: 'Sortér resultater'
       form:
         search_field:
