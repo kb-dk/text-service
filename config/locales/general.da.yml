@@ -66,8 +66,8 @@ da:
         author: 'Forfatter'
         title_asc: 'Titel A to Å'
         title_desc: 'Titel Å to A'
-        year_asc: 'Kronologiskt'	
-        year_desc: 'Kronologiskt, senast först'
+        year_asc: 'Kronologisk'	
+        year_desc: 'Omvendt kronologisk'
       email:
         text:
           from: 'Fra: %{value}'
