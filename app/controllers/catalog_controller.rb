@@ -105,6 +105,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field 'author_id_ssi', :label => 'Forfatter', helper_method: :author_link, short_form: true, itemprop: :author
+    config.add_index_field 'subcollection_ssi', :label => 'Samling', :single => true,  short_form: true, helper_method: :get_collection
     config.add_index_field 'person_id_ssi', :label => 'Person', helper_method: :person_link, short_form: true, itemprop: :person
     ## if we have no author_id_ssi (link to author portrait, just show the author name)
     config.add_index_field 'author_name_tesim', :label => 'Forfatter',  short_form: true, itemprop: :author, unless: proc {|_context, _field_config, doc| doc['author_id_ssi'].present?}
