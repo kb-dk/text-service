@@ -30,6 +30,8 @@ da:
           title: 'Ludvig Holbergs Værker'
         tfs:
           title: 'Trykkefrihedens Skrifter'
+        letters:
+          title: 'Danmarks Breve'
       bluebar:
         title: 'Tekst portal'
         welcome: 'Tekstportal'

@@ -70,11 +70,13 @@ module ApplicationHelper
     name = args
     case name
       when "poetry"
-      name = "Poesi"
+        name = "Poesi"
       when "prose"
-      name = "Prosa"
+        name = "Prosa"
       when "play"
-      name = "Skuespil"
+        name = "Skuespil"
+      when "letter"
+        name = "Breve"
     end
   end
 
@@ -103,6 +105,8 @@ module ApplicationHelper
       url = '/gv'
     when "tfs"
       url = '/tfs'
+    when "letters"
+      url = '/letters'
     else
       url = "#"
     end
@@ -124,6 +128,8 @@ module ApplicationHelper
          name = "Grundtvigs Værker"
        when "tfs"
          name = "Trykkefrihedens Skrifter"
+       when "letters"
+         name = "Danmarks Breve"
      end
      name
   end
@@ -242,6 +248,29 @@ module ApplicationHelper
     result
   end
 
+  def person_link args
+    ids = args[:value]
+    logger.debug "Creating person_link #{args[:document]['person_name_tesim'].to_s}"
+    if (ids.is_a? Array) && (ids.size > 1) # we have more than one person
+      repository = blacklight_config.repository_class.new(blacklight_config)
+      ids.map!{|id| link_to get_person_name(repository,id), solr_document_path(id)}
+      result=ids.to_sentence(:last_word_connector => ' og ')
+    else
+      if ids.is_a? Array
+        person_id = ids.first
+      else
+        person_id = ids
+      end
+      person_name = args[:document]['person_name_tesim'].first if args[:document]['person_name_tesim'].present?
+      person_name ||= "Intet Navn"
+      result = link_to author_name, solr_document_path(person_id)
+    end
+    logger.debug "result is #{result}"
+    result
+  end
+
+
+  
   def translate_model_names(name)
     I18n.t("general.models.#{name}")
   end
