@@ -27,7 +27,24 @@
 </div>
 
 <% if search_field_fritekst? %>
-    <% query = params[:q] + " " + params[:f]["other_location_ssim"] %>
+<%
+
+   query = String.new
+
+   if params.dig(:q)
+      query =  params[:q]
+   end
+  
+   if params.dig(:f) && params[:f].dig("other_location_ssim") 
+      query = query + " " + params[:f]["other_location_ssim"].first
+   end
+
+   if params.dig(:f) && params[:f].dig("person_name_ssim") 
+      query = query + " " + params[:f]["person_name_ssim"].first
+   end
+
+  
+  %>
     <%= javascript_tag do %>
         $(document).ready(
         function () {
