@@ -26,7 +26,6 @@
   </div>
 </div>
 
-<% if search_field_fritekst? %>
 <%
 
    query = String.new
@@ -45,6 +44,9 @@
 
   
   %>
+
+<% if !query.empty? %>
+<!-- % if search_field_fritekst? % -->
     <%= javascript_tag do %>
         $(document).ready(
         function () {
