@@ -12,7 +12,6 @@
 
 //
 //= require rails-ujs
-//= require jquery
 //
 // Required by Blacklight
 // Add Bootstrap js
