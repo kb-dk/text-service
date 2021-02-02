@@ -113,6 +113,11 @@ module ApplicationHelper
     url
   end
 
+  def get_collection args
+    name = args[:document]['subcollection_ssi']
+    get_collection_name(name)
+  end    
+  
   def get_collection_name args
      name = args
      case name

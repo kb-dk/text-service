@@ -69,8 +69,9 @@ class CatalogController < ApplicationController
 
     config.add_facet_field 'author_name_ssim', :label => 'Forfatter', :single => true, :limit => 10, :collapse => false
     config.add_facet_field 'person_name_ssim', :label => 'Person', :single => true, :limit => 10, :collapse => true
+    config.add_facet_field 'other_location_ssim', :label => 'Sted', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'contains_ssi', :label => 'Indeholder mest', :single => true, :limit => 10, :collapse => false, helper_method: :get_genre_name
-    config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => true, helper_method: :get_period_name
+#    config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => true, helper_method: :get_period_name
     config.add_facet_field 'subcollection_ssi', :label => 'Samling', :single => true, :limit => 10, :collapse => false, helper_method: :get_collection_name
     config.add_facet_field 'text_type_ssi', :label => 'Tekstkategori', :single => true, :limit => 10, :collapse => false
     config.add_facet_field 'textclass_genre_ssim', :label => 'Tekstklassifikation', :single => true, :limit => 10, :collapse => true
@@ -105,10 +106,17 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field 'author_id_ssi', :label => 'Forfatter', helper_method: :author_link, short_form: true, itemprop: :author
-    config.add_index_field 'person_id_ssi', :label => 'Person', helper_method: :person_link, short_form: true, itemprop: :person
+
+    config.add_index_field 'subcollection_ssi', :label => 'Samling', :single => true,  short_form: true, helper_method: :get_collection
+
+    #config.add_index_field 'person_id_ssi', :label => 'Person', helper_method: :person_link, short_form: true, itemprop: :person
+
+    
     ## if we have no author_id_ssi (link to author portrait, just show the author name)
     config.add_index_field 'author_name_tesim', :label => 'Forfatter',  short_form: true, itemprop: :author, unless: proc {|_context, _field_config, doc| doc['author_id_ssi'].present?}
-    config.add_index_field 'person_name_tesim', :label => 'Person',  short_form: true, itemprop: :person, unless: proc {|_context, _field_config, doc| doc['person_id_ssi'].present?}
+    
+    #    config.add_index_field 'person_name_tesim', :label => 'Person',  short_form: true, itemprop: :person, unless: proc {|_context, _field_config, doc| doc['person_id_ssi'].present?}
+    
     config.add_index_field 'volume_title_tesim', :label => 'Anvendt udgave', helper_method: :show_volume, short_form: true, itemprop: :isPartOf, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
     #config.add_index_field 'editor_ssi', :label => 'Redaktør', itemprop: :editor
 

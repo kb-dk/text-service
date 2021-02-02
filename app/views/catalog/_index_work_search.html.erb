@@ -26,11 +26,31 @@
   </div>
 </div>
 
-<% if search_field_fritekst? %>
+<%
+
+   query = String.new
+
+   if params.dig(:q)
+      query =  params[:q]
+   end
+  
+   if params.dig(:f) && params[:f].dig("other_location_ssim") 
+      query = query + " " + params[:f]["other_location_ssim"].first
+   end
+
+   if params.dig(:f) && params[:f].dig("person_name_ssim") 
+      query = query + " " + params[:f]["person_name_ssim"].first
+   end
+
+  
+  %>
+
+<% if !query.empty? %>
+<!-- % if search_field_fritekst? % -->
     <%= javascript_tag do %>
         $(document).ready(
         function () {
-        index_work_search("<%= document['id'] %>",$('#<%= modal_id %>'),$('#<%= modal_body_id %>'), $('#<%= matches_id %>'), $('#<%= text_label_id %>'), '<%= params[:q] %>', '<%= params[:match].present? ? params[:match] : "one" %>');
+        index_work_search("<%= document['id'] %>",$('#<%= modal_id %>'),$('#<%= modal_body_id %>'), $('#<%= matches_id %>'), $('#<%= text_label_id %>'), '<%= query %>', '<%= params[:match].present? ? params[:match] : "one" %>');
         });
     <% end %>
 <% end %>
