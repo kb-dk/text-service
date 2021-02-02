@@ -193,6 +193,7 @@ span.symbol{
   &.info,
   &.person,
   &.comment,
+  &.bookmark_border,
   &.place,
   &.title{
     @extend .hide_unicode_icon;
