@@ -5,13 +5,13 @@ function toggle_location() {
     if (this.classList.contains('active')) {
         for (i = 0; i < text_locations.length; i++) {
             text_locations[i].style.display = 'none';
-            text_locations[i].parentElement.style.display = 'none';
+            // text_locations[i].parentElement.style.display = 'none';
         }
     } else {
         for (i = 0; i < text_locations.length; i++) {
             text_locations[i].style.display = 'inline';
             text_locations[i].classList.add('icon', 'location_on');
-            text_locations[i].parentElement.style.display = 'inline';
+            // text_locations[i].parentElement.style.display = 'inline';
         }
     }
     this.classList.toggle('active');
