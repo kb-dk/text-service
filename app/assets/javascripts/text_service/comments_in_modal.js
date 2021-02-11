@@ -1,5 +1,5 @@
 "use strict";
-var comments = document.querySelectorAll('a[title="Kommentar"]');
+var comments = document.querySelectorAll('a[title="Kommentar"], a[title="Person"]');
 
 for (var i = 0; i < comments.length; i++) {
     var comment = comments[i];
