@@ -1,5 +1,20 @@
 "use strict";
 var comments = document.querySelectorAll('a[title="Kommentar"], a[title="Person"]');
+var local_comments = document.querySelectorAll('a.Bibel');
+
+for (var i = 0; i < local_comments.length; i++) {
+    var local_comment = local_comments[i];
+    local_comment.dataset.toggle = "modal";
+    local_comment.dataset.target = "#comment_modal";
+
+    local_comment.addEventListener("click", function (event) {
+      event.preventDefault()
+      var modal = document.getElementById('comment_modal');
+      var modal_body = modal.getElementsByClassName('modal-body')[0];
+      var comment_modal = document.getElementsByClassName("comment_modal_content");
+      modal_body.innerHTML = this.title;
+    });
+}
 
 for (var i = 0; i < comments.length; i++) {
     var comment = comments[i];

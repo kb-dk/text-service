@@ -1,13 +1,13 @@
-a{
+a {
   text-decoration: underline;
 }
 
-a.comment, a.Bibel {
+a.comment {
   text-decoration: none;
   pointer-events: none;
 }
 
-a.show_comments{
+a.show_comments, a.Bibel {
   pointer-events: auto !important;
   text-decoration: underline !important;
   cursor: pointer !important;
