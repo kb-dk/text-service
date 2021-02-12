@@ -1,5 +1,7 @@
 "use strict";
-var comments = document.querySelectorAll('a[title="Kommentar"], a[title="Person"]');
+var comments = document.querySelectorAll(
+  'a[title="Kommentar"], a[title="Person"], a[title="Plads"]'
+);
 var local_comments = document.querySelectorAll('a.Bibel');
 
 for (var i = 0; i < local_comments.length; i++) {
