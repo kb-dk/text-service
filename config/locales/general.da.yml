@@ -44,6 +44,9 @@ da:
           one: 'Mindst et ord'
           all: 'Alle ord'
           phrase: 'Som ordene står'
+        editorial:
+          no: 'Samlingstekster'
+          yes: 'Redaktionel tekst'
       list:
         format: 'Formater:'
         text: 'Tekst'

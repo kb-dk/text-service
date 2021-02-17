@@ -12,8 +12,22 @@ class SearchBuilder < Blacklight::SearchBuilder
   #     solr_parameters[:custom] = blacklight_params[:user_value]
   #   end
 
-  self.default_processor_chain += [:restrict_to_author_id, :add_work_id, :add_timestamp_interval, :more_search_params]
+  self.default_processor_chain +=
+    [:restrict_to_author_id,
+     :add_work_id,
+     :add_timestamp_interval,
+     :search_editorial_as_well,
+     :more_search_params]
 
+  def search_editorial_as_well  solr_params
+    if blacklight_params[:editorial] == 'yes'
+    #      solr_params[:fq] << "is_editorial_ssi:yes OR is_editorial_ssi:no"
+      solr_params[:fq] << "is_editorial_ssi:yes"
+    else
+      solr_params[:fq] << "is_editorial_ssi:no"
+    end
+  end
+  
   def add_work_id solr_params
     if blacklight_params[:search_field] == 'leaf' && blacklight_params[:workid].present?
       solr_params[:fq] ||= []
