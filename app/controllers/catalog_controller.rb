@@ -166,7 +166,7 @@ class CatalogController < ApplicationController
     # since we aren't specifying it otherwise.
     config.add_search_field('Alt',label: I18n.t('general.config.search.all_filters')) do |field|
       field.solr_parameters = {
-          :fq => ['cat_ssi:work AND type_ssi:work'],
+          :fq => ['type_ssi:work'],
           :qf => 'author_name_tesim^5 work_title_tesim^5 text_tsim',
           :pf => 'text_tsim'
       }
@@ -177,7 +177,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('author_title',label: I18n.t('general.config.search.author_title')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work AND type_ssi:work'],
+        :fq => ['type_ssi:work'],
         :qf => 'author_name_tesim work_title_tesim',
         :pf => 'work_title_tesim'
       }
@@ -214,7 +214,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('person', label: I18n.t('general.config.search.person')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work AND type_ssi:work'],
+        :fq => ['type_ssi:work'],
         :qf => 'person_name_tesim',
         :pf => 'person_name_tesim'
       }
@@ -224,7 +224,7 @@ class CatalogController < ApplicationController
   
     config.add_search_field('prose', label: I18n.t('general.config.search.prose')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work AND type_ssi:work'],
+        :fq => ['type_ssi:work'],
         :qf => 'prose_extract_tesim',
         :pf => 'prose_extract_tesim'
       }
@@ -234,7 +234,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('verse', label: I18n.t('general.config.search.verse')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work AND type_ssi:work'],        
+        :fq => ['type_ssi:work'],        
         :qf => 'verse_extract_tesim',
         :pf => 'verse_extract_tesim'
       }
@@ -244,7 +244,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('play', label: I18n.t('general.config.search.play')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work AND type_ssi:work'],                
+        :fq => ['type_ssi:work'],                
         :qf => 'performance_extract_tesim',
         :pf => 'performance_extract_tesim'
       }
@@ -311,7 +311,7 @@ class CatalogController < ApplicationController
 
     config.oai_config = {
         :default_solr_params => {
-            :fq => "cat_ssi:work"
+            :fq => "type_ssi:work"
         },
         :timestamp_field => 'timestamp',
         :limit => 20,
