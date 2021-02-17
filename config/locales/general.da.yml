@@ -45,8 +45,8 @@ da:
           all: 'Alle ord'
           phrase: 'Som ordene står'
         editorial:
-          no: 'Samlingstekster'
-          yes: 'Redaktionel tekst'
+          nope: 'Samlingstekst'
+          yep: 'Redaktionelt'
       list:
         format: 'Formater:'
         text: 'Tekst'
