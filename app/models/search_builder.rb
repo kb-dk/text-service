@@ -51,7 +51,7 @@ class SearchBuilder < Blacklight::SearchBuilder
 
   def part_of_volume_search solr_params
     solr_params[:fq] = []
-    solr_params[:fq] << "cat_ssi:work"
+    solr_params[:fq] << "type_ssi:leaf"
     solr_params[:fq] << "volume_id_ssi:#{blacklight_params[:volumeid]}"
     solr_params[:rows] = 10000
 
