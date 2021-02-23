@@ -30,10 +30,12 @@
   &.letter {
     &:before {
       content: 'B';
-      font-size: 1.2rem;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.4rem;
+      font-weight: bold;
     }
     position: relative;
-    bottom: 5px;
+    bottom: 0.25rem;
   }
   
   &.icon-xsmall {
