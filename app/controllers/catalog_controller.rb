@@ -25,7 +25,6 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
         :qt => 'search',
         :rows => 10,
-        #:fq => ['application_ssim:ADL'],
         :hl => 'true',
         :'hl.snippets' => '3',
         :'hl.simple.pre' => '<em class="highlight" >',
@@ -309,21 +308,34 @@ class CatalogController < ApplicationController
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
 
+   
+    oai_solr = []
     config.oai_config = {
         :default_solr_params => {
             :fq => "type_ssi:work"
         },
         :timestamp_field => 'timestamp',
         :limit => 20,
-        :sets => [{
-            :name => 'Test set',
-            :desc => 'A set for testing',
-            :spec => 'kb.test',
-            :solr_params => {},},
-        {:name => 'Another test set',
-                  :desc => 'More testing',
-                  :spec => 'kb.test2',
-                  :solr_params => {}}]
+        :sets => [
+          {
+            :name => 'ADL',
+            :desc => 'Archive for Danish Literature',
+            :spec => 'kb.adl',
+            :solr_params => {
+              :fq => "subcollection_ssi:adl"
+            }
+#            :solr_params => {},
+          },
+          {
+            :name => 'TFS',
+            :desc => 'Trykkefrihedens Skrifter',
+            :spec => 'kb.tfs',
+            :solr_params => {
+              :fq => "subcollection_ssi:tfs"
+            }
+#            :solr_params => {}
+          }
+        ]
     }
  end
 

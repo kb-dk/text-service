@@ -9,8 +9,8 @@ function index_work_search(id, modal_selector, modal_body_selector, target_selec
     } else {
         $.ajax({
             type: 'GET',
-            // url: '/text.json?search_field=leaf&rows=200&sort=position_isi+asc&q=' + q + '&workid=' + id + '&match=' + match,
-	    url: '/text.json?search_field=leaf&rows=200&&q=' + q + '&workid=' + id + '&match=' + match,
+//            url: '/text.json?search_field=leaf&rows=200&sort=position_isi+asc&q=' + q + '&workid=' + id + '&match=' + match,
+	    url: '/text.json?search_field=leaf&rows=200&q=' + q + '&workid=' + id + '&match=' + match,
             datatype: 'json',
             success: function (data) {
                 $(target_selector).empty();
@@ -37,7 +37,7 @@ function index_work_search(id, modal_selector, modal_body_selector, target_selec
                     });
                     for (var i = 0; i in docs; i++) {
                         if (typeof (docs[i].highlighting[docs[i].id][hl_field]) !== "undefined") {
-                            $(modal_body_selector).append('<p><a href="/text/' + id + '#' + docs[i].attributes.xmlid_ssi + '">' + docs[i].highlighting[docs[i].id][hl_field].join("...") + '</a></br>Side: ' + docs[i].attributes.page_ssi + '</p>');                        // }
+                            $(modal_body_selector).append('<a href="/text/' + id + '#' + docs[i].attributes.xmlid_ssi + '">' + docs[i].highlighting[docs[i].id][hl_field].join("...") + '</a></br>Side: ' + docs[i].attributes.page_ssi + '</p>');                        // }
                         }
                     }
                 }
