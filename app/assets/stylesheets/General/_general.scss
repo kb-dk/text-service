@@ -174,6 +174,14 @@ span.symbol.title, span.symbol.person, span.symbol.place{
   cursor: auto;
 }
 
+span.symbol.Bibel {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  &:before {
+    content: 'B';
+  }
+}
+
 a.comment{
   pointer-events: none;
   cursor: default;
@@ -194,7 +202,6 @@ span.symbol{
   &.person,
   &.Bibel,
   &.comment,
-  &.bookmark_border,
   &.place,
   &.title{
     @extend .hide_unicode_icon;

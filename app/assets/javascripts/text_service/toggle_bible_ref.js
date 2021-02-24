@@ -9,7 +9,7 @@ function toggle_bible_ref() {
     } else {
         for (i = 0; i < text_bible_refs.length; i++) {
             text_bible_refs[i].style.display = 'inline';
-            text_bible_refs[i].classList.add('icon', 'bookmark_border');
+            text_bible_refs[i].classList.add('icon', 'Bibel');
         }
     }
     this.classList.toggle('active');
