@@ -1,13 +1,16 @@
 <!-- Modal Alle forekomster  -->
 <% matches_id = "matches-ModalBody-#{document['id']}" %>
-<% text_label_id = "matces-text-label-#{document['id'].gsub("#", "")}" %>
+<% text_label_id = "matches-text-label-#{document['id'].gsub("#", "")}" %>
 <% modal_body_id = "matches-modal-body-#{document['id']}" %>
 <% modal_id = "matches-#{document['id']}" %>
 
 <% if search_field_fritekst? %>
-    <dt class="col-md-3" id=<%= text_label_id %>><%= t('general.search.list.in_text') %></dt>
-    <dd class="search-results col-md-9" id=<%= matches_id %>></dd>
+   <dt class="col-md-3" id=<%= text_label_id %>><%= t('general.search.list.in_text') %></dt>
+   <dd class="search-results col-md-9" id=<%= matches_id %>></dd>
 <% end %>
+
+<!-- DEBUG search_field  = <%= params[:search_field]  %> 
+           text_label_id = <%= text_label_id %> -->
 
 <div class="modal fade" id="<%= modal_id %>" tabindex="-1" role="dialog" aria-labelledby="textMatches">
   <div class="modal-dialog" role="document">

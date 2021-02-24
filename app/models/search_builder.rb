@@ -20,11 +20,14 @@ class SearchBuilder < Blacklight::SearchBuilder
      :more_search_params]
 
   def search_editorial_as_well  solr_params
-    if blacklight_params[:editorial] == 'yes'
-    #      solr_params[:fq] << "is_editorial_ssi:yes OR is_editorial_ssi:no"
+    if blacklight_params[:editorial].present? && blacklight_params[:editorial] == 'yes'
       solr_params[:fq] << "is_editorial_ssi:yes"
     else
-      solr_params[:fq] << "is_editorial_ssi:no"
+      if blacklight_params[:editorial].present? && blacklight_params[:editorial] == 'no'
+        solr_params[:fq] << "is_editorial_ssi:no"
+      else
+        solr_params[:fq] << "is_editorial_ssi:*"
+      end
     end
   end
   
@@ -32,8 +35,9 @@ class SearchBuilder < Blacklight::SearchBuilder
     if blacklight_params[:search_field] == 'leaf' && blacklight_params[:workid].present?
       #      solr_params[:fq] ||= []
       solr_params[:fq] = []
-      solr_params[:fl] = [:id,:text_tsim,:volume_id_ssi,:page_ssi,:position_isi,:xmlid_ssi]
+      solr_params[:fl] = [:id,:text_tsim,:volume_id_ssi,:page_ssi,:position_isi,:xmlid_ssi,:is_editorial_ssi]
       workid = blacklight_params[:workid]
+      # editorial = blacklight_params[:editorial]
       # workid = "#{workid}*" unless workid.include? '*'
       # sorting in document order
       solr_params[:facet] = false
@@ -44,6 +48,8 @@ class SearchBuilder < Blacklight::SearchBuilder
       # part of search
       solr_params[:fq] << "type_ssi:leaf"
       solr_params[:fq] << "part_of_ssim:#{workid}"
+      # solr_params[:fq] << "is_editorial_ssi:*"
+
     end
   end
 
@@ -51,7 +57,8 @@ class SearchBuilder < Blacklight::SearchBuilder
     if (blacklight_params[:authorid].present?)
       solr_params[:fq] ||= []
       solr_params[:fq] << "author_id_ssi:#{blacklight_params[:authorid]}"
-      solr_params[:fq] << "cat_ssi:work"
+      solr_params[:fq] << "type_ssi:work"
+      # should this one be type_ssi:work ???
     end
   end
 
