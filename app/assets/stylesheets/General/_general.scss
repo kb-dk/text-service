@@ -1,13 +1,13 @@
-a{
+a {
   text-decoration: underline;
 }
 
-a.comment{
+a.comment {
   text-decoration: none;
   pointer-events: none;
 }
 
-a.show_comments{
+a.show_comments, a.Bibel {
   pointer-events: auto !important;
   text-decoration: underline !important;
   cursor: pointer !important;
@@ -174,6 +174,14 @@ span.symbol.title, span.symbol.person, span.symbol.place{
   cursor: auto;
 }
 
+span.symbol.Bibel {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  &:before {
+    content: 'B';
+  }
+}
+
 a.comment{
   pointer-events: none;
   cursor: default;
@@ -192,7 +200,9 @@ span.symbol{
   &.modernized,
   &.info,
   &.person,
+  &.Bibel,
   &.comment,
+  &.bookmark_border,
   &.place,
   &.title{
     @extend .hide_unicode_icon;
