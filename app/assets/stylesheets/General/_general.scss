@@ -7,7 +7,7 @@ a.comment {
   pointer-events: none;
 }
 
-a.show_comments, a.Bibel {
+a.show_comments, a.Bibel, a.mytologi {
   pointer-events: auto !important;
   text-decoration: underline !important;
   cursor: pointer !important;
@@ -182,6 +182,14 @@ span.symbol.Bibel {
   }
 }
 
+span.symbol.mytologi {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  &:before {
+    content: 'M';
+  }
+}
+
 a.comment{
   pointer-events: none;
   cursor: default;
@@ -201,6 +209,7 @@ span.symbol{
   &.info,
   &.person,
   &.Bibel,
+  &.mytologi,
   &.comment,
   &.bookmark_border,
   &.place,
