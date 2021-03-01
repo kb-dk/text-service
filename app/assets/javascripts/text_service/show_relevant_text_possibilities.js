@@ -13,7 +13,7 @@ function show_relevant_text_possibilities() {
         pageBreak.innerHTML = '&#128463; ' + pageBreak.innerHTML;
     });
 
-    let types = ['quote', 'comment', 'translation', 'modernized', 'info', 'person', 'Bibel', 'place', 'title', 'pagination.other'];
+    let types = ['quote', 'comment', 'translation', 'modernized', 'info', 'person', 'Bibel', 'mytologi', 'place', 'title', 'pagination.other'];
     types.forEach(function(type)
     {
         var symbols = document.querySelectorAll('.symbol.' + type);

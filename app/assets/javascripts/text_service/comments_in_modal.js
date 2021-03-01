@@ -1,6 +1,6 @@
 "use strict";
 var comments = document.querySelectorAll(
-  'a[title="Kommentar"], a[title="Person"], a[title="Plads"]'
+  'a[title="Kommentar"], a[title="Person"], a[title="Plads"], a[title="Mytologi"]'
 );
 var local_comments = document.querySelectorAll('a.Bibel');
 
