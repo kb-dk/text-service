@@ -25,7 +25,6 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
         :qt => 'search',
         :rows => 10,
-        #:fq => ['application_ssim:ADL'],
         :hl => 'true',
         :'hl.snippets' => '3',
         :'hl.simple.pre' => '<em class="highlight" >',
@@ -166,7 +165,7 @@ class CatalogController < ApplicationController
     # since we aren't specifying it otherwise.
     config.add_search_field('Alt',label: I18n.t('general.config.search.all_filters')) do |field|
       field.solr_parameters = {
-          :fq => ['cat_ssi:work'],
+          :fq => ['type_ssi:work'],
           :qf => 'author_name_tesim^5 work_title_tesim^5 text_tsim',
           :pf => 'text_tsim'
       }
@@ -177,7 +176,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('author_title',label: I18n.t('general.config.search.author_title')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work'],
+        :fq => ['type_ssi:work'],
         :qf => 'author_name_tesim work_title_tesim',
         :pf => 'work_title_tesim'
       }
@@ -214,7 +213,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('person', label: I18n.t('general.config.search.person')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work'],
+        :fq => ['type_ssi:work'],
         :qf => 'person_name_tesim',
         :pf => 'person_name_tesim'
       }
@@ -224,7 +223,7 @@ class CatalogController < ApplicationController
   
     config.add_search_field('prose', label: I18n.t('general.config.search.prose')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work'],
+        :fq => ['type_ssi:work'],
         :qf => 'prose_extract_tesim',
         :pf => 'prose_extract_tesim'
       }
@@ -234,7 +233,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('verse', label: I18n.t('general.config.search.verse')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work'],
+        :fq => ['type_ssi:work'],        
         :qf => 'verse_extract_tesim',
         :pf => 'verse_extract_tesim'
       }
@@ -244,7 +243,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('play', label: I18n.t('general.config.search.play')) do |field|
       field.solr_parameters = {
-        :fq => ['cat_ssi:work'],
+        :fq => ['type_ssi:work'],                
         :qf => 'performance_extract_tesim',
         :pf => 'performance_extract_tesim'
       }
@@ -309,21 +308,34 @@ class CatalogController < ApplicationController
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
 
+   
+    oai_solr = []
     config.oai_config = {
         :default_solr_params => {
-            :fq => "cat_ssi:work"
+            :fq => "type_ssi:work"
         },
         :timestamp_field => 'timestamp',
         :limit => 20,
-        :sets => [{
-            :name => 'Test set',
-            :desc => 'A set for testing',
-            :spec => 'kb.test',
-            :solr_params => {},},
-        {:name => 'Another test set',
-                  :desc => 'More testing',
-                  :spec => 'kb.test2',
-                  :solr_params => {}}]
+        :sets => [
+          {
+            :name => 'ADL',
+            :desc => 'Archive for Danish Literature',
+            :spec => 'kb.adl',
+            :solr_params => {
+              :fq => "subcollection_ssi:adl"
+            }
+#            :solr_params => {},
+          },
+          {
+            :name => 'TFS',
+            :desc => 'Trykkefrihedens Skrifter',
+            :spec => 'kb.tfs',
+            :solr_params => {
+              :fq => "subcollection_ssi:tfs"
+            }
+#            :solr_params => {}
+          }
+        ]
     }
  end
 

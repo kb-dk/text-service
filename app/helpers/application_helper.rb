@@ -92,7 +92,7 @@ module ApplicationHelper
     collection = args
     case collection
     when "all"
-      url = '/text?match=one&q=&match=one&search_field=Alt'
+      url = '/text?match=one&q=&editorial=no&search_field=Alt'
     when "sks"
       url = '/sks'
     when "lhv"

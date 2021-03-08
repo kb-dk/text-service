@@ -27,6 +27,9 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'mini_racer'
 
+
+gem "activerecord", ">= 5.2.4.5"
+
 gem "activesupport", "~> 5.2.4.3"
 
 gem "rack", ">= 2.2.3"
