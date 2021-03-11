@@ -2,16 +2,24 @@ a {
   text-decoration: underline;
 }
 
-a.comment {
+a.comment, a.place {
   text-decoration: none;
-  pointer-events: none;
+  &:hover {
+    text-decoration: none;
+    pointer-events: inherit;
+    cursor: inherit;
+  }
+  &.show_comments {
+    text-decoration: underline;
+    pointer-events: inherit;
+    span:not(.symbol) {
+      pointer-events: auto !important;
+      text-decoration: underline !important;
+      cursor: pointer !important;
+    }
+  }
 }
 
-a.show_comments, a.Bibel, a.mytologi {
-  pointer-events: auto !important;
-  text-decoration: underline !important;
-  cursor: pointer !important;
-}
 
 #toc {
   .current_entry_parent {
@@ -188,11 +196,6 @@ span.symbol.mytologi {
   &:before {
     content: 'M';
   }
-}
-
-a.comment{
-  pointer-events: none;
-  cursor: default;
 }
 
 .hide_unicode_icon{
