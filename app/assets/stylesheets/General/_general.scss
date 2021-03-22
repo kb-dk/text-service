@@ -1,24 +1,30 @@
 a {
   text-decoration: underline;
-}
 
-a.comment, a.place {
-  text-decoration: none;
-  &:hover {
+  &.comment,
+  &.info,
+  &.place,
+  &.person {
     text-decoration: none;
-    pointer-events: inherit;
-    cursor: inherit;
-  }
-  &.show_comments {
-    text-decoration: underline;
-    pointer-events: inherit;
-    span:not(.symbol) {
-      pointer-events: auto !important;
-      text-decoration: underline !important;
-      cursor: pointer !important;
+    &:hover {
+      text-decoration: none;
+      pointer-events: inherit;
+      cursor: inherit;
+    }
+    &.show_icons {
+      text-decoration: underline;
+      pointer-events: inherit;
+      display: inline-block;
+      span:not(.symbol) {
+        pointer-events: auto !important;
+        text-decoration: underline !important;
+        cursor: pointer !important;
+      }
     }
   }
+
 }
+
 
 
 #toc {
@@ -174,25 +180,60 @@ article.om-tekstportalen {
   }
 }
 
+
 span.symbol, a.translation, a.modernized{
   display: none;
   cursor: pointer;
 }
-span.symbol.title, span.symbol.person, span.symbol.place{
+span.symbol.title {
   cursor: auto;
 }
 
-span.symbol.Bibel {
+.background-circle-old {
+    background:#002E70;
+    color: white;
+    border-radius:50%;
+    width:1.4rem;
+    height:1.4rem;
+    text-align: center;
+}
+
+.background-circle {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
+  font-size: 1.4rem;
+  position: relative;
+  letter-spacing: 0.1px;
+  line-height: 1.4rem;
+
+  display: none;
+  background:#002E70;
+  border-radius: 50%;
+  position: relative;
+  width: 1.4rem;
+  height: 1.4rem;
+  // margin-right: 8px;
+  vertical-align: middle;
+
+  &::before {
+    content: attr(data-content);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+span.symbol.Bibel {
+  @extend .background-circle;
   &:before {
     content: 'B';
   }
 }
 
 span.symbol.mytologi {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  @extend .background-circle;
   &:before {
     content: 'M';
   }
