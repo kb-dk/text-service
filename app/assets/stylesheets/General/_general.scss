@@ -4,7 +4,9 @@ a {
   &.comment,
   &.info,
   &.place,
-  &.person {
+  &.person,
+  &.Bibel,
+  &.mytologi {
     text-decoration: none;
     &:hover {
       text-decoration: none;
@@ -18,8 +20,8 @@ a {
       span:not(.symbol) {
         pointer-events: auto !important;
         text-decoration: underline !important;
-        cursor: pointer !important;
       }
+      cursor: pointer !important;
     }
   }
 
