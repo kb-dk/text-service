@@ -9,7 +9,7 @@ a {
     &:hover {
       text-decoration: none;
       pointer-events: inherit;
-      cursor: inherit;
+      // cursor: inherit;
     }
     &.show_icons {
       text-decoration: underline;
@@ -201,8 +201,9 @@ span.symbol.title {
 .background-circle {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   position: relative;
+  bottom: 4px;
   letter-spacing: 0.1px;
   line-height: 1.4rem;
 
@@ -210,8 +211,8 @@ span.symbol.title {
   background:#002E70;
   border-radius: 50%;
   position: relative;
-  width: 1.4rem;
-  height: 1.4rem;
+  width: 1.3rem;
+  height: 1.3rem;
   // margin-right: 8px;
   vertical-align: middle;
 
