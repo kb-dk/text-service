@@ -221,8 +221,8 @@ da:
     range_limit:
       range_begin: "%{field_label} range begin"
       range_end: "%{field_label} range end"
-      submit_limit: 'fjern'
-      remove_limit: 'begræns'
+      submit_limit: 'begræns'
+      remove_limit: 'fjern'
       missing: 'Unknown'
       view_distribution: 'histogram'
       view_larger: 'Større »'
