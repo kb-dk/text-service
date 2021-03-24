@@ -1,6 +1,4 @@
 a {
-  text-decoration: underline;
-
   &.comment,
   &.info,
   &.place,
@@ -9,17 +7,16 @@ a {
   &.mytologi {
     text-decoration: none;
     &:hover {
-      text-decoration: none;
       pointer-events: inherit;
+      text-decoration: none;
       // cursor: inherit;
     }
     &.show_icons {
-      text-decoration: underline;
       pointer-events: inherit;
       display: inline-block;
       span:not(.symbol) {
         pointer-events: auto !important;
-        text-decoration: underline !important;
+        text-decoration: underline;
       }
       cursor: pointer !important;
     }
@@ -202,7 +199,8 @@ span.symbol.title {
 
 .background-circle {
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  font-feature-settings: 'liga';
+  font-weight: 700;
   font-size: 1.3rem;
   position: relative;
   bottom: 4px;
@@ -210,7 +208,7 @@ span.symbol.title {
   line-height: 1.4rem;
 
   display: none;
-  background:#002E70;
+  background:black;
   border-radius: 50%;
   position: relative;
   width: 1.3rem;
