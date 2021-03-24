@@ -188,14 +188,7 @@ span.symbol.title {
   cursor: auto;
 }
 
-.background-circle-old {
-    background:#002E70;
-    color: white;
-    border-radius:50%;
-    width:1.4rem;
-    height:1.4rem;
-    text-align: center;
-}
+.debug { display: none !important; }
 
 .background-circle {
   font-family: 'Roboto', sans-serif;
