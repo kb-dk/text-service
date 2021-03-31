@@ -5,11 +5,13 @@ function toggle_bible_ref() {
     if (this.classList.contains('active')) {
         for (i = 0; i < text_bible_refs.length; i++) {
             text_bible_refs[i].style.display = 'none';
+            text_bible_refs[i].parentElement.classList.remove ('show_icons');
         }
     } else {
         for (i = 0; i < text_bible_refs.length; i++) {
-            text_bible_refs[i].style.display = 'inline';
+            text_bible_refs[i].style.display = 'inline-block';
             text_bible_refs[i].classList.add('icon', 'Bibel');
+            text_bible_refs[i].parentElement.classList.add ('show_icons');
         }
     }
     this.classList.toggle('active');

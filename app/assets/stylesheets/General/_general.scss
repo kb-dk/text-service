@@ -1,17 +1,30 @@
 a {
-  text-decoration: underline;
+  &.comment,
+  &.info,
+  &.place,
+  &.person,
+  &.Bibel,
+  &.mytologi {
+    text-decoration: none;
+    &:hover {
+      pointer-events: inherit;
+      text-decoration: none;
+      // cursor: inherit;
+    }
+    &.show_icons {
+      pointer-events: inherit;
+      display: inline-block;
+      span:not(.symbol) {
+        pointer-events: auto !important;
+        text-decoration: underline;
+      }
+      cursor: pointer !important;
+    }
+  }
+
 }
 
-a.comment {
-  text-decoration: none;
-  pointer-events: none;
-}
 
-a.show_comments, a.Bibel, a.mytologi {
-  pointer-events: auto !important;
-  text-decoration: underline !important;
-  cursor: pointer !important;
-}
 
 #toc {
   .current_entry_parent {
@@ -166,33 +179,58 @@ article.om-tekstportalen {
   }
 }
 
+
 span.symbol, a.translation, a.modernized{
   display: none;
   cursor: pointer;
 }
-span.symbol.title, span.symbol.person, span.symbol.place{
+span.symbol.title {
   cursor: auto;
 }
 
-span.symbol.Bibel {
+.debug { display: none !important; }
+
+.background-circle {
   font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  font-feature-settings: 'liga';
+  font-weight: 700;
+  font-size: 1.3rem;
+  position: relative;
+  bottom: 4px;
+  letter-spacing: 0.1px;
+  line-height: 1.4rem;
+
+  display: none;
+  background:black;
+  border-radius: 50%;
+  position: relative;
+  width: 1.3rem;
+  height: 1.3rem;
+  // margin-right: 8px;
+  vertical-align: middle;
+
+  &::before {
+    content: attr(data-content);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+span.symbol.Bibel {
+  @extend .background-circle;
   &:before {
     content: 'B';
   }
 }
 
 span.symbol.mytologi {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  @extend .background-circle;
   &:before {
     content: 'M';
   }
-}
-
-a.comment{
-  pointer-events: none;
-  cursor: default;
 }
 
 .hide_unicode_icon{
