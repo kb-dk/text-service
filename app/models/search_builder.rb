@@ -35,8 +35,8 @@ class SearchBuilder < Blacklight::SearchBuilder
     if blacklight_params[:search_field] == 'leaf' && blacklight_params[:workid].present?
       #      solr_params[:fq] ||= []
       solr_params[:fq] = []
-      solr_params[:fl] = [:id,:text_tsim,:volume_id_ssi,:page_ssi,:position_isi,:xmlid_ssi,:is_editorial_ssi]
-      workid = blacklight_params[:workid]
+      solr_params[:fl] = [:id,:text_tsim,:bible_ref_ssim,:volume_id_ssi,:page_ssi,:position_isi,:xmlid_ssi,:is_editorial_ssi]
+      workid    = blacklight_params[:workid]
       # editorial = blacklight_params[:editorial]
       # workid = "#{workid}*" unless workid.include? '*'
       # sorting in document order
@@ -48,6 +48,7 @@ class SearchBuilder < Blacklight::SearchBuilder
       # part of search
       solr_params[:fq] << "type_ssi:leaf"
       solr_params[:fq] << "part_of_ssim:#{workid}"
+
       # solr_params[:fq] << "is_editorial_ssi:*"
 
     end
