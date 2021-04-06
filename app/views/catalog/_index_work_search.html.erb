@@ -46,9 +46,8 @@
    end
 
    if params.dig(:f) && params[:f].dig("bible_ref_ssim") 
-#     query = query + " " +  params[:f]["bible_ref_ssim"].first +  "&f[bible_ref_ssim][]="  + "'" + params[:f]["bible_ref_ssim"].first + "'"
       query = query + " " + URI.escape("\"") +  params[:f]["bible_ref_ssim"].first + URI.escape("\"")
-     end
+   end
   
   %>
 
