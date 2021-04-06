@@ -193,13 +193,16 @@ span.symbol.title {
 .background-circle {
   font-family: 'Roboto', sans-serif;
   font-feature-settings: 'liga';
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.3rem;
+  line-height: 1.3rem;
   position: relative;
-  bottom: 4px;
+  bottom: 2px;
   letter-spacing: 0.1px;
-  line-height: 1.4rem;
+  -webkit-text-stroke: 1px white;
 
+  margin-left: 2px;
+  margin-right: 2px;
   display: none;
   background:black;
   border-radius: 50%;
