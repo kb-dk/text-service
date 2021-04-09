@@ -45,6 +45,9 @@
       query = query + " " + params[:f]["person_name_ssim"].first
    end
 
+   if params.dig(:f) && params[:f].dig("bible_ref_ssim") 
+      query = query + " " + URI.escape("\"") +  params[:f]["bible_ref_ssim"].first + URI.escape("\"")
+   end
   
   %>
 
