@@ -6,6 +6,7 @@ a {
   &.Bibel,
   &.mytologi {
     text-decoration: none;
+    text-indent: 0 !important;
     &:hover {
       pointer-events: inherit;
       text-decoration: none;
@@ -197,8 +198,7 @@ span.symbol.title {
   font-size: 1.3rem;
   line-height: 1.3rem;
   position: relative;
-  bottom: 2px;
-  letter-spacing: 0.1px;
+  // letter-spacing: 0.1px;
   -webkit-text-stroke: 1px white;
 
   margin-left: 2px;
