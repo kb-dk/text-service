@@ -197,11 +197,12 @@ module ApplicationHelper
     is_monograph = args[:document]['is_monograph_ssi']=='yes'
     args[:omit_author] = args[:document]['num_authors_isi'].present? ? args[:document]['num_authors_isi'] > 1 : false
 
-    if args[:document]['cat_ssi'] == 'volume'
-      tit = args[:document]['volume_title_tesim'].first.strip
-    else
-      tit = args[:document]['work_title_ssi'].present? ? args[:document]['work_title_ssi'].strip :  args[:document]['volume_title_tesim'].first.strip
-    end
+    # I don't think cat_ssi can have the value volume. This is obsolete!
+#    if args[:document]['cat_ssi'] == 'volume'
+#      tit = args[:document]['volume_title_tesim'].first.strip
+#    else
+      tit = args[:document]['work_title_tesim'].present? ? args[:document]['work_title_tesim'].first.strip :  args[:document]['volume_title_tesim'].first.strip
+#    end
 
     #
     # In retrospect one could easily say that there are far too many title fields in the text service
