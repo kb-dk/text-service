@@ -12,10 +12,13 @@
 
 //
 //= require rails-ujs
-//
-// Required by Blacklight
+
 // Add Bootstrap js
 //= require jquery3
+
+// Required by Blacklight
+//= require blacklight/blacklight
+
 //= require popper
 //= require bootstrap
 
