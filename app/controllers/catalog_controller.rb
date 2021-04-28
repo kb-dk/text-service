@@ -76,7 +76,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'textclass_genre_ssim', :label => 'Tekstklassifikation', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'textclass_keywords_ssim', :label => 'Emneord', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'bible_ref_ssim', :label => 'Bibelsted', :single => true, :limit => 10, :collapse => true
-    config.add_facet_field 'year_itsi', label: 'Dato', range: {
+    config.add_facet_field 'year_itsi', label: 'Årstal', range: {
                          num_segments: 10,
                          assumed_boundaries: [1500, Time.now.year + 2],
                          segments: true,
