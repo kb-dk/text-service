@@ -117,7 +117,10 @@ class CatalogController < ApplicationController
     
     #    config.add_index_field 'person_name_tesim', :label => 'Person',  short_form: true, itemprop: :person, unless: proc {|_context, _field_config, doc| doc['person_id_ssi'].present?}
     
+    config.add_index_field 'year_itsi', :label => 'Udgivelsesdato'
+
     config.add_index_field 'volume_title_tesim', :label => 'Anvendt udgave', helper_method: :show_volume, short_form: true, itemprop: :isPartOf, unless: proc { |_context, _field_config, doc | doc.id == doc['volume_id_ssi'] }
+    
     #config.add_index_field 'editor_ssi', :label => 'Redaktør', itemprop: :editor
 
 
