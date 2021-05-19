@@ -72,6 +72,9 @@ da:
         tfs:
           title: 'Om Trykkefrihedens Skrifter'
           summary: 'Ca. 1000 piecer og pamfletter indsamlet efter Christian 7. og Struensee erklærede trykkefrihed d. 14. september 1770.'
+        letters:	  
+          title: 'Om Danmarks Breve'
+          summary: 'Danmarks breve er en søgebase, hvor du finder digitaliseringer af trykte brevudgivelser fra Det Kgl. Bibliotek.'
         all:
           title: 'Alle værker'
           summary: 'Søgning i alle værker på tværs af alle tekstsamlinger.'
