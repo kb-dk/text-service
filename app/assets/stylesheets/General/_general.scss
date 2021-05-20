@@ -14,7 +14,7 @@ a {
     }
     &.show_icons {
       pointer-events: inherit;
-      display: inline-block;
+      display: inline;
       span:not(.symbol) {
         pointer-events: auto !important;
         text-decoration: underline;
