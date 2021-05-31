@@ -67,7 +67,7 @@ class CatalogController < ApplicationController
     # facet bar
 
     config.add_facet_field 'author_name_ssim', :label => 'Forfatter', :single => true, :limit => 10, :collapse => false
-    config.add_facet_field 'person_name_ssim', :label => 'Person', :single => true, :limit => 10, :collapse => true
+    config.add_facet_field 'person_name_ssim', :label => 'Anden person', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'other_location_ssim', :label => 'Sted', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'contains_ssi', :label => 'Indeholder mest', :single => true, :limit => 10, :collapse => false, helper_method: :get_genre_name
 #    config.add_facet_field 'perioid_ssi', :label => 'Periode', :single => true, :limit => 10, :collapse => true, helper_method: :get_period_name
