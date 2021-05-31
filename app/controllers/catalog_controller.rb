@@ -492,7 +492,7 @@ class CatalogController < ApplicationController
     when "lhv"
       id = "lhv"
     end
-    redirect_to  action: 'index', f: {subcollection_ssi: ["#{id}"]}, match: 'one', search_field: 'Alt'
+    redirect_to  action: 'index', f: {subcollection_ssi: ["#{id}"]}, editorial: 'no'  match: 'one', search_field: 'Alt'
   end
 
   def oai
