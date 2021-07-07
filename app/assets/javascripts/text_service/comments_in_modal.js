@@ -30,14 +30,15 @@ function register_comments ( comments ) {
             event.preventDefault()
             var modal = document.getElementById('comment_modal');
             var modal_body = modal.getElementsByClassName('modal-body')[0];
-
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
                     modal_body.innerHTML = this.responseText;
-                    console.log(this.responseText);
+		} else {
+			console.error("Error:", this.statusText);
 		}
 		var comment_modal = document.getElementsByClassName("comment_modal_content");
+		console.log(comment_modal);
 		if (comment_modal.length) {
 			var cmodal = comment_modal[0];
 			var links = cmodal.querySelectorAll(
@@ -54,3 +55,10 @@ function register_comments ( comments ) {
 	});
     }
 }
+
+// jQuery event for resetting the modal content when the modal is closed
+$('#comment_modal').on('hidden.bs.modal', function (e) {
+	var modal = document.getElementById('comment_modal');
+	var modal_body = modal.getElementsByClassName('modal-body')[0];
+	modal_body.innerHTML = '';
+})
