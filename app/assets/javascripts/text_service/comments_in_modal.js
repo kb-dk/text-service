@@ -35,12 +35,12 @@ function register_comments ( comments ) {
             xhttp.onreadystatechange = function () {
 		if (this.readyState == 4 && this.status == 200) {
                     modal_body.innerHTML = this.responseText;
+                    console.log(this.responseText);
 		}
 		var comment_modal = document.getElementsByClassName("comment_modal_content");
 		if (comment_modal.length) {
-                    cmodal = comment_modal[0];
-
-		    var links = cmodal.querySelectorAll(
+			var cmodal = comment_modal[0];
+			var links = cmodal.querySelectorAll(
 			'a[title="Punktkommentar"], a[title="Kommentar"], a[title="Person"], a[title*="Sted"], a[title="Mytologi"]'
 		    );
 		    register_comments(links);
