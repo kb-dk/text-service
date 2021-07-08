@@ -38,7 +38,6 @@ function register_comments ( comments ) {
 			console.error("Error:", this.statusText);
 		}
 		var comment_modal = document.getElementsByClassName("comment_modal_content");
-		console.log(comment_modal);
 		if (comment_modal.length) {
 			var cmodal = comment_modal[0];
 			var links = cmodal.querySelectorAll(
