@@ -49,7 +49,7 @@ function register_comments(comments, embedded = false) {
                 if (comment_modal.length) {
                     var cmodal = comment_modal[0];
                     var links = cmodal.querySelectorAll(
-                        'a[title="Punktkommentar"], a[title="Kommentar"], a[title="Person"], a[title*="Sted"], a[title="Mytologi"]'
+                        'a[title="Punktkommentar"], a[title="Kommentar"], a[title="Person"], a[title*="Sted"], a[title="Mytologi"], a[title="Titel"]'
                     );
                     register_comments(links, true);
                 }
