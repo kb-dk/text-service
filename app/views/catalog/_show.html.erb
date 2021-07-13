@@ -23,7 +23,7 @@ else
   text_capabilities = get_text_capabilities @document[:capabilities_ssi]
   classes = 'hidden'
   if text_capabilities.size() > 1 # (text_capabilities_type == "Hovedtekst") || (text_capabilities_type == "Tekst")
-    classes = ''
+    classes = 'active'
   end
   buttons_list = [
             ['Info','toggleInfoBtn','','','',true],
