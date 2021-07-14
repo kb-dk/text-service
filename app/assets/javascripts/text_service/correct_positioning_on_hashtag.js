@@ -22,3 +22,4 @@ function findPos(obj) {
 }
 
 window.addEventListener('load', correct_positioning_on_hashtag, false)
+window.addEventListener('hashchange', correct_positioning_on_hashtag, false)
