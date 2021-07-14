@@ -8,7 +8,8 @@ git_source(:github) do |repo_name|
 end
 
 #gem 'blacklight', '>= 7.0.1'
-gem 'blacklight', '7.3.0'
+# gem 'blacklight', '7.3.0'
+gem 'blacklight', '7.4.0'
 
 gem 'sprockets', '~> 3.7.2'
 
@@ -90,8 +91,8 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary',  '0.12.4'
-#gem 'bootstrap', '~> 4.1.1'
-gem "bootstrap", ">= 4.3.1"
+gem 'bootstrap', '~> 4.1.1'
+# gem "bootstrap", ">= 4.3.1"
 gem 'oai'
 # Google Material Icons
 gem 'material_icons'
