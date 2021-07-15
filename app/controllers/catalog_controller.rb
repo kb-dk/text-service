@@ -359,7 +359,7 @@ class CatalogController < ApplicationController
 
 
   def feedback
-    @response, @document = search_service.fetch URI.unescape(params[:id])
+    @document.response, @document = search_service.fetch URI.unescape(params[:id])
     @report = ""
     @report +=  I18n.t('general.config.email.text.from', value: current_user.email) + "\n" unless current_user.nil?
     @report +=  I18n.t('general.config.email.text.url', url: @document['url_ssi']) + "\n" unless @document['url_ssi'].blank?
@@ -466,7 +466,7 @@ class CatalogController < ApplicationController
   end
 
    def facsimile
-    @response, @document = search_service.fetch(params[:id])
+     @document.response, @document = search_service.fetch(params[:id])
     respond_to do |format|
       format.html { setup_next_and_previous_documents }
       format.pdf { send_pdf(@document, 'image') }
@@ -475,14 +475,14 @@ class CatalogController < ApplicationController
 
   # actions for generating the list of authorportraits and period descriptions
   def periods
-    (@response,@deprecated_document_list) = search_service.search_results do |builder|
+    (@document.response, @document.response.documents) = search_service.search_results do |builder|
       builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:period','type_ssi:work'], sort: 'sort_title_ssi asc'})
     end
     render "index"
   end
 
   def authors
-    (@response,@deprecated_document_list) = search_service.search_results do |builder|
+    (@document.response, @document.response.documents) = search_service.search_results do |builder|
       builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:author','type_ssi:work'], sort: 'sort_title_ssi asc'})
     end
     render "index"
