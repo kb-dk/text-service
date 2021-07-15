@@ -146,6 +146,7 @@ da:
         button_label: '%{count} per side'
         title: 'Antalt resultater per side'
         submit: 'Update'
+        aria_label: 'per side'
       sort:
         label_html: 'Sorter efter %{field}'
         submit: 'Sortér resultater'
