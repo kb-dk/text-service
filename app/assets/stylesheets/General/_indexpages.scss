@@ -4,10 +4,12 @@
 }
 .org-1658591f-a5c0-404a-8f54-856d0e08ecd0 {
   margin-bottom: 3rem;
+  h3{
+    font-family: 'nowaymedium', sans-serif;
+  }
 }
 a {
   display: inline;
-  //text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
@@ -35,32 +37,3 @@ a.pagination {
 .page-link{
   color: $color-dark-blue-100;
 }
-
-//.author-img-thumbnail{
-//  padding: 4px;
-//  margin-right: 30px;
-//  background-color: white;
-//  border: 1px solid #ddd;
-//  border-radius: 4px;
-//  display: inline-block;
-//  height: auto;
-//  width: 58px;
-//  img{
-//    width:48px;
-//
-//  }
-//}
-//
-//span.document-counter {
-//  display: none;
-//}
-//
-//.dlTxt, .dlFaks {
-//  padding-right: 15px;
-//}
-//
-//.btn-outline-secondary{
-//  background-color: $yellow;
-//  color:black;
-//}
-
