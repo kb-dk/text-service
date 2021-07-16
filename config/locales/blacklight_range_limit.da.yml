@@ -5,7 +5,7 @@ da:
       range_end: "%{field_label} range end"
       submit_limit: 'begræns'
       remove_limit: 'fjern'
-      missing: 'Unknown'
+      missing: 'Ukendt årstal'
       view_distribution: 'histogram'
       view_larger: 'Større »'
       results_range_html: 'Resultater fra <span class="min">%{min}</span> til <span class="max">%{max}</span>'

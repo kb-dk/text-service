@@ -65,7 +65,7 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
-
+    config.add_facet_field 'year_itsi', :label => 'Årstal', :range => {num_segments: 10, segments: true, maxlength: 4}, :collapse => false
     config.add_facet_field 'author_name_ssim', :label => 'Forfatter', :single => true, :limit => 10, :collapse => false
     config.add_facet_field 'person_name_ssim', :label => 'Anden person', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'other_location_ssim', :label => 'Sted', :single => true, :limit => 10, :collapse => true
@@ -76,8 +76,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'textclass_genre_ssim', :label => 'Tekstklassifikation', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'textclass_keywords_ssim', :label => 'Emneord', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'bible_ref_ssim', :label => 'Bibelsted', :single => true, :limit => 10, :collapse => true
-    config.add_facet_field 'year_itsi', :label => 'Årstal', :range => {num_segments: 10, segments: true, maxlength: 4}, :collapse => false
-    
+
     #
     # set :index_range to true if you want the facet pagination view to have facet prefix-based navigation
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
