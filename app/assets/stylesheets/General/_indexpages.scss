@@ -37,3 +37,33 @@ a.pagination {
 .page-link{
   color: $color-dark-blue-100;
 }
+
+#sort-dropdown{
+  a{
+    text-decoration: none;
+  }
+  .dropdown-menu.show{
+    min-width: 14rem;
+
+    a:active{
+        background-color: #f8f9fa;
+      color: inherit;
+    }
+  }
+  .btn.btn-outline-secondary.dropdown-toggle{
+    min-width: 14rem;
+    color: #495057;
+    background-color: white;
+    border: 1px solid #ced4da;
+    &:focus{
+      background-color: #fff;
+      border-color: #65b6ec;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem #CAF0FE;
+    }
+  }
+
+  .dropdown-toggle::after {
+    color: #002e70;
+  }
+}
