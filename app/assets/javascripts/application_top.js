@@ -24,6 +24,6 @@
 
 //blacklight_range_limit
 //= require bootstrap-slider
-//= require 'blacklight_range_limit.js'
+//= require blacklight_range_limit
 
 
