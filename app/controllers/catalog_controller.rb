@@ -76,22 +76,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'textclass_genre_ssim', :label => 'Tekstklassifikation', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'textclass_keywords_ssim', :label => 'Emneord', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'bible_ref_ssim', :label => 'Bibelsted', :single => true, :limit => 10, :collapse => true
-    config.add_facet_field 'year_itsi', label: 'Årstal', range: {
-                         num_segments: 10,
-                         assumed_boundaries: [1500, Time.now.year + 2],
-                         segments: true,
-                         maxlength: 4
-                       }
-
-#    config.add_facet_field 'pub_date', label: 'Publication Year',
-#                           range: {
-#                             num_segments: 10,
-#                             assumed_boundaries: [1900, Time.now.year + 2],
-#                             segments: true,
-#                             maxlength: 4
-#                           }
-
-    
+    config.add_facet_field 'year_itsi', :label => 'Årstal', :range => {num_segments: 10, segments: true, maxlength: 4}, :collapse => false
     
     #
     # set :index_range to true if you want the facet pagination view to have facet prefix-based navigation
