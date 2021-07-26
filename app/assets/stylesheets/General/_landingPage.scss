@@ -313,7 +313,7 @@ p.init, p.paragraph {
 p.paragraph {
   .pageBreak {
     &:after {
-      content: "\007C\007C";
+      content: "";
       color: $secondary;
       font-size: large;
     }
