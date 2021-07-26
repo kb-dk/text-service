@@ -22,3 +22,8 @@
 //= require popper
 //= require bootstrap
 
+//blacklight_range_limit
+//= require bootstrap-slider
+//= require blacklight_range_limit
+
+

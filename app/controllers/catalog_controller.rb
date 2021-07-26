@@ -65,7 +65,7 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
-
+    config.add_facet_field 'year_itsi', :label => 'Årstal', :range => {num_segments: 10, segments: true, maxlength: 4}, :collapse => false
     config.add_facet_field 'author_name_ssim', :label => 'Forfatter', :single => true, :limit => 10, :collapse => false
     config.add_facet_field 'person_name_ssim', :label => 'Anden person', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'other_location_ssim', :label => 'Sted', :single => true, :limit => 10, :collapse => true
@@ -76,23 +76,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'textclass_genre_ssim', :label => 'Tekstklassifikation', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'textclass_keywords_ssim', :label => 'Emneord', :single => true, :limit => 10, :collapse => true
     config.add_facet_field 'bible_ref_ssim', :label => 'Bibelsted', :single => true, :limit => 10, :collapse => true
-    config.add_facet_field 'year_itsi', label: 'Årstal', range: {
-                         num_segments: 10,
-                         assumed_boundaries: [1500, Time.now.year + 2],
-                         segments: true,
-                         maxlength: 4
-                       }
 
-#    config.add_facet_field 'pub_date', label: 'Publication Year',
-#                           range: {
-#                             num_segments: 10,
-#                             assumed_boundaries: [1900, Time.now.year + 2],
-#                             segments: true,
-#                             maxlength: 4
-#                           }
-
-    
-    
     #
     # set :index_range to true if you want the facet pagination view to have facet prefix-based navigation
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
@@ -359,7 +343,7 @@ class CatalogController < ApplicationController
 
 
   def feedback
-    @response, @document = search_service.fetch URI.unescape(params[:id])
+    @document.response, @document = search_service.fetch URI.unescape(params[:id])
     @report = ""
     @report +=  I18n.t('general.config.email.text.from', value: current_user.email) + "\n" unless current_user.nil?
     @report +=  I18n.t('general.config.email.text.url', url: @document['url_ssi']) + "\n" unless @document['url_ssi'].blank?
@@ -466,7 +450,7 @@ class CatalogController < ApplicationController
   end
 
    def facsimile
-    @response, @document = search_service.fetch(params[:id])
+     @document.response, @document = search_service.fetch(params[:id])
     respond_to do |format|
       format.html { setup_next_and_previous_documents }
       format.pdf { send_pdf(@document, 'image') }
@@ -475,14 +459,14 @@ class CatalogController < ApplicationController
 
   # actions for generating the list of authorportraits and period descriptions
   def periods
-    (@response,@deprecated_document_list) = search_service.search_results do |builder|
+    (@document.response, @document.response.documents) = search_service.search_results do |builder|
       builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:period','type_ssi:work'], sort: 'sort_title_ssi asc'})
     end
     render "index"
   end
 
   def authors
-    (@response,@deprecated_document_list) = search_service.search_results do |builder|
+    (@document.response, @document.response.documents) = search_service.search_results do |builder|
       builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:author','type_ssi:work'], sort: 'sort_title_ssi asc'})
     end
     render "index"
