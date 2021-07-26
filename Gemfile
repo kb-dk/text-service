@@ -7,8 +7,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-#gem 'blacklight', '>= 7.0.1'
-gem 'blacklight', '7.3.0'
+# gem 'blacklight', '7.3.0'
+gem 'blacklight', '7.7.0'
 
 gem 'sprockets', '~> 3.7.2'
 
@@ -84,8 +84,8 @@ gem 'rsolr', '>= 1.0'
 group :development, :test do
 end
 
-gem 'blacklight_range_limit', '~> 7.8.1'
-
+gem 'blacklight_range_limit', '~> 7.7.0'
+gem 'bootstrap-slider-rails'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'wicked_pdf'

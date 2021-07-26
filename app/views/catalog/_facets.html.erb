@@ -1,2 +1,9 @@
 <% # main container for facets/limits menu -%>
-<%= render :partial => 'shared/components/atoms/facet/index', locals: {content:render_facet_partials} %>
+
+<%#= render :partial => 'shared/components/atoms/facet/index', locals: {content:render_facet_partials} %>
+<div class="atom-317722d7-e5b8-4722-92cf-0be25cd1ac57">
+<% # container for facet groups -%>
+<% facet_group_names.each do |groupname| %>
+  <%= render 'facet_group', groupname: groupname %>
+<% end %>
+</div>
