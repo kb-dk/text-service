@@ -4,13 +4,13 @@ a {
   &.place,
   &.person,
   &.Bibel,
-  &.mytologi {
+  &.mytologi,
+  &.title{
     text-decoration: none;
     text-indent: 0 !important;
     &:hover {
       pointer-events: inherit;
       text-decoration: none;
-      // cursor: inherit;
     }
     &.show_icons {
       pointer-events: inherit;
