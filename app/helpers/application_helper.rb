@@ -85,7 +85,7 @@ module ApplicationHelper
   end
 
   def is_collection_home_page?
-    params[:q].blank? && params[:search_field] == 'Alt' && params[:match] == 'one' && has_only_collection_facet?
+    params[:commit] != 'begræns' && params[:q].blank? && params[:search_field] == 'Alt' && params[:match] == 'one' && has_only_collection_facet?
   end
 
   def get_collection_home_url args
