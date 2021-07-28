@@ -9,7 +9,8 @@ for (var i = 0; i < local_comments.length; i++) {
         event.preventDefault()
         var modal = document.getElementById('comment_modal');
         var modal_body = modal.getElementsByClassName('modal-body')[0];
-        var comment_modal = document.getElementsByClassName("comment_modal_content");
+        var modal_header = modal.getElementsByClassName('modal-title')[0];
+        modal_header.innerHTML = 'Bibel reference';
         modal_body.innerHTML = this.title;
     });
 }
@@ -25,10 +26,12 @@ function register_comments(comments, embedded = false) {
         comment.dataset.target = "#comment_modal";
         comment.addEventListener("click", onCommentClick);
         function onCommentClick (event) {
-            event.preventDefault()
+            event.preventDefault();
             $('#comment_modal').modal('show');
             var modal = document.getElementById('comment_modal');
             var modal_body = modal.getElementsByClassName('modal-body')[0];
+            var modal_header = modal.getElementsByClassName('modal-title')[0];
+            modal_header.innerHTML = this.title;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4) {
