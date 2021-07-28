@@ -50,33 +50,3 @@ function index_work_search(id, modal_selector, modal_body_selector, target_selec
     }
     return false;
 }
-
-// Called in the app/views/catalog/_show_tools_work.erb to trigger a modal with all the matches for the search performed in the index
-function show_work_search(id, target_selector, q) {
-    $('.contentSearch').hide();
-    $.ajax({
-        type: 'GET',
-        url: '/text.json?search_field=leaf&rows=200&q=' + encodeURI(q) + '&workid=' + id,
-	// url: '/catalog.json?search_field=leaf&rows=200&sort=position_isi+asc&q=' + encodeURI(q) + '&workid=' + id,
-        datatype: 'json',
-        success: function (data) {
-            $(target_selector).empty();
-            let docs = data.response.docs;
-            let highlighting = data.response.highlighting;
-            let matches_num = data.response.pages.total_count;
-            if (matches_num > 0) {
-                $('.contentSearch').show();
-                $(target_selector).append('<div id="results-header"><p>' + matches_num + ' match</p></div>');
-                for (var i = 0; i in docs; i++) {
-                    if (highlighting[docs[i].id].text_tesim != null) {
-                        $(target_selector).append('<p><a onClick="$(\'#searchFullText\').modal(\'hide\')" href="/solr_documents/' + id + '#' + docs[i].page_id_ssi + '">' + highlighting[docs[i].id].text_tesim.join("...") + '</a></br>Side: ' + docs[i].page_ssi + '</p>');
-                    }
-                }
-            }
-            if (matches_num == 0){
-                $(text_label_id).hide();
-                $(target_selector).hide();
-            } // If the number of matches is 0, or matches dosn't contain any highlight like in case of using 'NOT', hide the label
-        }
-    });
-}

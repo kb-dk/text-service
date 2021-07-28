@@ -61,12 +61,3 @@
     </div>
   </div>
 </div>
-
-<%= javascript_tag do %>
-    <% if search_field == 'Alt' || search_field == 'prose' || search_field == 'verse' || search_field == 'play' %>
-      $(document).ready(
-        function () {
-          show_work_search("<%= @document['id'] %>", $('#matchesModalBody'), "<%= query %>");
-        });
-    <% end %>
-<% end %>
