@@ -349,3 +349,7 @@ footer h3{
 a.note{
   cursor: pointer;
 }
+
+.modal-back-button[href='']{
+  visibility: hidden;
+}
