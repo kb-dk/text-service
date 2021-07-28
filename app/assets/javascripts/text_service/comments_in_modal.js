@@ -56,6 +56,8 @@ function register_comments(comments, embedded = false) {
             if(backButton !== null){
                 backButton.href = backButton.dataset.currenturl;
                 backButton.dataset.currenturl = url;
+                if (backButton.dataset.home === ''){backButton.dataset.home = url;}
+                if (backButton.dataset.home === backButton.dataset.currenturl){backButton.href = '';}
             }
             xhttp.open("GET", url, true);
             xhttp.send();
@@ -68,4 +70,6 @@ $('#comment_modal').on('hidden.bs.modal', function (e) {
     var modal = document.getElementById('comment_modal');
     var modal_body = modal.getElementsByClassName('modal-body')[0];
     modal_body.innerHTML = '';
+    document.getElementsByClassName('modal-back-button')[0].href = '';
+    document.getElementsByClassName('modal-back-button')[0].dataset.home = '';
 })
