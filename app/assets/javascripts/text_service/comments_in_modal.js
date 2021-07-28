@@ -40,7 +40,6 @@ function register_comments(comments, embedded = false) {
                 if (this.readyState === 4) {
                     if (this.status === 200) {
                         modal_body.innerHTML = this.responseText;
-                        console.log(this.responseText);
                     } else {
                         console.error("Error:", this.statusText);
                     }
@@ -68,4 +67,5 @@ $('#comment_modal').on('hidden.bs.modal', function (e) {
     var modal = document.getElementById('comment_modal');
     var modal_body = modal.getElementsByClassName('modal-body')[0];
     modal_body.innerHTML = '';
+    console.log('hej hej');
 })
