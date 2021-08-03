@@ -353,3 +353,16 @@ a.note{
 .modal-back-button[href='']{
   visibility: hidden;
 }
+
+.modal-body .read-more-button{
+  cursor: pointer;
+}
+
+.modal-body .read-more{
+  display: none;
+  padding: 20px 0;
+}
+
+.modal-body .read-more.visible{
+  display: block;
+}

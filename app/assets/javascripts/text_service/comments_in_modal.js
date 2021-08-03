@@ -48,6 +48,20 @@ function register_comments(comments, embedded = false) {
                         'a[title="Punktkommentar"], a[title="Kommentar"], a[title="Person"], a[title*="Sted"], a[title="Mytologi"], a[title="Titel"]'
                     );
                     register_comments(links, true);
+
+                    var read_more_buttons = cmodal.querySelectorAll(
+                        'a.read-more-button'
+                    );
+                    read_more_buttons.forEach(read_more_button => {
+                        read_more_button.addEventListener('click', function(event){
+                              let anchor = event.target.dataset.readMore;
+                              if (anchor){
+                                  document.getElementById(anchor).classList.toggle('visible');
+                                  event.target.innerHTML = event.target.innerHTML === 'Læs mere' ? 'Læs mindre' : 'Læs mere';
+                              }
+                        })
+                        console.log(read_more_button);
+                    });
                 }
             };
             var url = this.href.substr(this.href.lastIndexOf('/') + 1).replace("root#", "shoot-");
