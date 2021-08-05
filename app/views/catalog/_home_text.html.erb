@@ -15,6 +15,6 @@
 <%= render :partial => 'shared/components/organisms/top-container/index' %>
 <%= render :partial => 'shared/components/organisms/layout/1-column', locals: { elements:['advanced_search'], classes:'white-cover-bg padding-top', heading: text, description:t('view-specific.home.bluebar.description1')} %>
 <%= render :partial => 'shared/components/organisms/layout/1-column', locals: { elements:['h2', 'filtered_banner'], heading:'Samlingerne', description:'', classes:'', list: collections, urls: collections.map { |collection| get_collection_home_url(collection)}}%>
-<%= render :partial => 'shared/components/organisms/cookies-alert/index', locals: {description:t('view-specific.home.cookie'), url:'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html'} %>
+<%-# render :partial => 'shared/components/organisms/cookies-alert/index', locals: {description:t('view-specific.home.cookie'), url:'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html'} -%>
 
 
