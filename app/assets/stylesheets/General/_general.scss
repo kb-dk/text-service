@@ -335,7 +335,30 @@ span.symbol{
 }
 
 .mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a .form-wrapper:not(.small)>input {
-  width: max-content;
+  //width: max-content;
+  padding-right: 7rem;
+  margin: 0 0 0 .75rem;
+}
+
+.mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a .form-wrapper:not(.small)>input#q {
+  padding-right: 0;
+}
+
+.mol-d4e97117-4bf7-4516-92fa-54bb0abc40fb{
+  padding-right: 7rem;
+}
+
+.mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a .form-wrapper .mol-d4e97117-4bf7-4516-92fa-54bb0abc40fb input {
+  width: calc(100% + 7rem);
+}
+
+.mol-d4e97117-4bf7-4516-92fa-54bb0abc40fb ul {
+  width: calc(100% + 7rem);
+}
+
+.mol-84808011-3678-4f25-9e6b-db25897b6de1 .form-wrapper:not(.small) button, .mol-368fb22a-f8c3-45d3-9a05-ed68933d0d2a .form-wrapper:not(.small) button {
+  width: 9rem;
+  z-index: 100;
 }
 
 .show-for-small-only{
