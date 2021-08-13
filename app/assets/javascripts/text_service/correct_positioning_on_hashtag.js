@@ -4,8 +4,9 @@ function correct_positioning_on_hashtag() {
             let toolbarHeight = 60;
             let hash = document.location.hash;
             let anchor = document.getElementById(hash.substring(1));
-            let topPos = anchor.offsetTop;
-            window.scroll(0, findPos(anchor) - toolbarHeight);
+            if (anchor) {
+                window.scroll(0, findPos(anchor) - toolbarHeight);
+            }
         }, 0);
     }
 }

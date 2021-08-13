@@ -7,18 +7,13 @@
 }
 
 .collection-gv table td, table th {
-  border: 1px solid #ddd;
+  border: 0;
   padding: 8px;
 }
-
-.collection-gv table tr:nth-child(even){background-color: #f2f2f2;}
-
-.collection-gv table tr:hover {background-color: #ddd;}
 
 .collection-gv table th{
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #c0c0c0;
   color: white;
 }
