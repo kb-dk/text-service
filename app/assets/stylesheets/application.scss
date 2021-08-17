@@ -1,23 +1,17 @@
 // Adding new kbdk design variables
 @import 'kb-design/typography';
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
 // Adding website spesific variables before bootstrap
 @import "General/variables";
-
-// Adding view spesific variables before bootstrap
-//@import "Text-service/variables";
-//@import "ADL/variables";
 
 @import "bootstrap";
 @import 'blacklight/blacklight';
 
 @import "kb-design/styles";
 
-// Adding website specific styling files
 @import "General/General";
-// Adding view specific styling files
-//@import "Text-service/Text-service";
-//@import "ADL/ADL";
 
 @import "snippet";
 
@@ -26,3 +20,7 @@
 // Google Material Icons
 @import "material_icons";
 @import "material_icons_unicode";
+
+//blacklight_range_limit
+@import "blacklight_range_limit/blacklight_range_limit";
+@import "bootstrap-slider";

@@ -1,0 +1,19 @@
+// Style the tables inside the texts, for ex. /text/gv-1809_169A-txr-root
+.collection-gv table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.collection-gv table td, table th {
+  border: 0;
+  padding: 8px;
+}
+
+.collection-gv table th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: white;
+}

@@ -9,15 +9,21 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
+
 //
 //= require rails-ujs
-//= require jquery
-//
-// Required by Blacklight
-//= require blacklight/blacklight
 
 // Add Bootstrap js
 //= require jquery3
+
+// Required by Blacklight
+//= require blacklight/blacklight
+
 //= require popper
 //= require bootstrap
+
+//blacklight_range_limit
+//= require bootstrap-slider
+//= require blacklight_range_limit
+
 

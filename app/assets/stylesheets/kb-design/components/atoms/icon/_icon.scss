@@ -20,12 +20,36 @@
   &.twitter {
     background-image: url(asset-path('icons/icon-twitter.svg'));
   }
+  &.instagram {
+    background: url('https://api.iconify.design/entypo-social:instagram-with-circle.svg?color=white') no-repeat center center / contain;  }
+  &.linkedin {
+    background: url('https://api.iconify.design/entypo-social:linkedin-with-circle.svg?color=white') no-repeat center center / contain;
+  }
   &.button-right {
     background-image: url(asset-path('icons/icon-button-right.svg'));
     background-size: cover;
   }
   &.crown {
     background-image: url(asset-path('icons/icon-crown.svg'));
+  }
+  &.letter {
+    position: relative;
+    bottom: 0.25rem;
+    &:before {
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+    &.B {
+      &:before {
+        content: 'B';
+      }
+    }
+    &.M {
+      &:before {
+        content: 'M';
+      }
+    }
   }
   
   &.icon-xsmall {

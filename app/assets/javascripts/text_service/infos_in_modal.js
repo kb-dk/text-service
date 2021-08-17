@@ -1,16 +1,15 @@
 "use strict";
 var infos = document.querySelectorAll('a.info[title="Tekstkritik"]');
-
 for (var i = 0; i < infos.length; i++) {
     var info = infos[i];
     info.dataset.toggle = "modal";
     info.dataset.target = "#info_modal";
 
     info.addEventListener("click", function (event) {
-        event.preventDefault()
+        event.preventDefault();
         let modal = document.getElementById('info_modal');
         let modal_body = modal.getElementsByClassName('modal-body')[0];
-        let text_critic = this.parentElement.nextElementSibling;
+	    let text_critic = document.getElementById(event.target.dataset.anchor);
         modal_body.innerHTML = text_critic.innerHTML;
         text_critic.setAttribute("style", "display: none !important");
         let witnesses = text_critic.querySelectorAll('.witness[title]');

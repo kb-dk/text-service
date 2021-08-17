@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
+# ruby 2.5.0
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
-#gem 'blacklight', '>= 7.0.1'
-gem 'blacklight', '7.3.0'
+# gem 'blacklight', '7.3.0'
+gem 'blacklight', '7.7.0'
 
 gem 'sprockets', '~> 3.7.2'
 
@@ -16,16 +18,20 @@ gem 'rails', '~> 5.2.4.2'
 gem 'sqlite3'
 gem "actionview", ">= 5.2.4.2"
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+# gem 'puma', '~> 3.12'
+gem "puma", ">= 4.3.8"
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.1.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See hhttps://github.com/discourse/mini_racer
+# See https://github.com/discourse/mini_racer
+
 gem 'mini_racer'
 
 
-gem "activesupport", "~> 5.2.4.3"
+gem "activerecord", ">= 5.2.4.5"
+
+gem "activesupport", "~> 5.2.4.5"
 
 gem "rack", ">= 2.2.3"
 
@@ -78,12 +84,18 @@ gem 'rsolr', '>= 1.0'
 group :development, :test do
 end
 
+gem 'blacklight_range_limit', '~> 7.7.0'
+gem 'bootstrap-slider-rails'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary',  '0.12.4'
-#gem 'bootstrap', '~> 4.1.1'
-gem "bootstrap", ">= 4.3.1"
+gem 'bootstrap', '~> 4.1.1'
+# gem "bootstrap", ">= 4.3.1"
 gem 'oai'
 # Google Material Icons
 gem 'material_icons'
+
+gem "nokogiri", ">= 1.11.0"
+
+
