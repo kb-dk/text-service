@@ -449,13 +449,14 @@ class CatalogController < ApplicationController
                '</dl>'
   end
 
-   def facsimile
-     @document.response, @document = search_service.fetch(params[:id])
-    respond_to do |format|
-      format.html { setup_next_and_previous_documents }
-      format.pdf { send_pdf(@document, 'image') }
-    end
-  end
+  def facsimile
+    repository = blacklight_config.repository_class.new(blacklight_config)
+    @document = repository.find(params[:id]).documents.first
+     respond_to do |format|
+       format.html { setup_next_and_previous_documents }
+       format.pdf { send_pdf(@document, 'image') }
+     end
+   end
 
   # actions for generating the list of authorportraits and period descriptions
   def periods
