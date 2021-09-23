@@ -1,7 +1,10 @@
 <style>
 .tfs-overview { background-color: #f4f4f4; border-radius: 8px; padding: 1em; margin-bottom: 1.2em; }
 .tfs-overview div { font-weight: bold; }
-.tfs-overview ul li li { font-style: italic; }
+.tfs-overview ul.biblList li { text-indent: -1em; padding-left: 1em; }
+.tfs-overview ul.biblList li.noIndent { text-indent: 0; padding-left: 0; } /* Avoid Chrome indentation bug */
+.tfs-overview ul.biblList li li { font-style: italic; }
+.tfs-overview ul.biblList li.noIndent li { text-indent: -1em; padding-left: 1em; } /* Avoid Chrome indentation bug */
 </style>
 
 <h3>Bolle Luxdorphs samling af Trykkefrihedens Skrifter</h3>
@@ -24,26 +27,26 @@
 
 <div class="tfs-overview">
 <div>Række 1</div>
-<ul>
-  <li>bind 1-4: Philopatreias-debatten (62 skrifter)
+<ul class="biblList">
+  <li class="noIndent">bind 1-4: Philopatreias-debatten (62 skrifter)
 	  <ul>
 		<li>1: Philopatreias-debattens start – Bie, Jæger, Scheffer</li>
 		<li>2: Fortsat Philopatreias, bl.a. Chr. Thura</li>
 		<li>3: Philodanus, Philocosmus – Guldberg, Martfelt
 		<li>4: Junior Philopatreias – Rosenlund, Abildgaard</li>
 	  </ul></li>
-  <li>5-6: Landøkonomi (31 skrifter).
+  <li class="noIndent">5-6: Landøkonomi (31 skrifter).
 	  <ul>
 		<li>5: Handel, fabrikker, landøkonomi</li>
 		<li>6: Bondespørgsmålet, fællesskab, hoveri, landvæsenskommissionen</li>
 	  </ul></li>
-  <li>7-9: Handel, købstæder og finansvæsen (61 skrifter)
+  <li class="noIndent">7-9: Handel, købstæder og finansvæsen (61 skrifter)
 	  <ul>
 		<li>7: Handel, laugsvæsen</li>
 		<li>8: Christian Bagge-fejden, brændevin</li>
 		<li>9: Tallotteri-debatten</li>
 	  </ul></li>
-  <li>10-12: Embeder, Universitetet og Norges forhold (52 skrifter)
+  <li class="noIndent">10-12: Embeder, Universitetet og Norges forhold (52 skrifter)
 	  <ul>
 		<li>10: Militær, lægevidenskab, pebersvende</li>
 		<li>11: Norges forhold og økonomi</li>
@@ -61,7 +64,7 @@
 
 <div>Trykkefrihedens skrifter efter 17. Jan. 1772</div>
 <div>Række 2</div>
-<ul>
+<ul class="biblList">
   <li>bind 1: Prædikener fra Taksigelsesfesten 26. januar 1772  samt andre prædikener i anledning af 17. januar (17 skrifter)</li>
   <li>2: Andre hellige taler i anledning af 17. januar (10 skrifter)</li>
   <li>3: Nyhedsblade og efterretninger om 17. januar og Struensees levned (16 skrifter)</li>
@@ -82,7 +85,7 @@
   <li>18: Politiske blade og ugeskrifter – Blandinger, Andres Tanker, Bies Den fra Maanen hiemkomne Politicus – (12 skrifter)</li>
   <li>19-20: Tysksprogede politiske pamfletter om Struensee og 17. januar, overvejende med alternative udlægninger (17 skrifter)</li>
   <li>21: Prædikener fra Taksigelsesfesten 1. december 1773 (18 skrifter)</li>
-  <li>22-25: Skrifter primært fra anden halvdel af 1773 og 1774-75
+  <li class="noIndent">22-25: Skrifter primært fra anden halvdel af 1773 og 1774-75
 	  <ul>
 		<li>22: Arveprinsens fødselsdag og bryllup 1774 – P.F.Suhms statsromaner, primært tekster fra 1774 (25 skrifter)</li>
 		<li>23: Danske kommandoord, lotteri-debatten fortsat, primært tekster fra sen 1773-74 (31 skrifter)</li>
