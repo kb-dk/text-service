@@ -18,6 +18,11 @@
   <div class="facet-extended-list">
     <%= render_facet_limit(@display_facet, layout: false) %>
   </div>
+
+  <div>&nbsp;</div>
+  <div class="facet-pagination bottom">
+    <%= render :partial => 'facet_pagination' %>
+  </div>
 </div>
 
 <div class="modal-footer">
