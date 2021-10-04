@@ -10,7 +10,7 @@ for (var i = 0; i < local_comments.length; i++) {
         var modal = document.getElementById('comment_modal');
         var modal_body = modal.getElementsByClassName('modal-body')[0];
         var modal_header = modal.getElementsByClassName('modal-title')[0];
-        modal_header.innerHTML = 'Bibel reference';
+        modal_header.innerHTML = 'Bibelreference';
         modal_body.innerHTML = this.title;
     });
 }
