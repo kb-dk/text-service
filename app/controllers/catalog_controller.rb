@@ -460,14 +460,14 @@ class CatalogController < ApplicationController
 
   # actions for generating the list of authorportraits and period descriptions
   def periods
-    (@document.response, @document.response.documents) = search_service.search_results do |builder|
-      builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:period','type_ssi:work'], sort: 'sort_title_ssi asc'})
+    (@response, @documents) = search_service.search_results do |builder|
+      builder = blacklight_config.default_solr_params.merge({rows: 10000, q:"cat_ssi:period AND type_ssi:work", sort: 'sort_title_ssi asc'})
     end
     render "index"
   end
 
   def authors
-    (@document.response, @document.response.documents) = search_service.search_results do |builder|
+    (@response, @documents) = search_service.search_results do |builder|
       builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:author','type_ssi:work'], sort: 'sort_title_ssi asc'})
     end
     render "index"
