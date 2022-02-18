@@ -425,7 +425,11 @@ class CatalogController < ApplicationController
       pd = '<dt>Ophavsret</dt>' +
       '<dd>Materialet er fri af ophavsret. Du kan kopiere, ændre, distribuere eller fremføre værket,
       også til kommercielle formål, uden at bede om tilladelse.</dd>' +
-      '<dd><a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">Læs Public Domain-erklæringen</a>.</dd>'
+           '<dd><a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">Læs Public Domain-erklæringen</a>.</dd>'
+    elsif document['subcollection_ssi'] == "adl"
+      pd = '<!-- dt>Ophavsret</dt>' +
+      '<dd>Materialet er dedikeret til public domain. Du kan kopiere, ændre, distribuere og fremføre 	værket, også til kommercielle formål, uden at bede om tilladelse. Husk dog altid at kreditere ophavsmanden.</dd>' +
+      '<dd><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.da">Læs CC0-erklæringen</a>.</dd -->'
     else
       pd = '<dt>Ophavsret</dt>' +
       '<dd>Materialet er dedikeret til public domain. Du kan kopiere, ændre, distribuere og fremføre 	værket, også til kommercielle formål, uden at bede om tilladelse. Husk dog altid at kreditere ophavsmanden.</dd>' +
@@ -460,14 +464,14 @@ class CatalogController < ApplicationController
 
   # actions for generating the list of authorportraits and period descriptions
   def periods
-    (@document.response, @document.response.documents) = search_service.search_results do |builder|
-      builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:period','type_ssi:work'], sort: 'sort_title_ssi asc'})
+    (@response, @documents) = search_service.search_results do |builder|
+      builder = blacklight_config.default_solr_params.merge({rows: 10000, q:"cat_ssi:period AND type_ssi:work", sort: 'sort_title_ssi asc'})
     end
     render "index"
   end
 
   def authors
-    (@document.response, @document.response.documents) = search_service.search_results do |builder|
+    (@response, @documents) = search_service.search_results do |builder|
       builder = blacklight_config.default_solr_params.merge({rows: 10000, fq:['cat_ssi:author','type_ssi:work'], sort: 'sort_title_ssi asc'})
     end
     render "index"
