@@ -8,7 +8,9 @@ class FileServer
     else
       uri +="#{Rails.application.config_for(:text_service)["snippet_script"]}"
     end
+    
     uri +="?path=#{id}"
+    uri += "&xmlid=#{opts[:xmlid]}"  #if opts[:xmlid_ssi].present?
     uri += "&op=#{opts[:op]}" if opts[:op].present?
     uri += "&prefix=#{opts[:prefix]}" if opts[:prefix].present?
     uri += "&q=#{URI.escape(opts[:q])}" if opts[:q].present?
