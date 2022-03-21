@@ -8,6 +8,7 @@
 <% if ['Alt', 'phrase','prose','verse','play', 'phrase'].include? search_field %>
     <% query_params = current_search_session.try(:query_params)
        query  = query_params[:q] if query_params.present?
+       xmlid_ssi = query_params[:xmlid_ssi] if query_params.present?
        qmatch = query_params['match'] if query_params.present?
        query  = query.gsub!(/^\"|\"?$/, '').strip if query.present?
     %>
@@ -30,8 +31,7 @@
   <% end %>
 
   <%= FileServer.render_snippet(@document['id'],
-                                {q: query, match: qmatch, op: "render"}) %>
-
+                                {q: query, match: qmatch, op: "render",xmlid: @document['xmlid_ssi']}) %>
   <span id="scrollTop" class="jf-icon box rounded-borders jf-icon-pil-o scrollup hidden-print show-to-top">
   <%= render :partial =>'shared/components/atoms/icon/index', locals: {icon_type: 'arrow_upward', icon_size: 'icon-medium'}%>
 </span>
