@@ -16,7 +16,7 @@ gem 'sprockets', '~> 3.7.2'
 gem 'rails', '~> 5.2.6.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem "actionview", ">= 5.2.4.2"
+gem "actionview", ">= 5.2.4.3"
 # Use Puma as the app server
 # gem 'puma', '~> 3.12'
 gem "puma", ">= 4.3.8"
@@ -26,13 +26,13 @@ gem 'sassc-rails', '~> 2.1.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/discourse/mini_racer
 
-gem 'mini_racer'
+gem 'mini_racer', "=0.4.0" 
 
 
 gem "activerecord", ">= 5.2.4.5"
 
 gem "activesupport", "~> 5.2.6.2"
-
+gem "activestorage", "~>5.2.6.3"
 gem "rack", ">= 2.2.3"
 
 gem "actionpack", "~> 5.2.6.2"
