@@ -38,11 +38,11 @@
    end
   
    if params.dig(:f) && params[:f].dig("other_location_ssim") 
-      query = query + " " + params[:f]["other_location_ssim"].first
+      query = query + " "  +  URI.escape("\"") + params[:f]["other_location_ssim"].first + URI.escape("\"")
    end
 
    if params.dig(:f) && params[:f].dig("person_name_ssim") 
-      query = query + " " + params[:f]["person_name_ssim"].first
+      query = query + " " +  URI.escape("\"") + params[:f]["person_name_ssim"].first + URI.escape("\"")
    end
 
    if params.dig(:f) && params[:f].dig("bible_ref_ssim") 

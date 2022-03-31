@@ -1,6 +1,6 @@
 "use strict";
 // Called in the _index_default.html to populate the index partial with links of text searches
-// If the matxhes are more than 3, it creates a button that triggers a modal with all the matches/links
+// If there are are more than 3 matches, it creates a button that triggers a modal with all the matches/links
 function index_work_search(id, modal_selector, modal_body_selector, target_selector, text_label_id, q, match) {
     id = encodeURIComponent(id);
     if (!q.trim()) {

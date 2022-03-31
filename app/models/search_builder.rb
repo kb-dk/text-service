@@ -13,27 +13,34 @@ class SearchBuilder < Blacklight::SearchBuilder
   #   end
 
   self.default_processor_chain +=
-    [:restrict_to_author_id,
+    [:before_all_other_steps,
+     :restrict_to_author_id,
      :add_work_id,
      :add_timestamp_interval,
      :search_editorial_as_well,
      :more_search_params]
 
-  def search_editorial_as_well  solr_params
-    if blacklight_params[:editorial].present? && blacklight_params[:editorial] == 'yes'
-      solr_params[:fq] << "is_editorial_ssi:yes"
-    else
-      if blacklight_params[:editorial].present? && blacklight_params[:editorial] == 'no'
-        solr_params[:fq] << "is_editorial_ssi:no"
-      else
-        solr_params[:fq] << "is_editorial_ssi:*"
-      end
+  def before_all_other_steps solr_params
+    if (!blacklight_params[:q].present?)
+      solr_params['q'] = []
     end
   end
   
+  def restrict_to_author_id solr_params
+    if (blacklight_params[:authorid].present?)
+      solr_params[:fq] ||= []
+      solr_params[:fq] << "author_id_ssi:#{blacklight_params[:authorid]}"
+      solr_params[:fq] << "type_ssi:work"
+      # should this one be type_ssi:work ???
+    end
+  end
+
+  #
+  # the addition of work_id means that we are limiting our search to hits inside the object with this id
+  #
   def add_work_id solr_params
     if blacklight_params[:search_field] == 'leaf' && blacklight_params[:workid].present?
-      #      solr_params[:fq] ||= []
+
       solr_params[:fq] = []
       solr_params[:fl] = [:id,:text_tsim,:bible_ref_ssim,:volume_id_ssi,:page_ssi,:position_isi,:xmlid_ssi,:is_editorial_ssi]
       workid    = blacklight_params[:workid]
@@ -54,38 +61,24 @@ class SearchBuilder < Blacklight::SearchBuilder
     end
   end
 
-  def restrict_to_author_id solr_params
-    if (blacklight_params[:authorid].present?)
-      solr_params[:fq] ||= []
-      solr_params[:fq] << "author_id_ssi:#{blacklight_params[:authorid]}"
-      solr_params[:fq] << "type_ssi:work"
-      # should this one be type_ssi:work ???
-    end
-  end
-
-  def part_of_volume_search solr_params
-    solr_params[:fq] = []
-    solr_params[:fq] << "type_ssi:leaf"
-    solr_params[:fq] << "volume_id_ssi:#{blacklight_params[:volumeid]}"
-    solr_params[:rows] = 10000
-
-  end
-
-  def build_authors_in_period_search solr_params = {}
-    solr_params[:fq] = []
-    solr_params[:fq] << 'cat_ssi:author'
-    solr_params[:fq] << "perioid_ssi:#{blacklight_params[:perioid]}"
-    solr_params[:sort] = []
-    solr_params[:sort] << 'work_title_ssi asc'
-    solr_params[:rows] = 10000
-  end
-
   def add_timestamp_interval solr_params
     timeinterval_string = '['+ (blacklight_params[:from].present? ? blacklight_params[:from] : '*')
     timeinterval_string += ' TO '
     timeinterval_string += (blacklight_params[:until].present? ? blacklight_params[:until] : '*') +']'
     solr_params[:fq] ||= []
     solr_params[:fq] << "timestamp:#{timeinterval_string}"
+  end
+  
+  def search_editorial_as_well  solr_params
+    if blacklight_params[:editorial].present? && blacklight_params[:editorial] == 'yes'
+      solr_params[:fq] << "is_editorial_ssi:yes"
+    else
+      if blacklight_params[:editorial].present? && blacklight_params[:editorial] == 'no'
+        solr_params[:fq] << "is_editorial_ssi:no"
+      else
+        solr_params[:fq] << "is_editorial_ssi:*"
+      end
+    end
   end
 
   def more_search_params solr_params
@@ -113,4 +106,24 @@ class SearchBuilder < Blacklight::SearchBuilder
     end
     solr_params
   end
+
+#### We expect that the functions below are unused; commenting it out to see if something goes wrong.
+#  
+#  def part_of_volume_search solr_params
+#    solr_params[:fq] = []
+#    solr_params[:fq] << "type_ssi:leaf"
+#    solr_params[:fq] << "volume_id_ssi:#{blacklight_params[:volumeid]}"
+#    solr_params[:rows] = 10000
+#  end
+#
+#  def build_authors_in_period_search solr_params = {}
+#    solr_params[:fq] = []
+#    solr_params[:fq] << 'cat_ssi:author'
+#    solr_params[:fq] << "perioid_ssi:#{blacklight_params[:perioid]}"
+#    solr_params[:sort] = []
+#    solr_params[:sort] << 'work_title_ssi asc'
+#    solr_params[:rows] = 10000
+#  end
+#
+  
 end
