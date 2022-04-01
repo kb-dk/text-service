@@ -48,7 +48,8 @@ da:
           nope: 'Samlingstekst'
           yep: 'Redaktionelt'
       list:
-        format: 'Formater:'
+        format: 'Format:'
+        and: 'og'
         text: 'Tekst'
         facsimile: 'Faksimile'
         in_text: 'I tekst:'
