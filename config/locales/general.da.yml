@@ -50,8 +50,8 @@ da:
       list:
         format: 'Format:'
         and: 'og'
-        text: 'Tekst'
-        facsimile: 'Faksimile'
+        text: 'tekst'
+        facsimile: 'faksimile'
         in_text: 'I tekst:'
 # Keys that are used in catalog_controller
     config:
