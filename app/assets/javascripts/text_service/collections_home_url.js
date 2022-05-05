@@ -22,6 +22,9 @@ function collections_home_url() {
         case '/text?f[subcollection_ssi][]=tfs&match=one&search_field=Alt':
             new_url = '/tfs';
             break;
+        case '/text?f[subcollection_ssi][]=letters&match=one&search_field=Alt':
+            new_url = '/letters';
+            break;
         default:
             new_url = '';
     }
