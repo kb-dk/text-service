@@ -191,7 +191,7 @@ GEM
     minitest (5.15.0)
     multipart-post (2.1.1)
     nio4r (2.5.8)
-    nokogiri (1.13.3)
+    nokogiri (1.13.5)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oai (1.1.0)
@@ -335,7 +335,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   material_icons
   mini_racer (= 0.4.0)
-  nokogiri (>= 1.11.0)
+  nokogiri (>= 1.13.4)
   oai
   puma (>= 5.6.4)
   rack (>= 2.2.3)
