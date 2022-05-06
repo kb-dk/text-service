@@ -16,7 +16,7 @@ gem 'sprockets', '~> 3.7.2'
 gem 'rails', '~> 5.2.6.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem "actionview", ">= 5.2.4.3"
+gem "actionview", ">= 5.2.7.1"
 # Use Puma as the app server
 # gem 'puma', '~> 3.12'
 gem "puma", ">= 5.6.4"
