@@ -7,6 +7,13 @@
     position: relative;
     margin-bottom: 1.5rem;
   }
+
+  // This exception is added because of the drawing's copyright
+  // Drawing must not be cut in different devices
+  a[href = '/sks'] .bg-img-container {
+    background-position: right top;
+  }
+
   .img-frame {
     position: relative;
     button {
