@@ -6,12 +6,12 @@ function show_relevant_text_possibilities() {
     let pageBreaks = document.querySelectorAll('.symbol.pagination.edition');
     pageBreaks.forEach(function(pageBreak) {
         pageBreak.parentElement.style.display = 'inline';
-        pageBreak.innerHTML = '<span class="hidden"><img src="' + iconPath + '"/></span> ' + pageBreak.innerHTML;
+        pageBreak.innerHTML = '<span class="hidden"><i class="icon collections_bookmark icon-medium" title="Andre sidetal"></i></span> ' + pageBreak.innerHTML;
     });
 
     pageBreaks = document.querySelectorAll('.symbol.pagination.other');
     pageBreaks.forEach(function(pageBreak) {
-        pageBreak.innerHTML = '<img src="' + iconPath + '"/> ' + pageBreak.innerHTML;
+        pageBreak.innerHTML = '<i class="icon collections_bookmark icon-medium" title="Andre sidetal"></i>' + pageBreak.innerHTML;
     });
 
     let types = ['quote', 'comment', 'translation', 'modernized', 'info', 'person', 'Bibel', 'mytologi', 'place', 'title', 'pagination.other'];

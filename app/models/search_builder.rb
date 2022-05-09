@@ -83,15 +83,17 @@ class SearchBuilder < Blacklight::SearchBuilder
 
   def more_search_params solr_params
     # this is not the optimal way of doing phrase search, but i have not find the right solr params
-    if blacklight_params['match'] == 'phrase'
+    if blacklight_params['match'] == 'phrase' && solr_params['q']
       # We do have problems with string searching when the query contains quotation marks
       # because we want to add them ourselves
       solr_q_string = ''
       if solr_params['q']
         solr_q_string = solr_params['q']
+        if !solr_q_string.kind_of?(Array) 
+          solr_params['q'] =  solr_q_string.gsub(/\"/,'')
+          solr_params['q'] = "\"#{ solr_q_string}\""
+        end
       end
-      solr_params['q'] =  solr_q_string.gsub(/\"/,'')
-      solr_params['q'] = "\"#{ solr_q_string}\""
       solr_params['qs'] = 0
     end
     if blacklight_params['match'] == 'all'

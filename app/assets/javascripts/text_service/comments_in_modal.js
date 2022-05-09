@@ -6,7 +6,7 @@ for (var i = 0; i < local_comments.length; i++) {
     local_comment.dataset.target = "#comment_modal";
 
     local_comment.addEventListener("click", function (event) {
-        event.preventDefault()
+        event.preventDefault();
         var modal = document.getElementById('comment_modal');
         var modal_body = modal.getElementsByClassName('modal-body')[0];
         var modal_header = modal.getElementsByClassName('modal-title')[0];

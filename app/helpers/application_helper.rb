@@ -168,7 +168,11 @@ module ApplicationHelper
     if args[:omit_author]
       label << title
     else
-      label << author + title
+      if args[:document]['subcollection_ssi']=='letters'
+        label << title
+      else
+        label << author + title
+      end
     end
 
     label << "udg. af #{args[:document]['editor_ssi']}"         if args[:document]['editor_ssi'].present?
