@@ -264,6 +264,13 @@ span.symbol{
   }
 }
 
+i[title='Andre sidetal'].icon::before, i[title='Andre sidetal'] {
+  display: inline;
+}
+
+small.pagination{
+  padding-right: 2px;
+}
 
 .quote {
   font-size: medium;
