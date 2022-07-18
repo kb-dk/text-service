@@ -33,7 +33,7 @@ gem 'mini_racer', "=0.4.0"
 gem "activerecord", ">= 5.2.4.5"
 
 gem "activesupport", "~> 5.2.7.1"
-gem "activestorage", "~> 5.2.7.1"
+gem "activestorage", "~> 5.2.8.1"
 gem "rack", ">= 2.2.3"
 
 # gem "actionpack", "~> 5.2.6.2"
