@@ -13,11 +13,11 @@ gem 'blacklight', '7.7.0'
 gem 'sprockets', '~> 3.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.7.1'
+gem 'rails', '~> 5.2.8.1'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem "actionview", ">= 5.2.7.1"
+gem "actionview", ">= 5.2.8.1"
 # Use Puma as the app server
 # gem 'puma', '~> 3.12'
 gem "puma", ">= 5.6.4"
@@ -32,12 +32,11 @@ gem 'mini_racer', "=0.4.0"
 
 gem "activerecord", ">= 5.2.4.5"
 
-gem "activesupport", "~> 5.2.7.1"
+gem "activesupport", "~> 5.2.8.1"
 gem "activestorage", "~> 5.2.8.1"
 gem "rack", ">= 2.2.3"
 
-# gem "actionpack", "~> 5.2.6.2"
-gem "actionpack", ">= 5.2.7.1"
+gem "actionpack", ">= 5.2.8.1"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
