@@ -1,5 +1,5 @@
 <style>
-.about-collection .read-more-button { cursor:pointer; }
+.about-collection .read-more-btn { cursor:pointer; }
 .about-collection .read-more { display: none; margin-left: 3em; padding: .7em; border: 1px solid #ccc; }
 </style>
 
@@ -82,3 +82,19 @@ Man kan kopiere, ændre, distribuere og fremføre værket, også til kommerciell
 <a href="https://teol.ku.dk/skc/" target="_blank">Søren Kierkegaard Forskningscenteret</a>.</p>
 
 <p>Nærværende udgivelse er resultatet af et senere samarbejde mellem Søren Kierkegaard Forskningscenteret og Det Kgl. Bibliotek.</p>
+
+<script>
+let read_more_btns = document.querySelectorAll('a.read-more-btn');
+read_more_btns.forEach(read_more_btn => {
+  read_more_btn.addEventListener('click', function(event) {
+    let anchor = event.target.dataset.readMore;
+    if (anchor) {
+      let readMore = document.getElementById(anchor);
+      let isHidden = window.getComputedStyle(readMore).display === "none";
+      //event.target.innerHTML = event.target.innerHTML === 'Læs mere' ? 'Læs mindre' : 'Læs mere';
+      event.target.innerHTML = event.target.innerHTML === isHidden ? 'Mere&hellip;' : 'Mindre&hellip;';
+      readMore.classList.toggle('visible');
+    }
+  });
+});
+</script>
