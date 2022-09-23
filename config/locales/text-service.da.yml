@@ -107,6 +107,9 @@ da:
         lhv:
           title: 'Om Ludvig Holbergs Værker'
           summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
+        lhv:
+          title: 'About Louis Hjelmslev: Documents and Letters'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
         tfs:
           title: 'Om Trykkefrihedens Skrifter'
           summary: 'Ca. 1000 piecer og pamfletter indsamlet efter Christian 7. og Struensee erklærede trykkefrihed d. 14. september 1770.'

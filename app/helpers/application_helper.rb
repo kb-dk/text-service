@@ -127,6 +127,8 @@ module ApplicationHelper
          name = "Søren Kierkegaards Skrifter"
        when "lhv"
          name = "Ludvig Holbergs Skrifter"
+       when "lh"
+         name = "Louis Hjelmslevs breve"
        when "pmm"
          name = "Poul Martin Møllers Skrifter"
        when "adl"
