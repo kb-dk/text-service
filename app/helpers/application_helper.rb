@@ -97,6 +97,8 @@ module ApplicationHelper
       url = '/sks'
     when "lhv"
       url = '/lhv'
+    when "lh"
+      url = '/lh'
     when "pmm"
       url = '/pmm'
     when "adl"
