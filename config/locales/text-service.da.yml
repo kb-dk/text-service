@@ -34,8 +34,10 @@ da:
           title: 'Trykkefrihedens Skrifter'
         letters:
           title: 'Danmarks Breve'
+        lh:
+          title: 'Louis Hjelmslev &amp; strukturalisme'
       bluebar:
-        title: 'Tekst portal'
+        title: 'Tekstportal'
         welcome: 'Tekstportal'
         beta-welcome: 'Tekstportal [test] '
         description1: 'Her kan du læse og søge i værker fra middelalderen til det 20. årh.'
