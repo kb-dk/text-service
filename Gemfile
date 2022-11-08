@@ -99,6 +99,6 @@ gem 'oai'
 # Google Material Icons
 gem 'material_icons'
 
-gem "nokogiri", ">= 1.13.5"
+gem "nokogiri", ">= 1.13.9"
 
 

@@ -482,6 +482,8 @@ class CatalogController < ApplicationController
     case id
     when "gv"
       id = "gv"
+    when "lh"
+      id = "lh"
     when "lhv"
       id = "lhv"
     end

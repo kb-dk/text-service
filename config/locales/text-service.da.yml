@@ -28,14 +28,12 @@ da:
           title: 'Arkiv for Dansk Litteratur'
         lhv:
           title: 'Ludvig Holbergs Værker'
-        lhv:
-          title: 'Louis Hjelmslev: Documents and Letters'
         tfs:
           title: 'Trykkefrihedens Skrifter'
         letters:
           title: 'Danmarks Breve'
         lh:
-          title: 'Louis Hjelmslev &amp; strukturalisme'
+          title: 'Louis Hjelmslev & strukturalisme'
       bluebar:
         title: 'Tekstportal'
         welcome: 'Tekstportal'
@@ -43,7 +41,7 @@ da:
         description1: 'Her kan du læse og søge i værker fra middelalderen til det 20. årh.'
         description: 'Værker fra middelalderen til det 20. århundrede'
         link-label: 'Det Kgl. Bibliotek'
-        link: 'http://www.kb.dk'
+        link: 'https://www.kb.dk'
     footer:
       first-link-label: 'Det Danske Sprog- og Litteraturselskab'
       first-link: 'http://www.dsl.dk'
