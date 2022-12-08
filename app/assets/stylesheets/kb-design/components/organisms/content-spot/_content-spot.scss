@@ -10,11 +10,13 @@
 
   // This exception is added because of the drawing's copyright
   // Drawing must not be cut in different devices
-  a[href = '/sks'] .bg-img-container,
-  a[href = '/lh'] .bg-img-container {
+  a[href = '/sks'] .bg-img-container {
     background-position: right top;
   }
-
+  a[href = '/lh'] .bg-img-container {
+    background-position: right top;
+    background-size: 115%;
+  }
   a[href = '/gv'] .bg-img-container,
   a[href = '/tfs'] .bg-img-container {
     background-position: center top;
