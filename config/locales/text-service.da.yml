@@ -116,6 +116,9 @@ da:
         letters:	  
           title: 'Om Danmarks Breve'
           summary: 'Danmarks breve er en søgebase, hvor du finder digitaliseringer af trykte brevudgivelser fra Det Kgl. Bibliotek.'
+        lh:
+          title: 'Om Louis Hjelmslev & strukturalisme'
+          summary: 'De vigtigste breve og dokumenter fra sprogforskere som bekendte sig til strukturalismen med Louis Hjelmslev som omdrejningspunkt.'
         all:
           title: 'Alle værker'
           summary: 'Søgning i alle værker på tværs af alle tekstsamlinger.'
