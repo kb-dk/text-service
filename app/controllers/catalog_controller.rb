@@ -429,7 +429,9 @@ class CatalogController < ApplicationController
     elsif document['subcollection_ssi'] == "adl"
       pd = '<!-- dt>Ophavsret</dt>' +
       '<dd>Materialet er dedikeret til public domain. Du kan kopiere, ændre, distribuere og fremføre 	værket, også til kommercielle formål, uden at bede om tilladelse. Husk dog altid at kreditere ophavsmanden.</dd>' +
-      '<dd><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.da">Læs CC0-erklæringen</a>.</dd -->'
+           '<dd><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.da">Læs CC0-erklæringen</a>.</dd -->'
+    elsif document['subcollection_ssi'] == "lh"
+      pd = '<dd>Materialet kan være ophavsretligt beskyttet, og så må du kun bruge det til personlig brug.  Hvis ophavsmanden er død for mere end 70 år siden, er værket fri af ophavsret (public domain), og så kan du bruge værket frit.  Hvis der er flere ophavsmænd, gælder den længstlevendes dødsår.  Husk altid at kreditere ophavsmanden.</dd>'
     else
       pd = '<dt>Ophavsret</dt>' +
       '<dd>Materialet er dedikeret til public domain. Du kan kopiere, ændre, distribuere og fremføre 	værket, også til kommercielle formål, uden at bede om tilladelse. Husk dog altid at kreditere ophavsmanden.</dd>' +
