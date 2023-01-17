@@ -34,6 +34,8 @@ da:
           title: 'Danmarks Breve'
         lh:
           title: 'Louis Hjelmslev og hans kreds'
+        jur:
+          title: 'Lovforarbejder'
       bluebar:
         title: 'Tekstportal'
         welcome: 'Tekstportal'
@@ -92,21 +94,18 @@ da:
        digital_collections: 'Digitale samlinger'
     collection_home:
       about:
-        sks:
-          title: 'Om Søren Kierkegaards Skrifter'
-          summary: 'En tekstkritisk og kommenteret udgave af Søren Kierkegaards forfatterskab, journaler og breve.'
-        gv:
-          title: 'Om Grundtvigs Værker'
-          summary: 'En tekstkritisk og kommen&shy;teret udgave af N.F.S. Grundtvigs trykte forfatter&shy;skab. En af de betydeligste personligheder i 1800-tallets danske åndsliv.'
-        pmm:
-          title: 'Om Poul Martin Møllers Værker'
-          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
+        all:
+          title: 'Alle værker'
+          summary: 'Søgning i alle værker på tværs af alle tekstsamlinger.'
         adl:
           title: 'Om Arkiv for Dansk Litteratur'
           summary: 'Udvalgte dele af ældre dansk litteratur – fra middelalderen og frem til midten af det 20. århundrede.'
-        lhv:
-          title: 'Om Ludvig Holbergs Værker'
-          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
+        gv:
+          title: 'Om Grundtvigs Værker'
+          summary: 'En tekstkritisk og kommen&shy;teret udgave af N.F.S. Grundtvigs trykte forfatter&shy;skab. En af de betydeligste personligheder i 1800-tallets danske åndsliv.'
+        sks:
+          title: 'Om Søren Kierkegaards Skrifter'
+          summary: 'En tekstkritisk og kommenteret udgave af Søren Kierkegaards forfatterskab, journaler og breve.'
         tfs:
           title: 'Om Trykkefrihedens Skrifter'
           summary: 'Ca. 1000 piecer og pamfletter indsamlet efter Christian 7. og Struensee erklærede trykkefrihed d. 14. september 1770.'
@@ -116,8 +115,14 @@ da:
         lh:
           title: 'Om Louis Hjelmslev og hans kreds'
           summary: 'De vigtigste breve og dokumenter fra sprogforskere som bekendte sig til strukturalismen med Louis Hjelmslev som omdrejningspunkt.'
-        all:
-          title: 'Alle værker'
-          summary: 'Søgning i alle værker på tværs af alle tekstsamlinger.'
+        jur:
+          title: 'Om Lovforarbejder'
+          summary: 'Forarbejder til Grundloven af 1849 og Retsplejeloven af 1916 bl.a. ved lovudkast fra Proceskommissionen afgivet i perioden 1875-92.'
+        pmm:
+          title: 'Om Poul Martin Møllers Værker'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
+        lhv:
+          title: 'Om Ludvig Holbergs Værker'
+          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
 
 
