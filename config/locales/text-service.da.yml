@@ -34,7 +34,7 @@ da:
           title: 'Danmarks Breve'
         lh:
           title: 'Louis Hjelmslev og hans kreds'
-        jur:
+        jura:
           title: 'Lovforarbejder'
       bluebar:
         title: 'Tekstportal'
@@ -115,7 +115,7 @@ da:
         lh:
           title: 'Om Louis Hjelmslev og hans kreds'
           summary: 'De vigtigste breve og dokumenter fra sprogforskere som bekendte sig til strukturalismen med Louis Hjelmslev som omdrejningspunkt.'
-        jur:
+        jura:
           title: 'Om Lovforarbejder'
           summary: 'Forarbejder til Grundloven af 1849 og Retsplejeloven af 1916 bl.a. ved lovudkast fra Proceskommissionen afgivet i perioden 1875-92.'
         pmm:
