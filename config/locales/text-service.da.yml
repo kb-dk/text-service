@@ -26,6 +26,8 @@ da:
           title: 'Poul Martin Møllers Værker'
         adl:
           title: 'Arkiv for Dansk Litteratur'
+        jura:
+          title: 'Lovforarbejder'
         lhv:
           title: 'Ludvig Holbergs Værker'
         tfs:
@@ -92,6 +94,9 @@ da:
        digital_collections: 'Digitale samlinger'
     collection_home:
       about:
+        jura:
+          title: 'Lovforarbejder'
+          summary: 'Denne samling indeholder <i>Beretninger om Forhandlingerne paa Rigsdagen</i>, bind I og II, der er forarbejder til grundloven af 5. juni 1849. Samlingen indeholder desuden flere lovudkast bl.a. vedr. borgerlig retspleje og strafferetspleje der er afsagt af proceskommissioner i perioden 1876-1899. Disse lovudkast er en del af forarbejderne til <i>Lov om rettens pleje</i> af 1916.'
         sks:
           title: 'Om Søren Kierkegaards Skrifter'
           summary: 'En tekstkritisk og kommenteret udgave af Søren Kierkegaards forfatterskab, journaler og breve.'
