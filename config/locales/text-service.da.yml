@@ -4,7 +4,7 @@ da:
   view-specific:
     work_list: 'Tekster i tekstportalen'
     home:
-      cookie: 'I tekstportalen bruger vi cookies til at huske dine indstillinger og indsamle statistik.'
+      cookie: 'I tekstportalen anvender vi cookies til at huske dine indstillinger og indsamle statistik.'
       boxes:
         author:
           title: 'Forfatterportrætter'
@@ -35,7 +35,7 @@ da:
         letters:
           title: 'Danmarks Breve'
         lh:
-          title: 'Louis Hjelmslev & strukturalisme'
+          title: 'Louis Hjelmslev og hans kreds'
       bluebar:
         title: 'Tekstportal'
         welcome: 'Tekstportal'
@@ -95,8 +95,8 @@ da:
     collection_home:
       about:
         jura:
-          title: 'Lovforarbejder'
-          summary: 'Denne samling indeholder <i>Beretninger om Forhandlingerne paa Rigsdagen</i>, bind I og II, der er forarbejder til grundloven af 5. juni 1849. Samlingen indeholder desuden flere lovudkast bl.a. vedr. borgerlig retspleje og strafferetspleje der er afsagt af proceskommissioner i perioden 1876-1899. Disse lovudkast er en del af forarbejderne til <i>Lov om rettens pleje</i> af 1916.'
+          title: 'Om Lovforarbejder'
+          summary: 'Forarbejder til Grundloven af 1849 og Retsplejeloven af 1916 bl.a. ved lovudkast fra Proceskommissionen afgivet i perioden 1875-92.'
         sks:
           title: 'Om Søren Kierkegaards Skrifter'
           summary: 'En tekstkritisk og kommenteret udgave af Søren Kierkegaards forfatterskab, journaler og breve.'
@@ -112,9 +112,6 @@ da:
         lhv:
           title: 'Om Ludvig Holbergs Værker'
           summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
-        lhv:
-          title: 'About Louis Hjelmslev: Documents and Letters'
-          summary: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sollicitudin, neque in tristique mollis, nulla felis rutrum diam, at maximus arcu leo id risus.'
         tfs:
           title: 'Om Trykkefrihedens Skrifter'
           summary: 'Ca. 1000 piecer og pamfletter indsamlet efter Christian 7. og Struensee erklærede trykkefrihed d. 14. september 1770.'
@@ -122,7 +119,7 @@ da:
           title: 'Om Danmarks Breve'
           summary: 'Danmarks breve er en søgebase, hvor du finder digitaliseringer af trykte brevudgivelser fra Det Kgl. Bibliotek.'
         lh:
-          title: 'Om Louis Hjelmslev & strukturalisme'
+          title: 'Om Louis Hjelmslev og hans kreds'
           summary: 'De vigtigste breve og dokumenter fra sprogforskere som bekendte sig til strukturalismen med Louis Hjelmslev som omdrejningspunkt.'
         all:
           title: 'Alle værker'
