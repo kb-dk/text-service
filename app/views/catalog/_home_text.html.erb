@@ -4,9 +4,10 @@
      text = t('view-specific.home.bluebar.welcome')
    end
 
-#  collections = ['all', 'adl', 'letters', 'gv', 'sks', 'tfs']
-collections = ['all', 'adl',  'gv', 'lh', 'sks', 'tfs']
-#  collections = ['all', 'adl', 'gv', 'sks', 'pmm', 'lvh']
+#NOT USED NOW:  collections = ['all', 'adl', 'letters', 'gv', 'sks', 'pmm', 'lvh']
+
+# Front page icons in alphabetical order of the Danish collection title
+collections = ['all', 'adl', 'gv', 'jura', 'lh', 'sks', 'tfs']
 %>
 
 <%= render :partial => 'shared/components/organisms/bread-crumb/index', locals: {classes: '', items: [[t('view-specific.breadcrumb.text_service'),root_path]]} %>
