@@ -4,10 +4,13 @@ function collections_home_url() {
     url = decodeURIComponent(url.substr(url.lastIndexOf('/text')));
     let new_url;
     switch (url) {
+        case '/text?f[subcollection_ssi][]=lh&match=one&search_field=Alt':
+            new_url = '/lh';
+            break;
         case '/text?f[subcollection_ssi][]=sks&match=one&search_field=Alt':
             new_url = '/sks';
             break;
-        case '/text?f[subcollection_ssi][]=hlv&match=one&search_field=Alt':
+        case '/text?f[subcollection_ssi][]=lhv&match=one&search_field=Alt':
             new_url = '/lhv';
             break;
         case '/text?f[subcollection_ssi][]=pmm&match=one&search_field=Alt':
