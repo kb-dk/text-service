@@ -12,20 +12,30 @@
           <br>
   <% end -%>
   <% if collection == "tfs" %>
-  <div class="col-sm-12">
-    <strong>Ophavsret</strong><br>
-    Materialet er fri af ophavsret. Du kan kopiere, ændre, distribuere eller fremføre værket,
-    også til kommercielle formål, uden at bede om tilladelse.<br />
-    <a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">
-      <img alt="Creative Commons-licens" style="border-width:0" src="https://i.creativecommons.org/p/mark/1.0/88x31.png" />
-    </a><br />
-    <a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">Læs Public Domain-erklæringen</a>.
-  </div>
+     <div class="col-sm-12">
+       <strong>Ophavsret</strong><br>
+       Materialet er fri af ophavsret. Du kan kopiere, ændre, distribuere eller fremføre værket,
+       også til kommercielle formål, uden at bede om tilladelse.<br />
+       <a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">
+	 <img alt="Creative Commons-licens" style="border-width:0" src="https://i.creativecommons.org/p/mark/1.0/88x31.png" />
+       </a><br />
+       <a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">Læs Public Domain-erklæringen</a>.
+     </div>
   <% elsif collection == "adl" %>
       <div class="col-sm-12">
       <!-- strong>Ophavsret</strong><br/>
       Materialet er dedikeret til public domain. Du kan kopiere, ændre, distribuere og fremføre værket, også til kommercielle formål, uden at bede om tilladelse. Husk dog altid at kreditere ophavsmanden.<br/ -->
       <!-- a href="https://creativecommons.org/publicdomain/zero/1.0/deed.da" target="_blank" style="text-decoration: none" --><!-- %= show_svg('cc-zero.svg') %  Læs CC0-erklæringen</a -->
+     </div>
+  <% elsif collection == "lh" %>
+      <div class="col-sm-12">
+	<strong>Ophavsret</strong><br/> Materialet kan være
+	ophavsretligt beskyttet, og så må du kun bruge det til
+	personlig brug.  Hvis ophavsmanden er død for mere end 70 år
+	siden, er værket fri af ophavsret (public domain), og så kan
+	du bruge værket frit.  Hvis der er flere ophavsmænd, gælder
+	den længstlevendes dødsår.  Husk altid at kreditere
+	ophavsmanden.
     </div>
   <% elsif collection == "jura" %>
     <div class="col-sm-12">
