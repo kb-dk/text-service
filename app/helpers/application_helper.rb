@@ -109,6 +109,8 @@ module ApplicationHelper
       url = '/tfs'
     when "letters"
       url = '/letters'
+    when "jura"
+      url = '/jura'
     else
       url = "#"
     end
@@ -123,22 +125,24 @@ module ApplicationHelper
   def get_collection_name args
      name = args
      case name
-       when "sks"
-         name = "Søren Kierkegaards Skrifter"
-       when "lhv"
-         name = "Ludvig Holbergs Skrifter"
-       when "lh"
-         name = "Louis Hjelmslev & strukturalisme"
-       when "pmm"
-         name = "Poul Martin Møllers Skrifter"
-       when "adl"
-         name = "Arkiv for Dansk Litteratur"
-       when "gv"
-         name = "Grundtvigs Værker"
-       when "tfs"
-         name = "Trykkefrihedens Skrifter"
-       when "letters"
-         name = "Danmarks Breve"
+     when "jura"
+       name = "Lovforarbejder"
+     when "sks"
+       name = "Søren Kierkegaards Skrifter"
+     when "lhv"
+       name = "Ludvig Holbergs Skrifter"
+     when "lh"
+       name = "Louis Hjelmslev & strukturalisme"
+     when "pmm"
+       name = "Poul Martin Møllers Skrifter"
+     when "adl"
+       name = "Arkiv for Dansk Litteratur"
+     when "gv"
+       name = "Grundtvigs Værker"
+     when "tfs"
+       name = "Trykkefrihedens Skrifter"
+     when "letters"
+       name = "Danmarks Breve"
      end
      name
   end
