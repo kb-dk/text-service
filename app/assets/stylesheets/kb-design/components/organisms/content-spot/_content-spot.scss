@@ -14,6 +14,18 @@
     background-position: right top;
   }
 
+  // Avoid cutting important parts
+  a[href = '/gv'] .bg-img-container,
+  a[href = '/tfs'] .bg-img-container {
+    background-position: center top;
+  }
+  // The portrayed person must always look in from the side; no cropping on right side
+  a[href = '/lh'] .bg-img-container {
+    background-position: right top;
+    background-size: 115%;
+  }
+
+
   .img-frame {
     position: relative;
     button {
