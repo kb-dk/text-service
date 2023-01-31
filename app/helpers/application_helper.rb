@@ -132,7 +132,7 @@ module ApplicationHelper
      when "lhv"
        name = "Ludvig Holbergs Skrifter"
      when "lh"
-       name = "Louis Hjelmslev & strukturalisme"
+       name = "Louis Hjelmslev og hans kreds"
      when "pmm"
        name = "Poul Martin Møllers Skrifter"
      when "adl"
