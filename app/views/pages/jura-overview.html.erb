@@ -10,11 +10,13 @@ div.breadcrumb-bar { padding: .6em 3em; background-color: #CAF0FE; color: #98989
 .jura-overview table td a { text-decoration: none; color: #0957c7; }
 .jura-overview table td a:hover { text-decoration: underline; }
 .jura-overview table tr:nth-child(odd) td { background-color: #eee; }
-.jura-overview table tr:nth-child(odd) td:last-child { background-color: transparent; }
 .jura-overview table tr > td:nth-child(4), .jura-overview .weak { color: #999;}
 .jura-overview table tr > *:nth-child(2) { padding-right: 1em; }
 .jura-overview table tr:hover td { background-color: #dfd; }
-.jura-overview table tr:hover td:last-child { background-color: transparent; }
+.jura-overview table tr:first-child th { padding-top: 2em; }
+.jura-overview table tbody:first-child tr:first-child th { padding-top: 0; }
+.jura-overview table tr.lessPadding th { padding-top: .5em; }
+.jura-overview i.icon { font-size: 16px; position: relative; top: 2px; }
 </style>
 </head>
 <body>
@@ -31,48 +33,48 @@ div.breadcrumb-bar { padding: .6em 3em; background-color: #CAF0FE; color: #98989
 
 <table>
 <tbody>
-<tr><th scope="col">FORARBEJDER TIL GRUNDLOVEN AF 5. JUNI 1849</th><th scope="col" class="nowrap">1. møde</th><th scope="col">Udgivelsesår</th><th colspan="2" class="weak nowrap">Digitalt værk-ID</th></tr>
-<tr><td><a href="/text/jura-texts-g01-root">Beretning om Forhandlingerne paa Rigsdagen. Bind I. Spalte 1-1476</a></td><td>1848-10-23</td><td>1848/1849</td><td style="width:2em">G01</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-g02-root">Beretning om Forhandlingerne paa Rigsdagen. Bind II. Spalte 1477-3968</a></td><td>1849-02-22</td><td>1849</td><td>G02</td><td></td></tr>
+<tr><th scope="col">FORARBEJDER TIL GRUNDLOVEN AF 5. JUNI 1849</th><th scope="col" class="nowrap">1. møde</th><th scope="col">Udgivelsesår</th><th class="weak">Digitalt<br>værk&#8209;ID</th><th>Faksimiler</th></tr>
+<tr><td><a href="/text/jura-texts-g01-root">Beretning om Forhandlingerne paa Rigsdagen. Bind I. Spalte 1-1476</a></td><td>1848-10-23</td><td>1848/1849</td><td style="width:2em">G01</td><td><a href="/jura-docs/g01_fuld_grundlov1.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-g02-root">Beretning om Forhandlingerne paa Rigsdagen. Bind II. Spalte 1477-3968</a></td><td>1849-02-22</td><td>1849</td><td>G02</td><td><a href="/jura-docs/g02_fuld_grundlov2.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
 </tbody>
 <tbody>
-<tr class="juraSection"><th scope="col">FORARBEJDER TIL RETSPLEJELOVEN 1916</th><th scope="col">Fremsat</th><th scope="col" colspan="2">Udgivelsesår</th></tr>
+<tr><th scope="col">FORARBEJDER TIL RETSPLEJELOVEN 1916</th><th scope="col">Fremsat</th><th scope="col">Udgivelsesår</th><th class="weak">Digitalt<br>værk&#8209;ID</th><th>Faksimiler</th></tr>
 <tr style="display:none;max-height:0"></tr> <!-- for correct CSS nth-child(odd/even) count -->
-<tr><th scope="col" colspan="4">Proceskommissionerne</th></tr>
-<tr><td><a href="/text/jura-texts-r01-root">Proceskommissionen af 1868. Offentliggjort 1875</a></td><td>Mar. 1875</td><td>1875</td><td>R01</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r02-root">Proceskommissionen af 1868. Offentliggjort 1876</a></td><td>Feb. 1876</td><td>1876</td><td>R02</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r03-root">Proceskommissionen af 1868. Offentliggjort 1877</a></td><td>Jun. 1877</td><td>1877</td><td>R03</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r04-root">Proceskommissionen af 1892. Offentliggjort 1899</a></td><td>uvist</td><td>1899</td><td>R04</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r05-root">Proceskommissionen af 1892. Offentliggjort 1899</a></td><td>uvist</td><td>1899</td><td>R05</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r06-root">Proceskommissionen af 1892. Offentliggjort 1899</a></td><td>uvist</td><td>1899</td><td>R06</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r07-root">Retspleje-Reformen. En Oversigt. Offentliggjort</a></td><td>1901	</td><td>1901</td><td>R07</td><td></td></tr>
+<tr class="lessPadding"><th scope="col" colspan="4">Proceskommissionerne</th></tr>
+<tr><td><a href="/text/jura-texts-r01-root">Proceskommissionen af 1868. Offentliggjort 1875</a></td><td>Mar. 1875</td><td>1875</td><td>R01</td><td><a href="/jura-docs/r01_fuld_proceskom_1868.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r02-root">Proceskommissionen af 1868. Offentliggjort 1876</a></td><td>Feb. 1876</td><td>1876</td><td>R02</td><td><a href="/jura-docs/r02_fuld_proceskom_1868_1.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r03-root">Proceskommissionen af 1868. Offentliggjort 1877</a></td><td>Jun. 1877</td><td>1877</td><td>R03</td><td><a href="/jura-docs/r03_fuld_retspleje_1877_14.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r04-root">Proceskommissionen af 1892. Offentliggjort 1899</a></td><td>uvist</td><td>1899</td><td>R04</td><td><a href="/jura-docs/r04_fuld_procescom_1892.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r05-root">Proceskommissionen af 1892. Offentliggjort 1899</a></td><td>uvist</td><td>1899</td><td>R05</td><td><a href="/jura-docs/r05_fuld_retspleje_1899_14.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r06-root">Proceskommissionen af 1892. Offentliggjort 1899</a></td><td>uvist</td><td>1899</td><td>R06</td><td><a href="/jura-docs/r06_fuld_proceskom_1892_1.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r07-root">Retspleje-Reformen. En Oversigt. Offentliggjort</a></td><td>1901</td><td>1901</td><td>R07</td><td><a href="/jura-docs/r07_fuld_.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
 <tr><th scope="col" colspan="4">Rigsdagstidende</th></tr>
-<tr><td><a href="/text/jura-texts-r08-root">1880/1881: Lovforslag</a></td><td>1880-12-17</td><td>1880/1881</td><td>R08</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r09-root">1901/1902: Lovforslag</a></td><td>1901-10-26</td><td>1901/1902</td><td>R09</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r10-root">1901/1902: Bemærkninger til lovforslag</a></td><td>1901-10-26</td><td>1901/1902</td><td>R10</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r11-root">1901/1902: Betænkning (Folketinget)</a></td><td>1902-05-14</td><td>1901/1902</td><td>R11</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r12-root">1901/1902: Tillæg til betænkning (Folketinget)</a></td><td>1902-05-17</td><td>1901/1902</td><td>R12</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r13-root">1902/1903: Lovforslag</a></td><td>1902-10-07</td><td>1902/1903</td><td>R13</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r14-root">1902/1903: Betænkning (Folketinget)</a></td><td>1902-11-06</td><td>1902/1903</td><td>R14</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r15-root">1902/1903: Betænkning</a></td><td>1903-05-11</td><td>1902/1903</td><td>R15</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r16-root">1905/1906: Lovforslag</a></td><td>1905-10-03</td><td>1905/1906</td><td>R16</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r17-root">1905/1906: Beretning fra Fællesudvalget</a></td><td>1906-04-05</td><td>1905/1906</td><td>R17</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r18-root">1906/1907: Lovforslag</a></td><td>1906-12-14</td><td>1907/1907</td><td>R18</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r19-root">1908/1909: Lovforslag</a></td><td>1908-10-23</td><td>1908/1909</td><td>R19</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r20-root">1908/1909: Betænkning (Folketinget)</a></td><td>1909-02-05</td><td>1908/1909</td><td>R20</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r21-root">1908/1909: Erklæring (Folketinget)</a></td><td>1909-03-23</td><td>1908/1909</td><td>R21</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r22-root">1912/1913: Lovforslag</a></td><td>1912-12-10</td><td>1912/1913</td><td>R22</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r23-root">1912/1913: Betænkning (Folketinget)</a></td><td>1913-04-24</td><td>1912/1913</td><td>R23</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r24-root">1913/1914: Lovforslag</a></td><td>1914-01-26</td><td>1913/1914</td><td>R24</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r25-root">1913/1914: Betænkning (Folketinget)</a></td><td>1914-03-31</td><td>1913/1914</td><td>R25</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r26-root">1913/1914: Betænkning (Landstinget)</a></td><td>1914-05-29</td><td>1913/1914</td><td>R26</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r27-root">1915/1916: Lovforslag</a></td><td>1915-12-01</td><td>1915/1916</td><td>R27</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r28-root">1915/1916: Betænkning (Folketinget)</a></td><td>1916-02-17</td><td>1915/1916</td><td>R28</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r29-root">1915/1916: Betænkning (Landstinget)</a></td><td>1916-03-30</td><td>1915/1916</td><td>R29</td><td></td></tr>
+<tr><td><a href="/text/jura-texts-r08-root">1880/1881: Lovforslag</a></td><td>1880-12-17</td><td>1880/1881</td><td>R08</td><td><a href="/jura-docs/r08_fuld_rigsdagtid_a_1880-1881.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r09-root">1901/1902: Lovforslag</a></td><td>1901-10-26</td><td>1901/1902</td><td>R09</td><td><a href="/jura-docs/r09_full_rigsdagtid_a_1901-1902.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r10-root">1901/1902: Bemærkninger til lovforslag</a></td><td>1901-10-26</td><td>1901/1902</td><td>R10</td><td><a href="/jura-docs/r10_fuld_rigsdagtid_b_1901-1902.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r11-root">1901/1902: Betænkning (Folketinget)</a></td><td>1902-05-14</td><td>1901/1902</td><td>R11</td><td><a href="/jura-docs/r11_fuld_rigsdagtid_b1_1901-1902.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r12-root">1901/1902: Tillæg til betænkning (Folketinget)</a></td><td>1902-05-17</td><td>1901/1902</td><td>R12</td><td><a href="/jura-docs/r12_fuld_rigsdagtid_b2_1901-1902.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r13-root">1902/1903: Lovforslag</a></td><td>1902-10-07</td><td>1902/1903</td><td>R13</td><td><a href="/jura-docs/r13_fuld_rigsdagtid_a_1902-1903.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r14-root">1902/1903: Betænkning (Folketinget)</a></td><td>1902-11-06</td><td>1902/1903</td><td>R14</td><td><a href="/jura-docs/r14_fuld_rigsdagtid_b1_1902-1903.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r15-root">1902/1903: Betænkning</a></td><td>1903-05-11</td><td>1902/1903</td><td>R15</td><td><a href="/jura-docs/r15_fuld_rigsdagtid_b2_1902-1903.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r16-root">1905/1906: Lovforslag</a></td><td>1905-10-03</td><td>1905/1906</td><td>R16</td><td><a href="/jura-docs/r16_fuld_rigsdagtid_a_1905-1906.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r17-root">1905/1906: Beretning fra Fællesudvalget</a></td><td>1906-04-05</td><td>1905/1906</td><td>R17</td><td><a href="/jura-docs/r17_fuld_rigsdagtid_b_1905-1906.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r18-root">1906/1907: Lovforslag</a></td><td>1906-12-14</td><td>1907/1907</td><td>R18</td><td><a href="/jura-docs/r18_fuld_rigsdagtid_1906-1907.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r19-root">1908/1909: Lovforslag</a></td><td>1908-10-23</td><td>1908/1909</td><td>R19</td><td><a href="/jura-docs/r19_fuld_rigsdagtid_1908-1909.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r20-root">1908/1909: Betænkning (Folketinget)</a></td><td>1909-02-05</td><td>1908/1909</td><td>R20</td><td><a href="/jura-docs/r20_fuld_rigsdagtid_b1_1908-1909.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r21-root">1908/1909: Erklæring (Folketinget)</a></td><td>1909-03-23</td><td>1908/1909</td><td>R21</td><td><a href="/jura-docs/r21_fuld_rigsdagtid_b2_1908-1909.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r22-root">1912/1913: Lovforslag</a></td><td>1912-12-10</td><td>1912/1913</td><td>R22</td><td><a href="/jura-docs/r22_fuld_rigsdagtid_a_1912-1913.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r23-root">1912/1913: Betænkning (Folketinget)</a></td><td>1913-04-24</td><td>1912/1913</td><td>R23</td><td><a href="/jura-docs/r23_fuld_rigsdagtid_b_1912-1913.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r24-root">1913/1914: Lovforslag</a></td><td>1914-01-26</td><td>1913/1914</td><td>R24</td><td><a href="/jura-docs/r24_fuld_rigsdagtid_1913-1914.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r25-root">1913/1914: Betænkning (Folketinget)</a></td><td>1914-03-31</td><td>1913/1914</td><td>R25</td><td><a href="/jura-docs/r25_fuld_rigsdagtid_b1_1913-1914.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r26-root">1913/1914: Betænkning (Landstinget)</a></td><td>1914-05-29</td><td>1913/1914</td><td>R26</td><td><a href="/jura-docs/r26_fuld_rigsdagtid_b_1913-1914.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r27-root">1915/1916: Lovforslag</a></td><td>1915-12-01</td><td>1915/1916</td><td>R27</td><td><a href="/jura-docs/r27_fuld_rigsdagtid_a_1915-1916.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r28-root">1915/1916: Betænkning (Folketinget)</a></td><td>1916-02-17</td><td>1915/1916</td><td>R28</td><td><a href="/jura-docs/r28_fuld_rigsdagtid_b1_1915-1916.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r29-root">1915/1916: Betænkning (Landstinget)</a></td><td>1916-03-30</td><td>1915/1916</td><td>R29</td><td><a href="/jura-docs/r29_fuld_rigsdagtid_b2_1915-1916.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
 <tr style="display:none;max-height:0"></tr> <!-- for correct CSS nth-child(odd/even) count -->
 <tr><th scope="col" colspan="4">Lovtidende</th></tr>
-<tr><td><a href="/text/jura-texts-r30-root">1909: Lov</a></td><td>1909-03-26</td><td>1909</td><td>R30</td><td></td></tr>
-<tr><td><a href="/text/jura-texts-r31-root">1916: Lov</a></td><td>1916-04-11</td><td>1916</td><td>R31</td><td></td></tr>
+<tr><td><a href="/text/jura-texts-r30-root">1909: Lov</a></td><td>1909-03-26</td><td>1909</td><td>R30</td><td><a href="/jura-docs/r30_fuld_lovtid_1909.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
+<tr><td><a href="/text/jura-texts-r31-root">1916: Lov</a></td><td>1916-04-11</td><td>1916</td><td>R31</td><td><a href="/jura-docs/r31_fuld_rigsdagtid_a_1916.pdf" target="_blank" title="PDF med alle sider">PDF <i class="icon symbol open_in_new"></i></a></td></tr>
 </tbody>
 </table>
 
