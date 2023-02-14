@@ -22,7 +22,9 @@
   // The portrayed person must always look in from the side; no cropping on right side
   a[href = '/lh'] .bg-img-container {
     background-position: right top;
-    background-size: 115%;
+    @include media-breakpoint-up(xl) { // Extra large devices (large desktops, 1200px and up)
+      background-size: 115%;
+    }
   }
 
 
