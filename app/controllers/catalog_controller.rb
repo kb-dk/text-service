@@ -422,26 +422,30 @@ class CatalogController < ApplicationController
     # image has to be local to show up in pdf
     pd = ""
     if document['subcollection_ssi'] == "tfs"
-      pd = '<dt>Ophavsret</dt>' +
+      pd = '<dt>Ophavsret:</dt>' +
       '<dd>Materialet er fri af ophavsret. Du kan kopiere, ændre, distribuere eller fremføre værket, også til kommercielle formål, uden at bede om tilladelse.</dd>' +
       '<dd><a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">Læs Public Domain-erklæringen</a></dd>'
     elsif document['subcollection_ssi'] == "adl"
-      pd = '<!-- dt>Ophavsret</dt>' +
+      pd = '<!-- dt>Ophavsret:</dt>' +
       '<dd>Materialet er dedikeret til public domain. Du kan kopiere, ændre, distribuere og fremføre værket, også til kommercielle formål, uden at bede om tilladelse. Husk dog altid at kreditere ophavsmanden.</dd>' +
       '<dd><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.da">Læs CC0-erklæringen</a></dd -->'
     elsif document['subcollection_ssi'] == "lh"
-      pd = '<dt>Ophavsret</dt>' +
-	  '<dd>Materialet kan være ophavsretligt beskyttet, og så må du kun bruge det til personlig brug.  Hvis ophavsmanden er død for mere end 70 år siden, er værket fri af ophavsret (public domain), og så kan du bruge værket frit.  Hvis der er flere ophavsmænd, gælder den længstlevendes dødsår.  Husk altid at kreditere ophavsmanden.</dd>'
+      pd = '<dt>Ophavsret:</dt>' +
+	  '<dd>Materialet kan være ophavsretligt beskyttet, og så må du kun bruge det til personlig brug. Hvis ophavsmanden er død for mere end 70 år siden, er værket fri af ophavsret (public domain), og så kan du bruge værket frit. Hvis der er flere ophavsmænd, gælder den længstlevendes dødsår.  Husk altid at kreditere ophavsmanden.</dd>'
     elsif document['subcollection_ssi'] == "jura"
-      pd = '<dt>Ophavsret</dt>' +
+      pd = '<dt>Ophavsret:</dt>' +
 	  '<dd>Love, administrative forskrifter, retsafgørelser og lignende offentlige aktstykker er ikke genstand for ophavsret. Du kan frit kopiere, distribuere eller fremføre materialet uden at bede om tilladelse.<br/>Hvis materialet indeholder selvstændige bidrag, skal du være opmærksom på, at disse bidrag kan være beskyttet af ophavsret. Selvstændige bidrag må gengives i forbindelse med aktstykket. Hvis det selvstændige bidrag bruges adskilt fra aktstykket, gælder de øvrige ophavsretlige regler.</dd>'
     elsif document['subcollection_ssi'] == "letters"
-      pd = '<dt>Ophavsret</dt>' +
-      '<dd>Materialet er fri af ophavsret. Du kan kopiere, ændre, distribuere eller fremføre værket, også til kommercielle formål, uden at bede om tilladelse.  Husk altid at kreditere ophavsmanden.</dd>' +
+      pd = '<dt>Ophavsret:</dt>' +
+      '<dd>Materialet er fri af ophavsret. Du kan kopiere, ændre, distribuere eller fremføre værket, også til kommercielle formål, uden at bede om tilladelse. Husk altid at kreditere ophavsmanden.</dd>' +
       '<dd><a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">Læs Public Domain-erklæringen</a></dd>'
+    elsif document['subcollection_ssi'] == "sks"
+      pd = '<dt>Ophavsret:</dt>' +
+      '<dd>Materialet er dedikeret til public domain. ' +
+      '<a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.da">Læs CC0-erklæringen</a></dd>'
     else
-      pd = '<dt>Ophavsret</dt>' +
-      '<dd>Materialet er dedikeret til public domain. Du kan kopiere, ændre, distribuere og fremføre 	værket, også til kommercielle formål, uden at bede om tilladelse. Husk dog altid at kreditere ophavsmanden.</dd>' +
+      pd = '<dt>Ophavsret:</dt>' +
+      '<dd>Materialet er dedikeret til public domain. Du kan kopiere, ændre, distribuere og fremføre værket, også til kommercielle formål, uden at bede om tilladelse. Husk dog altid at kreditere ophavsmanden.</dd>' +
       '<dd><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.da">Læs CC0-erklæringen</a></dd>'
     end
     
