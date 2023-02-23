@@ -14,15 +14,15 @@
             <%= render :partial => 'collection_home', locals: {collection: collection} %>
           </div>
           <div class="small-12 medium-4 cell right-col">
-            <% if collection == 'adl' %>
+        <% if collection == 'adl' %>
               <% subjects = ['author', 'period'] %>
               <% urls = ['/authors', '/periods'] %>
               <% subjects.each_with_index do |subject, index| %>
                 <%= render :partial => 'shared/components/organisms/content-spot/index', locals: {header: t("view-specific.home.boxes.#{subject}.title"), description: t("view-specific.home.boxes.#{subject}.description"), image:"#{subject}.jpg", classes:'', url:urls[index]} %>
                 <% end %>
-            <% elsif collection == 'tfs' %>
+        <% elsif collection == 'tfs' %>
             <aside style="text-align:right"><a href='/pages/tfs-bibliografi'>Læs detaljeret bibliografi</a></aside>
-            <% elsif collection == 'jura' %>
+        <% elsif collection == 'jura' %>
             <aside style="text-align:right"><a href='/pages/jura-overview'>Oversigt</a></aside>
 	    <% elsif collection == 'gv' %>
 
@@ -55,15 +55,14 @@
 
 	    <aside  style="text-align:right"><a data-blacklight-modal="trigger" href="/text/facet/other_location_ssim?editorial=no&amp;f%5Bsubcollection_ssi%5D%5B%5D=sks&amp;match=one&amp;q=&amp;search_field=Alt">Steder</a></aside>
 
-	    <!-- aside  style="text-align:right">   <a data-blacklight-modal="trigger" href="/text/facet/textclass_genre_ssim?editorial=no&amp;f%5Bsubcollection_ssi%5D%5B%5D=sks&amp;match=one&amp;q=&amp;search_field=Alt">Tekstklassifikation</a></aside -->
+	    <!-- aside  style="text-align:right"><a data-blacklight-modal="trigger" href="/text/facet/textclass_genre_ssim?editorial=no&amp;f%5Bsubcollection_ssi%5D%5B%5D=sks&amp;match=one&amp;q=&amp;search_field=Alt">Tekstklassifikation</a></aside -->
 	    
 	    <!-- aside  style="text-align:right"><a data-blacklight-modal="trigger" href="/text/facet/textclass_keywords_ssim?editorial=no&amp;f%5Bsubcollection_ssi%5D%5B%5D=sks&amp;match=one&amp;q=&amp;search_field=Alt">Emneord</a></aside -->
 
 	    <aside  style="text-align:right"><a data-blacklight-modal="trigger" href="/text/facet/bible_ref_ssim?editorial=no&amp;f%5Bsubcollection_ssi%5D%5B%5D=sks&amp;match=one&amp;q=&amp;search_field=Alt">Bibelsted</a></aside>
 
+	    <aside style="text-align:right;margin:3rem 0 1.5rem"><img src="<%= asset_url("sks-narrow.jpg")%>" alt="Søren Kierkegaard vignet" style="width:180px" /></aside>
 
-
-	    
 	    <% end %>
           </div>
         </div>
