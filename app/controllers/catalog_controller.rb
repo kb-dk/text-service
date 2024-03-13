@@ -426,9 +426,12 @@ class CatalogController < ApplicationController
       '<dd>Materialet er fri af ophavsret. Du kan kopiere, ændre, distribuere eller fremføre værket, også til kommercielle formål, uden at bede om tilladelse.</dd>' +
       '<dd><a rel="license" href="https://creativecommons.org/publicdomain/mark/1.0/deed.da">Læs Public Domain-erklæringen</a></dd>'
     elsif document['subcollection_ssi'] == "adl"
-      pd = '<!-- dt>Ophavsret:</dt>' +
-      '<dd>Materialet er dedikeret til public domain. Du kan kopiere, ændre, distribuere og fremføre værket, også til kommercielle formål, uden at bede om tilladelse. Husk dog altid at kreditere ophavsmanden.</dd>' +
-      '<dd><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/deed.da">Læs CC0-erklæringen</a></dd -->'
+      pd = '<dt>Ophavsret:</dt>' +
+      '<dd>Udgiver har den fulde ophavsret.</dd>' +
+      '<dd>Dog kan værket gengives i det omfang som det følger af ophavsretsretlige undtagelser om citat, kopiering til privat brug mv. Desuden kan der ske kopiering til undervisningsbrug mv. i det omfang som det følger af aftaler indgået med Copydan og tilsvarende institutioner.</dd>' +
+      '<dd>Nogle af værkerne i Arkiv for Dansk Litteratur er dog helt fri af ophavsret (public domain), og så kan du bruge værket frit.</dd>' +
+      '<dd><i>Du kan finde en liste over værker fra Arkiv for Dansk Litteratur, som er frie her: <a href="https://dsl.dk/">liste (MANGLER)</a>.</i></dd>' +
+      '<dd><i>Har du spørgsmål til benyttelsen af et værk, kan du kontakte udgiver: <a href="https://dsl.dk/">Det Danske Sprog- og Litteraturselskab</a></i></dd>'
     elsif document['subcollection_ssi'] == "lh"
       pd = '<dt>Ophavsret:</dt>' +
 	  '<dd>Materialet kan være ophavsretligt beskyttet, og så må du kun bruge det til personlig brug. Hvis ophavsmanden er død for mere end 70 år siden, er værket fri af ophavsret (public domain), og så kan du bruge værket frit. Hvis der er flere ophavsmænd, gælder den længstlevendes dødsår.  Husk altid at kreditere ophavsmanden.</dd>'
