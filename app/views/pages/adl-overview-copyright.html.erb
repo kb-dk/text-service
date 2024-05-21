@@ -2,13 +2,14 @@
 <style>
 div.breadcrumb-bar { padding: .6em 3em; background-color: #CAF0FE; color: #989898; }
 div.adl-copyright { padding: 1.5em 3em 2.5em 3em; }
-table.cp { --table-border: 1px solid #aaa; }
+table.cp { --table-border: 1px solid #aaa; width: 100%;}
 table.cp { border-collapse: collapse; border-top: var(--table-border); border-left: var(--table-border); }
 table.cp th, table.cp td { vertical-align: top; border-bottom: var(--table-border); border-right: var(--table-border); padding: 2pt 4pt; }
+table.cp thead { position: sticky; top: 0; background: #fff; z-index: 10; }
 table.cp th { text-align: left; padding: 4pt 4pt; }
-table.cp tr.fri td { background-color: #b6d7a8; }
-table.cp tr.dsl td { background-color: #a4c2f4; }
-table.cp tr.sats td { background-color: #f6b26b; }
+table.cp tr.fri td { background-color: #dfeed9; }
+table.cp tr.dsl td { background-color: #bed6ff; }
+table.cp tr.sats td { background-color: #f3d2af; }
 table.cp tbody.cp tr:hover { filter: brightness(1.1); }
 </style>
 <script>
@@ -35,15 +36,16 @@ function checkboxCp(box, cl) {
 
 <p style="text-align:right">Sidst ændret:&nbsp; 31-03-2022</p>
 <table class="cp">
-<tbody>
-<tr><th>Notation nedenfor</th><th>Antal nedenfor</th><th>Skjul (klik)</th><th colspan="4">Ophavsret for værkerne i listen nedenfor</th></tr>
+<thead>
+<tr><th style="width:5em">Notation nedenfor</th><th style="width:9em">Antal nedenfor</th><th style="width:4em">Skjul (klik)</th><th colspan="4">Ophavsret for værkerne i listen nedenfor</th></tr>
 <tr class="fri"><td>FRI</td><td>269</td><td><input type="checkbox" onclick="checkboxCp(this,'fri')"/></td><td colspan="4">Fri af ophavsret</td></tr>
 <tr class="dsl"><td>DSL</td><td>166</td><td><input type="checkbox" onclick="checkboxCp(this,'dsl')"/></td><td colspan="4">Ophavsretshaver: <a href="https://dsl.dk/" target="_blank">Det Danske Sprog- og Litteraturselskab</a></td></tr>
 <tr class="sats"><td>SATS m.v.</td><td>67</td><td><input type="checkbox" onclick="checkboxCp(this,'sats')"/></td><td colspan="4">Ophavsretshaver: SATS m.v.</td></tr>
 <tr><td colspan="7">&nbsp;</td></tr>
 
 <tr><th>Ophavsret</th><th>Forfatter</th><th>Fødselsår</th><th>dødsår</th><th>Titel, sted, forlag, årstal etc.</th><th>URL i tekster.kb.dk</th><th>Tekstfil (TEI)</th></tr>
-</tbody>
+</thead>
+
 <tbody class="cp">
 <tr class="fri"><td>FRI</td><td>Aakjær, Jeppe.</td><td>1866</td><td>1930</td><td>Af min Hjemstavns Saga : lidt Bondehistorie. - 1919. Kbh., Gyldendal, 1918-19.</td><td>tekster.kb.dk/text/adl-texts-aakjaer05tom-shoot-workid...</td><td>aakjaer05tom.xml</td></tr>
 <tr class="fri"><td>FRI</td><td>Aakjær, Jeppe.</td><td>1866</td><td>1930</td><td>Arbejdets Glæde ; Hvor der er gjærende Kræfter ; Jens Langkniv. - 1919. Kbh., Gyldendal, 1918-19.</td><td>tekster.kb.dk/text/adl-texts-aakjaer08tom-shoot-workid...</td><td>aakjaer08tom.xml</td></tr>
