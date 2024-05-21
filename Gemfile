@@ -92,7 +92,7 @@ gem 'bootstrap-slider-rails'
 gem 'jquery-rails'
 gem 'font-awesome-rails'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary',  '0.12.4'
+gem 'wkhtmltopdf-binary', '0.12.6.7'
 gem 'bootstrap', '~> 4.3.1'
 # gem "bootstrap", ">= 4.3.1"
 gem 'oai'
