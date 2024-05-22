@@ -34,7 +34,7 @@ gem "activerecord", ">= 5.2.4.5"
 
 gem "activesupport", "~> 5.2.8.1"
 gem "activestorage", "~> 5.2.8.1"
-gem "rack", ">= 2.2.3"
+gem "rack", ">= 2.2.6.4"
 
 gem "actionpack", ">= 5.2.8.1"
 
@@ -99,6 +99,4 @@ gem 'oai'
 # Google Material Icons
 gem 'material_icons'
 
-gem "nokogiri", ">= 1.13.9"
-
-
+gem "nokogiri", ">= 1.14.3"
