@@ -20,7 +20,7 @@ gem 'sqlite3'
 gem "actionview", ">= 5.2.8.1"
 # Use Puma as the app server
 # gem 'puma', '~> 3.12'
-gem "puma", ">= 6.4.2"
+gem "puma", ">= 5.6.4"
 # Use SCSS for stylesheets
 gem 'sassc-rails', '~> 2.1.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,7 +34,7 @@ gem "activerecord", ">= 5.2.4.5"
 
 gem "activesupport", "~> 5.2.8.1"
 gem "activestorage", "~> 5.2.8.1"
-gem "rack", ">= 2.2.6.4"
+gem "rack", ">= 2.2.3"
 
 gem "actionpack", ">= 5.2.8.1"
 
@@ -99,4 +99,6 @@ gem 'oai'
 # Google Material Icons
 gem 'material_icons'
 
-gem "nokogiri", ">= 1.16.5"
+gem "nokogiri", ">= 1.13.9"
+
+
