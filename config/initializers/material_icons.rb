@@ -1,4 +1,2 @@
-# Initialize material icons setup
-MaterialIcons.setup do |config|
-  config.unicode = true
-end
+# MaterialIcons v4.0.0 does not expose a setup API.
+# This initializer is intentionally left blank to allow the app to start.
