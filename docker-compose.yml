@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  solr:
+    image: solr:8.11.1
+    container_name: text-service-solr
+    ports:
+      - '8983:8983'
+    volumes:
+      - ./solr/conf:/opt/solr/server/solr/configsets/text-retriever-core/conf:ro
+    command: solr-precreate text-retriever-core opt/solr/server/solr/configsets/text-retriever-core/conf
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8983/solr"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: text-service-app
+    depends_on:
+      solr:
+        condition: service_started
+    ports:
+      - '3000:3000'
+    environment:
+      RAILS_ENV: production
+      RACK_ENV: production
+      SOLR_URL: http://solr:8983/solr/text-retriever-core/
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:-docker_secret_key_base_change_me}
+      RAILS_SERVE_STATIC_FILES: 'true'
+      RAILS_LOG_TO_STDOUT: 'true'
+    restart: unless-stopped
