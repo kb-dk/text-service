@@ -16,7 +16,8 @@ gem 'sprockets', '~> 3.7.2'
 gem 'rails', '~> 5.2.8.1'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'ffi', '1.15.5'
+gem 'sqlite3', '1.6.9'
 gem "actionview", ">= 5.2.8.1"
 # Use Puma as the app server
 # gem 'puma', '~> 3.12'
@@ -28,7 +29,6 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/discourse/mini_racer
 
 gem 'mini_racer', "=0.4.0" 
-
 
 gem "activerecord", ">= 5.2.4.5"
 
@@ -44,6 +44,7 @@ gem 'coffee-rails', '~> 4.2'
 #gem 'turbolinks', '~> 5.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'json', '~> 2.6.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

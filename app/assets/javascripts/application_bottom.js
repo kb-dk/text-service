@@ -15,5 +15,3 @@
 //= require catalog.js
 //= require DkBreve.js
 //= require_tree ./text_service
-
-//= require cookie-script.js
