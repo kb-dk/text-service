@@ -41,6 +41,14 @@ Text Service is a Ruby on Rails application that provides a searchable, faceted 
 
 ## Running Locally
 
+Prequisite: When running this on newer machines (like anything Ubuntu >24.04), run:
+
+```bash
+export CFLAGS="-std=gnu11 -Wno-error=incompatible-pointer-types"export RUBY_CONFIGURE_OPTS="--disable-jit-support"
+```
+
+before installing ruby / rbenv.
+
 1. Install Ruby and the required gems:
 
 ```bash
