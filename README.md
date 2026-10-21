@@ -32,7 +32,7 @@ Text Service is a Ruby on Rails application that provides a searchable, faceted 
 
 ## Dependencies
 
-- Ruby 2.5.x compatible
+- Ruby 2.7.8 compatible
 - Rails 5.2.8
 - SQLite3 for local development database
 - Apache Solr for search index backend
