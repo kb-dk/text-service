@@ -32,7 +32,7 @@ Text Service is a Ruby on Rails application that provides a searchable, faceted 
 
 ## Dependencies
 
-- Ruby 2.5.x compatible
+- Ruby 2.7.8 compatible
 - Rails 5.2.8
 - SQLite3 for local development database
 - Apache Solr for search index backend
@@ -40,6 +40,14 @@ Text Service is a Ruby on Rails application that provides a searchable, faceted 
 - wkhtmltopdf for PDF generation via `wicked_pdf`
 
 ## Running Locally
+
+Prequisite: When running this on newer machines (like anything Ubuntu >24.04), run:
+
+```bash
+export CFLAGS="-std=gnu11 -Wno-error=incompatible-pointer-types"export RUBY_CONFIGURE_OPTS="--disable-jit-support"
+```
+
+before installing ruby / rbenv.
 
 1. Install Ruby and the required gems:
 
