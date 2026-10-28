@@ -98,7 +98,7 @@ gem 'bootstrap', '~> 4.3.1'
 # gem "bootstrap", ">= 4.3.1"
 gem 'oai'
 # Google Material Icons
-gem 'material_icons'
+gem 'material_icons', '2.2.1'
 
 gem "nokogiri", ">= 1.13.9"
 
