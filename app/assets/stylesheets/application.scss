@@ -18,9 +18,7 @@
 //font awesome
 @import "font-awesome";
 // Google Material Icons
-@import "material_icons";
-// material_icons_unicode is not available in the current material_icons gem version.
-// Remove or restore this import if the gem is updated to provide it.
+@import "material_icons_unicode";
 
 //blacklight_range_limit
 @import "blacklight_range_limit/blacklight_range_limit";
